@@ -4,7 +4,7 @@
   "release_tag": "v0.2.5",
   "repository_url": "https://github.com/jdding/rolemap",
   "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.5",
-  "publication_status": "versioned_public_resource",
+  "publication_status": "unreleased_local_revision_of_v0.2.5",
   "release_date": "2026-10-19",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
@@ -34,5 +34,10 @@
     "internal review records"
   ],
   "hosted_live_demo": "https://jdding.github.io/rolemap/",
-  "demo_execution": "pinned Pyodide, actual Python source, synthetic input, no upload"
+  "demo_execution": "pinned Pyodide, actual Python source, synthetic input, no upload",
+  "baseline_release_commit": "56884062717bdd2c2555b9644957574e111a9992",
+  "unreleased_changes": [
+    "Clarified capabilities and relationship to SIDInspector",
+    "Added reproducible five-view multiplicity sensitivity"
+  ]
 }

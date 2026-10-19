@@ -21,13 +21,13 @@
     },
     {
       "path": "ARTIFACT_QUICKSTART.md",
-      "bytes": 2749,
-      "sha256": "dd7d9213cdb63bf2632089f5476db72038fb4d6047f0d0b45a3e10a3ca433b42"
+      "bytes": 2893,
+      "sha256": "809895cf5ada3ffb04733f1b9ebe11db1f46dbea9779775d68db2c61ac2f9339"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 860,
-      "sha256": "19e6b83fbc5a78af2e4e5ecfa242ede7a6e4d62f743a4cef7a1d52174bb1f66e"
+      "bytes": 1171,
+      "sha256": "e67c56126ac1b316622d972b98b034ff069d1824fb94588214504e019ae9fb59"
     },
     {
       "path": "CITATION.cff",
@@ -56,13 +56,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4656,
-      "sha256": "6395810e6f1162ef64f3987f9f0d50d05a2beda3ca7d832b4da027b5c7046a2a"
+      "bytes": 4851,
+      "sha256": "94f3a3e861c9388888e4d5f69a0413ef37897d5188b7d161bc89019a048adb48"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 1303,
-      "sha256": "0ec8877f73e86d0286b662f539514947cc4e305adbc301d6bd8c7975745dc189"
+      "bytes": 1540,
+      "sha256": "35c803ff1c742559142d007184cf26535ac59a60d781802effdc31d81934e31f"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/README.md",
@@ -170,19 +170,29 @@
       "sha256": "7aa60ca69ab77b83f168b664ece676f632b666b54b696dc69b351d6c2809b780"
     },
     {
+      "path": "analysis/reuse_validation/MULTIPLICITY_PLAN.md",
+      "bytes": 2137,
+      "sha256": "892fe95ecd3b5958d8761e94e11ce6c13cf568e900ada4d55c5a847d82b6e8e1"
+    },
+    {
+      "path": "analysis/reuse_validation/MULTIPLICITY_README.md",
+      "bytes": 2959,
+      "sha256": "2b1cc7c676fb8c3f5391dad9cdf4513c96f71a477595fdd2568be40afff4838b"
+    },
+    {
       "path": "analysis/reuse_validation/PROTOCOL.md",
       "bytes": 8621,
       "sha256": "d1d507154a04716f0b054e6b2bae8d5aa2395c7272165ce5b7d811996b47a33d"
     },
     {
       "path": "analysis/reuse_validation/README.md",
-      "bytes": 9223,
-      "sha256": "ff903cc1aff66dd6171a992d4a4f45ed39d9ca2a05cc86b6a56958cc231acd23"
+      "bytes": 9447,
+      "sha256": "67563a59cdbb9424b50030b55464dbc5ccb44559bb953bd6608627afc0c5d02a"
     },
     {
       "path": "analysis/reuse_validation/RESULT_REVIEW_SUMMARY.md",
-      "bytes": 2847,
-      "sha256": "7ea8622dc4bbbc3a4e7193ab8b2ae79d3e19c5cf6288f52799214da4a9e85910"
+      "bytes": 3434,
+      "sha256": "e546028f3ae87a904afe3f32fef69a7275e106fb4b1d8a2fcea8256c394ee83e"
     },
     {
       "path": "analysis/reuse_validation/SOURCE_PROVENANCE.json",
@@ -215,6 +225,11 @@
       "sha256": "4153a6b0fa6a5fb31d987a61950a7d0d43437f1b90627f29001ffa854f03a122"
     },
     {
+      "path": "analysis/reuse_validation/multiplicity_sensitivity.py",
+      "bytes": 9965,
+      "sha256": "8e5772637072a0313cbf119afc9ae80ac7379e59efbe3fcc719179eb47193a8f"
+    },
+    {
       "path": "analysis/reuse_validation/requirements-research.txt",
       "bytes": 122,
       "sha256": "328023b5d6f5e6f64e7d1e373939d7af500edf0023e8b06639003046089d3a12"
@@ -238,6 +253,16 @@
       "path": "analysis/reuse_validation/results/audit_main_r1/RESULTS.json",
       "bytes": 15345,
       "sha256": "f537b9d04bbe1662e4415351f9a53825cbe0259d24f3721d10ec1616a63e3991"
+    },
+    {
+      "path": "analysis/reuse_validation/results/multiplicity_audit/MULTIPLICITY_SENSITIVITY.csv",
+      "bytes": 817,
+      "sha256": "ea272e1f5555ea4860ec1a691e9831f4244dd6484cb5bf8215655d130af07843"
+    },
+    {
+      "path": "analysis/reuse_validation/results/multiplicity_audit/MULTIPLICITY_SENSITIVITY.json",
+      "bytes": 4650,
+      "sha256": "03094027bd18f22dcfe858a8bb70cae991aa8fa38d89ee6e415c4404eeafe6ed"
     },
     {
       "path": "analysis/reuse_validation/results/test_common_r1/RESULTS.csv",
@@ -410,9 +435,19 @@
       "sha256": "2da2026035e8cb2092bf8a148e245f46921b6443d30b36b261a2f8d957ad6a1d"
     },
     {
+      "path": "docs/RELATION_TO_SIDINSPECTOR.md",
+      "bytes": 2311,
+      "sha256": "7fa44f24caf59228ec89e802bbf8eeb99b1e87af2b8d3de3720bc57b1421fde8"
+    },
+    {
       "path": "docs/REPRESENTATION_PROTOCOL.md",
       "bytes": 1077,
       "sha256": "1dd5dddb378146ddec04e58ba4336ddcd4961c135e338262d68674d43463d62f"
+    },
+    {
+      "path": "docs/RESOURCE_CAPABILITIES.md",
+      "bytes": 3999,
+      "sha256": "9515d06d970ebd750dfb2d4e9bde92dc75c3361882b5c21403d1388fe086528f"
     },
     {
       "path": "docs/ROLEMAP_RECORD_PROTOCOL.md",
@@ -926,7 +961,8 @@
     }
   ],
   "counts": {
-    "files": 184,
-    "bytes": 8528189
-  }
+    "files": 191,
+    "bytes": 8556725
+  },
+  "working_copy_status": "unreleased_review_revision"
 }

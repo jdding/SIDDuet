@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Distinguish package-only analyses from provider-input reconstruction and private-data use.
+- Explain the contribution relative to SIDInspector without excluding its interaction probes.
+- Add the five-view Bonferroni bootstrap sensitivity, preserving all original fits and primary designation.
+
 ## 0.2.5 — 2026-10-19
 
 - Readable source layout and CLI names, with the canonical topology implementation preserved.

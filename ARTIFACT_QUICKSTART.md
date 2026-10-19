@@ -7,6 +7,8 @@ The [online example](https://jdding.github.io/rolemap/) runs the same core scrip
 in your browser with fabricated inputs. It needs no account or local installation.
 For the full source-integrity and interface checks, use the command below.
 
+The [capability guide](docs/RESOURCE_CAPABILITIES.md) states which analyses run from the package alone and which need provider or user inputs.
+
 ## 1. Check the resource and run the synthetic example
 
 ```sh
