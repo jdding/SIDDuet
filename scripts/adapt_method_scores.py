@@ -99,22 +99,24 @@ def main() -> None:
         for row in rows:
             if not math.isfinite(float(row["score"])):
                 raise ValueError("scores must be finite")
-            output.append({
-                "method_id": args.method_id,
-                "method_paradigm": args.method_paradigm,
-                "score_direction": args.score_direction,
-                "topology_profile_id": TOPOLOGY_PROFILE_ID,
-                "topology_sha256": topology_sha256,
-                "dataset": row["dataset"],
-                "unit_id": row["unit_id"],
-                "role": row["role"],
-                "candidate_id": row["candidate_id"],
-                "is_target": row["is_target"],
-                "score": row["score"],
-                "topology_cell": target_topology["topology_cell"],
-                "rsd_bucket": target_topology["rsd_bucket"],
-                "rsi_mag_bucket": target_topology["rsi_mag_bucket"],
-            })
+            output.append(
+                {
+                    "method_id": args.method_id,
+                    "method_paradigm": args.method_paradigm,
+                    "score_direction": args.score_direction,
+                    "topology_profile_id": TOPOLOGY_PROFILE_ID,
+                    "topology_sha256": topology_sha256,
+                    "dataset": row["dataset"],
+                    "unit_id": row["unit_id"],
+                    "role": row["role"],
+                    "candidate_id": row["candidate_id"],
+                    "is_target": row["is_target"],
+                    "score": row["score"],
+                    "topology_cell": target_topology["topology_cell"],
+                    "rsd_bucket": target_topology["rsd_bucket"],
+                    "rsi_mag_bucket": target_topology["rsi_mag_bucket"],
+                }
+            )
 
     args.out_csv.parent.mkdir(parents=True, exist_ok=True)
     with args.out_csv.open("w", encoding="utf-8", newline="") as handle:

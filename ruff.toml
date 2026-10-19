@@ -1,0 +1,4 @@
+line-length = 100
+target-version = "py39"
+# This canonical source is byte-bound by the published v2 reconstruction references.
+exclude = ["scripts/build_role_topology.py"]

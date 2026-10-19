@@ -11,12 +11,19 @@ support to each task, and attaches model predictions with explicit coverage and 
 | Should task counts be pooled for later exposure-allocation forecasts? | [Temporal reuse example](analysis/reuse_validation/README.md) |
 | Which requests does the diagnostic cover for a real joint model? | [UniSAR predictions and complete replay](analysis/model_reuse/REPLAY.md) |
 
+## Try it online
+
+[Run the browser example](https://jdding.github.io/rolemap/) without installing Python.
+It executes six shipped Python scripts on the eight-item synthetic fixture, checks
+source hashes and shows the computed topology, map coverage and candidate metrics.
+The first run loads a pinned Pyodide runtime; data stay in your browser.
+
 ## Quickstart
 
 Python 3.10+ and the standard library are enough for the synthetic example:
 
 ```sh
-git clone --branch v0.2.4 https://github.com/jdding/rolemap.git
+git clone --branch v0.2.5 https://github.com/jdding/rolemap.git
 cd rolemap
 python3 -I scripts/validate_release.py
 ```
@@ -60,7 +67,7 @@ conflict, or ranking improvements.
   the three approved fixed maps and minimal cohort, representing six views. Obtain
   request files from the provider; no quantizer retraining is needed.
 - [Complete UniSAR replay](analysis/model_reuse/REPLAY.md): download the separately
-  licensed checkpoint from the [v0.2.4 release](https://github.com/jdding/rolemap/releases/tag/v0.2.4)
+  licensed checkpoint from the [fixed checkpoint assets](https://github.com/jdding/rolemap/releases/tag/v0.2.4)
   and obtain the pinned upstream source and processed data. The recorded CPU environment
   reproduced 16,698,100 score values byte for byte.
 - [Provider reconstruction](docs/PREPROCESSING_PROTOCOL.md): build paired observations

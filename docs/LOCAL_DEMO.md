@@ -1,4 +1,21 @@
-# Local runnable demo
+# Runnable demos
+
+## Online example
+
+Open <https://jdding.github.io/rolemap/> and select **Run example**. The browser loads
+a pinned Pyodide Python runtime and verifies the source/fixture hashes against the
+package manifest. Six actual scripts rebuild counts and topology, join the map,
+inspect within-code support and evaluate supplied candidate scores. Each execution
+uses a fresh temporary filesystem directory. The page accepts no uploads and needs
+no account, provider data, model download or hosted inference service.
+
+The first load needs access to the jsDelivr runtime CDN. The optional local interface
+below is available when that network dependency is unsuitable. The fixture demonstrates
+software behavior; it does not reproduce the real dataset findings or run all command-line
+rejection tests. Use the CLI quickstart for the full source and interface checks.
+
+## Local interface
+
 
 ```sh
 python3 -I scripts/serve_demo.py --port 8765

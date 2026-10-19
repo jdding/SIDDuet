@@ -46,15 +46,19 @@ def aggregate(units: list[dict[str, object]], field: str | None) -> list[dict[st
         grouped[(str(row["dataset"]), str(row["role"]), value)].append(row)
     output: list[dict[str, object]] = []
     for (dataset, role, value), rows in sorted(grouped.items()):
-        output.append({
-            "dataset": dataset,
-            "role": role,
-            "slice_type": "all" if field is None else field,
-            "slice_value": value,
-            "units": len(rows),
-            "ndcg10": round(sum(float(row["ndcg10"]) for row in rows) / len(rows), 6),
-            "mean_group_size": round(sum(int(row["group_size"]) for row in rows) / len(rows), 6),
-        })
+        output.append(
+            {
+                "dataset": dataset,
+                "role": role,
+                "slice_type": "all" if field is None else field,
+                "slice_value": value,
+                "units": len(rows),
+                "ndcg10": round(sum(float(row["ndcg10"]) for row in rows) / len(rows), 6),
+                "mean_group_size": round(
+                    sum(int(row["group_size"]) for row in rows) / len(rows), 6
+                ),
+            }
+        )
     return output
 
 
@@ -68,7 +72,11 @@ def main() -> None:
 
     topology, topology_sha256 = read_topology(args.topology)
     sid_lookup = {(row["dataset"], row["item_id"]): row["sid"] for row in read_csv(args.sid_map)}
-    joined = [dict(row, sid=sid_lookup[(row["dataset"], row["item_id"])]) for row in topology if (row["dataset"], row["item_id"]) in sid_lookup]
+    joined = [
+        dict(row, sid=sid_lookup[(row["dataset"], row["item_id"])])
+        for row in topology
+        if (row["dataset"], row["item_id"]) in sid_lookup
+    ]
     groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for row in joined:
         groups[(row["dataset"], row["sid"])].append(row)
@@ -83,15 +91,17 @@ def main() -> None:
             positions = {row["item_id"]: position for position, row in enumerate(ranked, start=1)}
             for row in group:
                 position = positions[row["item_id"]]
-                units.append({
-                    "dataset": dataset,
-                    "role": role,
-                    "topology_cell": row["topology_cell"],
-                    "rsd_bucket": row["rsd_bucket"],
-                    "rsi_mag_bucket": row["rsi_mag_bucket"],
-                    "group_size": len(group),
-                    "ndcg10": 1.0 / math.log2(position + 1) if position <= 10 else 0.0,
-                })
+                units.append(
+                    {
+                        "dataset": dataset,
+                        "role": role,
+                        "topology_cell": row["topology_cell"],
+                        "rsd_bucket": row["rsd_bucket"],
+                        "rsi_mag_bucket": row["rsi_mag_bucket"],
+                        "group_size": len(group),
+                        "ndcg10": 1.0 / math.log2(position + 1) if position <= 10 else 0.0,
+                    }
+                )
     if not units:
         raise ValueError("no SID collision groups with at least two items")
     rows = []

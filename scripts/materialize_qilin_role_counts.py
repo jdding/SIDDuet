@@ -156,7 +156,9 @@ def write_counts(path, counts):
     with path.open("x", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(["dataset", "item_id", "role", "label", "count"])
-        for (key, role, label), count in sorted(counts.items(), key=lambda row: (str(row[0][0]), row[0][1] != "search", row[0][2])):
+        for (key, role, label), count in sorted(
+            counts.items(), key=lambda row: (str(row[0][0]), row[0][1] != "search", row[0][2])
+        ):
             writer.writerow([DATASET, key, role, label, count])
 
 
@@ -166,8 +168,16 @@ def main():
     parser.add_argument("--out-counts", type=Path, required=True)
     parser.add_argument("--out-summary", type=Path, required=True)
     parser.add_argument("--batch-size", type=int, default=4096)
-    parser.add_argument("--profile-rows", type=int, help="Bound notes AND events per file; partial output is not a dataset result")
-    parser.add_argument("--hash-inputs", action="store_true", help="Stream all required input bytes for SHA-256 binding")
+    parser.add_argument(
+        "--profile-rows",
+        type=int,
+        help="Bound notes AND events per file; partial output is not a dataset result",
+    )
+    parser.add_argument(
+        "--hash-inputs",
+        action="store_true",
+        help="Stream all required input bytes for SHA-256 binding",
+    )
     args = parser.parse_args()
     if args.batch_size <= 0 or (args.profile_rows is not None and args.profile_rows <= 0):
         parser.error("batch size and profile rows must be positive")
@@ -189,36 +199,82 @@ def main():
     notes_audit, split_audits = Counter(), {}
     inputs = []
     for path in note_paths:
-        add_notes(parquet_rows(path, ["note_idx", "taxonomy2_id", "taxonomy1_id"], args.batch_size, args.profile_rows), labels, notes_audit)
+        add_notes(
+            parquet_rows(
+                path,
+                ["note_idx", "taxonomy2_id", "taxonomy1_id"],
+                args.batch_size,
+                args.profile_rows,
+            ),
+            labels,
+            notes_audit,
+        )
     for name, role, column, path in split_paths:
         audit = split_audits.setdefault(name, Counter())
         for row in parquet_rows(path, [column], args.batch_size, args.profile_rows):
             add_event(row[column], role, labels, counts, audit)
     for path in note_paths + [entry[3] for entry in split_paths]:
-        inputs.append({"path_relative_to_provider": str(path.relative_to(args.qilin_root)), "bytes": path.stat().st_size,
-                       "sha256": input_hash(path) if args.hash_inputs else None})
+        inputs.append(
+            {
+                "path_relative_to_provider": str(path.relative_to(args.qilin_root)),
+                "bytes": path.stat().st_size,
+                "sha256": input_hash(path) if args.hash_inputs else None,
+            }
+        )
     for audit in split_audits.values():
-        assert audit["appearances_seen"] == sum(audit[key] for key in (
-            "valid_appearances", "excluded_null_detail", "excluded_missing_or_invalid_item_id", "excluded_missing_taxonomy_or_catalog_item"))
-        assert audit["events_seen"] == sum(audit[key] for key in (
-            "events_empty_or_missing_details", "events_without_valid_appearances", "events_with_engaged_label", "events_with_exposure_fallback"))
-    assert notes_audit["rows_seen"] == sum(notes_audit[key] for key in (
-        "rows_with_label", "excluded_missing_or_invalid_item_id", "excluded_missing_taxonomy"))
+        assert audit["appearances_seen"] == sum(
+            audit[key]
+            for key in (
+                "valid_appearances",
+                "excluded_null_detail",
+                "excluded_missing_or_invalid_item_id",
+                "excluded_missing_taxonomy_or_catalog_item",
+            )
+        )
+        assert audit["events_seen"] == sum(
+            audit[key]
+            for key in (
+                "events_empty_or_missing_details",
+                "events_without_valid_appearances",
+                "events_with_engaged_label",
+                "events_with_exposure_fallback",
+            )
+        )
+    assert notes_audit["rows_seen"] == sum(
+        notes_audit[key]
+        for key in (
+            "rows_with_label",
+            "excluded_missing_or_invalid_item_id",
+            "excluded_missing_taxonomy",
+        )
+    )
     write_counts(args.out_counts, counts)
     payload = {
         "schema": "sr_sid_rolemap.qilin_provider_role_counts.v1",
-        "status": "PROFILE_ONLY" if args.profile_rows is not None else "COMPLETE_LOCAL_MATERIALIZATION",
-        "dataset": DATASET, "profile_rows_per_file": args.profile_rows,
-        "input_hashes_verified": False, "input_hashes_computed": args.hash_inputs,
-        "inputs": inputs, "notes": dict(sorted(notes_audit.items())), "labeled_catalog_items": len(labels),
-        "splits": {name: dict(sorted(audit.items())) for name, audit in sorted(split_audits.items())},
-        "output_rows": len(counts), "output_appearances": sum(counts.values()),
-        "output_sha256": input_hash(args.out_counts), "wall_seconds": time.monotonic() - started,
-        "protocol": {"category": "taxonomy2_id with taxonomy1_id fallback; exclude missing IDs/taxonomy",
-                     "engagement": "any finite positive click/like/collect/comment/share/page_time",
-                     "event_label": "dominant engaged category, else exposures; lexical string tie-break",
-                     "assignment": "count every retained appearance, including duplicates",
-                     "scope": "both provider train and test; descriptive topology, not training features"},
+        "status": "PROFILE_ONLY"
+        if args.profile_rows is not None
+        else "COMPLETE_LOCAL_MATERIALIZATION",
+        "dataset": DATASET,
+        "profile_rows_per_file": args.profile_rows,
+        "input_hashes_verified": False,
+        "input_hashes_computed": args.hash_inputs,
+        "inputs": inputs,
+        "notes": dict(sorted(notes_audit.items())),
+        "labeled_catalog_items": len(labels),
+        "splits": {
+            name: dict(sorted(audit.items())) for name, audit in sorted(split_audits.items())
+        },
+        "output_rows": len(counts),
+        "output_appearances": sum(counts.values()),
+        "output_sha256": input_hash(args.out_counts),
+        "wall_seconds": time.monotonic() - started,
+        "protocol": {
+            "category": "taxonomy2_id with taxonomy1_id fallback; exclude missing IDs/taxonomy",
+            "engagement": "any finite positive click/like/collect/comment/share/page_time",
+            "event_label": "dominant engaged category, else exposures; lexical string tie-break",
+            "assignment": "count every retained appearance, including duplicates",
+            "scope": "both provider train and test; descriptive topology, not training features",
+        },
         "release_boundary": "Counts retain original item keys and remain local; only this aggregate summary may be reviewed for release.",
     }
     args.out_summary.parent.mkdir(parents=True, exist_ok=True)

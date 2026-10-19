@@ -38,7 +38,9 @@ def item_field(rows: list[dict[str, str]]) -> str:
     return "synthetic_item_id"
 
 
-def summarize(rows: list[dict[str, str]]) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+def summarize(
+    rows: list[dict[str, str]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     if not rows:
         return [], []
     sid_col = sid_field(rows)

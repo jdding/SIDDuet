@@ -30,7 +30,7 @@ Each command reports PASS and writes its fabricated-data checks under the chosen
 
 ## Real data replay has additional requirements
 
-Real replay needs lawful local source counts/topologies, the same supplied maps and admission metadata, a manifest binding actual paths and hashes, and fresh output directories outside the checkout. Use `--help` and each script's input validation to construct these declared inputs. The fixed protocols specify the grouping, support strata, seeds, 199 simulation draws and weighting rules. No independent approval receipt is required by the public CLI. If a local provenance receipt is supplied, its bindings are checked.
+Real replay needs lawful local source counts/topologies, the same supplied maps and admission metadata, a manifest binding actual paths and hashes, and fresh output directories outside the checkout. Use `--help` and each script's input validation to construct these declared inputs. The fixed protocols specify the grouping, support strata, seeds, 199 simulation draws and weighting rules. No independent approval receipt is required by the public CLI. The optional `--provenance-receipt` checks local input/code hash bindings. The former `--acceptance-receipt` flag remains an alias; no author approval value is required.
 
 For the exact-total supplement, use the shipped `reports/diagnostics_20261019/population/POPULATION_RESULTS.json` as `--primary-results` and the shipped population helper as `--population-code`; both are hash-bound. The supplement checks observed results against that primary reference before comparing its alternative regrouping.
 

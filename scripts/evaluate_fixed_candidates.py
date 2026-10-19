@@ -38,17 +38,19 @@ def aggregate(units: list[dict[str, object]], field: str | None) -> list[dict[st
         ].append(row)
     output: list[dict[str, object]] = []
     for (method_id, method_paradigm, dataset, role, value), rows in sorted(grouped.items()):
-        output.append({
-            "method_id": method_id,
-            "method_paradigm": method_paradigm,
-            "dataset": dataset,
-            "role": role,
-            "slice_type": "all" if field is None else field,
-            "slice_value": value,
-            "units": len(rows),
-            "ndcg10": round(sum(float(row["ndcg10"]) for row in rows) / len(rows), 6),
-            "hit10": round(sum(float(row["hit10"]) for row in rows) / len(rows), 6),
-        })
+        output.append(
+            {
+                "method_id": method_id,
+                "method_paradigm": method_paradigm,
+                "dataset": dataset,
+                "role": role,
+                "slice_type": "all" if field is None else field,
+                "slice_value": value,
+                "units": len(rows),
+                "ndcg10": round(sum(float(row["ndcg10"]) for row in rows) / len(rows), 6),
+                "hit10": round(sum(float(row["hit10"]) for row in rows) / len(rows), 6),
+            }
+        )
     return output
 
 
@@ -82,12 +84,16 @@ def main() -> None:
     if missing:
         raise ValueError(f"candidate input missing fields: {sorted(missing)}")
     if any(row["topology_profile_id"] != TOPOLOGY_PROFILE_ID for row in candidate_rows):
-        raise ValueError(f"candidate topology_profile_id must be {TOPOLOGY_PROFILE_ID} on every row")
+        raise ValueError(
+            f"candidate topology_profile_id must be {TOPOLOGY_PROFILE_ID} on every row"
+        )
     topology_hashes = {row["topology_sha256"] for row in candidate_rows}
     if len(topology_hashes) != 1:
         raise ValueError("candidate topology_sha256 must be constant across the input")
     topology_sha256 = next(iter(topology_hashes))
-    if len(topology_sha256) != 64 or any(char not in "0123456789abcdef" for char in topology_sha256):
+    if len(topology_sha256) != 64 or any(
+        char not in "0123456789abcdef" for char in topology_sha256
+    ):
         raise ValueError("candidate topology_sha256 must be a lowercase SHA256")
     for row in candidate_rows:
         if row["method_paradigm"] not in {"generative", "discriminative", "hybrid"}:
@@ -112,23 +118,29 @@ def main() -> None:
         direction = next(iter(directions))
         target = targets[0]
         target_score = float(target["score"])
-        greater = sum((float(row["score"]) > target_score) if direction == "higher_is_better"
-                      else (float(row["score"]) < target_score) for row in group)
+        greater = sum(
+            (float(row["score"]) > target_score)
+            if direction == "higher_is_better"
+            else (float(row["score"]) < target_score)
+            for row in group
+        )
         tied = sum(float(row["score"]) == target_score for row in group)
         possible_ranks = range(greater + 1, greater + tied + 1)
         ndcg10 = sum(1.0 / math.log2(rank + 1) for rank in possible_ranks if rank <= 10) / tied
         hit10 = sum(rank <= 10 for rank in possible_ranks) / tied
-        units.append({
-            "method_id": method_id,
-            "method_paradigm": next(iter(paradigms)),
-            "dataset": dataset,
-            "role": role,
-            "topology_cell": target["topology_cell"],
-            "rsd_bucket": target["rsd_bucket"],
-            "rsi_mag_bucket": target["rsi_mag_bucket"],
-            "ndcg10": ndcg10,
-            "hit10": hit10,
-        })
+        units.append(
+            {
+                "method_id": method_id,
+                "method_paradigm": next(iter(paradigms)),
+                "dataset": dataset,
+                "role": role,
+                "topology_cell": target["topology_cell"],
+                "rsd_bucket": target["rsd_bucket"],
+                "rsi_mag_bucket": target["rsi_mag_bucket"],
+                "ndcg10": ndcg10,
+                "hit10": hit10,
+            }
+        )
     rows = []
     for field in [None, "topology_cell", "rsd_bucket", "rsi_mag_bucket"]:
         rows.extend(aggregate(units, field))

@@ -1,9 +1,9 @@
 {
   "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.2.4",
-  "release_tag": "v0.2.4",
+  "version": "0.2.5",
+  "release_tag": "v0.2.5",
   "repository_url": "https://github.com/jdding/rolemap",
-  "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.4",
+  "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.5",
   "publication_status": "versioned_public_resource",
   "release_date": "2026-10-19",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
@@ -32,5 +32,7 @@
     "upstream implementation",
     "paper drafts",
     "internal review records"
-  ]
+  ],
+  "hosted_live_demo": "https://jdding.github.io/rolemap/",
+  "demo_execution": "pinned Pyodide, actual Python source, synthetic input, no upload"
 }

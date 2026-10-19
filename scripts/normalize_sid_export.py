@@ -5,6 +5,7 @@ This changes CSV representation only. Item IDs and complete token sequences
 remain intact; no SID fitting, token generation or identity inference occurs.
 The output map must remain local under the source artifact's access terms.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -18,7 +19,13 @@ from pathlib import Path
 from typing import TextIO
 
 REQUIRED = {
-    "schema_version", "dataset", "item_id", "system_id", "sid_family", "sid_role", "sid_tokens"
+    "schema_version",
+    "dataset",
+    "item_id",
+    "system_id",
+    "sid_family",
+    "sid_role",
+    "sid_tokens",
 }
 
 
@@ -60,7 +67,9 @@ class HashedWriter:
 def normalize(source_path: Path, target: TextIO) -> tuple[dict[str, object], dict[str, object]]:
     seen: set[str] = set()
     lengths: Counter[int] = Counter()
-    metadata: dict[str, set[str]] = {field: set() for field in ("schema_version", "system_id", "sid_family")}
+    metadata: dict[str, set[str]] = {
+        field: set() for field in ("schema_version", "system_id", "sid_family")
+    }
     sid_counts: Counter[str] = Counter()
     row_count = 0
     output = HashedWriter(target)
@@ -80,20 +89,32 @@ def normalize(source_path: Path, target: TextIO) -> tuple[dict[str, object], dic
                     raise ValueError("this converter accepts one Qilin export")
                 identity = row["item_id"]
                 if re.fullmatch(r"0|[1-9][0-9]*", identity) is None:
-                    raise ValueError("item_id must use canonical nonnegative provider integer spelling")
+                    raise ValueError(
+                        "item_id must use canonical nonnegative provider integer spelling"
+                    )
                 if identity in seen:
                     raise ValueError("duplicate item_id in source export")
                 if row["sid_role"] != "shared":
-                    raise ValueError("this converter requires shared SID rows, not role-specific assignments")
+                    raise ValueError(
+                        "this converter requires shared SID rows, not role-specific assignments"
+                    )
                 for field in metadata:
                     if not row[field].strip():
                         raise ValueError("source identity metadata must be nonempty")
                     metadata[field].add(row[field])
                     if len(metadata[field]) != 1:
-                        raise ValueError("source export mixes schema, system or SID-family identities")
+                        raise ValueError(
+                            "source export mixes schema, system or SID-family identities"
+                        )
                 tokens = json.loads(row["sid_tokens"])
-                if not isinstance(tokens, list) or len(tokens) < 2 or not all(isinstance(token, str) and token.strip() for token in tokens):
-                    raise ValueError("sid_tokens must be a JSON array of at least two nonempty strings")
+                if (
+                    not isinstance(tokens, list)
+                    or len(tokens) < 2
+                    or not all(isinstance(token, str) and token.strip() for token in tokens)
+                ):
+                    raise ValueError(
+                        "sid_tokens must be a JSON array of at least two nonempty strings"
+                    )
                 sid = json.dumps(tokens, ensure_ascii=False, separators=(",", ":"))
                 writer.writerow({"dataset": "qilin", "item_id": identity, "sid": sid})
                 seen.add(identity)
@@ -115,9 +136,14 @@ def normalize(source_path: Path, target: TextIO) -> tuple[dict[str, object], dic
         "collision_groups": sum(count > 1 for count in sid_counts.values()),
     }
     return {
-        "sha256": source_hash, "bytes": source_bytes, **stats,
+        "sha256": source_hash,
+        "bytes": source_bytes,
+        **stats,
     }, {
-        "schema": "dataset,item_id,sid", "sha256": output.digest.hexdigest(), "bytes": output.bytes, "rows": row_count,
+        "schema": "dataset,item_id,sid",
+        "sha256": output.digest.hexdigest(),
+        "bytes": output.bytes,
+        "rows": row_count,
     }
 
 

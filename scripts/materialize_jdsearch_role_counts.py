@@ -63,7 +63,9 @@ def iter_behavior(path: Path, max_rows: int) -> Iterable[tuple[int, dict[str, st
             yield row_number, row
 
 
-def parse_behavior_lists(row_number: int, row: dict[str, str]) -> tuple[list[int], list[float], list[str], list[int]]:
+def parse_behavior_lists(
+    row_number: int, row: dict[str, str]
+) -> tuple[list[int], list[float], list[str], list[int]]:
     candidate_ids = [int(value) for value in split_list(row["candidate_wid_list"])]
     candidate_labels = [float(value) for value in split_list(row["candidate_label_list"])]
     history_queries = split_list(row["history_qry_list"])
@@ -75,7 +77,9 @@ def parse_behavior_lists(row_number: int, row: dict[str, str]) -> tuple[list[int
     if not (len(history_queries) == len(history_ids) == len(history_types)):
         raise ValueError(f"behavior row {row_number}: history query/item/type length mismatch")
     if len(history_times) != len(history_ids) + 1:
-        raise ValueError(f"behavior row {row_number}: history_time must include one test-query entry")
+        raise ValueError(
+            f"behavior row {row_number}: history_time must include one test-query entry"
+        )
     return candidate_ids, candidate_labels, history_queries, history_ids
 
 
@@ -83,7 +87,9 @@ def collect_referenced_items(behavior: Path, max_rows: int) -> tuple[set[int], C
     referenced: set[int] = set()
     audit: Counter[str] = Counter()
     for row_number, row in iter_behavior(behavior, max_rows):
-        candidate_ids, candidate_labels, history_queries, history_ids = parse_behavior_lists(row_number, row)
+        candidate_ids, candidate_labels, history_queries, history_ids = parse_behavior_lists(
+            row_number, row
+        )
         referenced.update(candidate_ids)
         referenced.update(history_ids)
         audit["behavior_rows"] += 1
@@ -109,7 +115,11 @@ def load_categories(metadata: Path, referenced: set[int]) -> tuple[dict[int, int
             if item_id not in referenced:
                 continue
             label = next(
-                (row[field] for field in ("cate_id_4", "cate_id_3", "cate_id_2", "cate_id_1") if row[field] and row[field] != "-1"),
+                (
+                    row[field]
+                    for field in ("cate_id_4", "cate_id_3", "cate_id_2", "cate_id_1")
+                    if row[field] and row[field] != "-1"
+                ),
                 None,
             )
             if label is None:
@@ -143,9 +153,18 @@ def materialize_counts(
     samples: list[dict[str, object]] = []
 
     for row_number, row in iter_behavior(behavior, max_rows):
-        candidate_ids, candidate_labels, history_queries, history_ids = parse_behavior_lists(row_number, row)
-        mapped_candidates = [(item_id, score, categories.get(item_id)) for item_id, score in zip(candidate_ids, candidate_labels)]
-        engaged_labels = [category for _, score, category in mapped_candidates if score > 0 and category is not None]
+        candidate_ids, candidate_labels, history_queries, history_ids = parse_behavior_lists(
+            row_number, row
+        )
+        mapped_candidates = [
+            (item_id, score, categories.get(item_id))
+            for item_id, score in zip(candidate_ids, candidate_labels)
+        ]
+        engaged_labels = [
+            category
+            for _, score, category in mapped_candidates
+            if score > 0 and category is not None
+        ]
         exposed_labels = [category for _, _, category in mapped_candidates if category is not None]
         role_labels = engaged_labels or exposed_labels
         if role_labels:
@@ -170,7 +189,11 @@ def materialize_counts(
         else:
             audit["search_events_without_mapped_category"] += 1
 
-        queryless = [(item_id, categories.get(item_id)) for query, item_id in zip(history_queries, history_ids) if query == "-1"]
+        queryless = [
+            (item_id, categories.get(item_id))
+            for query, item_id in zip(history_queries, history_ids)
+            if query == "-1"
+        ]
         # JDsearch histories are reverse chronological. For each older query-less
         # item, the preceding element is its next newer query-less interaction.
         for index in range(1, len(queryless)):
@@ -208,16 +231,28 @@ def write_counts(
 ) -> tuple[int, int]:
     common_items = sorted(set(search_counts) & set(rec_counts))
     if len(common_items) < 4:
-        raise ValueError(f"JDsearch has only {len(common_items)} common items after materialization")
+        raise ValueError(
+            f"JDsearch has only {len(common_items)} common items after materialization"
+        )
     rows = 0
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["dataset", "item_id", "role", "label", "count"], lineterminator="\n")
+        writer = csv.DictWriter(
+            handle, fieldnames=["dataset", "item_id", "role", "label", "count"], lineterminator="\n"
+        )
         writer.writeheader()
         for item_id in common_items:
             for role, store in (("search", search_counts), ("rec", rec_counts)):
                 for label, count in sorted(store[item_id].items()):
-                    writer.writerow({"dataset": DATASET, "item_id": item_id, "role": role, "label": label, "count": count})
+                    writer.writerow(
+                        {
+                            "dataset": DATASET,
+                            "item_id": item_id,
+                            "role": role,
+                            "label": label,
+                            "count": count,
+                        }
+                    )
                     rows += 1
     return len(common_items), rows
 
@@ -280,7 +315,9 @@ def main() -> None:
         "inspection_samples": samples,
     }
     args.out_summary.parent.mkdir(parents=True, exist_ok=True)
-    args.out_summary.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.out_summary.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     print(f"PASS_JDSEARCH_ROLE_ADAPTER common_items={common_items} output_rows={output_rows}")
 
 

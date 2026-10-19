@@ -7,17 +7,18 @@
   ],
   "approved_derived_native_inputs": "../../data/native_exports/README.md",
   "engine_original_sha256": "bf3aae960caa4b09c4b5143500f8a4f9a92d7a59f1322336e1cd9eddfe900d0d",
-  "engine_packaged_sha256": "bf3aae960caa4b09c4b5143500f8a4f9a92d7a59f1322336e1cd9eddfe900d0d",
+  "engine_packaged_sha256": "cfcee4e14f0c49e97337c73931671cfb3aa8dba1946a20f0e42fdb12eaad6b54",
   "extractor_approved_minimal_cohort_sha256": "a6f3202fd6b6ac09e1a154e8c6d42511bd663e2f381206739c0243113aeb33e9",
   "extractor_changes": "Explicit --universe and --protocol; no private absolute path defaults/telemetry text; fixed source/cohort hashes, membership checks, deduplication, split and partition mathematics unchanged; accepted cohort CSV SHA now binds the released minimal item-ID-only cohort, whose item set and exact replay match the original topology cohort",
   "extractor_original_sha256": "f70b914461a9976628d02b55ab7692f4bdb6a6fb13c551d69fc97aecaa7b0870",
-  "extractor_packaged_sha256": "016a333d9c46f512e4fe0a82dee290a3cd5f4747fa5dc2246f6a55bc75787b36",
+  "extractor_packaged_sha256": "1f611876a7d99e7fab7d3e93edb34379086224373225de75d14b6ac6f0f2e391",
   "extractor_previous_portable_sha256": "cff6ebae86ce2547882937dbbd5a6978f7c9b3c14864bfc345c7c3e15d4e06b1",
   "protocol_sha256": "d1d507154a04716f0b054e6b2bae8d5aa2395c7272165ce5b7d811996b47a33d",
   "restricted_key_scan": "PASS: no request/user/session hashes, item lists, map specifications, probability arrays or restricted row objects in copied aggregate JSON; source_bindings retain file-path-to-SHA256 metadata only",
   "schema": "sr_sid_rolemap.optional_reuse_analysis_source.v1",
   "tests_original_sha256": "41961b8d9c8d71c1437d0482c3c904cd2c25dd58e56c3ba13834cd27f4710c7e",
-  "tests_packaged_sha256": "41961b8d9c8d71c1437d0482c3c904cd2c25dd58e56c3ba13834cd27f4710c7e",
+  "tests_packaged_sha256": "2b4e0d7817c772b19d443fd61334998a724f384954e48ddf8459d4f3ef184db4",
   "original_protocol_sha256": "fcf0564ebcb02da27e46989c8b168a24a0f4dfd1f4e3988e2629d8e1dab3332b",
-  "public_protocol_edit": "Execution-only author authorization/budget commentary replaced by reader guidance; scientific design and values unchanged."
+  "public_protocol_edit": "Execution-only author authorization/budget commentary replaced by reader guidance; scientific design and values unchanged.",
+  "source_layout_revision": "0.2.5 formatting only; original calculation ASTs preserved"
 }

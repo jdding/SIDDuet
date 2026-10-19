@@ -67,7 +67,11 @@ def main() -> None:
 
     topology_rows, topology_sha256 = read_topology(args.topology)
     sid_lookup = unique_map(read_csv(args.sid_map), "sid")
-    joined = [dict(row, sid=sid_lookup[(row["dataset"], row["item_id"])]) for row in topology_rows if (row["dataset"], row["item_id"]) in sid_lookup]
+    joined = [
+        dict(row, sid=sid_lookup[(row["dataset"], row["item_id"])])
+        for row in topology_rows
+        if (row["dataset"], row["item_id"]) in sid_lookup
+    ]
     if not joined:
         raise ValueError("SID map has no overlap with topology")
 
@@ -86,32 +90,38 @@ def main() -> None:
             unique = len({row["sid"] for row in subset})
             rate = 1.0 - unique / len(subset)
             rates.append(rate)
-            cell_rows.append({
+            cell_rows.append(
+                {
+                    "dataset": dataset,
+                    "family": args.family,
+                    "topology_profile_id": TOPOLOGY_PROFILE_ID,
+                    "topology_sha256": topology_sha256,
+                    "topology_cell": cell,
+                    "items": len(subset),
+                    "unique_sid_count": unique,
+                    "unique_sid_ratio": round(unique / len(subset), 6),
+                    "collision_rate": round(rate, 6),
+                }
+            )
+        dataset_summaries.append(
+            {
                 "dataset": dataset,
                 "family": args.family,
                 "topology_profile_id": TOPOLOGY_PROFILE_ID,
                 "topology_sha256": topology_sha256,
-                "topology_cell": cell,
-                "items": len(subset),
-                "unique_sid_count": unique,
-                "unique_sid_ratio": round(unique / len(subset), 6),
-                "collision_rate": round(rate, 6),
-            })
-        dataset_summaries.append({
-            "dataset": dataset,
-            "family": args.family,
-            "topology_profile_id": TOPOLOGY_PROFILE_ID,
-            "topology_sha256": topology_sha256,
-            "topology_items": len(universe),
-            "joined_items": len(group),
-            "join_coverage": round(len(group) / len(universe), 6) if universe else 0.0,
-            "unique_sid_count": len(sids),
-            "unique_sid_ratio": round(len(sids) / len(group), 6) if group else None,
-            "collision_rate": round(1.0 - len(sids) / len(group), 6) if group else None,
-            "cell_collision_rate_spread": round(max(rates) - min(rates), 6) if rates else None,
-            "mixed_cell_sid_count": sum(len(cells) > 1 for cells in sid_cells.values()),
-            "max_topology_cells_per_sid": max((len(cells) for cells in sid_cells.values()), default=0),
-        })
+                "topology_items": len(universe),
+                "joined_items": len(group),
+                "join_coverage": round(len(group) / len(universe), 6) if universe else 0.0,
+                "unique_sid_count": len(sids),
+                "unique_sid_ratio": round(len(sids) / len(group), 6) if group else None,
+                "collision_rate": round(1.0 - len(sids) / len(group), 6) if group else None,
+                "cell_collision_rate_spread": round(max(rates) - min(rates), 6) if rates else None,
+                "mixed_cell_sid_count": sum(len(cells) > 1 for cells in sid_cells.values()),
+                "max_topology_cells_per_sid": max(
+                    (len(cells) for cells in sid_cells.values()), default=0
+                ),
+            }
+        )
 
     write_csv(args.out_csv, cell_rows)
     payload = {

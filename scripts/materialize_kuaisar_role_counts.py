@@ -20,7 +20,9 @@ from typing import Any
 try:
     import pandas as pd
 except ImportError:
-    raise SystemExit("Provider reading requires optional pandas==2.2.3; no dependency was installed.") from None
+    raise SystemExit(
+        "Provider reading requires optional pandas==2.2.3; no dependency was installed."
+    ) from None
 
 
 def _top_value(frame: pd.DataFrame, key: str, value: str, count_name: str) -> pd.DataFrame:
@@ -33,7 +35,9 @@ def _top_value(frame: pd.DataFrame, key: str, value: str, count_name: str) -> pd
     return counts.drop_duplicates(key, keep="first")
 
 
-def load_kuaisar_metadata(data_root: Path, needed_item_ids: set[int], chunksize: int) -> pd.DataFrame:
+def load_kuaisar_metadata(
+    data_root: Path, needed_item_ids: set[int], chunksize: int
+) -> pd.DataFrame:
     usecols = ["item_id", "first_level_category_id", "second_level_category_id"]
     chunks: list[pd.DataFrame] = []
     for chunk in pd.read_csv(data_root / "item_features.csv", usecols=usecols, chunksize=chunksize):
@@ -46,12 +50,14 @@ def load_kuaisar_metadata(data_root: Path, needed_item_ids: set[int], chunksize:
     meta = meta.dropna(subset=["item_id", "second_level_category_id"]).copy()
     meta["item_id"] = meta["item_id"].astype("int64")
     meta["label"] = meta["second_level_category_id"].astype(str)
-    return meta[["item_id", "label", "first_level_category_id", "second_level_category_id"]].drop_duplicates(
-        "item_id", keep="first"
-    )
+    return meta[
+        ["item_id", "label", "first_level_category_id", "second_level_category_id"]
+    ].drop_duplicates("item_id", keep="first")
 
 
-def counter_dict_from_pairs(frame: pd.DataFrame, item_col: str, label_col: str) -> dict[int, Counter[str]]:
+def counter_dict_from_pairs(
+    frame: pd.DataFrame, item_col: str, label_col: str
+) -> dict[int, Counter[str]]:
     counts = frame.groupby([item_col, label_col], dropna=False).size().reset_index(name="n")
     out: dict[int, Counter[str]] = defaultdict(Counter)
     for row in counts.itertuples(index=False):
@@ -59,7 +65,9 @@ def counter_dict_from_pairs(frame: pd.DataFrame, item_col: str, label_col: str) 
     return dict(out)
 
 
-def kuaisar_role_counts(data_root: Path, chunksize: int) -> tuple[dict[int, Counter[str]], dict[int, Counter[str]]]:
+def kuaisar_role_counts(
+    data_root: Path, chunksize: int
+) -> tuple[dict[int, Counter[str]], dict[int, Counter[str]]]:
     src = pd.read_csv(data_root / "src_inter.csv", usecols=["keyword", "item_id"])
     rec = pd.read_csv(data_root / "rec_inter.csv", usecols=["user_id", "item_id", "timestamp"])
     src = src.dropna(subset=["keyword", "item_id"]).copy()
@@ -81,10 +89,14 @@ def kuaisar_role_counts(data_root: Path, chunksize: int) -> tuple[dict[int, Coun
     query_top = _top_value(src_meta, "keyword", "label", "query_label_count").rename(
         columns={"label": "query_role_label"}
     )
-    search_pairs = src[["item_id", "keyword"]].merge(query_top[["keyword", "query_role_label"]], on="keyword")
+    search_pairs = src[["item_id", "keyword"]].merge(
+        query_top[["keyword", "query_role_label"]], on="keyword"
+    )
     search_counts = counter_dict_from_pairs(search_pairs, "item_id", "query_role_label")
 
-    next_meta = meta[["item_id", "label"]].rename(columns={"item_id": "next_item_id", "label": "next_role_label"})
+    next_meta = meta[["item_id", "label"]].rename(
+        columns={"item_id": "next_item_id", "label": "next_role_label"}
+    )
     rec_labeled = rec_pairs.merge(next_meta, on="next_item_id", how="inner")
     rec_counts = counter_dict_from_pairs(rec_labeled, "item_id", "next_role_label")
     return search_counts, rec_counts
@@ -107,7 +119,9 @@ def write_counts(path: Path, search_counts, rec_counts) -> dict[str, Any]:
         writer.writerow(["dataset", "item_id", "role", "label", "count"])
         for item_id in sorted(set(search_counts) | set(rec_counts), key=lambda key: str(key)):
             for role, mapping in (("search", search_counts), ("rec", rec_counts)):
-                for label, count in sorted(mapping.get(item_id, {}).items(), key=lambda pair: str(pair[0])):
+                for label, count in sorted(
+                    mapping.get(item_id, {}).items(), key=lambda pair: str(pair[0])
+                ):
                     writer.writerow(["kuaisar", str(item_id), role, str(label), count])
                     rows += 1
                     role_rows[role] += 1
@@ -131,16 +145,27 @@ def main() -> None:
     parser.add_argument("--kuaisar-root", type=Path, required=True)
     parser.add_argument("--out-counts", type=Path, required=True)
     parser.add_argument("--out-summary", type=Path, required=True)
-    parser.add_argument("--hash-inputs", action="store_true", help="Bind all three complete provider files by SHA-256")
+    parser.add_argument(
+        "--hash-inputs",
+        action="store_true",
+        help="Bind all three complete provider files by SHA-256",
+    )
     args = parser.parse_args()
     if args.out_counts.exists() or args.out_summary.exists():
         parser.error("output exists; choose fresh paths")
     if args.out_counts.resolve() == args.out_summary.resolve():
         parser.error("count and summary outputs must be different paths")
-    input_paths = [args.kuaisar_root / name for name in ("src_inter.csv", "rec_inter.csv", "item_features.csv")]
+    input_paths = [
+        args.kuaisar_root / name for name in ("src_inter.csv", "rec_inter.csv", "item_features.csv")
+    ]
     if any(not path.is_file() for path in input_paths):
-        parser.error("provider root must contain src_inter.csv, rec_inter.csv and item_features.csv")
-    if any(output.resolve() in {path.resolve() for path in input_paths} for output in (args.out_counts, args.out_summary)):
+        parser.error(
+            "provider root must contain src_inter.csv, rec_inter.csv and item_features.csv"
+        )
+    if any(
+        output.resolve() in {path.resolve() for path in input_paths}
+        for output in (args.out_counts, args.out_summary)
+    ):
         parser.error("outputs must not replace provider inputs")
     started = time.monotonic()
     inputs = [
@@ -178,8 +203,14 @@ def main() -> None:
         "protocol": {
             "metadata_chunksize": 500_000,
             "item_label": "second_level_category_id; retain the first nonmissing metadata row per item",
-            "search": "two-pass keyword dominant second-level category; lexical category ties; assign the keyword label to every retained exposure, including items without metadata",
-            "rec": "sort user_id,timestamp,item_id; pair each current item with the next item within its user; use the next item's available second-level category",
+            "search": (
+                "two-pass keyword dominant second-level category; lexical category ties; assign the "
+                "keyword label to every retained exposure, including items without metadata"
+            ),
+            "rec": (
+                "sort user_id,timestamp,item_id; pair each current item with the next item within its"
+                " user; use the next item's available second-level category"
+            ),
             "count": "retain repeated appearances; no positive-only filter or target-size constraint",
             "scope": "descriptive observed role counts, not training features",
         },

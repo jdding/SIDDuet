@@ -74,11 +74,13 @@ def read_events(path: Path) -> dict[tuple[str, str, str], list[dict[str, object]
 def dominant_label(rows: list[dict[str, object]]) -> tuple[str, str]:
     engaged = Counter(str(row["item_label"]) for row in rows if bool(row["engaged"]))
     source = engaged if engaged else Counter(str(row["item_label"]) for row in rows)
-    return min(source, key=lambda label: (-source[label], label)), "engaged" if engaged else "exposure"
+    return min(
+        source, key=lambda label: (-source[label], label)
+    ), "engaged" if engaged else "exposure"
 
 
 def materialize(
-    events: dict[tuple[str, str, str], list[dict[str, object]]]
+    events: dict[tuple[str, str, str], list[dict[str, object]]],
 ) -> tuple[list[dict[str, object]], Counter[str]]:
     counts: Counter[tuple[str, str, str, str]] = Counter()
     label_sources: Counter[str] = Counter()
@@ -106,7 +108,9 @@ def materialize(
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["dataset", "item_id", "role", "label", "count"], lineterminator="\n")
+        writer = csv.DictWriter(
+            handle, fieldnames=["dataset", "item_id", "role", "label", "count"], lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(rows)
 

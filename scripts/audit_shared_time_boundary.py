@@ -4,6 +4,7 @@
 This CPU audit reads provider parquet and an existing SID export. It does not
 train a model, infer leakage effects, or regenerate a SID quantizer.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -23,6 +24,7 @@ SPLITS = (
     ("rec", "test", "recommendation_test", "rec_result_details_with_idx", "request_timestamp"),
 )
 
+
 @dataclass(frozen=True)
 class Request:
     role: str
@@ -31,12 +33,14 @@ class Request:
     end: float
     targets: tuple[int, ...]
 
+
 def sha256(path):
     digest = hashlib.sha256()
     with Path(path).open("rb") as handle:
         for block in iter(lambda: handle.read(8 * 1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
 
 def item_id(value):
     if value is None or isinstance(value, bool):
@@ -45,6 +49,7 @@ def item_id(value):
     if not text.isdecimal():
         raise ValueError("item ID must use its provider integer namespace")
     return int(text)
+
 
 def load_map(path):
     ids = set()
@@ -64,7 +69,11 @@ def load_map(path):
             if value in ids:
                 raise ValueError("duplicate item ID in SID map")
             tokens = json.loads(row[field])
-            if not isinstance(tokens, list) or len(tokens) < 2 or not all(isinstance(t, str) and t for t in tokens):
+            if (
+                not isinstance(tokens, list)
+                or len(tokens) < 2
+                or not all(isinstance(t, str) and t for t in tokens)
+            ):
                 raise ValueError("SID must be a JSON array of at least two nonempty string tokens")
             if "sid_role" in fields and row["sid_role"] != "shared":
                 raise ValueError("the case requires a shared SID export")
@@ -73,6 +82,7 @@ def load_map(path):
     if not ids:
         raise ValueError("empty SID map")
     return ids, {"items": len(ids), "token_lengths": dict(sorted(lengths.items()))}
+
 
 def read_requests(root, pq):
     records = []
@@ -84,7 +94,13 @@ def read_requests(root, pq):
         rows = missing_time = 0
         for path in paths:
             parquet = pq.ParquetFile(path)
-            inventory.append({"relative_path": str(path.relative_to(root)), "sha256": sha256(path), "bytes": path.stat().st_size})
+            inventory.append(
+                {
+                    "relative_path": str(path.relative_to(root)),
+                    "sha256": sha256(path),
+                    "bytes": path.stat().st_size,
+                }
+            )
             for batch in parquet.iter_batches(batch_size=1024, columns=[column], use_threads=False):
                 for details in batch.column(0).to_pylist():
                     rows += 1
@@ -111,11 +127,20 @@ def read_requests(root, pq):
                     if not timestamps:
                         missing_time += 1
                         continue
-                    records.append(Request(role, split, min(timestamps), max(timestamps), tuple(sorted(targets))))
-        inventory.append({"provider_split": directory, "rows": rows, "rows_without_timestamp": missing_time})
+                    records.append(
+                        Request(
+                            role, split, min(timestamps), max(timestamps), tuple(sorted(targets))
+                        )
+                    )
+        inventory.append(
+            {"provider_split": directory, "rows": rows, "rows_without_timestamp": missing_time}
+        )
         if missing_time:
-            raise ValueError("timestamp-less requests cannot silently disappear from the shared split")
+            raise ValueError(
+                "timestamp-less requests cannot silently disappear from the shared split"
+            )
     return records, inventory
+
 
 def check_catalog(root, mapped, pq):
     paths = sorted((root / "notes").glob("*.parquet"))
@@ -124,16 +149,27 @@ def check_catalog(root, mapped, pq):
     catalog = set()
     inventory = []
     for path in paths:
-        inventory.append({"relative_path": str(path.relative_to(root)), "sha256": sha256(path), "bytes": path.stat().st_size})
-        for batch in pq.ParquetFile(path).iter_batches(batch_size=65536, columns=["note_idx"], use_threads=False):
+        inventory.append(
+            {
+                "relative_path": str(path.relative_to(root)),
+                "sha256": sha256(path),
+                "bytes": path.stat().st_size,
+            }
+        )
+        for batch in pq.ParquetFile(path).iter_batches(
+            batch_size=65536, columns=["note_idx"], use_threads=False
+        ):
             for value in batch.column(0).to_pylist():
                 idx = item_id(value)
                 if idx in catalog:
                     raise ValueError("duplicate static provider note ID")
                 catalog.add(idx)
     if not mapped.issubset(catalog):
-        raise ValueError("SID IDs are outside the static provider namespace; supply the actual ID bridge")
+        raise ValueError(
+            "SID IDs are outside the static provider namespace; supply the actual ID bridge"
+        )
     return catalog, inventory
+
 
 def partition(records, fraction):
     if not 0 < fraction < 1:
@@ -156,11 +192,16 @@ def partition(records, fraction):
     assert len(provider_train) == len(before) + len(crossing) + len(after)
     assert len(before) == len(train) + len(valid) + len(excluded)
     return {"test_anchor": anchor, "validation_start": cut}, {
-        "provider_train": provider_train, "before_test_anchor": before,
-        "crossing_test_anchor": crossing, "starting_at_or_after_test_anchor": after,
-        "train": train, "validation": valid, "crossing_validation_boundary": excluded,
+        "provider_train": provider_train,
+        "before_test_anchor": before,
+        "crossing_test_anchor": crossing,
+        "starting_at_or_after_test_anchor": after,
+        "train": train,
+        "validation": valid,
+        "crossing_validation_boundary": excluded,
         "test": test,
     }
+
 
 def summarize(records, mapped):
     result = {}
@@ -170,14 +211,17 @@ def summarize(records, mapped):
         assignments = sum(len(r.targets) for r in subset)
         mapped_assignments = sum(sum(t in mapped for t in r.targets) for r in subset)
         result[role] = {
-            "requests": len(subset), "positive_requests": sum(bool(r.targets) for r in subset),
+            "requests": len(subset),
+            "positive_requests": sum(bool(r.targets) for r in subset),
             "mapped_positive_requests": sum(any(t in mapped for t in r.targets) for r in subset),
             "positive_target_assignments": assignments,
             "mapped_positive_target_assignments": mapped_assignments,
             "mapped_assignment_fraction": mapped_assignments / assignments if assignments else None,
-            "unique_positive_targets": len(targets), "mapped_unique_positive_targets": len(targets & mapped),
+            "unique_positive_targets": len(targets),
+            "mapped_unique_positive_targets": len(targets & mapped),
         }
     return result
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -192,7 +236,9 @@ def main():
         import pyarrow
         import pyarrow.parquet as pq
     except ImportError as exc:
-        raise SystemExit("Provider parquet reading requires optional pyarrow==21.0.0; see docs/REAL_REUSE_CASE.md") from exc
+        raise SystemExit(
+            "Provider parquet reading requires optional pyarrow==21.0.0; see docs/REAL_REUSE_CASE.md"
+        ) from exc
     started = time.monotonic()
     records, inventory = read_requests(args.qilin_root, pq)
     boundaries, partitions = partition(records, args.train_fraction)
@@ -201,26 +247,43 @@ def main():
     if any(t not in catalog for r in records for t in r.targets):
         raise ValueError("a positive provider target is outside the static catalog")
     summaries = {name: summarize(rows, mapped) for name, rows in partitions.items()}
-    if any(summaries[name][role]["mapped_positive_requests"] == 0
-           for name in ("train", "validation", "test") for role in ("search", "rec")):
+    if any(
+        summaries[name][role]["mapped_positive_requests"] == 0
+        for name in ("train", "validation", "test")
+        for role in ("search", "rec")
+    ):
         raise ValueError("one role/split has no mapped positive request")
-    violates = bool(partitions["crossing_test_anchor"] or partitions["starting_at_or_after_test_anchor"])
+    violates = bool(
+        partitions["crossing_test_anchor"] or partitions["starting_at_or_after_test_anchor"]
+    )
     payload = {
         "schema": "sr_sid_rolemap.shared_time_boundary_case.v1",
         "status": "PASS_SHARED_TIME_BOUNDARY_AUDIT",
         "question": "Can provider role-specific train partitions be pooled unchanged under one declared global future cutoff?",
-        "boundaries": boundaries, "train_fraction": args.train_fraction,
+        "boundaries": boundaries,
+        "train_fraction": args.train_fraction,
         "decisions": {
-            "pool_provider_train_unchanged": "REJECT_UNDER_DECLARED_GLOBAL_CUTOFF" if violates else "ADMIT_UNDER_DECLARED_GLOBAL_CUTOFF",
-            "next_action": "keep provider tests intact; exclude crossing/post-anchor train requests; freeze validation before SID filtering" if violates else "keep the verified split; audit SID fit provenance separately",
+            "pool_provider_train_unchanged": "REJECT_UNDER_DECLARED_GLOBAL_CUTOFF"
+            if violates
+            else "ADMIT_UNDER_DECLARED_GLOBAL_CUTOFF",
+            "next_action": "keep provider tests intact; exclude crossing/post-anchor train requests; freeze validation before SID filtering"
+            if violates
+            else "keep the verified split; audit SID fit provenance separately",
             "sid_fit_provenance": "NOT_ESTABLISHED_BY_CSV_OR_IDENTITY_COVERAGE",
         },
         "partition_counts": {name: len(rows) for name, rows in partitions.items()},
         "role_support": summaries,
-        "sid_map": {"sha256": sha256(args.sid_map), **sid, "identity_namespace": "provider note_idx checked against static notes"},
+        "sid_map": {
+            "sha256": sha256(args.sid_map),
+            **sid,
+            "identity_namespace": "provider note_idx checked against static notes",
+        },
         "static_catalog_items": len(catalog),
         "inputs": inventory + note_inventory,
-        "runtime": {"pyarrow": pyarrow.__version__, "wall_seconds": round(time.monotonic() - started, 6)},
+        "runtime": {
+            "pyarrow": pyarrow.__version__,
+            "wall_seconds": round(time.monotonic() - started, 6),
+        },
         "interpretation": [
             "Conditional split admission, not evidence that provider splits are erroneous.",
             "No ranking, decoding, leakage effect, shared-vs-separate utility or semantic conflict is measured.",
@@ -234,6 +297,7 @@ def main():
         handle.write(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     print(payload["status"])
     print(payload["decisions"]["pool_provider_train_unchanged"])
+
 
 if __name__ == "__main__":
     main()

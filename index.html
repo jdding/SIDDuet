@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoleMap · Runnable example</title>
+  <link rel="stylesheet" href="demo/browser.css">
+  <script src="demo/browser-example.js" defer></script>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">RoleMap / 0.2.5</div>
+    <h1>Inspect a shared code across two tasks</h1>
+    <p class="lede">Run an eight-item example to build task observations, inspect shared-code groups, and evaluate supplied candidate scores.</p>
+    <nav aria-label="Resource links">
+      <a href="https://github.com/jdding/rolemap/blob/v0.2.5/ARTIFACT_QUICKSTART.md">Quickstart</a>
+      <a href="https://github.com/jdding/rolemap/blob/v0.2.5/docs/BRING_YOUR_OWN_DATA.md">Use your own data</a>
+      <a href="https://github.com/jdding/rolemap/tree/v0.2.5">Source and replay</a>
+    </nav>
+  </header>
+  <aside class="notice">
+    <strong>Synthetic example · runs in your browser</strong>
+    This page executes the resource's Python scripts. It uses fabricated inputs to demonstrate the interfaces; real-data findings have separate replay instructions. No data upload or model download is needed.
+  </aside>
+  <div class="action">
+    <button id="run" type="button">Run example</button>
+    <span id="status" role="status" aria-live="polite">Ready. The first run loads Python; repeat runs reuse the runtime.</span>
+  </div>
+  <section class="results" id="results" hidden>
+    <h2>1. Paired task observations</h2>
+    <div class="scroll">
+      <table>
+        <caption>Eight fabricated items, rebuilt from the supplied event fixture.</caption>
+        <thead><tr><th scope="col">Item</th><th scope="col">Search support</th><th scope="col">Rec. support</th><th scope="col">RSD</th><th scope="col">RSI</th><th scope="col">Cell</th></tr></thead>
+        <tbody id="topology"></tbody>
+      </table>
+    </div>
+    <p class="note">Cell letters give RSD first and |RSI| second; H/L means above/at-or-below the within-fixture median. Equal values stay together.</p>
+    <div class="pair">
+      <section>
+        <h2>2. Code-group coverage</h2>
+        <div class="scroll"><table>
+          <caption>Exact item join to the supplied synthetic code map.</caption>
+          <thead><tr><th scope="col">Joined / items</th><th scope="col">Coverage</th><th scope="col">Unique codes</th></tr></thead>
+          <tbody id="coverage"></tbody>
+        </table></div>
+      </section>
+      <section>
+        <h2>3. Candidate-score evaluation</h2>
+        <div class="scroll"><table>
+          <caption>Supplied synthetic scores, with one target per request.</caption>
+          <thead><tr><th scope="col">Task</th><th scope="col">Requests</th><th scope="col">NDCG@10</th><th scope="col">Hit@10</th></tr></thead>
+          <tbody id="metrics"></tbody>
+        </table></div>
+      </section>
+    </div>
+    <details><summary>Executed source scripts</summary><ul id="steps"></ul><p id="runtime" class="note"></p></details>
+  </section>
+  <footer>
+    Python runs locally through a pinned Pyodide runtime. Source and fixture hashes are checked before execution.
+    For licensed provider inputs and real model predictions, follow the repository's replay instructions.
+  </footer>
+</main>
+</body>
+</html>

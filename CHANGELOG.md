@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.5 — 2026-10-19
+
+- Readable source layout and CLI names, with the canonical topology implementation preserved.
+- Optional input/code provenance receipts; the earlier flag remains a compatibility alias.
+- A browser example that executes the actual Python core on synthetic inputs.
+- The v0.2.4 checkpoint remains a separately licensed, fixed download.
+
 ## 0.2.4 — 2026-10-19
 
 Initial public RoleMap release.
