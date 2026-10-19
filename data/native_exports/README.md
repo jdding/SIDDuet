@@ -83,5 +83,6 @@ license and repository source-code presentation are distinguished in the
 notice. No upstream native implementation source code is bundled or relicensed.
 The exception is limited to these three maps and the minimal cohort; it does
 not authorize redistribution of raw request/user/query data, role-label joins,
-other complete maps or fitted models. This remains an unpublished local
-candidate; public access, hosted demo and tag are not advertised as complete.
+other complete maps or fitted models. These fixed exports are included in
+versioned RoleMap releases; real-observation replay still requires the provider
+request files described above.

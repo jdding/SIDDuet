@@ -27,7 +27,7 @@ The first run loads a pinned Pyodide runtime; data stay in your browser.
 Python 3.10+ and the standard library are enough for the synthetic example:
 
 ```sh
-git clone --branch v0.2.5 https://github.com/jdding/rolemap.git
+git clone --branch v0.2.6 https://github.com/jdding/rolemap.git
 cd rolemap
 python3 -I scripts/validate_release.py
 ```

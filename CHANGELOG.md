@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.6 — 2026-10-19
 
 - Add a four-hour Qilin window selected from both tasks' actual calendar coverage before loss evaluation.
 - Retain the primary, maps and estimators; report both windows with five- and ten-endpoint uncertainty sensitivities.

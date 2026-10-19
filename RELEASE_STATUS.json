@@ -1,10 +1,10 @@
 {
   "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.2.5",
-  "release_tag": "v0.2.5",
+  "version": "0.2.6",
+  "release_tag": "v0.2.6",
   "repository_url": "https://github.com/jdding/rolemap",
-  "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.5",
-  "publication_status": "unreleased_shared_window_revision_of_v0.2.5",
+  "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.6",
+  "publication_status": "public_release",
   "release_date": "2026-10-19",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
@@ -36,10 +36,10 @@
   "hosted_live_demo": "https://jdding.github.io/rolemap/",
   "demo_execution": "pinned Pyodide, actual Python source, synthetic input, no upload",
   "baseline_release_commit": "56884062717bdd2c2555b9644957574e111a9992",
-  "unreleased_changes": [
+  "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication",
+  "changes": [
     "Clarified capabilities and relationship to SIDInspector",
     "Added reproducible five-view multiplicity sensitivity",
     "Coverage-selected four-hour Qilin check and two-window multiplicity sensitivity"
-  ],
-  "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication"
+  ]
 }

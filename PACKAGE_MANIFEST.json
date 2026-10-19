@@ -1,7 +1,7 @@
 {
   "schema": "sr_sid_rolemap.package_manifest.v1",
-  "release_version": "0.2.5",
-  "release_tag": "v0.2.5",
+  "release_version": "0.2.6",
+  "release_tag": "v0.2.6",
   "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
   "files": [
     {
@@ -26,13 +26,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1396,
-      "sha256": "c48b5eaec03af315da19e487957ef98c720105a7d8ca15db307b93d4a4c441ae"
+      "bytes": 1406,
+      "sha256": "895aa278c66ab7d943a0c674c63d984b6d62f1df34303fe0e1d02106a75e1676"
     },
     {
       "path": "CITATION.cff",
       "bytes": 377,
-      "sha256": "9d820dcebe24d67c45f96a2a351ccde847ee143efe0de52ba15a5e13acd7937d"
+      "sha256": "02a2d0ade426b758016b8aa3328a420ac3b0481100f5d837113a62453afa0e99"
     },
     {
       "path": "DEVELOPMENT.md",
@@ -57,12 +57,12 @@
     {
       "path": "README.md",
       "bytes": 5051,
-      "sha256": "a5baeda83ee5c46b4ebd4a2bb380f63bfde79d6d7487ac4442c35fedc0e12f12"
+      "sha256": "9756a9965c2a20e084ebbc6a766d6003d6398a2c49c5fd4fd88ab22afaf7b5f6"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 1775,
-      "sha256": "53adc4cb1b84c6c3fe9a7110ad81bff23cab5e084f468b5b89bd48c32266c809"
+      "bytes": 1735,
+      "sha256": "93037fe36ae5fdf45326141a14aa495a0fbba4fcdc57cb2081b29a7f0af3c54a"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/README.md",
@@ -376,8 +376,8 @@
     },
     {
       "path": "data/native_exports/README.md",
-      "bytes": 4705,
-      "sha256": "27c0c93d2b312f97efc388e3fc573f8b353dfc4958b0421acdeb5dffe5a4229f"
+      "bytes": 4740,
+      "sha256": "6c9efedddd153fc5346a154966f92209abd26c5bf6918fa029f0c7c89f5cc8b9"
     },
     {
       "path": "data/native_exports/cohort.csv",
@@ -552,7 +552,7 @@
     {
       "path": "index.html",
       "bytes": 3341,
-      "sha256": "c686c722dc121b056413e3eb3b8bfbb98e23ad0bb753b5013755166a84d4c3a2"
+      "sha256": "7bbc2a2d726c215c1e8e9979d3090fac0ea4dd6abc8a6cf1aab3fe4b9afd33db"
     },
     {
       "path": "reports/PROFILE_EVIDENCE_INDEX.json",
@@ -1027,7 +1027,7 @@
   ],
   "counts": {
     "files": 204,
-    "bytes": 8635918
+    "bytes": 8635923
   },
-  "working_copy_status": "unreleased_shared_window_revision"
+  "working_copy_status": "release"
 }
