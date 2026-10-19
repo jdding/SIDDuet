@@ -1,0 +1,106 @@
+{
+  "schema": "sr_sid_rolemap.dataset_admission_registry.v1",
+  "levels": [
+    "registered_main",
+    "priority_candidate",
+    "method_carrier_only",
+    "derived_role_extension",
+    "literature_only"
+  ],
+  "table2_rule": "Current main datasets are QA-passing v2-rebuilt genuine search/recommendation surfaces; historical or proxy-derived roles do not enter the main coverage total.",
+  "datasets": [
+    {
+      "dataset_id": "kuaisar",
+      "title": "KuaiSAR",
+      "role_evidence": "authentic_search_and_recommendation_logs",
+      "access_status": "public_provider_release",
+      "admission_level": "registered_main",
+      "topology_status": "materialized",
+      "common_items": 97729,
+      "source_url": "https://github.com/KuaiSAR/KuaiSAR.github.io"
+    },
+    {
+      "dataset_id": "qilin",
+      "title": "Qilin",
+      "role_evidence": "authentic_app_level_search_and_recommendation_sessions",
+      "access_status": "public_provider_release",
+      "admission_level": "registered_main",
+      "topology_status": "materialized",
+      "common_items": 20540,
+      "source_url": "https://github.com/RED-Search/Qilin"
+    },
+    {
+      "dataset_id": "jdsearch",
+      "title": "JDsearch",
+      "role_evidence": "real_search_and_queryless_history_without_recommendation_vs_browsing_source_labels",
+      "access_status": "public_provider_release",
+      "admission_level": "derived_role_extension",
+      "topology_status": "historical_proxy_not_current_v2_rebuilt",
+      "common_items": null,
+      "source_url": "https://github.com/rucliujn/JDsearch",
+      "historical_common_items": 1248451,
+      "scope_note": "The legacy adapter labels query-less history rec. This is a proxy assumption, not identified recommendation traffic. Excluded from current genuine search/recommendation core and current v2 total."
+    },
+    {
+      "dataset_id": "uditsr_mt_small",
+      "title": "UDITSR MT-Small",
+      "role_evidence": "authentic_meituan_search_and_recommendation_rows",
+      "access_status": "public_method_release",
+      "admission_level": "method_carrier_only",
+      "topology_status": "released_role_label_ontology_not_documented",
+      "common_items": null,
+      "source_url": "https://github.com/zhangyuting725/UDITSR"
+    },
+    {
+      "dataset_id": "amazon_joint_sr",
+      "title": "Amazon joint-S&R variants",
+      "role_evidence": "recommendation_interactions_split_or_augmented_with_generated_queries",
+      "access_status": "public_upstream_data",
+      "admission_level": "derived_role_extension",
+      "topology_status": "not_materialized",
+      "common_items": null,
+      "source_url": "https://github.com/JennyXieJiayi/UnifiedSSR"
+    },
+    {
+      "dataset_id": "movielens25m_joint_sr",
+      "title": "MovieLens25M joint-S&R variants",
+      "role_evidence": "recommendation_histories_plus_generated_or_metadata_derived_queries",
+      "access_status": "public_upstream_data",
+      "admission_level": "derived_role_extension",
+      "topology_status": "not_materialized",
+      "common_items": null,
+      "source_url": "https://arxiv.org/abs/2508.10478"
+    },
+    {
+      "dataset_id": "million_playlist_joint_sr",
+      "title": "Million Playlist joint-S&R variant",
+      "role_evidence": "playlist_continuation_plus_playlist_title_retrieval",
+      "access_status": "public_challenge_terms_require_recheck",
+      "admission_level": "derived_role_extension",
+      "topology_status": "not_materialized",
+      "common_items": null,
+      "source_url": "https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge"
+    },
+    {
+      "dataset_id": "industrial_joint_sr_corpora",
+      "title": "Commercial joint S&R corpora",
+      "role_evidence": "authentic_industrial_surfaces",
+      "access_status": "no_reproducible_public_data_path",
+      "admission_level": "literature_only",
+      "topology_status": "unavailable",
+      "common_items": null,
+      "source_url": "https://arxiv.org/abs/2603.17533"
+    },
+    {
+      "dataset_id": "kuaisar_unisar_processed",
+      "title": "Provider-processed KuaiSAR positive-history input view",
+      "role_evidence": "identified_search_and_recommendation_positive_histories_with_truncated_search_sessions",
+      "access_status": "public_method_provider_release_plus_locally_supplied_checkpoint",
+      "admission_level": "method_carrier_only",
+      "topology_status": "processed_view_materialized_outside_core_reference",
+      "common_items": 9104,
+      "source_url": "https://github.com/TengShi-RUC/UniSAR",
+      "scope_note": "Same provider dataset, separate ID/preprocessing view. No raw-ID bridge is assumed; excluded from the 118269-item core total. See reports/model_reuse."
+    }
+  ]
+}

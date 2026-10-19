@@ -1,0 +1,118 @@
+{
+  "schema": "sr_sid_rolemap.full_checkpoint_replay.v1",
+  "status": "PASS_FULL_CHECKPOINT_REPLAY",
+  "steps": [
+    {
+      "step": "assemble",
+      "returncode": 0,
+      "seconds": 0.40759129199999977
+    },
+    {
+      "step": "prepare_small",
+      "returncode": 0,
+      "seconds": 3.385504083
+    },
+    {
+      "step": "import_small",
+      "returncode": 0,
+      "seconds": 0.54061
+    },
+    {
+      "step": "topology_small",
+      "returncode": 0,
+      "seconds": 0.9928979579999995
+    },
+    {
+      "step": "prepare_full",
+      "returncode": 0,
+      "seconds": 25.185926958000003
+    },
+    {
+      "step": "import_full",
+      "returncode": 0,
+      "seconds": 7.741293167000002
+    },
+    {
+      "step": "topology_full",
+      "returncode": 0,
+      "seconds": 12.893362792000005
+    },
+    {
+      "step": "admit_small",
+      "returncode": 0,
+      "seconds": 0.08576750000000288
+    },
+    {
+      "step": "predict",
+      "returncode": 0,
+      "seconds": 329.9658135
+    },
+    {
+      "step": "adapt",
+      "returncode": 0,
+      "seconds": 3.4133762920000095
+    },
+    {
+      "step": "evaluate",
+      "returncode": 0,
+      "seconds": 2.588482499999998
+    },
+    {
+      "step": "analyze",
+      "returncode": 0,
+      "seconds": 1.3277467920000277
+    },
+    {
+      "step": "tie_sensitivity",
+      "returncode": 0,
+      "seconds": 29.570664791000013
+    }
+  ],
+  "runtime": {
+    "python": "3.9.6",
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.8.0",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "PyYAML": "6.0.3",
+    "device": "cpu",
+    "threads": 4,
+    "tqdm": "4.67.1"
+  },
+  "seconds": 420.252408084,
+  "checkpoint_sha256": "67d335cdbc08a652f4eebd0e4f0493c01fa50ff388743a28cf34505ce0443de1",
+  "checkpoint_from_package": true,
+  "raw_provider_rows_from_package": false,
+  "original_author_source_from_package": false,
+  "full_test_requests": 166981,
+  "score_values_replayed": 16698100,
+  "prediction_files_bitwise_equal": {
+    "all_scores.csv": true,
+    "covered_scores.csv": true,
+    "units.csv": true
+  },
+  "small_and_full_topologies_bitwise_equal": true,
+  "public_evaluator_object_equal": true,
+  "diagnostic_max_abs_error": 0.0,
+  "tie_sensitivity_max_abs_error": 0.0,
+  "new_training": false,
+  "independent_human_operator": false,
+  "limits": "Automated clean-directory replay. The recorded runtime defines the exact byte-replay claim; other hardware/library versions are not certified. Not external adoption.",
+  "pipeline_script_sha256": {
+    "analysis/model_reuse/replay_unisar.py": "b82f1ccf164a72fe73c2afa1d0cc85a860a91ccdc6b5c1eea0e377718b83ec08",
+    "analysis/model_reuse/prepare_observations.py": "67e7a5cde7c4129fec42703ceb4a8884b156419af1d56863e588c08952c19c94",
+    "analysis/model_reuse/export_unisar_scores.py": "9ac0fa5a2ff55b6116fdcf0506e3da8009369e2379c94562ecd7ca47657d3843",
+    "analysis/model_reuse/analyze_predictions.py": "eb7a5aa96fa024777a393fa8390be0d3d5117759e731d766774c0a8c39024628",
+    "analysis/model_reuse/tie_policy_sensitivity.py": "3748da7a2f1da49bdbe0c3615f6939b76c649cd74e93dfc4d607996e904d4813",
+    "scripts/assemble_checkpoint.py": "9194e048d3bd705c43a98104dc5a68a202b945ba339fbc257cfd308dce6c0adb",
+    "scripts/import_role_counts.py": "516c67b9ccfc5786e7da6202be7b05e4fc967c1435a3416128a4a654aa7de108",
+    "scripts/build_role_topology.py": "755bc709fc100b723ac8309691b0d896fcd86160507168a4f23e16ac4e8e8d6c",
+    "scripts/admit_sid_family.py": "eddae02d6a97c4f6a6acebe84064e8dbffd0d4ffbce8ed9d79432a0fb723c8a3",
+    "scripts/adapt_method_scores.py": "192b864ca9752f29e204219fe74439b15f367ac6af0cfeadb9774a8cfa06cfe8",
+    "scripts/evaluate_fixed_candidates.py": "43586cd50a04ccfad265cb532d9fd70185ada23dc0693dedb26dcce9214f2b8e"
+  },
+  "fresh_virtualenv": true,
+  "fresh_public_source_and_provider_download": true,
+  "dependency_file": "replay_environment.txt"
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": "sr_sid_rolemap.rolemap_record.v1",
+  "record_id": "synthetic:catalog_a:item_0042:rqvae_v1",
+  "dataset": {
+    "dataset_id": "synthetic_catalog_a",
+    "split": "test",
+    "profile_id": "synthetic_rolemap_profile_v1"
+  },
+  "item_bridge": {
+    "item_key": "synthetic_item_0042",
+    "key_type": "synthetic",
+    "roles": [
+      "search",
+      "recommendation"
+    ]
+  },
+  "role_evidence": {
+    "source_protocol": "synthetic_provider_role_counts_v1",
+    "search": {
+      "support_bucket": "medium",
+      "top_label": "label_a",
+      "entropy": 0.82
+    },
+    "recommendation": {
+      "support_bucket": "high",
+      "top_label": "label_c",
+      "entropy": 1.31
+    }
+  },
+  "topology": {
+    "level": "L0",
+    "status": "observed",
+    "rsd": 0.0412,
+    "rsi": 0.374,
+    "topology_cell": "high_rsd|high_rsi",
+    "builder_version": "sr_sid_rolemap.topology.v1"
+  },
+  "sid_artifact": {
+    "artifact_id": "synthetic_rqvae_v1",
+    "family": "RQ-VAE-style",
+    "map_version": "synthetic_map_v1",
+    "join_status": "joined",
+    "provenance_uri": "samples/synthetic_sid_map.csv"
+  },
+  "observations": {
+    "L1": {
+      "status": "observed",
+      "surfaces": [
+        {
+          "surface_type": "exact_sid_collision",
+          "status": "observed",
+          "candidate_universe": "synthetic_registered_catalog",
+          "summary": {
+            "collision_group_size": 3,
+            "topology_cells_in_group": 2
+          }
+        }
+      ]
+    },
+    "L2": {
+      "status": "null",
+      "surfaces": [
+        {
+          "surface_type": "complete_sid_recovery",
+          "status": "null",
+          "candidate_universe": "synthetic_full_catalog",
+          "summary": {
+            "role_conditioned_minus_shared": 0.0
+          }
+        }
+      ]
+    },
+    "L3": {
+      "status": "not_evaluated",
+      "surfaces": []
+    }
+  },
+  "decision": {
+    "claim_permissions": [
+      {
+        "claim_id": "paired_role_evidence_equivalent",
+        "status": "blocked",
+        "evidence_level": "L0",
+        "reason": "The registered provider evidence occupies the high-divergence, high-imbalance cell."
+      },
+      {
+        "claim_id": "role_conditioning_improves_complete_sid_recovery",
+        "status": "blocked",
+        "evidence_level": "L2",
+        "reason": "The observed complete-SID contrast is null on the declared full catalog."
+      },
+      {
+        "claim_id": "shared_policy_causes_utility_loss",
+        "status": "not_evaluated",
+        "evidence_level": "L3",
+        "reason": "No equal-budget heldout policy comparison is attached."
+      }
+    ],
+    "next_required_checks": [
+      "Attach an equal-budget heldout shared-versus-role-conditioned policy comparison before making a utility-conflict claim."
+    ]
+  },
+  "provenance": {
+    "builders": [
+      "scripts/build_role_topology.py",
+      "scripts/admit_sid_family.py"
+    ],
+    "source_checksums": [
+      "sha256:synthetic_fixture_only"
+    ],
+    "protocol_versions": [
+      "sr_sid_rolemap.rolemap_record.v1",
+      "sr_sid_rolemap.topology.v1"
+    ]
+  },
+  "release": {
+    "access_level": "public_synthetic",
+    "restricted_fields": [
+      "raw_query_text",
+      "user_trajectory",
+      "full_item_sid_map",
+      "checkpoint"
+    ]
+  }
+}

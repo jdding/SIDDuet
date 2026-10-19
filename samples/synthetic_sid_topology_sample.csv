@@ -1,0 +1,9 @@
+dataset,synthetic_item_id,synthetic_sid,rsd_bucket,rsi_mag_bucket,rsi_direction,topology_cell,search_support_bin,rec_support_bin,sample_type
+kuaisar,kuaisar_synthetic_01,sid:01:ku,high_rsd,high_rsi,rec_broader,high_rsd|high_rsi,5-9,10-24,synthetic_schema_example
+kuaisar,kuaisar_synthetic_02,sid:02:ku,high_rsd,low_rsi,balanced,high_rsd|low_rsi,10-24,1-4,synthetic_schema_example
+kuaisar,kuaisar_synthetic_03,sid:03:ku,low_rsd,high_rsi,search_broader,low_rsd|high_rsi,5-9,10-24,synthetic_schema_example
+kuaisar,kuaisar_synthetic_04,sid:04:ku,low_rsd,low_rsi,balanced,low_rsd|low_rsi,10-24,1-4,synthetic_schema_example
+qilin,qilin_synthetic_01,sid:01:qi,high_rsd,high_rsi,rec_broader,high_rsd|high_rsi,5-9,10-24,synthetic_schema_example
+qilin,qilin_synthetic_02,sid:02:qi,high_rsd,low_rsi,balanced,high_rsd|low_rsi,10-24,1-4,synthetic_schema_example
+qilin,qilin_synthetic_03,sid:03:qi,low_rsd,high_rsi,search_broader,low_rsd|high_rsi,5-9,10-24,synthetic_schema_example
+qilin,qilin_synthetic_04,sid:04:qi,low_rsd,low_rsi,balanced,low_rsd|low_rsi,10-24,1-4,synthetic_schema_example

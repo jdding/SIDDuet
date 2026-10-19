@@ -1,0 +1,28 @@
+[
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 560,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 973149922010,
+        "numerator": 306492113
+      },
+      "upper_exclusive": {
+        "denominator": 977056847090,
+        "numerator": 372576591
+      }
+    },
+    "rsi_boundary_end": 191,
+    "rsi_boundary_start": 191,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 516873855777
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 518714603408
+      }
+    }
+  }
+]

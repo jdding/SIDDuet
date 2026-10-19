@@ -1,0 +1,17 @@
+{
+  "bindings": {
+    "inputs_sha256": "8f2dd199023dd034f9057b780da4b2d76a9486ae2d10e9d0c788fddf97192fa4",
+    "plan_sha256": "b3c6fb90fdb8b53be8a9d25dd991a384c630da959a6e4b509160e30e1cad9913",
+    "script_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce"
+  },
+  "dataset": "qilin",
+  "items": 20540,
+  "outputs": {
+    "all_maximizing_cut_classes.json": "8ce4175394b13e3504ee0b4fbc0f8519b5dc313176943358cb6facb9e9e54d75",
+    "nine_pairs.csv": "3ca9e262e7850479d43fa6fa5f2b2e2070de3143de3bd9919bc2191b15d5d7db",
+    "summary.json": "fa9f1454ece9d05e8e6309dc18682b8e29b0e3fcfe9eb22ba49a4cd75777bd53"
+  },
+  "script_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce",
+  "status": "PASS",
+  "topology_sha256": "8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "dataset": "kuaisar",
+  "items": 97729,
+  "summary_sha256": "e462349fc8858b7d484a576e10a6d95a37543f0d8582cbbd277f36f6aaeaefcd",
+  "aggregate_files": {
+    "component_triples.csv": "279e325c63bb3eb30e13c672de78682abbcabcd02195f3cdab5c0e88f8c76d5d",
+    "exact_rsd_tie_decomposition.csv": "ae246af447fb2b6e77ba74611ff36dc88a03e6d13d64939011898c5c4611e260",
+    "js_raw_key_merges.csv": "e014accd6176b486c62ae141b40f43e1028c687167bfbf829a7348b6b1226331",
+    "summary.json": "e462349fc8858b7d484a576e10a6d95a37543f0d8582cbbd277f36f6aaeaefcd"
+  },
+  "restricted_item_csv_sha256": "7da7b6d1c850a51c9de6f4751d7b723db9dee674200b2ed44d188a15a4b649e6",
+  "script_sha256": "f7297b15bac9b80ec68cf4fe0fd86b0b01e264a4f85d8364e3f996cea6f4065e"
+}

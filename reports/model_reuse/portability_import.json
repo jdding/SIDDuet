@@ -1,0 +1,15 @@
+{
+  "schema": "sr_sid_rolemap.count_import.v1",
+  "status": "pass",
+  "dataset": "kuaisar_unisar_processed",
+  "source_rows": 1102,
+  "aggregated_rows": 1102,
+  "roles_seen": [
+    "rec",
+    "search"
+  ],
+  "input_sha256": "943ecd2e7aa74d9181e8c5abf68ba07881278305f6d36abe7cc86c140323cc1d",
+  "config_sha256": "e0083fd2097bbfb531cb8a33b45b70a35384bb5e2baafe67ab008b66a4c6694a",
+  "output_sha256": "caf54b30d9d915b84432331ed0a75687ee65cf8430d1dfb00600493fc9752118",
+  "boundary": "Field conversion preserves declared counts. The producer must define the contextual labels and observation unit; this importer does not infer task or label meaning."
+}

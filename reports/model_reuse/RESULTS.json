@@ -1,0 +1,104 @@
+{
+  "schema": "sr_sid_rolemap.actual_model_diagnostic.v1",
+  "status": "PASS_DESCRIPTIVE_ANALYSIS",
+  "method": "UniSAR",
+  "dataset": "kuaisar_unisar_processed",
+  "confirmatory": false,
+  "bootstrap_draws": 2000,
+  "roles": {
+    "search": {
+      "requests": 9789,
+      "users": 1384,
+      "covered_requests": 287,
+      "covered_users": 219,
+      "coverage_percent": 2.9318622944120953,
+      "all_ndcg10": 0.6252527814207507,
+      "covered_ndcg10": 0.5300302866663055,
+      "covered_minus_all_ndcg10": -0.09522249475444522,
+      "cohort_difference_bootstrap": {
+        "ci95": [
+          -0.14473965051572532,
+          -0.047590685991338075
+        ],
+        "valid_draws": 2000
+      },
+      "target_tied_requests": 2288,
+      "all_equal_requests": 0,
+      "support_stratified_label_association": {
+        "group_definition": "label JSD=1 versus JSD<1; fixed tolerance 1e-12",
+        "raw_groups": {
+          "nonmaximal_JSD": {
+            "requests": 176,
+            "ndcg10": 0.5152803681445984
+          },
+          "maximal_JSD": {
+            "requests": 111,
+            "ndcg10": 0.5534175448628865
+          }
+        },
+        "eligible_strata": 4,
+        "eligible_requests": 185,
+        "eligible_users": 156,
+        "status": "DESCRIPTIVE_ASSOCIATION",
+        "difference_maximal_minus_nonmaximal": -0.0011669553859696036,
+        "bootstrap": {
+          "ci95": [
+            -0.11686734578787329,
+            0.12357830010814956
+          ],
+          "valid_draws": 2000
+        }
+      }
+    },
+    "rec": {
+      "requests": 157192,
+      "users": 4852,
+      "covered_requests": 4996,
+      "covered_users": 2124,
+      "coverage_percent": 3.1782787928138836,
+      "all_ndcg10": 0.40782936871968484,
+      "covered_ndcg10": 0.33836541492088174,
+      "covered_minus_all_ndcg10": -0.0694639537988031,
+      "cohort_difference_bootstrap": {
+        "ci95": [
+          -0.0793777777073397,
+          -0.05955543584857857
+        ],
+        "valid_draws": 2000
+      },
+      "target_tied_requests": 2,
+      "all_equal_requests": 0,
+      "support_stratified_label_association": {
+        "group_definition": "label JSD=1 versus JSD<1; fixed tolerance 1e-12",
+        "raw_groups": {
+          "maximal_JSD": {
+            "requests": 1561,
+            "ndcg10": 0.33274584970041626
+          },
+          "nonmaximal_JSD": {
+            "requests": 3435,
+            "ndcg10": 0.3409191678493058
+          }
+        },
+        "eligible_strata": 16,
+        "eligible_requests": 4862,
+        "eligible_users": 2111,
+        "status": "DESCRIPTIVE_ASSOCIATION",
+        "difference_maximal_minus_nonmaximal": -0.03387646006165924,
+        "bootstrap": {
+          "ci95": [
+            -0.05786938055219339,
+            -0.008464433270504092
+          ],
+          "valid_draws": 1995
+        }
+      }
+    }
+  },
+  "inputs_sha256": {
+    "units.csv": "679580c94ea2083023e6b60968f2faf964534979a53396fed028431ff74aba9a",
+    "processed_topology_full_r1.csv": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+    "INFERENCE.json": "a397f508015a1a66b2fbf33a12abfd2c096be4ef77e4ba5c1363dacbb0d20c3e"
+  },
+  "boundary": "A descriptive full-test expansion after the initial sample. Cohort differences and label associations are not causal effects, ranking gains or prospective prediction validation."
+}

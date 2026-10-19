@@ -1,0 +1,3 @@
+# Optional analysis dependencies; the ordinary resource quickstart remains dependency-free.
+numpy==1.26.4
+pyarrow==21.0.0

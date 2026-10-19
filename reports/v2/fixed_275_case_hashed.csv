@@ -1,0 +1,17 @@
+surface,surface_rank,dataset,item_hash,search_support,rec_support,profile_id,topology_cell,rsd_score,rsi_signed,rsd_at_median,rsi_at_median
+search_support_leaders,1,kuaisar,fc2b8ccb402f,46,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,8.49173285568e-05,0,1,0
+search_support_leaders,2,kuaisar,9fa2d231ec42,16,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,8.49173285568e-05,-1,1,1
+search_support_leaders,3,kuaisar,e7d303ff8e75,16,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,8.49173285568e-05,0,1,0
+search_support_leaders,4,kuaisar,d0b200ebbd7a,15,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,8.49173285568e-05,-1,1,1
+search_support_leaders,5,kuaisar,8668da0ec8d4,7,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,3.23490866666e-05,0,0,0
+search_support_leaders,6,kuaisar,62b59b0b683f,6,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,8.49173285568e-05,0,1,0
+search_support_leaders,7,kuaisar,e859c8530bdd,6,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,8.49173285568e-05,0,1,0
+search_support_leaders,8,kuaisar,35d319fe1cd4,6,1,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,5.02019242174e-05,-1,0,1
+rec_support_leaders,1,kuaisar,e53fe6b51e9c,1,478,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,3.68493229391e-05,1,0,1
+rec_support_leaders,2,kuaisar,8b451626f811,1,145,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,3.70102482619e-05,1,0,1
+rec_support_leaders,3,kuaisar,709c6cc96afe,1,108,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,6.91173187768e-05,1,0,1
+rec_support_leaders,4,kuaisar,19919fb8d431,1,49,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,6.91648745564e-05,1,0,1
+rec_support_leaders,5,kuaisar,924818a8bacc,1,38,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,6.95067810177e-05,1,0,1
+rec_support_leaders,6,kuaisar,18c5d3fe21d8,1,29,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,6.94317864075e-05,1,0,1
+rec_support_leaders,7,kuaisar,2febb78f3851,1,28,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,5.2334440602e-05,1,0,1
+rec_support_leaders,8,kuaisar,b30ec92a1992,2,27,sr_sid_rolemap.topology.value_median.v2,low_rsd|low_rsi,5.12936196442e-05,1,0,1

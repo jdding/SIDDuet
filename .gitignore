@@ -1,0 +1,6 @@
+outputs/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+weights/unisar_kuaisar_v1/checkpoint.part-*

@@ -1,0 +1,17 @@
+{
+  "bindings": {
+    "inputs_sha256": "8f2dd199023dd034f9057b780da4b2d76a9486ae2d10e9d0c788fddf97192fa4",
+    "plan_sha256": "b3c6fb90fdb8b53be8a9d25dd991a384c630da959a6e4b509160e30e1cad9913",
+    "script_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce"
+  },
+  "dataset": "kuaisar",
+  "items": 97729,
+  "outputs": {
+    "all_maximizing_cut_classes.json": "0ab7aca3340be629157e69a3f16ea72ddd6ab7a3598d89a39d96c16b7c2031c7",
+    "nine_pairs.csv": "513eb6555bc72903768fe789ad92a38e0195172001539a87c03d66b70baaddc1",
+    "summary.json": "790ca3dffa03e7bebfa70e015ec60c9f778f409bca5e709ab3d95366f3455560"
+  },
+  "script_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce",
+  "status": "PASS",
+  "topology_sha256": "597dc7a74c2cd404cbd98a5a5ded61fd2161af071e950a4291cb09895a6e7ad5"
+}

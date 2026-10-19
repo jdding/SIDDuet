@@ -1,0 +1,94 @@
+{
+  "status": "PASS_REAL_CHECKPOINT_INFERENCE",
+  "model": "UniSAR",
+  "dataset": "kuaisar_unisar_processed",
+  "checkpoint_sha256": "67d335cdbc08a652f4eebd0e4f0493c01fa50ff388743a28cf34505ce0443de1",
+  "upstream_commit": "1a14a246066cd1aa6ee789c57ff2c7499f3d7379",
+  "source_sha256": {
+    "main.py": "16a48d9c28ea39f7db2b790d3bc0b8fbe0a1d30dfff8721c99d0a9ff1dc92207",
+    "models/__init__.py": "6b21afe75b91360f9a2a6dbc08fd6366fd68bef5a1959a68869073a3c7b95775",
+    "models/BaseModel.py": "ae1e410a653cc16fbc859e44dbdeed6bcbb1d4c339c7c44cabf1ad452bf35e46",
+    "models/Inputs.py": "9640b8bce56140ac23cf70047876dd56b0eae206754fc0101836b73aa8a942fa",
+    "models/layers.py": "9e28645cec98a224a53f1137bbcf9f78a38d702805d394db23e1db19cc6a3045",
+    "models/UniSAR.py": "bd2711f26da727d261749d771ceee89cfc01c5c1d23c31946f52bc9471b6f0df",
+    "utils/__init__.py": "9880fafa7652a4c01b25e742a637993856d2bbd217e78d23b760c033e58e4f3f",
+    "utils/const.py": "2b176954e897109cd63d0647386b522c330a8c028387acd9d35cec54ae7120dc",
+    "utils/dataset.py": "52535ef81334f29cc08a1a736b351b71969770fda08accc96cd955895cdab640",
+    "utils/Runner.py": "f844028b4563cc46dd26de43c3d0b21224038cd7d1b9dcd6c50b68ab0de1da7e",
+    "utils/sampler.py": "2baaf0bf95910b0b55d992a8ccaa8d81dbc327655e61202d33cb95b7177d9278",
+    "utils/utils.py": "d6a2ba718f38bc52013bbb7f37661b1f6fcb76b73f249e2cd86d4f8d0c8ce3fe"
+  },
+  "load": {
+    "missing_keys": [],
+    "ignored_training_only_keys": [
+      "feature_alignment.infoNCE_loss.temp",
+      "feature_alignment.infoNCE_loss.weight_matrix",
+      "rec_his_cl.infoNCE_temp",
+      "rec_his_cl.weight_matrix",
+      "src_his_cl.infoNCE_temp",
+      "src_his_cl.weight_matrix"
+    ]
+  },
+  "device": "cpu",
+  "threads": 4,
+  "new_training": false,
+  "pilot": false,
+  "runtime_changes": [
+    "dropout disabled in eval",
+    "contrastive training-only buffers omitted, all prediction weights required",
+    "nested-tensor and MHA fastpath disabled"
+  ],
+  "setup_seconds": 3.3744771250000003,
+  "roles": {
+    "search": {
+      "provider_test_rows": 9789,
+      "selected_requests": 9789,
+      "scored_requests": 9789,
+      "duplicate_candidate_requests": 0,
+      "topology_covered": 287,
+      "ndcg_sum": 6120.599477327876,
+      "hit_sum": 8260.0,
+      "covered_ndcg_sum": 152.11869227322956,
+      "covered_hit_sum": 211.0,
+      "target_tied_requests": 2288,
+      "all_equal_requests": 0,
+      "max_target_ties": 8,
+      "batch_single_max_abs": 1.341104507446289e-07,
+      "inference_seconds": 21.119398791,
+      "ndcg10": 0.6252527814207658,
+      "hit10": 0.8438042700990909,
+      "covered_ndcg10": 0.530030286666305,
+      "covered_hit10": 0.735191637630662
+    },
+    "rec": {
+      "provider_test_rows": 157192,
+      "selected_requests": 157192,
+      "scored_requests": 157192,
+      "duplicate_candidate_requests": 0,
+      "topology_covered": 4996,
+      "ndcg_sum": 64107.51412779058,
+      "hit_sum": 105854.0,
+      "covered_ndcg_sum": 1690.4736129447358,
+      "covered_hit_sum": 2916.0,
+      "target_tied_requests": 2,
+      "all_equal_requests": 0,
+      "max_target_ties": 2,
+      "batch_single_max_abs": 1.1920928955078125e-07,
+      "inference_seconds": 176.488953041,
+      "ndcg10": 0.40782936871972225,
+      "hit10": 0.6734057712860705,
+      "covered_ndcg10": 0.33836541492088384,
+      "covered_hit10": 0.5836669335468375
+    }
+  },
+  "input_sha256": {
+    "src_test.pkl": "32c280057b4f47969a2bf0ac4a056172391a31ee83c8c9b86e61a1c50d272872",
+    "rec_test.pkl": "ead6a99fda7c7a4068facedf87a3e4717bff38aa15ad766cd2a0396020fdcbed"
+  },
+  "seconds": 208.973944417,
+  "output_sha256": {
+    "all_scores.csv": "cf98988e96470271159d4f11fc3b912ed2499b5be00d9eb1c9d78de76f699dcf",
+    "covered_scores.csv": "9b6b5c63e2fe30ef31e4958ba3811403b868c3d5c92ec9f1d965497a97d4e045",
+    "units.csv": "679580c94ea2083023e6b60968f2faf964534979a53396fed028431ff74aba9a"
+  }
+}

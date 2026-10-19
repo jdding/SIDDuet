@@ -1,0 +1,25 @@
+{
+  "maps": [
+    {
+      "name": "supplied_shared_prefix",
+      "path": "local/semantic_complete.csv",
+      "depth": 2
+    },
+    {
+      "name": "supplied_semantic_complete",
+      "path": "local/semantic_complete.csv"
+    },
+    {
+      "name": "supplied_collaborative_complete",
+      "path": "local/collaborative_complete.csv"
+    }
+  ],
+  "paired_shared_prefix": [
+    {
+      "left": "local/semantic_complete.csv",
+      "right": "local/collaborative_complete.csv",
+      "depth": 2
+    }
+  ],
+  "universe": "local/item_ids.json"
+}

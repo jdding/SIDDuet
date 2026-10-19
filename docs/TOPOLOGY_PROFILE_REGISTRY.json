@@ -1,0 +1,29 @@
+{
+  "builder": "scripts/build_role_topology.py",
+  "builder_sha256": "755bc709fc100b723ac8309691b0d896fcd86160507168a4f23e16ac4e8e8d6c",
+  "contract": "docs/TOPOLOGY_PROFILE_V2_CONTRACT.md",
+  "contract_sha256": "d2c333ffaff5008f2ddce74de688ef08727ed00744f47040b97e67d6de370a2f",
+  "current_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "current_references": {
+    "kuaisar": "reports/v2/kuaisar_topology_reference.json",
+    "qilin": "reports/v2/qilin_topology_reference.json"
+  },
+  "historical_profile": {
+    "artifact_name": "full_b2_topology_universe.csv",
+    "artifact_sha256": "0ece7e55541a3535fe0afe66f261da885cf15e457b244112afb4a82f4d71e3d9",
+    "id": "legacy_artifact_sha256:0ece7e55541a3535fe0afe66f261da885cf15e457b244112afb4a82f4d71e3d9",
+    "raw_rebuild_claimed": false,
+    "sliced_scientific_results_migrated": false,
+    "verification_scope": "Stored components, ranks, RRF, RSI and numeric-order median memberships are self-consistent; original raw-count numerical environment is not fully specified.",
+    "verified_archived_rows": 118269
+  },
+  "jdsearch_full_v2_rebuilt": false,
+  "jdsearch_status": "Historical aggregate and adapter availability only; full inputs absent from current reconstruction.",
+  "reconstructed_common_items": 118269,
+  "reconstructed_datasets": [
+    "kuaisar",
+    "qilin"
+  ],
+  "reconstruction_verification": "reports/v2/RECONSTRUCTION_VERIFICATION.json",
+  "schema": "sr_sid_rolemap.topology_profile_registry.v2"
+}

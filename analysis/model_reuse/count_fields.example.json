@@ -1,0 +1,5 @@
+{
+  "dataset": "kuaisar_unisar_processed",
+  "fields": {"item_id": "catalog_item", "role": "service", "label": "context_category", "count": "observations"},
+  "role_values": {"query": "search", "feed": "rec"}
+}

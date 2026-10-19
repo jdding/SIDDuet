@@ -1,0 +1,44 @@
+{
+  "cell_counts": {
+    "high_rsd|high_rsi": 0,
+    "high_rsd|low_rsi": 0,
+    "low_rsd|high_rsi": 0,
+    "low_rsd|low_rsi": 275
+  },
+  "claim_boundary": "Role-support heterogeneity only. Cell names mean strictly above or at/below a dataset median; empty high cells are valid. Neither a low label nor this selected case establishes semantic compatibility, model harm, or utility.",
+  "dataset": "kuaisar",
+  "group_size": 275,
+  "hash_salt_label": "sr_sid_rolemap_r089_public_safe_v1",
+  "leaders": {
+    "rec": {
+      "item_hash": "e53fe6b51e9c",
+      "rec_support": 478.0,
+      "search_support": 1.0,
+      "topology_cell": "low_rsd|low_rsi"
+    },
+    "search": {
+      "item_hash": "fc2b8ccb402f",
+      "rec_support": 1.0,
+      "search_support": 46.0,
+      "topology_cell": "low_rsd|low_rsi"
+    }
+  },
+  "leaders_are_different": true,
+  "membership_sha256": "367cfdc83b6ce1d93d9dea2010b5fb1621432ca84c83a1eced56756bae303d51",
+  "public_safety": {
+    "query_or_user_data_in_outputs": false,
+    "raw_item_ids_in_outputs": false,
+    "raw_sid_tokens_in_outputs": false
+  },
+  "schema": "sr_sid_rolemap.fixed_collision_case.v2",
+  "selection": "Group fixed by its archived SID hash before v2 reconstruction; no new cell-based selection. SID hash uses the literal supplied SID field, preserving the archived representation.",
+  "sid_hash": "699a0666f64d",
+  "sid_map_sha256": "3bc30c1f42b4ff41df6ea609037e6d686fc7950563e0258dbc6f5ea2fe85c2fe",
+  "status": "pass",
+  "support_sums": {
+    "rec": 1413.0,
+    "search": 514.0
+  },
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "topology_sha256": "597dc7a74c2cd404cbd98a5a5ded61fd2161af071e950a4291cb09895a6e7ad5"
+}

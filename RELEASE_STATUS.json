@@ -1,0 +1,36 @@
+{
+  "schema": "sr_sid_rolemap.public_release.v1",
+  "version": "0.2.4",
+  "release_tag": "v0.2.4",
+  "repository_url": "https://github.com/jdding/rolemap",
+  "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.4",
+  "publication_status": "versioned_public_resource",
+  "release_date": "2026-10-19",
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
+  "reconstructed_datasets": [
+    "kuaisar",
+    "qilin"
+  ],
+  "reconstructed_common_items": 118269,
+  "local_demo_command": "python3 -I scripts/serve_demo.py --port 8765",
+  "checkpoint": {
+    "distribution": "optional_github_release_assets",
+    "manifest": "weights/unisar_kuaisar_v1/CHECKPOINT.json",
+    "license": "CC-BY-NC-SA-4.0"
+  },
+  "license_scope": {
+    "own_code": "MIT",
+    "documentation_and_aggregates": "CC-BY-4.0",
+    "Qilin_exports": "Apache-2.0",
+    "checkpoint": "CC-BY-NC-SA-4.0"
+  },
+  "excluded": [
+    "raw/provider data",
+    "user/query/request rows",
+    "prediction rows",
+    "upstream implementation",
+    "paper drafts",
+    "internal review records"
+  ]
+}

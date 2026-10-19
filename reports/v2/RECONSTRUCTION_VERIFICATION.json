@@ -1,0 +1,34 @@
+{
+  "builder_sha256": "755bc709fc100b723ac8309691b0d896fcd86160507168a4f23e16ac4e8e8d6c",
+  "contract_sha256": "d2c333ffaff5008f2ddce74de688ef08727ed00744f47040b97e67d6de370a2f",
+  "datasets": {
+    "kuaisar": {
+      "counts_sha256": "bdc260a40c0952bfca3dfd27ec7ca46124d2e0b78d7bcf6a84a73aae4008ce3f",
+      "decision_sha256": "b65c0163876c57cd5363a2872c29f8fcc079d98f5e19358cbc5c74b27486ad72",
+      "independent_serialized_row_checks_pass": true,
+      "items": 97729,
+      "receiver_csv_and_decision_hashes_match": true,
+      "topology_csv_sha256": "597dc7a74c2cd404cbd98a5a5ded61fd2161af071e950a4291cb09895a6e7ad5"
+    },
+    "qilin": {
+      "counts_sha256": "dff45018241d29a4cf25f76d1365fb3d3aad1d7fef63adb56a60f5e0d054c390",
+      "decision_sha256": "aa51f5cca429a9eea5a3f17d730c2c6f6921dfdb307a7e108ced817737ae7d4e",
+      "independent_serialized_row_checks_pass": true,
+      "items": 20540,
+      "receiver_csv_and_decision_hashes_match": true,
+      "topology_csv_sha256": "8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed"
+    }
+  },
+  "external_adoption_established": false,
+  "fresh_venv": false,
+  "input_scope": {
+    "kuaisar": "Three provider CSVs -> shipping provider adapter -> counts -> v2 topology; independent receiver repeats raw extraction.",
+    "qilin": "Nine pinned provider Parquet files were previously verified -> counts; this independent v2 receiver repeats the counts-to-topology stage."
+  },
+  "internal_receiver": true,
+  "reference_runtime": "CPython 3.12.14 on macOS arm64",
+  "runtime_portability": "Other runtimes must verify their exact keys/ranks/partitions against reference hashes; fixture agreement is not a universal libm guarantee.",
+  "schema": "sr_sid_rolemap.v2_reconstruction_verification.v1",
+  "status": "PASS_REFERENCE_AND_INTERNAL_RECEIVER",
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2"
+}

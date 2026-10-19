@@ -1,0 +1,33 @@
+{
+  "runs": [
+    {
+      "family": "GRID",
+      "source_name": "r079_main_grid_sid_map.csv",
+      "source_sha256": "d4f37adecac2de0aa555b30105db994dbfff8d8af6eff253cc89ff1ab4a3f899",
+      "normalized_sha256": "a06157ab9748745badbfe0630f7e1370449cf7552553c47b75b6d4f7fc403722",
+      "rows": 118269,
+      "identity_and_literal_tokens_preserved": true,
+      "model_or_sid_generation": false
+    },
+    {
+      "family": "RQ-VAE",
+      "source_name": "r082c_full_scr_native_rqvae_sid_map.csv",
+      "source_sha256": "4cb2fa45dcd5fa77fe1677eb0d0fe36bddd32a47bbeb9110463fdf1359897743",
+      "normalized_sha256": "ad49d21cea7ab006563024c15544902b36bb5c5179fe3460c9f8722c20706bf6",
+      "rows": 118269,
+      "identity_and_literal_tokens_preserved": true,
+      "model_or_sid_generation": false
+    },
+    {
+      "family": "ReSID-GAOQ",
+      "source_name": "r088_resid_gaoq_full_sid_map.csv",
+      "source_sha256": "3bc30c1f42b4ff41df6ea609037e6d686fc7950563e0258dbc6f5ea2fe85c2fe",
+      "normalized_sha256": "f3edf6248aeda9804b87a7d4f2ee8b3457c156acdc24b58022d191b675299581",
+      "rows": 118269,
+      "identity_and_literal_tokens_preserved": true,
+      "model_or_sid_generation": false
+    }
+  ],
+  "profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "scope": "existing-map structural admissions only; no ranking or model utility rerun"
+}

@@ -1,0 +1,925 @@
+{
+  "analysis_kind": "post-primary fixed-score numerical-cut sensitivity and geometric upper bound",
+  "dataset": "qilin",
+  "feasibility_bound": {
+    "boundary_pairs_examined": 246718,
+    "items": 20540,
+    "matrix_bytes": 1973744,
+    "matrix_shape": [
+      562,
+      439
+    ],
+    "maximizing_boundary_pairs": 1,
+    "maximizing_interval_runs": 1,
+    "maximum_minimum_quadrant_fraction": 0.137682570593963,
+    "maximum_minimum_quadrant_items": 2828,
+    "representative": {
+      "abs_rsi_key_cut": {
+        "denominator": 1,
+        "numerator": 516873855777
+      },
+      "counts": {
+        "HH": 5148,
+        "HL": 9736,
+        "LH": 2828,
+        "LL": 2828
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 5148,
+          "unique_coordinate_pairs": 88,
+          "unique_rsd": 1,
+          "unique_rsi_keys": 88
+        },
+        "HL": {
+          "items": 9736,
+          "unique_coordinate_pairs": 102,
+          "unique_rsd": 1,
+          "unique_rsi_keys": 102
+        },
+        "LH": {
+          "items": 2828,
+          "unique_coordinate_pairs": 452,
+          "unique_rsd": 431,
+          "unique_rsi_keys": 187
+        },
+        "LL": {
+          "items": 2828,
+          "unique_coordinate_pairs": 164,
+          "unique_rsd": 143,
+          "unique_rsi_keys": 121
+        }
+      },
+      "items": 20540,
+      "lexicographic_order": "rsd boundary index, then rsi boundary index",
+      "minimum_quadrant_fraction": 0.137682570593963,
+      "minimum_quadrant_items": 2828,
+      "occupied_quadrants": 4,
+      "rsd_boundary_index": 560,
+      "rsd_cut": {
+        "denominator": 973149922010,
+        "numerator": 306492113
+      },
+      "rsd_cut_interval": {
+        "lower_inclusive": {
+          "denominator": 973149922010,
+          "numerator": 306492113
+        },
+        "upper_exclusive": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        }
+      },
+      "rsi_boundary_index": 191,
+      "rsi_cut_interval": {
+        "lower_inclusive": {
+          "denominator": 1,
+          "numerator": 516873855777
+        },
+        "upper_exclusive": {
+          "denominator": 1,
+          "numerator": 518714603408
+        }
+      }
+    },
+    "unique_abs_rsi_keys": 438,
+    "unique_rsd_values": 561
+  },
+  "inputs": {
+    "acceptance_receipt_sha256": "6111f18161bf9a2de851edc7b0648ca5bc373fdd06be8c74479cf9c31a957fa3",
+    "inputs_sha256": "8f2dd199023dd034f9057b780da4b2d76a9486ae2d10e9d0c788fddf97192fa4",
+    "plan_sha256": "b3c6fb90fdb8b53be8a9d25dd991a384c630da959a6e4b509160e30e1cad9913",
+    "script_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce",
+    "topology_sha256": "8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed"
+  },
+  "interpretation_limits": [
+    "all cuts preserve complete equality blocks",
+    "no replacement protocol selected",
+    "geometric occupancy upper bound is not evidence of useful or predictive bins",
+    "no old count target, model or training"
+  ],
+  "items": 20540,
+  "nine_quantile_pairs": [
+    {
+      "abs_rsi_key_axis": {
+        "above": 8595,
+        "below": 0,
+        "cut": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "cut_is_largest_tie": true,
+        "equal": 11945,
+        "equal_cut_fraction": 0.5815481986368062,
+        "high": 8595,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 11945,
+        "unique_high": 437,
+        "unique_low": 1,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 6047,
+        "HL": 9358,
+        "LH": 2548,
+        "LL": 2587
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 6047,
+          "unique_coordinate_pairs": 368,
+          "unique_rsd": 165,
+          "unique_rsi_keys": 280
+        },
+        "HL": {
+          "items": 9358,
+          "unique_coordinate_pairs": 2,
+          "unique_rsd": 2,
+          "unique_rsi_keys": 1
+        },
+        "LH": {
+          "items": 2548,
+          "unique_coordinate_pairs": 427,
+          "unique_rsd": 388,
+          "unique_rsi_keys": 216
+        },
+        "LL": {
+          "items": 2587,
+          "unique_coordinate_pairs": 9,
+          "unique_rsd": 9,
+          "unique_rsi_keys": 1
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.1240506329113924,
+      "minimum_quadrant_items": 2548,
+      "occupied_quadrants": 4,
+      "q_abs_rsi": "1/4",
+      "q_rsd": "1/4",
+      "rsd_axis": {
+        "above": 15405,
+        "below": 5134,
+        "cut": {
+          "denominator": 1957835390140,
+          "numerator": 489723933
+        },
+        "cut_is_largest_tie": false,
+        "equal": 1,
+        "equal_cut_fraction": 4.868549172346641e-05,
+        "high": 15405,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 5135,
+        "unique_high": 166,
+        "unique_low": 395,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 8595,
+        "below": 0,
+        "cut": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "cut_is_largest_tie": true,
+        "equal": 11945,
+        "equal_cut_fraction": 0.5815481986368062,
+        "high": 8595,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 11945,
+        "unique_high": 437,
+        "unique_low": 1,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 6047,
+        "HL": 9358,
+        "LH": 2548,
+        "LL": 2587
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 6047,
+          "unique_coordinate_pairs": 368,
+          "unique_rsd": 165,
+          "unique_rsi_keys": 280
+        },
+        "HL": {
+          "items": 9358,
+          "unique_coordinate_pairs": 2,
+          "unique_rsd": 2,
+          "unique_rsi_keys": 1
+        },
+        "LH": {
+          "items": 2548,
+          "unique_coordinate_pairs": 427,
+          "unique_rsd": 388,
+          "unique_rsi_keys": 216
+        },
+        "LL": {
+          "items": 2587,
+          "unique_coordinate_pairs": 9,
+          "unique_rsd": 9,
+          "unique_rsi_keys": 1
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.1240506329113924,
+      "minimum_quadrant_items": 2548,
+      "occupied_quadrants": 4,
+      "q_abs_rsi": "1/2",
+      "q_rsd": "1/4",
+      "rsd_axis": {
+        "above": 15405,
+        "below": 5134,
+        "cut": {
+          "denominator": 1957835390140,
+          "numerator": 489723933
+        },
+        "cut_is_largest_tie": false,
+        "equal": 1,
+        "equal_cut_fraction": 4.868549172346641e-05,
+        "high": 15405,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 5135,
+        "unique_high": 166,
+        "unique_low": 395,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 0,
+        "below": 12948,
+        "cut": {
+          "denominator": 1,
+          "numerator": 1000000000000
+        },
+        "cut_is_largest_tie": false,
+        "equal": 7592,
+        "equal_cut_fraction": 0.369620253164557,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 438,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 15405,
+        "LH": 0,
+        "LL": 5135
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 15405,
+          "unique_coordinate_pairs": 370,
+          "unique_rsd": 166,
+          "unique_rsi_keys": 281
+        },
+        "LH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LL": {
+          "items": 5135,
+          "unique_coordinate_pairs": 436,
+          "unique_rsd": 395,
+          "unique_rsi_keys": 217
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 2,
+      "q_abs_rsi": "3/4",
+      "q_rsd": "1/4",
+      "rsd_axis": {
+        "above": 15405,
+        "below": 5134,
+        "cut": {
+          "denominator": 1957835390140,
+          "numerator": 489723933
+        },
+        "cut_is_largest_tie": false,
+        "equal": 1,
+        "equal_cut_fraction": 4.868549172346641e-05,
+        "high": 15405,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 5135,
+        "unique_high": 166,
+        "unique_low": 395,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 8595,
+        "below": 0,
+        "cut": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "cut_is_largest_tie": true,
+        "equal": 11945,
+        "equal_cut_fraction": 0.5815481986368062,
+        "high": 8595,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 11945,
+        "unique_high": 437,
+        "unique_low": 1,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 0,
+        "LH": 8595,
+        "LL": 11945
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LH": {
+          "items": 8595,
+          "unique_coordinate_pairs": 795,
+          "unique_rsd": 553,
+          "unique_rsi_keys": 437
+        },
+        "LL": {
+          "items": 11945,
+          "unique_coordinate_pairs": 11,
+          "unique_rsd": 11,
+          "unique_rsi_keys": 1
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 2,
+      "q_abs_rsi": "1/4",
+      "q_rsd": "1/2",
+      "rsd_axis": {
+        "above": 0,
+        "below": 5656,
+        "cut": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        },
+        "cut_is_largest_tie": true,
+        "equal": 14884,
+        "equal_cut_fraction": 0.724634858812074,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 561,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 8595,
+        "below": 0,
+        "cut": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "cut_is_largest_tie": true,
+        "equal": 11945,
+        "equal_cut_fraction": 0.5815481986368062,
+        "high": 8595,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 11945,
+        "unique_high": 437,
+        "unique_low": 1,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 0,
+        "LH": 8595,
+        "LL": 11945
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LH": {
+          "items": 8595,
+          "unique_coordinate_pairs": 795,
+          "unique_rsd": 553,
+          "unique_rsi_keys": 437
+        },
+        "LL": {
+          "items": 11945,
+          "unique_coordinate_pairs": 11,
+          "unique_rsd": 11,
+          "unique_rsi_keys": 1
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 2,
+      "q_abs_rsi": "1/2",
+      "q_rsd": "1/2",
+      "rsd_axis": {
+        "above": 0,
+        "below": 5656,
+        "cut": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        },
+        "cut_is_largest_tie": true,
+        "equal": 14884,
+        "equal_cut_fraction": 0.724634858812074,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 561,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 0,
+        "below": 12948,
+        "cut": {
+          "denominator": 1,
+          "numerator": 1000000000000
+        },
+        "cut_is_largest_tie": false,
+        "equal": 7592,
+        "equal_cut_fraction": 0.369620253164557,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 438,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 0,
+        "LH": 0,
+        "LL": 20540
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LL": {
+          "items": 20540,
+          "unique_coordinate_pairs": 806,
+          "unique_rsd": 561,
+          "unique_rsi_keys": 438
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 1,
+      "q_abs_rsi": "3/4",
+      "q_rsd": "1/2",
+      "rsd_axis": {
+        "above": 0,
+        "below": 5656,
+        "cut": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        },
+        "cut_is_largest_tie": true,
+        "equal": 14884,
+        "equal_cut_fraction": 0.724634858812074,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 561,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 8595,
+        "below": 0,
+        "cut": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "cut_is_largest_tie": true,
+        "equal": 11945,
+        "equal_cut_fraction": 0.5815481986368062,
+        "high": 8595,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 11945,
+        "unique_high": 437,
+        "unique_low": 1,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 0,
+        "LH": 8595,
+        "LL": 11945
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LH": {
+          "items": 8595,
+          "unique_coordinate_pairs": 795,
+          "unique_rsd": 553,
+          "unique_rsi_keys": 437
+        },
+        "LL": {
+          "items": 11945,
+          "unique_coordinate_pairs": 11,
+          "unique_rsd": 11,
+          "unique_rsi_keys": 1
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 2,
+      "q_abs_rsi": "1/4",
+      "q_rsd": "3/4",
+      "rsd_axis": {
+        "above": 0,
+        "below": 5656,
+        "cut": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        },
+        "cut_is_largest_tie": true,
+        "equal": 14884,
+        "equal_cut_fraction": 0.724634858812074,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 561,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 8595,
+        "below": 0,
+        "cut": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "cut_is_largest_tie": true,
+        "equal": 11945,
+        "equal_cut_fraction": 0.5815481986368062,
+        "high": 8595,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 11945,
+        "unique_high": 437,
+        "unique_low": 1,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 0,
+        "LH": 8595,
+        "LL": 11945
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LH": {
+          "items": 8595,
+          "unique_coordinate_pairs": 795,
+          "unique_rsd": 553,
+          "unique_rsi_keys": 437
+        },
+        "LL": {
+          "items": 11945,
+          "unique_coordinate_pairs": 11,
+          "unique_rsd": 11,
+          "unique_rsi_keys": 1
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 2,
+      "q_abs_rsi": "1/2",
+      "q_rsd": "3/4",
+      "rsd_axis": {
+        "above": 0,
+        "below": 5656,
+        "cut": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        },
+        "cut_is_largest_tie": true,
+        "equal": 14884,
+        "equal_cut_fraction": 0.724634858812074,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 561,
+        "unique_values": 561
+      }
+    },
+    {
+      "abs_rsi_key_axis": {
+        "above": 0,
+        "below": 12948,
+        "cut": {
+          "denominator": 1,
+          "numerator": 1000000000000
+        },
+        "cut_is_largest_tie": false,
+        "equal": 7592,
+        "equal_cut_fraction": 0.369620253164557,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.5815481986368062,
+        "largest_tie_items": 11945,
+        "largest_tie_values": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 438,
+        "unique_values": 438
+      },
+      "counts": {
+        "HH": 0,
+        "HL": 0,
+        "LH": 0,
+        "LL": 20540
+      },
+      "distinct_values_by_quadrant": {
+        "HH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "HL": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LH": {
+          "items": 0,
+          "unique_coordinate_pairs": 0,
+          "unique_rsd": 0,
+          "unique_rsi_keys": 0
+        },
+        "LL": {
+          "items": 20540,
+          "unique_coordinate_pairs": 806,
+          "unique_rsd": 561,
+          "unique_rsi_keys": 438
+        }
+      },
+      "items": 20540,
+      "minimum_quadrant_fraction": 0.0,
+      "minimum_quadrant_items": 0,
+      "occupied_quadrants": 1,
+      "q_abs_rsi": "3/4",
+      "q_rsd": "3/4",
+      "rsd_axis": {
+        "above": 0,
+        "below": 5656,
+        "cut": {
+          "denominator": 977056847090,
+          "numerator": 372576591
+        },
+        "cut_is_largest_tie": true,
+        "equal": 14884,
+        "equal_cut_fraction": 0.724634858812074,
+        "high": 0,
+        "items": 20540,
+        "largest_tie_fraction": 0.724634858812074,
+        "largest_tie_items": 14884,
+        "largest_tie_values": [
+          {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          }
+        ],
+        "low": 20540,
+        "unique_high": 0,
+        "unique_low": 561,
+        "unique_values": 561
+      }
+    }
+  ],
+  "profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "runtime": {
+    "elapsed_seconds": 0.7740286660000493,
+    "execution_surface": "dedicated independent local CPU CLI; no model, API, GPU or training launcher",
+    "numpy": "2.3.5",
+    "peak_rss_native_units": 47120384,
+    "peak_rss_units": "bytes on macOS; kibibytes on Linux",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]"
+  },
+  "v2_median_correspondence_checked_items": 20540
+}

@@ -1,0 +1,391 @@
+{
+  "schema": "rolemap.uniform_baseline_diagnostic.v1",
+  "created_utc": "2026-10-19T09:27:30.574389+00:00",
+  "status": "POSTHOC_DIAGNOSTIC_ONLY",
+  "protocol_changed": false,
+  "primary_result_or_gate_changed": false,
+  "model_reselection_performed": false,
+  "source_bindings": {
+    "fitted_main_sha256": "158e9def7a22316185a6bb501fa70d166e497b8b64816cb1b20f4aad2ed99800",
+    "audit_main_results_sha256": "313399e123bebd89aac1dc73a93cb79b134f19941c274cc1ade4439f0155b4a9",
+    "validation_sha256": "bf82a16dba7f01a6c52d4e59bddc84df8741970195781afec4d6506ac7ab7dd5",
+    "audit_sha256": "d17775c9a7c4fa9b82273b9d3c23d52f11c732abbc9117a02f64065fa9efbf75"
+  },
+  "uniform_definition": "p(i|g)=1/group_size; natural-log loss; same request/group/member weights",
+  "views": [
+    {
+      "view": "gensar_shared2",
+      "status": "FITTED",
+      "results": {
+        "validation": {
+          "uniform_loss_nats": {
+            "search": 1.6863630352347503,
+            "rec": 1.753873629959177,
+            "macro": 1.7201183325969636
+          },
+          "scored_requests": {
+            "search": 494,
+            "rec": 949
+          },
+          "selected_blind_loss_nats": {
+            "macro": 1.6794964599900077,
+            "rec": 1.6613218661279219,
+            "search": 1.6976710538520936
+          },
+          "selected_aware_loss_nats": {
+            "macro": 1.662582606884337,
+            "rec": 1.6535256170737735,
+            "search": 1.6716395966949007
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.014723438539849587,
+            "rec": 0.10034801288540351,
+            "macro": 0.05753572571262655
+          },
+          "uniform_minus_blind_nats": {
+            "search": -0.011308018617343318,
+            "rec": 0.09255176383125518,
+            "macro": 0.04062187260695582
+          }
+        },
+        "audit": {
+          "uniform_loss_nats": {
+            "search": 1.698613233426806,
+            "rec": 1.798093542514642,
+            "macro": 1.748353387970724
+          },
+          "scored_requests": {
+            "search": 528,
+            "rec": 1067
+          },
+          "selected_blind_loss_nats": {
+            "macro": 1.7056143396960919,
+            "rec": 1.7062442320203348,
+            "search": 1.7049844473718492
+          },
+          "selected_aware_loss_nats": {
+            "macro": 1.6929281581329374,
+            "rec": 1.702655263880605,
+            "search": 1.6832010523852698
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.015412181041536188,
+            "rec": 0.09543827863403709,
+            "macro": 0.05542522983778664
+          },
+          "uniform_minus_blind_nats": {
+            "search": -0.0063712139450431415,
+            "rec": 0.09184931049430722,
+            "macro": 0.04273904827463215
+          }
+        }
+      }
+    },
+    {
+      "view": "gensar_semantic_complete",
+      "status": "FITTED",
+      "results": {
+        "validation": {
+          "uniform_loss_nats": {
+            "search": 1.2157719396355944,
+            "rec": 1.254826348300211,
+            "macro": 1.2352991439679026
+          },
+          "scored_requests": {
+            "search": 235,
+            "rec": 476
+          },
+          "selected_blind_loss_nats": {
+            "macro": 1.2209441539418995,
+            "rec": 1.2413527890221356,
+            "search": 1.2005355188616635
+          },
+          "selected_aware_loss_nats": {
+            "macro": 1.2104228291378782,
+            "rec": 1.2269363623727434,
+            "search": 1.1939092959030133
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.021862643732581066,
+            "rec": 0.027889985927467498,
+            "macro": 0.024876314830024393
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.015236420773930837,
+            "rec": 0.013473559278075253,
+            "macro": 0.014354990026003156
+          }
+        },
+        "audit": {
+          "uniform_loss_nats": {
+            "search": 1.2528769392954573,
+            "rec": 1.2733552748180956,
+            "macro": 1.2631161070567765
+          },
+          "scored_requests": {
+            "search": 249,
+            "rec": 543
+          },
+          "selected_blind_loss_nats": {
+            "macro": 1.2540576815764428,
+            "rec": 1.2628980753252494,
+            "search": 1.2452172878276362
+          },
+          "selected_aware_loss_nats": {
+            "macro": 1.2504879631823502,
+            "rec": 1.2560101530351213,
+            "search": 1.2449657733295791
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.007911165965878153,
+            "rec": 0.017345121782974315,
+            "macro": 0.012628143874426234
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.007659651467821105,
+            "rec": 0.010457199492846181,
+            "macro": 0.009058425480333643
+          }
+        }
+      }
+    },
+    {
+      "view": "gensar_collaborative_complete",
+      "status": "FITTED",
+      "results": {
+        "validation": {
+          "uniform_loss_nats": {
+            "search": 1.4746485285705802,
+            "rec": 1.8993998978941007,
+            "macro": 1.6870242132323403
+          },
+          "scored_requests": {
+            "search": 272,
+            "rec": 418
+          },
+          "selected_blind_loss_nats": {
+            "macro": 1.6856116375470904,
+            "rec": 1.8981655835370685,
+            "search": 1.4730576915571125
+          },
+          "selected_aware_loss_nats": {
+            "macro": 1.6855919490056235,
+            "rec": 1.8981262064541344,
+            "search": 1.4730576915571125
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.0015908370134676275,
+            "rec": 0.0012736914399662513,
+            "macro": 0.0014322642267168284
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.0015908370134676275,
+            "rec": 0.0012343143570321402,
+            "macro": 0.0014125756852498839
+          }
+        },
+        "audit": {
+          "uniform_loss_nats": {
+            "search": 1.4675900727725233,
+            "rec": 1.9784668297148225,
+            "macro": 1.7230284512436729
+          },
+          "scored_requests": {
+            "search": 310,
+            "rec": 454
+          },
+          "selected_blind_loss_nats": {
+            "macro": 1.7237269706886713,
+            "rec": 1.9781306658144069,
+            "search": 1.4693232755629357
+          },
+          "selected_aware_loss_nats": {
+            "macro": 1.7237480638192715,
+            "rec": 1.9781462319021907,
+            "search": 1.4693498957363522
+          },
+          "uniform_minus_aware_nats": {
+            "search": -0.0017598229638289276,
+            "rec": 0.0003205978126317177,
+            "macro": -0.0007196125755986049
+          },
+          "uniform_minus_blind_nats": {
+            "search": -0.001733202790412447,
+            "rec": 0.00033616390041557587,
+            "macro": -0.0006985194449984355
+          }
+        }
+      }
+    },
+    {
+      "view": "gaoq_depth1",
+      "status": "FITTED",
+      "results": {
+        "validation": {
+          "uniform_loss_nats": {
+            "search": 6.4643398150665945,
+            "rec": 6.464427777820792,
+            "macro": 6.464383796443693
+          },
+          "scored_requests": {
+            "search": 543,
+            "rec": 1050
+          },
+          "selected_blind_loss_nats": {
+            "macro": 6.367329179756096,
+            "rec": 6.2835448567155145,
+            "search": 6.451113502796678
+          },
+          "selected_aware_loss_nats": {
+            "macro": 6.355018029664851,
+            "rec": 6.270093975287715,
+            "search": 6.439942084041989
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.02439773102460574,
+            "rec": 0.19433380253307764,
+            "macro": 0.10936576677884169
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.013226312269916107,
+            "rec": 0.18088292110527782,
+            "macro": 0.09705461668759696
+          }
+        },
+        "audit": {
+          "uniform_loss_nats": {
+            "search": 6.464336876930293,
+            "rec": 6.464417871300573,
+            "macro": 6.464377374115433
+          },
+          "scored_requests": {
+            "search": 576,
+            "rec": 1169
+          },
+          "selected_blind_loss_nats": {
+            "macro": 6.3835154624444606,
+            "rec": 6.320578306607306,
+            "search": 6.446452618281616
+          },
+          "selected_aware_loss_nats": {
+            "macro": 6.377235578420308,
+            "rec": 6.310190848445748,
+            "search": 6.444280308394868
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.020056568535425257,
+            "rec": 0.15422702285482526,
+            "macro": 0.08714179569512481
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.017884258648677154,
+            "rec": 0.14383956469326709,
+            "macro": 0.08086191167097212
+          }
+        }
+      }
+    },
+    {
+      "view": "gaoq_depth2",
+      "status": "FITTED",
+      "results": {
+        "validation": {
+          "uniform_loss_nats": {
+            "search": 2.3059014834342824,
+            "rec": 2.3098567626305653,
+            "macro": 2.307879123032424
+          },
+          "scored_requests": {
+            "search": 543,
+            "rec": 1050
+          },
+          "selected_blind_loss_nats": {
+            "macro": 2.2640936265369467,
+            "rec": 2.2329814093069094,
+            "search": 2.2952058437669836
+          },
+          "selected_aware_loss_nats": {
+            "macro": 2.2514649861580818,
+            "rec": 2.211813440525557,
+            "search": 2.291116531790606
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.014784951643676436,
+            "rec": 0.0980433221050081,
+            "macro": 0.05641413687434227
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.010695639667298806,
+            "rec": 0.07687535332365592,
+            "macro": 0.04378549649547736
+          }
+        },
+        "audit": {
+          "uniform_loss_nats": {
+            "search": 2.3043891634766482,
+            "rec": 2.3100785412706455,
+            "macro": 2.307233852373647
+          },
+          "scored_requests": {
+            "search": 576,
+            "rec": 1169
+          },
+          "selected_blind_loss_nats": {
+            "macro": 2.2709615796752054,
+            "rec": 2.2554267997119917,
+            "search": 2.2864963596384187
+          },
+          "selected_aware_loss_nats": {
+            "macro": 2.2625193990039794,
+            "rec": 2.2425208854811873,
+            "search": 2.282517912526771
+          },
+          "uniform_minus_aware_nats": {
+            "search": 0.021871250949877297,
+            "rec": 0.06755765578945816,
+            "macro": 0.044714453369667506
+          },
+          "uniform_minus_blind_nats": {
+            "search": 0.017892803838229554,
+            "rec": 0.05465174155865382,
+            "macro": 0.036272272698441466
+          }
+        }
+      }
+    },
+    {
+      "view": "gaoq_depth3",
+      "status": "NO_COLLISION_CONTROL",
+      "results": {
+        "validation": {
+          "uniform_loss_nats": {
+            "search": null,
+            "rec": null,
+            "macro": null
+          },
+          "scored_requests": {
+            "search": 0,
+            "rec": 0
+          }
+        },
+        "audit": {
+          "uniform_loss_nats": {
+            "search": null,
+            "rec": null,
+            "macro": null
+          },
+          "scored_requests": {
+            "search": 0,
+            "rec": 0
+          }
+        }
+      }
+    }
+  ],
+  "uniform_worse_than_selected_blind_on_all_noncontrol_tuning_macros": true,
+  "primary_practical_interpretation_changed": false,
+  "causal_role_information_claim_supported": false,
+  "effective_shrinkage_is_part_of_model_choice": true,
+  "new_uniform_confidence_intervals_computed": false,
+  "raw_response_path": "review/UNIFORM_BASELINE_DIAGNOSTIC.md"
+}

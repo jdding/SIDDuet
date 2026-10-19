@@ -1,0 +1,156 @@
+{
+  "builder_sha256": "755bc709fc100b723ac8309691b0d896fcd86160507168a4f23e16ac4e8e8d6c",
+  "cell_counts": {
+    "kuaisar_unisar_processed::high_rsd|high_rsi": 0,
+    "kuaisar_unisar_processed::high_rsd|low_rsi": 4532,
+    "kuaisar_unisar_processed::low_rsd|high_rsi": 0,
+    "kuaisar_unisar_processed::low_rsd|low_rsi": 4572
+  },
+  "dataset_common_items": {
+    "kuaisar_unisar_processed": 9104
+  },
+  "datasets": 1,
+  "empty_high_axes": {
+    "kuaisar_unisar_processed": [
+      "rsi_mag"
+    ]
+  },
+  "input": {
+    "bytes": 5633292,
+    "name": "role_label_counts.csv",
+    "sha256": "9a75d710d4a47e73cc3023fe2a5717bd572c2ce488c0e16f3bec293c120a78ed"
+  },
+  "input_datasets": 1,
+  "items": 9104,
+  "median_diagnostics": {
+    "kuaisar_unisar_processed": {
+      "rsd_score": {
+        "above_median_items": 4532,
+        "at_median_items": 40,
+        "below_median_items": 4532,
+        "comparison": "exact_rrf_fraction",
+        "decision_zero_items": 0,
+        "degenerate_axis": false,
+        "empty_high": false,
+        "high_items": 4532,
+        "items": 9104,
+        "key_zero_items": 0,
+        "low_items": 4572,
+        "median": {
+          "denominator": 4017028972,
+          "numerator": 3487885
+        },
+        "median_tie_items": 40,
+        "raw_zero_items": 0,
+        "status": "pass",
+        "unique_decision_values": 1409
+      },
+      "rsi_mag": {
+        "above_median_items": 0,
+        "at_median_items": 8331,
+        "below_median_items": 773,
+        "comparison": "q12_integer_units",
+        "decision_zero_items": 2,
+        "degenerate_axis": false,
+        "empty_high": true,
+        "high_items": 0,
+        "items": 9104,
+        "key_zero_items": 2,
+        "low_items": 9104,
+        "median": {
+          "denominator": 1,
+          "numerator": 1000000000000
+        },
+        "median_tie_items": 8331,
+        "raw_zero_items": 2,
+        "status": "pass",
+        "unique_decision_values": 589
+      }
+    }
+  },
+  "occupied_cell_counts": {
+    "kuaisar_unisar_processed": 2
+  },
+  "occupied_cells": {
+    "kuaisar_unisar_processed": [
+      "low_rsd|low_rsi",
+      "high_rsd|low_rsi"
+    ]
+  },
+  "output_csv_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+  "parameters": {
+    "binning": "H iff value > median; L iff value <= median; all ties stay together",
+    "item_order": "canonical ASCII integers numerically, then opaque IDs by Unicode string",
+    "median": "ordinary exact median; arithmetic mean of central values for even n",
+    "q12_scope": "engineering equivalence relation, not a calibrated error bound or tunable parameter",
+    "rank_quantum": "0.000000000001",
+    "rank_ties": "average one-based ranks stored as twice-rank integers",
+    "raw_float_csv_format": ".12g display only; exact decision fields and binary64 hex preserved",
+    "rounding": "decimal half-even of shortest float string",
+    "rrf_k": 60,
+    "rsd_comparison": "exact sum of Fraction(2,120+twice_rank); no second quantization",
+    "rsi_comparison": "Q12(abs(raw RSI)) integer units",
+    "rsi_denominator_floor": 1e-12,
+    "rsi_direction_comparison": "raw binary64 signed RSI; strictly > epsilon / < -epsilon; otherwise balanced",
+    "rsi_direction_epsilon": 0.05
+  },
+  "profile_contract_sha256": "d2c333ffaff5008f2ddce74de688ef08727ed00744f47040b97e67d6de370a2f",
+  "profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "runtime": {
+    "implementation": "CPython",
+    "libc": [
+      "",
+      ""
+    ],
+    "machine": "arm64",
+    "math_backend_scope": "CPython math extension and host libm; no universal cross-platform equivalence claim",
+    "math_extension_sha256": "af6caa19dc6588187ddea18846cd71d87743c440c977721e9d49b3c0c8dea6d4",
+    "os_version": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:57 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8132",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+    "python_build": [
+      "default",
+      "Aug 25 2026 21:26:21"
+    ],
+    "python_compiler": "Clang 21.0.0 (clang-2100.3.34.2)",
+    "release": "27.0.0",
+    "system": "Darwin"
+  },
+  "schema": "sr_sid_rolemap.role_topology_summary.v2",
+  "semantic_hash_encoding": "canonical output-order JSON lines; UTF-8; ensure_ascii=false; sorted keys; compact separators; LF",
+  "semantic_hash_fields": [
+    "dataset",
+    "item_id",
+    "profile_id",
+    "js_rank_key",
+    "neighbor_rank_key",
+    "top_label_rank_key",
+    "js_twice_rank",
+    "neighbor_twice_rank",
+    "top_label_twice_rank",
+    "rsd_numerator",
+    "rsd_denominator",
+    "rsi_split_key",
+    "rsd_at_median",
+    "rsi_at_median",
+    "rsi_direction",
+    "rsd_bucket",
+    "rsi_mag_bucket",
+    "topology_cell"
+  ],
+  "semantic_hash_integer_fields": [
+    "js_rank_key",
+    "neighbor_rank_key",
+    "top_label_rank_key",
+    "js_twice_rank",
+    "neighbor_twice_rank",
+    "top_label_twice_rank",
+    "rsd_numerator",
+    "rsd_denominator",
+    "rsi_split_key",
+    "rsd_at_median",
+    "rsi_at_median"
+  ],
+  "semantic_key_rank_partition_sha256": "a900643bada1fe1274c9c61e3b2c2d188463184f32b6d89822fe1169d85dee6b",
+  "status": "pass"
+}

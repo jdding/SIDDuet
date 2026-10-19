@@ -1,0 +1,528 @@
+{
+  "complete_maps_exported": false,
+  "date": "2026-10-19",
+  "fake_or_autoapproved_gate_created": false,
+  "files": [
+    {
+      "export_bytes": 31630,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/code/population_analysis.py",
+      "export_sha256": "84df7129b1cbc146b0ae9da754a772de667e361a7ad3acf5619d1f11cf4c6b29",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 31630,
+      "source_relative_to_diagnostic_run": "code/population_analysis.py",
+      "source_sha256": "84df7129b1cbc146b0ae9da754a772de667e361a7ad3acf5619d1f11cf4c6b29",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 21690,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/code/exact_total_analysis.py",
+      "export_sha256": "61a915769721724685f704aa3b1ba1169e6b5d32c88f3f01de793c7adf332158",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 21690,
+      "source_relative_to_diagnostic_run": "code/exact_total_analysis.py",
+      "source_sha256": "61a915769721724685f704aa3b1ba1169e6b5d32c88f3f01de793c7adf332158",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 30644,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/code/tie_source_analysis.py",
+      "export_sha256": "f7297b15bac9b80ec68cf4fe0fd86b0b01e264a4f85d8364e3f996cea6f4065e",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 30644,
+      "source_relative_to_diagnostic_run": "code/tie_source_analysis.py",
+      "source_sha256": "f7297b15bac9b80ec68cf4fe0fd86b0b01e264a4f85d8364e3f996cea6f4065e",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 17747,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/code/threshold_sensitivity.py",
+      "export_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 17747,
+      "source_relative_to_diagnostic_run": "code/threshold_sensitivity.py",
+      "source_sha256": "b34ba148e005c0eea3c3cc9aa323caaf22fdf04abef4fb55358b3776bdfc9cce",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 8729,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/protocols/PRIMARY_ANALYSIS_CONTRACT.md",
+      "export_sha256": "88b44d37cce2315654d610fb2cc7a992c4d00a9088a1a2df5d05244cf30c6c0c",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 8729,
+      "source_relative_to_diagnostic_run": "ANALYSIS_CONTRACT.md",
+      "source_sha256": "88b44d37cce2315654d610fb2cc7a992c4d00a9088a1a2df5d05244cf30c6c0c",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 6837,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/protocols/EXACT_TOTAL_PLAN.md",
+      "export_sha256": "eadfe65c9e2cfc883298369b7771a836a2a8bb68f574132afb34a1821dd18312",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 6837,
+      "source_relative_to_diagnostic_run": "augmentation/EXACT_TOTAL_PLAN.md",
+      "source_sha256": "eadfe65c9e2cfc883298369b7771a836a2a8bb68f574132afb34a1821dd18312",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 5763,
+      "export_relative_to_resource": "analysis/diagnostic_extension_20261019/protocols/THRESHOLD_PLAN.md",
+      "export_sha256": "b3c6fb90fdb8b53be8a9d25dd991a384c630da959a6e4b509160e30e1cad9913",
+      "frozen_source_or_protocol": true,
+      "source_bytes": 5763,
+      "source_relative_to_diagnostic_run": "augmentation/THRESHOLD_PLAN.md",
+      "source_sha256": "b3c6fb90fdb8b53be8a9d25dd991a384c630da959a6e4b509160e30e1cad9913",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 301612,
+      "export_relative_to_resource": "reports/diagnostics_20261019/population/POPULATION_RESULTS.json",
+      "export_sha256": "cf4e6390265b72b8d8f5a0c401002ac9f86eb117cdd51ec51531416a8cc3a5f6",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 302296,
+      "source_relative_to_diagnostic_run": "population/full/POPULATION_RESULTS.json",
+      "source_sha256": "b9e5ade19db56479e2ad164503e1d1b17bcff2316c03d354f0fcce0ce82a28e9",
+      "transformation": "json_project_path_redaction",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 5145,
+        "project_prefix_replacements": 18,
+        "strings": 99
+      }
+    },
+    {
+      "export_bytes": 4267805,
+      "export_relative_to_resource": "reports/diagnostics_20261019/population/NULL_AGGREGATE_DRAWS.json",
+      "export_sha256": "79fb82e145eae2c17a476353db0ae601bc4591f502d32a11344c28fb724a00fc",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 4267805,
+      "source_relative_to_diagnostic_run": "population/full/NULL_AGGREGATE_DRAWS.json",
+      "source_sha256": "79fb82e145eae2c17a476353db0ae601bc4591f502d32a11344c28fb724a00fc",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 157608,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 8554,
+      "export_relative_to_resource": "reports/diagnostics_20261019/population/EXECUTION_RECEIPT.json",
+      "export_sha256": "2a69770c50d55abcba8e5c173e1078c300670f6de7875b71ea96afbee5d0e909",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 9542,
+      "source_relative_to_diagnostic_run": "population/full/EXECUTION_RECEIPT.json",
+      "source_sha256": "132e100389586a3306af60c4baeadf2510f7ac62a32dd94f513bd8d5bae8aa40",
+      "transformation": "json_project_path_redaction",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 52,
+        "project_prefix_replacements": 26,
+        "strings": 70
+      }
+    },
+    {
+      "export_bytes": 286293,
+      "export_relative_to_resource": "reports/diagnostics_20261019/exact_total/EXACT_TOTAL_RESULTS.json",
+      "export_sha256": "6a91dd8d83dd37a527de847e18ccd8533946a6e75feacfbe499a4dc98a0b2371",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 287053,
+      "source_relative_to_diagnostic_run": "augmentation/exact_total/full/EXACT_TOTAL_RESULTS.json",
+      "source_sha256": "04fa97a111520df0024c3c763cae70310ca4f5c55905eddb8fd8ea18bbb7b6bb",
+      "transformation": "json_project_path_redaction",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 3337,
+        "project_prefix_replacements": 20,
+        "strings": 1302
+      }
+    },
+    {
+      "export_bytes": 1963794,
+      "export_relative_to_resource": "reports/diagnostics_20261019/exact_total/NULL_AGGREGATE_DRAWS.json",
+      "export_sha256": "0c2a6e5850d5885eb9e678d78ad44f99960ce70b26c5b95fc5dcc780a5c3924b",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 1963794,
+      "source_relative_to_diagnostic_run": "augmentation/exact_total/full/NULL_AGGREGATE_DRAWS.json",
+      "source_sha256": "0c2a6e5850d5885eb9e678d78ad44f99960ce70b26c5b95fc5dcc780a5c3924b",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 78804,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 9212,
+      "export_relative_to_resource": "reports/diagnostics_20261019/exact_total/EXECUTION_RECEIPT.json",
+      "export_sha256": "93ef8d74c871998b4a52cc524bf7f9d9cdd1ef5200b29bdb3cec87deecad64e1",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 10276,
+      "source_relative_to_diagnostic_run": "augmentation/exact_total/full/EXECUTION_RECEIPT.json",
+      "source_sha256": "7dfdc6fa891fc853d40b43caeb6043b5de740c0f0ccf7a49f1486b29470f14c0",
+      "transformation": "json_project_path_redaction",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 52,
+        "project_prefix_replacements": 28,
+        "strings": 77
+      }
+    },
+    {
+      "export_bytes": 1357,
+      "export_relative_to_resource": "reports/diagnostics_20261019/exact_total/TABLE.csv",
+      "export_sha256": "5755d0214be9e15dc73532c358de0738993d94d8523a31f6781619d737ce4292",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 1357,
+      "source_relative_to_diagnostic_run": "augmentation/exact_total/TABLE.csv",
+      "source_sha256": "5755d0214be9e15dc73532c358de0738993d94d8523a31f6781619d737ce4292",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 380266,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/kuaisar/component_triples.csv",
+      "export_sha256": "279e325c63bb3eb30e13c672de78682abbcabcd02195f3cdab5c0e88f8c76d5d",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 380266,
+      "source_relative_to_diagnostic_run": "ties/kuaisar/component_triples.csv",
+      "source_sha256": "279e325c63bb3eb30e13c672de78682abbcabcd02195f3cdab5c0e88f8c76d5d",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 193329,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/kuaisar/exact_rsd_tie_decomposition.csv",
+      "export_sha256": "ae246af447fb2b6e77ba74611ff36dc88a03e6d13d64939011898c5c4611e260",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 193329,
+      "source_relative_to_diagnostic_run": "ties/kuaisar/exact_rsd_tie_decomposition.csv",
+      "source_sha256": "ae246af447fb2b6e77ba74611ff36dc88a03e6d13d64939011898c5c4611e260",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 347214,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/kuaisar/js_raw_key_merges.csv",
+      "export_sha256": "e014accd6176b486c62ae141b40f43e1028c687167bfbf829a7348b6b1226331",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 347214,
+      "source_relative_to_diagnostic_run": "ties/kuaisar/js_raw_key_merges.csv",
+      "source_sha256": "e014accd6176b486c62ae141b40f43e1028c687167bfbf829a7348b6b1226331",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 756,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/kuaisar/receipt.json",
+      "export_sha256": "835ec1e6910df94bdf869f1e52b42f64b0309129b321b4e2421456cd47795b0d",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 756,
+      "source_relative_to_diagnostic_run": "ties/kuaisar/receipt.json",
+      "source_sha256": "835ec1e6910df94bdf869f1e52b42f64b0309129b321b4e2421456cd47795b0d",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 1,
+        "project_prefix_replacements": 0,
+        "strings": 9
+      }
+    },
+    {
+      "export_bytes": 703454,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/kuaisar/summary.json",
+      "export_sha256": "e462349fc8858b7d484a576e10a6d95a37543f0d8582cbbd277f36f6aaeaefcd",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 703454,
+      "source_relative_to_diagnostic_run": "ties/kuaisar/summary.json",
+      "source_sha256": "e462349fc8858b7d484a576e10a6d95a37543f0d8582cbbd277f36f6aaeaefcd",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 14256,
+        "project_prefix_replacements": 0,
+        "strings": 442
+      }
+    },
+    {
+      "export_bytes": 46527,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/qilin/component_triples.csv",
+      "export_sha256": "76f1f11e29e91a32c9e34156d1ed3fda2c2b5806ce815e415441dafa52c75c92",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 46527,
+      "source_relative_to_diagnostic_run": "ties/qilin/component_triples.csv",
+      "source_sha256": "76f1f11e29e91a32c9e34156d1ed3fda2c2b5806ce815e415441dafa52c75c92",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 23187,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/qilin/exact_rsd_tie_decomposition.csv",
+      "export_sha256": "52b7fef1c132a22be93ae430a7099951a4a6d7d0f43c354ea381aee872a7cde5",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 23187,
+      "source_relative_to_diagnostic_run": "ties/qilin/exact_rsd_tie_decomposition.csv",
+      "source_sha256": "52b7fef1c132a22be93ae430a7099951a4a6d7d0f43c354ea381aee872a7cde5",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 40990,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/qilin/js_raw_key_merges.csv",
+      "export_sha256": "78a1e2f2f58546fd05b327752a0fe837aa6598ad2699afb14dc3ab56f8dc1504",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 40990,
+      "source_relative_to_diagnostic_run": "ties/qilin/js_raw_key_merges.csv",
+      "source_sha256": "78a1e2f2f58546fd05b327752a0fe837aa6598ad2699afb14dc3ab56f8dc1504",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 754,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/qilin/receipt.json",
+      "export_sha256": "0bdbeb23dfd58f08a09e2f02168a8e900962e706ae87bb6bbebaa0abe22be6c0",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 754,
+      "source_relative_to_diagnostic_run": "ties/qilin/receipt.json",
+      "source_sha256": "0bdbeb23dfd58f08a09e2f02168a8e900962e706ae87bb6bbebaa0abe22be6c0",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 1,
+        "project_prefix_replacements": 0,
+        "strings": 9
+      }
+    },
+    {
+      "export_bytes": 676995,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/qilin/summary.json",
+      "export_sha256": "33458449517e70ee2b2ec63eb0fc52ba56170cae9f70b584fee775dc216e6e1b",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 676995,
+      "source_relative_to_diagnostic_run": "ties/qilin/summary.json",
+      "source_sha256": "33458449517e70ee2b2ec63eb0fc52ba56170cae9f70b584fee775dc216e6e1b",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 13806,
+        "project_prefix_replacements": 0,
+        "strings": 442
+      }
+    },
+    {
+      "export_bytes": 3877,
+      "export_relative_to_resource": "reports/diagnostics_20261019/ties/TABLE.csv",
+      "export_sha256": "1e2b93b0f0c106bd4c6f7a1aa7ac9623d2d60e8d4cdae9a5256f63df879d575c",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 3877,
+      "source_relative_to_diagnostic_run": "ties/TABLE.csv",
+      "source_sha256": "1e2b93b0f0c106bd4c6f7a1aa7ac9623d2d60e8d4cdae9a5256f63df879d575c",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 24104,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/kuaisar/summary.json",
+      "export_sha256": "790ca3dffa03e7bebfa70e015ec60c9f778f409bca5e709ab3d95366f3455560",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 24104,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/kuaisar/summary.json",
+      "source_sha256": "790ca3dffa03e7bebfa70e015ec60c9f778f409bca5e709ab3d95366f3455560",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 575,
+        "project_prefix_replacements": 0,
+        "strings": 36
+      }
+    },
+    {
+      "export_bytes": 830,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/kuaisar/receipt.json",
+      "export_sha256": "85eb2533ab1879560f0a7ec88770c8f5d3058b489c73472777ce82c2a49ceda8",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 830,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/kuaisar/receipt.json",
+      "source_sha256": "85eb2533ab1879560f0a7ec88770c8f5d3058b489c73472777ce82c2a49ceda8",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 1,
+        "project_prefix_replacements": 0,
+        "strings": 10
+      }
+    },
+    {
+      "export_bytes": 405,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/kuaisar/nine_pairs.csv",
+      "export_sha256": "513eb6555bc72903768fe789ad92a38e0195172001539a87c03d66b70baaddc1",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 405,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/kuaisar/nine_pairs.csv",
+      "source_sha256": "513eb6555bc72903768fe789ad92a38e0195172001539a87c03d66b70baaddc1",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 5494,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/kuaisar/all_maximizing_cut_classes.json",
+      "export_sha256": "0ab7aca3340be629157e69a3f16ea72ddd6ab7a3598d89a39d96c16b7c2031c7",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 5494,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/kuaisar/all_maximizing_cut_classes.json",
+      "source_sha256": "0ab7aca3340be629157e69a3f16ea72ddd6ab7a3598d89a39d96c16b7c2031c7",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 108,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 23788,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/qilin/summary.json",
+      "export_sha256": "fa9f1454ece9d05e8e6309dc18682b8e29b0e3fcfe9eb22ba49a4cd75777bd53",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 23788,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/qilin/summary.json",
+      "source_sha256": "fa9f1454ece9d05e8e6309dc18682b8e29b0e3fcfe9eb22ba49a4cd75777bd53",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 575,
+        "project_prefix_replacements": 0,
+        "strings": 36
+      }
+    },
+    {
+      "export_bytes": 828,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/qilin/receipt.json",
+      "export_sha256": "e01435986f4b8f60ec34daa1a9cd26141b4b6afd10f573483305d54cf9ae2b9f",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 828,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/qilin/receipt.json",
+      "source_sha256": "e01435986f4b8f60ec34daa1a9cd26141b4b6afd10f573483305d54cf9ae2b9f",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 1,
+        "project_prefix_replacements": 0,
+        "strings": 10
+      }
+    },
+    {
+      "export_bytes": 425,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/qilin/nine_pairs.csv",
+      "export_sha256": "3ca9e262e7850479d43fa6fa5f2b2e2070de3143de3bd9919bc2191b15d5d7db",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 425,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/qilin/nine_pairs.csv",
+      "source_sha256": "3ca9e262e7850479d43fa6fa5f2b2e2070de3143de3bd9919bc2191b15d5d7db",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 604,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/qilin/all_maximizing_cut_classes.json",
+      "export_sha256": "8ce4175394b13e3504ee0b4fbc0f8519b5dc313176943358cb6facb9e9e54d75",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 604,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/qilin/all_maximizing_cut_classes.json",
+      "source_sha256": "8ce4175394b13e3504ee0b4fbc0f8519b5dc313176943358cb6facb9e9e54d75",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 12,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    },
+    {
+      "export_bytes": 1853,
+      "export_relative_to_resource": "reports/diagnostics_20261019/thresholds/TABLE.csv",
+      "export_sha256": "4fb9f5f1e925255c333521370dc4fdc632fe40d849378afee6be7cf334c4d16b",
+      "frozen_source_or_protocol": false,
+      "source_bytes": 1853,
+      "source_relative_to_diagnostic_run": "augmentation/thresholds/TABLE.csv",
+      "source_sha256": "4fb9f5f1e925255c333521370dc4fdc632fe40d849378afee6be7cf334c4d16b",
+      "transformation": "byte_copy",
+      "value_preservation_checks": {
+        "nonstring_scalar_values": 0,
+        "project_prefix_replacements": 0,
+        "strings": 0
+      }
+    }
+  ],
+  "numerical_results_changed": false,
+  "profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "raw_item_identifiers_exported": false,
+  "restricted_join_rows_exported": false,
+  "schema": "sr_sid_rolemap.public_diagnostic_export.v1",
+  "source_run": "WWW4_DIAGNOSTIC_EXTENSION_20261018",
+  "transformation_policy": {
+    "code_protocol_csv": "Byte-copy unchanged.",
+    "identity_boundary": "Hashes embedded in original execution receipts continue to identify the original local files. For transformed public files, use export_sha256 in this export map. No byte-identity claim is made for redacted exports.",
+    "json": "Replace only the original local project absolute path prefix in strings with <local-project>. Preserve all other JSON values and hashes. Byte-copy JSON without that prefix."
+  }
+}

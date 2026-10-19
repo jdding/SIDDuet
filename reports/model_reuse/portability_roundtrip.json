@@ -1,0 +1,12 @@
+{
+  "status": "PASS_EXACT_TOPOLOGY_ROUNDTRIP",
+  "users": 1024,
+  "common_items": 320,
+  "input_schema": "catalog_item,service,context_category,observations",
+  "converted_schema": "dataset,item_id,role,label,count",
+  "byte_identical_reference_topology": true,
+  "topology_sha256": "a27222d628e34f644d47eca6fbb15be5c2a561b593db32374465e9102dd30dd8",
+  "requires_qilin_converter": false,
+  "third_independent_dataset": false,
+  "external_adoption": false
+}

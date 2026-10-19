@@ -1,0 +1,460 @@
+{
+  "schema": "sr_sid_rolemap.method_admission_registry.v2",
+  "levels": [
+    "literature_only",
+    "interface_specified",
+    "adapter_verified",
+    "rolemap_executed"
+  ],
+  "scope_definition": "Core coverage is restricted to systems that construct or consume a non-atomic SID shared across search and recommendation and expose an item-to-SID join plus a SID-specific diagnostic surface. Named adjacent systems may have executed score interfaces without admission as a shared-SID core system; component execution and full original-system reproduction are recorded separately.",
+  "scope_partitions": {
+    "core_reference": [
+      "resource_native_joint_t5"
+    ],
+    "core_external": [
+      "gensar"
+    ],
+    "priority_protocol": [
+      "joint_semantic_ids"
+    ],
+    "shared_sid_literature_boundary": [
+      "neo",
+      "one_hierarchy_two_systems"
+    ],
+    "adjacent_non_sid": [
+      "bridging_sr",
+      "gensr",
+      "gems",
+      "intsr",
+      "jsr",
+      "user",
+      "srjgraph",
+      "sesrec",
+      "unisar",
+      "unifiedssr",
+      "uditsr",
+      "usr",
+      "superrs",
+      "gems_gradsubspace_sigir2026",
+      "minsar_www2026",
+      "tubifm_recsys2026",
+      "retrievalformer",
+      "nearest_but_not_dearest",
+      "do_we_really_need_specialization",
+      "spotify_pfr"
+    ]
+  },
+  "methods": [
+    {
+      "method_id": "resource_native_joint_t5",
+      "title": "Resource-native joint T5 carrier",
+      "year": 2026,
+      "paradigm": "generative",
+      "sid_use": "shared_hierarchical_sid",
+      "code_status": "resource_code",
+      "data_status": "licensed_qilin",
+      "admission_level": "rolemap_executed",
+      "supported_surfaces": [
+        "fixed_candidate_ranking",
+        "full_catalog_prefix_survival",
+        "full_catalog_complete_sid_recovery"
+      ],
+      "source_url": "resource_internal"
+    },
+    {
+      "method_id": "bridging_sr",
+      "title": "Bridging Search and Recommendation in Generative Retrieval: Does One Task Help the Other?",
+      "year": 2024,
+      "paradigm": "generative",
+      "sid_use": "joint_atomic_item_identifiers",
+      "code_status": "no_verified_public_code_path",
+      "data_status": "public_derived_search_role_datasets",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking",
+        "full_catalog_complete_sid_recovery"
+      ],
+      "source_url": "https://arxiv.org/abs/2410.16823"
+    },
+    {
+      "method_id": "gensar",
+      "title": "GenSAR: Unifying Balanced Search and Recommendation with Generative Retrieval",
+      "year": 2025,
+      "paradigm": "generative",
+      "sid_use": "shared_prefix_codebooks_with_role_specific_suffixes",
+      "code_status": "official_public_code",
+      "data_status": "public_amazon_plus_private_commercial",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking",
+        "full_catalog_prefix_survival",
+        "full_catalog_complete_sid_recovery"
+      ],
+      "source_url": "https://github.com/TengShi-RUC/GenSAR",
+      "component_execution": {
+        "status": "executed",
+        "component": "controlled native joint quantizer",
+        "views": 3,
+        "full_original_system_reproduced": false,
+        "evidence": "data/native_exports/README.md"
+      }
+    },
+    {
+      "method_id": "gensr",
+      "title": "Unifying Search and Recommendation: A Generative Paradigm Inspired by Information Theory",
+      "year": 2025,
+      "paradigm": "generative",
+      "sid_use": "candidate_conditioned_yes_no",
+      "code_status": "implementation_not_pinned",
+      "data_status": "public_derived_role_datasets",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2504.06714"
+    },
+    {
+      "method_id": "joint_semantic_ids",
+      "title": "Semantic IDs for Joint Generative Search and Recommendation",
+      "year": 2025,
+      "paradigm": "generative",
+      "sid_use": "shared_separate_prefix_shared_and_fused_sids",
+      "code_status": "official_code_not_verified",
+      "data_status": "public_movielens_with_generated_queries",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking",
+        "full_catalog_prefix_survival",
+        "full_catalog_complete_sid_recovery"
+      ],
+      "source_url": "https://arxiv.org/abs/2508.10478"
+    },
+    {
+      "method_id": "gems",
+      "title": "Unifying Search and Recommendation in LLMs via Gradient Multi-Subspace Tuning",
+      "year": 2026,
+      "paradigm": "generative",
+      "sid_use": "single_atomic_item_token",
+      "code_status": "official_public_code",
+      "data_status": "public_qilin_and_derived_amazon",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://github.com/Polaris-JZ/GEMS",
+      "provenance": "shared-sid-audit-20260829",
+      "note": "Name-collision guard per admission-addendum-20261017: this row is the 2026-08-29 audit entry (commit bba2554, one added tokenizer token per atomic item, compatibility provenance only) and is distinct from gems_gradsubspace_sigir2026 (SIGIR 2026 Gradient Multi-Subspace Tuning, arXiv 2601.09496, commit bc5de60). Unqualified use of the short name GEMS is ambiguous as of that addendum."
+    },
+    {
+      "method_id": "intsr",
+      "title": "IntSR: An Integrated Generative Framework for Search and Recommendation",
+      "year": 2025,
+      "paradigm": "generative",
+      "sid_use": "integrated_generative_item_identifiers",
+      "code_status": "no_public_code_found",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "full_catalog_complete_sid_recovery"
+      ],
+      "source_url": "https://arxiv.org/abs/2509.21179"
+    },
+    {
+      "method_id": "jsr",
+      "title": "Joint Modeling and Optimization of Search and Recommendation",
+      "year": 2018,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "paper_protocol",
+      "data_status": "public_product_data_basis",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/1807.05631"
+    },
+    {
+      "method_id": "user",
+      "title": "USER: A Unified Information Search and Recommendation Model based on Integrated Behavior Sequence",
+      "year": 2021,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "official_public_code",
+      "data_status": "private_information_content_logs",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://github.com/jingjyyao/Personalized-Search/tree/main/USER"
+    },
+    {
+      "method_id": "srjgraph",
+      "title": "Joint Learning of E-commerce Search and Recommendation with a Unified Graph Neural Network",
+      "year": 2022,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "no_usable_public_code_found",
+      "data_status": "private_ecommerce_logs",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://doi.org/10.1145/3488560.3498414"
+    },
+    {
+      "method_id": "sesrec",
+      "title": "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation",
+      "year": 2023,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "official_public_code",
+      "data_status": "public_derived_amazon_plus_private_commercial",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://github.com/Ethan00Si/SESREC-SIGIR-2023"
+    },
+    {
+      "method_id": "unisar",
+      "title": "UniSAR: Modeling User Transition Behaviors between Search and Recommendation",
+      "year": 2024,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "official_public_code",
+      "data_status": "processed_kuaisar_and_derived_amazon",
+      "admission_level": "rolemap_executed",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://github.com/TengShi-RUC/UniSAR",
+      "execution_scope": {
+        "surface": "fixed_candidate_ranking",
+        "dataset_view": "kuaisar_unisar_processed",
+        "requests_scored": 166981,
+        "topology_covered_requests": 5283,
+        "new_training": false,
+        "original_author_checkpoint": false,
+        "shared_sid_core_admission": false,
+        "full_original_paper_reproduction": false,
+        "evidence": "reports/model_reuse/RESULTS.json"
+      }
+    },
+    {
+      "method_id": "unifiedssr",
+      "title": "UnifiedSSR: A Unified Framework of Sequential Search and Recommendation",
+      "year": 2024,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "official_public_code_and_checkpoint",
+      "data_status": "public_jdsearch_and_derived_amazon",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://github.com/JennyXieJiayi/UnifiedSSR"
+    },
+    {
+      "method_id": "uditsr",
+      "title": "Unified Dual-Intent Translation for Joint Modeling of Search and Recommendation",
+      "year": 2024,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "official_public_code",
+      "data_status": "public_mt_small",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://github.com/zhangyuting725/UDITSR"
+    },
+    {
+      "method_id": "usr",
+      "title": "A Unified Search and Recommendation Framework Based on Multi-Scenario Learning for Ranking in E-commerce",
+      "year": 2024,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "no_public_code_found",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2405.10835"
+    },
+    {
+      "method_id": "superrs",
+      "title": "SuperRS: Multi Scenario Reciprocal-Aware Dual MoE for Unified Recommendation-Search Ranking",
+      "year": 2025,
+      "paradigm": "discriminative",
+      "sid_use": "shared_atomic_item_identity",
+      "code_status": "no_public_code_found",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://doi.org/10.1145/3726302.3731949"
+    },
+    {
+      "method_id": "one_hierarchy_two_systems",
+      "title": "One Hierarchy, Two Systems: Semantic Product IDs for Discovery-Surface Ranking and Search-Page Query Reformulation",
+      "year": 2026,
+      "paradigm": "discriminative",
+      "sid_use": "shared_sid_prefix_features",
+      "code_status": "no_public_code_found",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2608.20640"
+    },
+    {
+      "method_id": "neo",
+      "title": "A Unified Model for Personalization: Language-Steerable Generative Recommendation, Search, and User Understanding",
+      "year": 2026,
+      "paradigm": "generative",
+      "sid_use": "typed_shared_sids",
+      "code_status": "no_public_training_code_found",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "full_catalog_complete_sid_recovery"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.17533"
+    },
+    {
+      "method_id": "gems_gradsubspace_sigir2026",
+      "title": "GEMS (Gradient Multi-Subspace Tuning)",
+      "year": 2026,
+      "paradigm": "generative",
+      "sid_use": "single_atomic_item_token",
+      "code_status": "official_public_code_no_license",
+      "data_status": "public_qilin_and_derived_amazon",
+      "admission_level": "interface_specified",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2601.09496",
+      "decision": "excluded_from_core_adjacent_unified_system",
+      "provenance": "admission-addendum-20261017",
+      "note": "SIGIR 2026, DOI 10.1145/3805712.3809719. Atomic <item_N> tokens, one added tokenizer token per item (data.py, BSRDataset); constrained-decoding trie over these tokens; no RQ-VAE/quantization/clustering/SID construction. Fails core invariants 1, 3, and 4. Official code public at HEAD bc5de60 (2026-08-31), no LICENSE file (spdx_id null): research-evaluation use only, no vendoring. Boundary fact: atomic IDs plus gradient-subspace tuning beat the TIGER/LETTER/Sem-BSR/GenSAR semantic-ID baselines on Qilin and Amazon in their tables."
+    },
+    {
+      "method_id": "minsar_www2026",
+      "title": "MinSAR",
+      "year": 2026,
+      "paradigm": "discriminative",
+      "sid_use": "user_side_vqvae_interest_quantization",
+      "code_status": "no_public_code_found",
+      "data_status": "not_specified_in_addendum",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "WWW 2026",
+      "decision": "excluded_from_core_boundary_evidence",
+      "provenance": "admission-addendum-20261017",
+      "note": "VQ-VAE quantizes the user-side unified interest (memory + short-term + user embedding); PLE-style shared/task experts with query-guided gating; items discriminative. No item-side SID. Names the S&R trade-off as a first-class problem; SHAP plus loss-weight sweeps retained as load-bearing trade-off boundary evidence."
+    },
+    {
+      "method_id": "tubifm_recsys2026",
+      "title": "TubiFM",
+      "year": 2026,
+      "paradigm": "generative",
+      "sid_use": "single_atomic_item_token",
+      "code_status": "industry_deployment_no_public_code",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "RecSys 2026 (industry, Tubi)",
+      "decision": "excluded_from_core_boundary_evidence",
+      "provenance": "admission-addendum-20261017",
+      "note": "Llama 3.2 1B over serialized user stories; one atomic token per item; semantic IDs were tried and did not improve offline metrics. Industrial negative datapoint on the SID axis, cited as boundary evidence."
+    },
+    {
+      "method_id": "retrievalformer",
+      "title": "RetrievalFormer (Keeping the index open)",
+      "year": 2026,
+      "paradigm": "discriminative",
+      "sid_use": "dense_content_embeddings_no_item_sid",
+      "code_status": "code_not_verified",
+      "data_status": "public_dual_surface_logs",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2608.24079",
+      "decision": "excluded_from_core_sharing_cost_motivation_evidence",
+      "provenance": "admission-addendum-20261017",
+      "note": "Content-feature dual-encoder tower (open to new items without retraining) versus ID-softmax recommender; no multi-token SID. Prices the recommendation-side cost of a shared index on public dual-surface logs with retrained, tuned baselines; nearest niche encroachment on the controlled shared-vs-role-specific generative-SID niche."
+    },
+    {
+      "method_id": "nearest_but_not_dearest",
+      "title": "Nearest but not dearest",
+      "year": 2026,
+      "paradigm": "discriminative",
+      "sid_use": "single_dense_joint_audio_text_embedding",
+      "code_status": "industry_deployment_no_public_code",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.30568",
+      "decision": "off_scope_provenance_audit_layer_kindred_evidence",
+      "provenance": "admission-addendum-20261017",
+      "note": "Deployed B2B music discovery. One LAION-CLAP joint audio-text embedding space plus one candidate filter plus one ranking head serving both roles; curator-feedback audit (cosine AUC 0.644; 38% nearest-neighbor rejection). Shared representation requires role-aware audit."
+    },
+    {
+      "method_id": "do_we_really_need_specialization",
+      "title": "Do we really need specialization?",
+      "year": 2025,
+      "paradigm": "discriminative",
+      "sid_use": "generalist_dense_text_embeddings",
+      "code_status": "evaluation_public_benchmarks_only",
+      "data_status": "public_benchmarks_blair_config",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "https://arxiv.org/abs/2507.05006",
+      "decision": "boundary_literature_anti_specialization_evidence",
+      "provenance": "admission-addendum-20261017",
+      "note": "RecSys 2025. Generalist text embeddings, zero-shot, evaluated on both sequential recommendation and product search; anti-specialization evidence at the representation level."
+    },
+    {
+      "method_id": "spotify_pfr",
+      "title": "You Say Search, I Say Recs (Spotify PFR)",
+      "year": 2025,
+      "paradigm": "hybrid",
+      "sid_use": "no_item_identifier_llm_query_routing",
+      "code_status": "industry_deployment_no_public_code",
+      "data_status": "private_industrial",
+      "admission_level": "literature_only",
+      "supported_surfaces": [
+        "fixed_candidate_ranking"
+      ],
+      "source_url": "RecSys 2025",
+      "decision": "off_scope_routing_layer_not_identifier_layer",
+      "provenance": "admission-addendum-20261017",
+      "note": "LLM router dispatching queries to search/recommendation service APIs; no item identifier mechanism. Paradigm recorded as hybrid because the addendum specifies a routing layer over both services rather than a single retriever paradigm."
+    }
+  ],
+  "component_coverage": [
+    {
+      "component": "GenSAR native joint quantizer",
+      "views": 3,
+      "executed": true
+    },
+    {
+      "component": "ReSID native GAOQ",
+      "views": 3,
+      "executed": true,
+      "joint_search_recommendation_model": false
+    }
+  ]
+}

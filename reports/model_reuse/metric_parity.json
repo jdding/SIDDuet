@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "units": 5283,
+  "evaluation_schema": "sr_sid_rolemap.fixed_candidate_evaluation.v3",
+  "tie_policy": "uniform_within_exact_score_ties",
+  "absolute_tolerance": 5.1e-07,
+  "same_candidate_lists": true,
+  "source": "actual UniSAR predictions, not a fabricated interface fixture"
+}

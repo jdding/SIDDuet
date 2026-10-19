@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "dataset": "qilin",
+  "items": 20540,
+  "summary_sha256": "33458449517e70ee2b2ec63eb0fc52ba56170cae9f70b584fee775dc216e6e1b",
+  "aggregate_files": {
+    "component_triples.csv": "76f1f11e29e91a32c9e34156d1ed3fda2c2b5806ce815e415441dafa52c75c92",
+    "exact_rsd_tie_decomposition.csv": "52b7fef1c132a22be93ae430a7099951a4a6d7d0f43c354ea381aee872a7cde5",
+    "js_raw_key_merges.csv": "78a1e2f2f58546fd05b327752a0fe837aa6598ad2699afb14dc3ab56f8dc1504",
+    "summary.json": "33458449517e70ee2b2ec63eb0fc52ba56170cae9f70b584fee775dc216e6e1b"
+  },
+  "restricted_item_csv_sha256": "94a2b099d37aea8f94c985ef10aa6fddc03b16cac5a439275f1d302e6e9e5608",
+  "script_sha256": "f7297b15bac9b80ec68cf4fe0fd86b0b01e264a4f85d8364e3f996cea6f4065e"
+}

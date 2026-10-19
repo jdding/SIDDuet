@@ -1,0 +1,511 @@
+{
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261019,
+  "common_window": {
+    "common_range": [
+      1732530507.0,
+      1732700621.0
+    ],
+    "retained_requests": 70115,
+    "role_ranges": {
+      "rec": [
+        1732530507.0,
+        1732700624.0
+      ],
+      "search": [
+        1732138228.0,
+        1732700621.0
+      ]
+    },
+    "source_requests": 70125
+  },
+  "elapsed_seconds": 0.43921518325805664,
+  "evaluation_manifest_sha256": "674069e511a45abe77b79e2ee2a27520e47207b8ed85162a6dfaab1baad43cea",
+  "evaluation_sha256": "d17775c9a7c4fa9b82273b9d3c23d52f11c732abbc9117a02f64065fa9efbf75",
+  "evaluation_split": "audit",
+  "fitted_sha256": "49ee9199323815f0e0d8d14f6d9daa391fd9f41a1adc32d8b56e4e338ffde25a",
+  "note": "Raw losses across granularities are not a method quality ranking.",
+  "results": [
+    {
+      "aware_loss": {
+        "macro": 1.6929281581329374,
+        "rec": 1.702655263880605,
+        "search": 1.6832010523852698
+      },
+      "blind_loss": {
+        "macro": 1.7056143396960919,
+        "rec": 1.7062442320203348,
+        "search": 1.7049844473718492
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            0.0015837410923108782,
+            0.02418105885415158
+          ],
+          "rec": [
+            -0.0018056867442384327,
+            0.008776336395835794
+          ],
+          "search": [
+            0.00021859186536428156,
+            0.043718490058958705
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 1019,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 342,
+        "member_appearances": 661,
+        "rec_role_unseen_group_member_appearances": 240,
+        "rec_role_unseen_member_appearances": 558,
+        "search_role_unseen_group_member_appearances": 419,
+        "search_role_unseen_member_appearances": 915
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 1652,
+          "mapped_member_appearances": 1900,
+          "mapped_requests": 1169,
+          "no_mapped_requests": 2430,
+          "scored_requests": 1067,
+          "singleton_only_requests": 102,
+          "source_requests": 3599
+        },
+        "search": {
+          "collision_member_appearances": 1184,
+          "mapped_member_appearances": 1360,
+          "mapped_requests": 576,
+          "no_mapped_requests": 1347,
+          "scored_requests": 528,
+          "singleton_only_requests": 48,
+          "source_requests": 1923
+        }
+      },
+      "delta_nats": {
+        "macro": 0.012686181563154486,
+        "rec": 0.0035889681397298645,
+        "search": 0.02178339498657933
+      },
+      "name": "gensar_shared2",
+      "primary": true,
+      "selected_aware": {
+        "alpha": 10.0,
+        "kind": "separate",
+        "validation": {
+          "macro": 1.662582606884337,
+          "rec": 1.6535256170737735,
+          "search": 1.6716395966949007
+        }
+      },
+      "selected_blind": {
+        "alpha": 10.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 1.6794964599900077,
+          "rec": 1.6613218661279219,
+          "search": 1.6976710538520936
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 1.2504879631823502,
+        "rec": 1.2560101530351213,
+        "search": 1.2449657733295791
+      },
+      "blind_loss": {
+        "macro": 1.2540576815764428,
+        "rec": 1.2628980753252494,
+        "search": 1.2452172878276362
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            -0.007134195045325528,
+            0.01428582446298477
+          ],
+          "rec": [
+            -0.012380573314641945,
+            0.02642299163177886
+          ],
+          "search": [
+            -0.008594699217051532,
+            0.009063129031206043
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 609,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 358,
+        "member_appearances": 503,
+        "rec_role_unseen_group_member_appearances": 258,
+        "rec_role_unseen_member_appearances": 369,
+        "search_role_unseen_group_member_appearances": 254,
+        "search_role_unseen_member_appearances": 322
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 658,
+          "mapped_member_appearances": 1900,
+          "mapped_requests": 1169,
+          "no_mapped_requests": 2430,
+          "scored_requests": 543,
+          "singleton_only_requests": 626,
+          "source_requests": 3599
+        },
+        "search": {
+          "collision_member_appearances": 394,
+          "mapped_member_appearances": 1360,
+          "mapped_requests": 576,
+          "no_mapped_requests": 1347,
+          "scored_requests": 249,
+          "singleton_only_requests": 327,
+          "source_requests": 1923
+        }
+      },
+      "delta_nats": {
+        "macro": 0.0035697183940925914,
+        "rec": 0.0068879222901281345,
+        "search": 0.0002515144980570483
+      },
+      "name": "gensar_semantic_complete",
+      "primary": false,
+      "selected_aware": {
+        "alpha": 10.0,
+        "kind": "separate",
+        "validation": {
+          "macro": 1.2104228291378782,
+          "rec": 1.2269363623727434,
+          "search": 1.1939092959030133
+        }
+      },
+      "selected_blind": {
+        "alpha": 100.0,
+        "kind": "balanced",
+        "validation": {
+          "macro": 1.2209441539418995,
+          "rec": 1.2413527890221356,
+          "search": 1.2005355188616635
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 1.7237480638192715,
+        "rec": 1.9781462319021907,
+        "search": 1.4693498957363522
+      },
+      "blind_loss": {
+        "macro": 1.7237269706886713,
+        "rec": 1.9781306658144069,
+        "search": 1.4693232755629357
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            -0.00013502873484844968,
+            7.694026545639873e-05
+          ],
+          "rec": [
+            -0.00024106385118630725,
+            0.00017677608258194193
+          ],
+          "search": [
+            -7.031879726027146e-05,
+            0.0
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 576,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 606,
+        "member_appearances": 606,
+        "rec_role_unseen_group_member_appearances": 444,
+        "rec_role_unseen_member_appearances": 445,
+        "search_role_unseen_group_member_appearances": 481,
+        "search_role_unseen_member_appearances": 481
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 534,
+          "mapped_member_appearances": 1900,
+          "mapped_requests": 1169,
+          "no_mapped_requests": 2430,
+          "scored_requests": 454,
+          "singleton_only_requests": 715,
+          "source_requests": 3599
+        },
+        "search": {
+          "collision_member_appearances": 490,
+          "mapped_member_appearances": 1360,
+          "mapped_requests": 576,
+          "no_mapped_requests": 1347,
+          "scored_requests": 310,
+          "singleton_only_requests": 266,
+          "source_requests": 1923
+        }
+      },
+      "delta_nats": {
+        "macro": -2.1093130600169374e-05,
+        "rec": -1.556608778385815e-05,
+        "search": -2.6620173416480597e-05
+      },
+      "name": "gensar_collaborative_complete",
+      "primary": false,
+      "selected_aware": {
+        "beta": 100.0,
+        "kind": "shrinkage",
+        "validation": {
+          "macro": 1.6855919490056235,
+          "rec": 1.8981262064541344,
+          "search": 1.4730576915571125
+        }
+      },
+      "selected_blind": {
+        "alpha": 10.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 1.6856116375470904,
+          "rec": 1.8981655835370685,
+          "search": 1.4730576915571125
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 6.377217332194698,
+        "rec": 6.31015435599453,
+        "search": 6.444280308394868
+      },
+      "blind_loss": {
+        "macro": 6.3834836399820425,
+        "rec": 6.320543384381346,
+        "search": 6.44642389558274
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            -0.0069373863806173166,
+            0.019267061238391843
+          ],
+          "rec": [
+            0.004048866975818433,
+            0.015746970915386765
+          ],
+          "search": [
+            -0.02408539064951194,
+            0.0280677622536245
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 1096,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 0,
+        "member_appearances": 694,
+        "rec_role_unseen_group_member_appearances": 0,
+        "rec_role_unseen_member_appearances": 592,
+        "search_role_unseen_group_member_appearances": 0,
+        "search_role_unseen_member_appearances": 1033
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 1900,
+          "mapped_member_appearances": 1900,
+          "mapped_requests": 1169,
+          "no_mapped_requests": 2430,
+          "scored_requests": 1169,
+          "singleton_only_requests": 0,
+          "source_requests": 3599
+        },
+        "search": {
+          "collision_member_appearances": 1360,
+          "mapped_member_appearances": 1360,
+          "mapped_requests": 576,
+          "no_mapped_requests": 1347,
+          "scored_requests": 576,
+          "singleton_only_requests": 0,
+          "source_requests": 1923
+        }
+      },
+      "delta_nats": {
+        "macro": 0.006266307787344161,
+        "rec": 0.010389028386816435,
+        "search": 0.002143587187871887
+      },
+      "name": "gaoq_depth1",
+      "primary": false,
+      "selected_aware": {
+        "alpha": 1000.0,
+        "kind": "separate",
+        "validation": {
+          "macro": 6.35500299868221,
+          "rec": 6.2700639133224305,
+          "search": 6.439942084041989
+        }
+      },
+      "selected_blind": {
+        "alpha": 1000.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 6.367301021565178,
+          "rec": 6.283516162127299,
+          "search": 6.451085881003058
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 2.2625148020759314,
+        "rec": 2.2425208854811873,
+        "search": 2.282508718670676
+      },
+      "blind_loss": {
+        "macro": 2.270956953651825,
+        "rec": 2.2554267997119917,
+        "search": 2.2864871075916584
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            0.005673310268324777,
+            0.010982557472553924
+          ],
+          "rec": [
+            0.008461643364441185,
+            0.016804978843537377
+          ],
+          "search": [
+            0.0005306481953220143,
+            0.007373746254624456
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 1096,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 335,
+        "member_appearances": 694,
+        "rec_role_unseen_group_member_appearances": 251,
+        "rec_role_unseen_member_appearances": 592,
+        "search_role_unseen_group_member_appearances": 319,
+        "search_role_unseen_member_appearances": 1033
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 1900,
+          "mapped_member_appearances": 1900,
+          "mapped_requests": 1169,
+          "no_mapped_requests": 2430,
+          "scored_requests": 1169,
+          "singleton_only_requests": 0,
+          "source_requests": 3599
+        },
+        "search": {
+          "collision_member_appearances": 1360,
+          "mapped_member_appearances": 1360,
+          "mapped_requests": 576,
+          "no_mapped_requests": 1347,
+          "scored_requests": 576,
+          "singleton_only_requests": 0,
+          "source_requests": 1923
+        }
+      },
+      "delta_nats": {
+        "macro": 0.008442151575893675,
+        "rec": 0.012905914230804338,
+        "search": 0.003978388920982567
+      },
+      "name": "gaoq_depth2",
+      "primary": false,
+      "selected_aware": {
+        "beta": 100.0,
+        "kind": "shrinkage",
+        "validation": {
+          "macro": 2.2514459405068328,
+          "rec": 2.2117753492230596,
+          "search": 2.291116531790606
+        }
+      },
+      "selected_blind": {
+        "alpha": 100.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 2.2640833083004153,
+          "rec": 2.232960772833847,
+          "search": 2.2952058437669836
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 0,
+          "mapped_member_appearances": 1900,
+          "mapped_requests": 1169,
+          "no_mapped_requests": 2430,
+          "scored_requests": 0,
+          "singleton_only_requests": 1169,
+          "source_requests": 3599
+        },
+        "search": {
+          "collision_member_appearances": 0,
+          "mapped_member_appearances": 1360,
+          "mapped_requests": 576,
+          "no_mapped_requests": 1347,
+          "scored_requests": 0,
+          "singleton_only_requests": 576,
+          "source_requests": 1923
+        }
+      },
+      "interval": null,
+      "loss": null,
+      "name": "gaoq_depth3",
+      "primary": false,
+      "status": "NO_COLLISION_CONTROL"
+    }
+  ],
+  "schema": "rolemap.allocation_forecast.v1",
+  "source_bindings": {
+    "local-inputs/restricted/native_features_r1/item_ids.json": "364a879bdae817289e122e39082d91e47a5e7eb69b19c90c098d38dbd2dee8a8",
+    "local-inputs/restricted/native_gaoq_r1/gaoq_depth1.csv": "2e97829d47ed9f167287c8d4abcabce0609a6ac4ef0b35c7d5994636daf704c2",
+    "local-inputs/restricted/native_gaoq_r1/gaoq_depth2.csv": "b28747968f35c7f484e49d1646eb034641043d147caf65d5b4aac98128fc8adf",
+    "local-inputs/restricted/native_gaoq_r1/gaoq_depth3.csv": "1a5a175b13196a7d837f3732d3cb5e3ee40f5798404cb94891b9a7f095cd69cf",
+    "local-inputs/restricted/native_gensar_export_r1/collaborate_native_complete.csv": "5b166b5a200457230129e05712585eafa95114679654bee71675413319cd5c64",
+    "local-inputs/restricted/native_gensar_export_r1/semantic_native_complete.csv": "da6bdd9ab65c983f028ce8137add898464bda91a348e963cc8dd08ac53c38740",
+    "local-inputs/review-stage/WWW4_REUSE_VALIDATION_20261019/PROTOCOL.md": "fcf0564ebcb02da27e46989c8b168a24a0f4dfd1f4e3988e2629d8e1dab3332b",
+    "local-inputs/WWW4_REUSE_VALIDATION_20261019/code/allocation_forecast.py": "bf3aae960caa4b09c4b5143500f8a4f9a92d7a59f1322336e1cd9eddfe900d0d",
+    "local-inputs/restricted/extracted_trainval_r3/EXTRACTION_RECEIPT.json": "674069e511a45abe77b79e2ee2a27520e47207b8ed85162a6dfaab1baad43cea",
+    "local-inputs/restricted/extracted_trainval_r3/train.jsonl": "ec2c812850fb4c75da6451daa79e5d46d3d9e04edf84fb1485d65957046321d7",
+    "local-inputs/restricted/extracted_trainval_r3/validation.jsonl": "bf82a16dba7f01a6c52d4e59bddc84df8741970195781afec4d6506ac7ab7dd5"
+  }
+}

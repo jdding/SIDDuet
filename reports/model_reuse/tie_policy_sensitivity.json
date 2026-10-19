@@ -1,0 +1,49 @@
+{
+  "status": "PASS_TIE_POLICY_SENSITIVITY",
+  "old_policy": "sort by score, then lexicographic candidate ID (v2)",
+  "new_policy": "expected gain uniformly within exact score ties (v3)",
+  "study_primary": "v3",
+  "roles": {
+    "search": {
+      "all": {
+        "requests": 9789,
+        "tied_requests": 2288,
+        "old_ndcg10": 0.6245265178195333,
+        "new_ndcg10": 0.6252527814207658,
+        "old_hit10": 0.8438042700990909,
+        "new_hit10": 0.8438042700990909
+      },
+      "covered": {
+        "requests": 287,
+        "tied_requests": 38,
+        "old_ndcg10": 0.5263553772818745,
+        "new_ndcg10": 0.530030286666305,
+        "old_hit10": 0.735191637630662,
+        "new_hit10": 0.735191637630662
+      }
+    },
+    "rec": {
+      "all": {
+        "requests": 157192,
+        "tied_requests": 2,
+        "old_ndcg10": 0.40782936871972225,
+        "new_ndcg10": 0.40782936871972225,
+        "old_hit10": 0.6734057712860705,
+        "new_hit10": 0.6734057712860705
+      },
+      "covered": {
+        "requests": 4996,
+        "tied_requests": 0,
+        "old_ndcg10": 0.33836541492088384,
+        "new_ndcg10": 0.33836541492088384,
+        "old_hit10": 0.5836669335468375,
+        "new_hit10": 0.5836669335468375
+      }
+    }
+  },
+  "coverage_difference_direction_same_under_both_policies": true,
+  "historical_frozen_reports_recomputed": false,
+  "method_or_weights_changed": false,
+  "seconds": 29.468749167,
+  "boundary": "Descriptive metric sensitivity on the same actual predictions. Candidate-ID ordering is arbitrary; old IDs are not semantic ground truth."
+}

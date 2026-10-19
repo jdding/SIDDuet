@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jdding/rolemap/schemas/rolemap_record.schema.json",
+  "title": "SearchRec RoleMap Record",
+  "description": "A typed decision record joining paired search-recommendation evidence, one SID artifact, observed diagnostic surfaces, and claim permissions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "dataset",
+    "item_bridge",
+    "role_evidence",
+    "topology",
+    "sid_artifact",
+    "observations",
+    "decision",
+    "provenance",
+    "release"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "sr_sid_rolemap.rolemap_record.v1"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_id", "split", "profile_id"],
+      "properties": {
+        "dataset_id": {"type": "string", "minLength": 1},
+        "split": {"type": "string", "minLength": 1},
+        "profile_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "item_bridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_key", "key_type", "roles"],
+      "properties": {
+        "item_key": {"type": "string", "minLength": 1},
+        "key_type": {"enum": ["raw_restricted", "hashed_public", "synthetic"]},
+        "roles": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "search"},
+            {"const": "recommendation"}
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "role_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_protocol", "search", "recommendation"],
+      "properties": {
+        "source_protocol": {"type": "string", "minLength": 1},
+        "search": {"$ref": "#/$defs/roleSummary"},
+        "recommendation": {"$ref": "#/$defs/roleSummary"}
+      }
+    },
+    "topology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "status", "rsd", "rsi", "topology_cell", "builder_version"],
+      "properties": {
+        "level": {"const": "L0"},
+        "status": {"enum": ["observed", "null"]},
+        "rsd": {"type": "number"},
+        "rsi": {"type": "number", "minimum": -1, "maximum": 1},
+        "topology_cell": {
+          "enum": [
+            "low_rsd|low_rsi",
+            "low_rsd|high_rsi",
+            "high_rsd|low_rsi",
+            "high_rsd|high_rsi"
+          ]
+        },
+        "builder_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "sid_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "family", "map_version", "join_status", "provenance_uri"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "family": {"type": "string", "minLength": 1},
+        "map_version": {"type": "string", "minLength": 1},
+        "join_status": {"enum": ["joined", "not_joined", "partial"]},
+        "provenance_uri": {"type": "string", "minLength": 1}
+      }
+    },
+    "observations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["L1", "L2", "L3"],
+      "properties": {
+        "L1": {"$ref": "#/$defs/evidenceLevel"},
+        "L2": {"$ref": "#/$defs/evidenceLevel"},
+        "L3": {"$ref": "#/$defs/evidenceLevel"}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_permissions", "next_required_checks"],
+      "properties": {
+        "claim_permissions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/claimPermission"}
+        },
+        "next_required_checks": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["builders", "source_checksums", "protocol_versions"],
+      "properties": {
+        "builders": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "source_checksums": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "protocol_versions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["access_level", "restricted_fields"],
+      "properties": {
+        "access_level": {"enum": ["public_synthetic", "public_hashed", "aggregate_only", "builder_only", "restricted"]},
+        "restricted_fields": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  },
+  "$defs": {
+    "roleSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["support_bucket", "top_label", "entropy"],
+      "properties": {
+        "support_bucket": {"type": "string", "minLength": 1},
+        "top_label": {"type": "string", "minLength": 1},
+        "entropy": {"type": "number", "minimum": 0}
+      }
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["surface_type", "status", "candidate_universe", "summary"],
+      "properties": {
+        "surface_type": {"type": "string", "minLength": 1},
+        "status": {"enum": ["observed", "null"]},
+        "candidate_universe": {"type": "string", "minLength": 1},
+        "summary": {"type": "object"}
+      }
+    },
+    "evidenceLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "surfaces"],
+      "properties": {
+        "status": {"enum": ["observed", "null", "not_evaluated", "blocked"]},
+        "surfaces": {"type": "array", "items": {"$ref": "#/$defs/surface"}}
+      }
+    },
+    "claimPermission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "status", "evidence_level", "reason"],
+      "properties": {
+        "claim_id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["supported", "blocked", "not_evaluated"]},
+        "evidence_level": {"enum": ["L0", "L1", "L2", "L3"]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_summaries": [
+    {
+      "cell_collision_rate_spread": 0.072277,
+      "collision_rate": 0.7375,
+      "dataset": "kuaisar_unisar_processed",
+      "family": "catalog_category_path",
+      "join_coverage": 1.0,
+      "joined_items": 320,
+      "max_topology_cells_per_sid": 2,
+      "mixed_cell_sid_count": 31,
+      "topology_items": 320,
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "a27222d628e34f644d47eca6fbb15be5c2a561b593db32374465e9102dd30dd8",
+      "unique_sid_count": 84,
+      "unique_sid_ratio": 0.2625
+    }
+  ],
+  "family": "catalog_category_path",
+  "release_boundary": "aggregate outputs only; full SID maps and item-level topology joins remain local",
+  "schema": "sr_sid_rolemap.sid_family_admission.v1",
+  "status": "pass",
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "topology_sha256": "a27222d628e34f644d47eca6fbb15be5c2a561b593db32374465e9102dd30dd8"
+}

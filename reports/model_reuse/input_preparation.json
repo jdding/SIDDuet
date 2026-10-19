@@ -1,0 +1,39 @@
+{
+  "status": "PASS_INPUT_CONVERSION",
+  "dataset": "kuaisar_unisar_processed",
+  "preprocessing_profile": "unisar_processed_positive_context_v1",
+  "sample_rule": "First requested users by SHA256(seed:user:processed_user_id), independent of topology or predictions.",
+  "sampling_seed": "rolemap-external-20261019-v1",
+  "users_available": 22699,
+  "users_selected": 22699,
+  "common_items": 9104,
+  "observations": {
+    "rec_history_appearances_total": 4284366,
+    "rec_history_missing_item_or_category": 0,
+    "rec_transitions": 4261667,
+    "search_item_appearances": 462251,
+    "search_sessions": 258495,
+    "search_items": 366526,
+    "rec_items": 268063,
+    "search_only_items": 357422,
+    "rec_only_items": 258959
+  },
+  "source_sha256": {
+    "vocab/user_vocab.pkl": "8530693973a806069a5d52b89b2568ca0d95b269a4366d641fbd680446ca7dc2",
+    "vocab/item_vocab_np.pkl": "2790d9d9e88f6c553dc776cee847bcb61b0d9697057a35b41c5710622df4dd5c",
+    "vocab/src_session_vocab_np.pkl": "e7e6800ad550350743670392379b14090597788de685e9f768ad0309ea028197"
+  },
+  "converter_sha256": "67e7a5cde7c4129fec42703ceb4a8884b156419af1d56863e588c08952c19c94",
+  "catalog_map_sha256": "7c5ea6a5f89a727cf3fc89f9b46a276cd221da50099fc8a5a581ba2ab0b1f1df",
+  "map_semantics": "Illustrative provider category path, not a learned SID or an independent tokenizer.",
+  "counts_sha256": "2b138a677cc16af41da1fca5bc744e79f43eb6d3955e002a43839d9a09706ab4",
+  "selected_users_sha256": "f1657a8b23eab40999b3cef19de03163f82b46f88251309e11242fb2ea588410",
+  "seconds": 19.308580834,
+  "limits": [
+    "Processed ID namespace; no asserted raw-ID bridge to the original RoleMap reference.",
+    "Positive histories and at most five clicked items per processed search session, not complete exposure logs.",
+    "Descriptive observations include the stored history; not a train-only predictor or a prospective utility test.",
+    "Same KuaiSAR provider, new input view; not a third independent dataset.",
+    "User/item rows remain local; this report is aggregate."
+  ]
+}

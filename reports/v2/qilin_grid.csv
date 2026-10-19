@@ -1,0 +1,3 @@
+dataset,family,topology_profile_id,topology_sha256,topology_cell,items,unique_sid_count,unique_sid_ratio,collision_rate
+qilin,GRID,sr_sid_rolemap.topology.value_median.v2,8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed,low_rsd|high_rsi,8595,2987,0.347528,0.652472
+qilin,GRID,sr_sid_rolemap.topology.value_median.v2,8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed,low_rsd|low_rsi,11945,3801,0.318208,0.681792

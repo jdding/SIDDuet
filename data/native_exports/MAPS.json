@@ -1,0 +1,40 @@
+{
+  "maps": [
+    {
+      "name": "gensar_shared2",
+      "path": "native_maps/gensar_semantic.csv",
+      "depth": 2
+    },
+    {
+      "name": "gensar_semantic_complete",
+      "path": "native_maps/gensar_semantic.csv"
+    },
+    {
+      "name": "gensar_collaborative_complete",
+      "path": "native_maps/gensar_collaborative.csv"
+    },
+    {
+      "name": "gaoq_depth1",
+      "path": "native_maps/gaoq_complete.csv",
+      "depth": 1
+    },
+    {
+      "name": "gaoq_depth2",
+      "path": "native_maps/gaoq_complete.csv",
+      "depth": 2
+    },
+    {
+      "name": "gaoq_depth3",
+      "path": "native_maps/gaoq_complete.csv",
+      "depth": 3
+    }
+  ],
+  "paired_shared_prefix": [
+    {
+      "left": "native_maps/gensar_semantic.csv",
+      "right": "native_maps/gensar_collaborative.csv",
+      "depth": 2
+    }
+  ],
+  "universe": "cohort.json"
+}

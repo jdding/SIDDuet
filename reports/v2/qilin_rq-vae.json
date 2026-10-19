@@ -1,0 +1,25 @@
+{
+  "dataset_summaries": [
+    {
+      "cell_collision_rate_spread": 0.13209,
+      "collision_rate": 0.316456,
+      "dataset": "qilin",
+      "family": "RQ-VAE",
+      "join_coverage": 1.0,
+      "joined_items": 20540,
+      "max_topology_cells_per_sid": 2,
+      "mixed_cell_sid_count": 1512,
+      "topology_items": 20540,
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed",
+      "unique_sid_count": 14040,
+      "unique_sid_ratio": 0.683544
+    }
+  ],
+  "family": "RQ-VAE",
+  "release_boundary": "aggregate outputs only; full SID maps and item-level topology joins remain local",
+  "schema": "sr_sid_rolemap.sid_family_admission.v1",
+  "status": "pass",
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "topology_sha256": "8096e7ca68166e120591568185cc0fd3a763c246e0c586cca369140b21f0cbed"
+}

@@ -1,0 +1,130 @@
+{
+  "approved_minimal_derived_exports": {
+    "contents": "three catalog item-to-code CSVs and minimal cohort only",
+    "license": "Apache-2.0",
+    "path": "data/native_exports/PROVENANCE.json",
+    "raw_user_request_or_role_label_data": false
+  },
+  "excluded": [
+    "raw logs",
+    "query text",
+    "user trajectories",
+    "other full item-level maps and all full topology joins"
+  ],
+  "profiles": [
+    {
+      "cell_counts": {
+        "kuaisar::high_rsd|high_rsi": 0,
+        "kuaisar::high_rsd|low_rsi": 0,
+        "kuaisar::low_rsd|high_rsi": 0,
+        "kuaisar::low_rsd|low_rsi": 97729
+      },
+      "common_items": 97729,
+      "dataset": "kuaisar",
+      "median_diagnostics": {
+        "rsd_score": {
+          "above_median_items": 0,
+          "at_median_items": 65354,
+          "below_median_items": 32375,
+          "comparison": "exact_rrf_fraction",
+          "decision_zero_items": 0,
+          "degenerate_axis": false,
+          "empty_high": true,
+          "high_items": 0,
+          "items": 97729,
+          "key_zero_items": 0,
+          "low_items": 97729,
+          "median": {
+            "denominator": 17767776455550,
+            "numerator": 1508792111
+          },
+          "median_tie_items": 65354,
+          "raw_zero_items": 0,
+          "status": "pass",
+          "unique_decision_values": 4420
+        },
+        "rsi_mag": {
+          "above_median_items": 0,
+          "at_median_items": 54510,
+          "below_median_items": 43219,
+          "comparison": "q12_integer_units",
+          "decision_zero_items": 36064,
+          "degenerate_axis": false,
+          "empty_high": true,
+          "high_items": 0,
+          "items": 97729,
+          "key_zero_items": 36064,
+          "low_items": 97729,
+          "median": {
+            "denominator": 1,
+            "numerator": 1000000000000
+          },
+          "median_tie_items": 54510,
+          "raw_zero_items": 36064,
+          "status": "pass",
+          "unique_decision_values": 3263
+        }
+      },
+      "occupied_cells": 1,
+      "release_level": "aggregate_reference_only"
+    },
+    {
+      "cell_counts": {
+        "qilin::high_rsd|high_rsi": 0,
+        "qilin::high_rsd|low_rsi": 0,
+        "qilin::low_rsd|high_rsi": 8595,
+        "qilin::low_rsd|low_rsi": 11945
+      },
+      "common_items": 20540,
+      "dataset": "qilin",
+      "median_diagnostics": {
+        "rsd_score": {
+          "above_median_items": 0,
+          "at_median_items": 14884,
+          "below_median_items": 5656,
+          "comparison": "exact_rrf_fraction",
+          "decision_zero_items": 0,
+          "degenerate_axis": false,
+          "empty_high": true,
+          "high_items": 0,
+          "items": 20540,
+          "key_zero_items": 0,
+          "low_items": 20540,
+          "median": {
+            "denominator": 977056847090,
+            "numerator": 372576591
+          },
+          "median_tie_items": 14884,
+          "raw_zero_items": 0,
+          "status": "pass",
+          "unique_decision_values": 561
+        },
+        "rsi_mag": {
+          "above_median_items": 8595,
+          "at_median_items": 11945,
+          "below_median_items": 0,
+          "comparison": "q12_integer_units",
+          "decision_zero_items": 11945,
+          "degenerate_axis": false,
+          "empty_high": false,
+          "high_items": 8595,
+          "items": 20540,
+          "key_zero_items": 11945,
+          "low_items": 11945,
+          "median": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "median_tie_items": 11945,
+          "raw_zero_items": 11945,
+          "status": "pass",
+          "unique_decision_values": 438
+        }
+      },
+      "occupied_cells": 2,
+      "release_level": "aggregate_reference_only"
+    }
+  ],
+  "schema": "public_data_profile_registry.v2",
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2"
+}

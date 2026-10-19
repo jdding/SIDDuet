@@ -1,0 +1,117 @@
+{
+  "schema": "sr_sid_rolemap.full_model_replay_inputs.v1",
+  "official_commit": "1a14a246066cd1aa6ee789c57ff2c7499f3d7379",
+  "source_files": [
+    {
+      "path": "main.py",
+      "sha256": "16a48d9c28ea39f7db2b790d3bc0b8fbe0a1d30dfff8721c99d0a9ff1dc92207"
+    },
+    {
+      "path": "models/BaseModel.py",
+      "sha256": "ae1e410a653cc16fbc859e44dbdeed6bcbb1d4c339c7c44cabf1ad452bf35e46"
+    },
+    {
+      "path": "models/Inputs.py",
+      "sha256": "9640b8bce56140ac23cf70047876dd56b0eae206754fc0101836b73aa8a942fa"
+    },
+    {
+      "path": "models/UniSAR.py",
+      "sha256": "bd2711f26da727d261749d771ceee89cfc01c5c1d23c31946f52bc9471b6f0df"
+    },
+    {
+      "path": "models/__init__.py",
+      "sha256": "6b21afe75b91360f9a2a6dbc08fd6366fd68bef5a1959a68869073a3c7b95775"
+    },
+    {
+      "path": "models/layers.py",
+      "sha256": "9e28645cec98a224a53f1137bbcf9f78a38d702805d394db23e1db19cc6a3045"
+    },
+    {
+      "path": "utils/Runner.py",
+      "sha256": "f844028b4563cc46dd26de43c3d0b21224038cd7d1b9dcd6c50b68ab0de1da7e"
+    },
+    {
+      "path": "utils/__init__.py",
+      "sha256": "9880fafa7652a4c01b25e742a637993856d2bbd217e78d23b760c033e58e4f3f"
+    },
+    {
+      "path": "utils/const.py",
+      "sha256": "2b176954e897109cd63d0647386b522c330a8c028387acd9d35cec54ae7120dc"
+    },
+    {
+      "path": "utils/dataset.py",
+      "sha256": "52535ef81334f29cc08a1a736b351b71969770fda08accc96cd955895cdab640"
+    },
+    {
+      "path": "utils/sampler.py",
+      "sha256": "2baaf0bf95910b0b55d992a8ccaa8d81dbc327655e61202d33cb95b7177d9278"
+    },
+    {
+      "path": "utils/utils.py",
+      "sha256": "d6a2ba718f38bc52013bbb7f37661b1f6fcb76b73f249e2cd86d4f8d0c8ce3fe"
+    }
+  ],
+  "provider_files": [
+    {
+      "path": "dataset/src_test.pkl",
+      "bytes": 5713251,
+      "sha256": "32c280057b4f47969a2bf0ac4a056172391a31ee83c8c9b86e61a1c50d272872"
+    },
+    {
+      "path": "dataset/rec_test.pkl",
+      "bytes": 86707990,
+      "sha256": "ead6a99fda7c7a4068facedf87a3e4717bff38aa15ad766cd2a0396020fdcbed"
+    },
+    {
+      "path": "vocab/user_vocab.pkl",
+      "bytes": 164621469,
+      "sha256": "8530693973a806069a5d52b89b2568ca0d95b269a4366d641fbd680446ca7dc2"
+    },
+    {
+      "path": "vocab/query_vocab.pkl",
+      "bytes": 607140969,
+      "sha256": "1d7adf550ce2c88d1d311f506fd3000e1af6f3fc7f6cbf967abd4ca1cea93c25"
+    },
+    {
+      "path": "vocab/user_vocab_np.pkl",
+      "bytes": 726764,
+      "sha256": "87eb6cb31ee2f6ec32a76db4a184820031ac5a29b2586f542450e1998c6ee2a4"
+    },
+    {
+      "path": "vocab/item_vocab_np.pkl",
+      "bytes": 280140961,
+      "sha256": "2790d9d9e88f6c553dc776cee847bcb61b0d9697057a35b41c5710622df4dd5c"
+    },
+    {
+      "path": "vocab/src_session_vocab_np.pkl",
+      "bytes": 177912037,
+      "sha256": "e7e6800ad550350743670392379b14090597788de685e9f768ad0309ea028197"
+    }
+  ],
+  "downloads": {
+    "source_zip": "https://codeload.github.com/TengShi-RUC/UniSAR/zip/1a14a246066cd1aa6ee789c57ff2c7499f3d7379",
+    "processed_data": "https://drive.usercontent.google.com/download?id=1AgCl3Jd7UxJjGCOvUfx1Yf3SODUpyXiT&export=download&confirm=t",
+    "data_zip_sha256": "db75d7458f6ec5f942a4f63f03b4bb381c33af3950b7f660a145b4a97d7ab8d2"
+  },
+  "checkpoint_manifest": "weights/unisar_kuaisar_v1/CHECKPOINT.json",
+  "expected": {
+    "common_items": 9104,
+    "small_common_items": 320,
+    "full_topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+    "small_topology_sha256": "a27222d628e34f644d47eca6fbb15be5c2a561b593db32374465e9102dd30dd8",
+    "prediction_output_sha256": {
+      "all_scores.csv": "cf98988e96470271159d4f11fc3b912ed2499b5be00d9eb1c9d78de76f699dcf",
+      "covered_scores.csv": "9b6b5c63e2fe30ef31e4958ba3811403b868c3d5c92ec9f1d965497a97d4e045",
+      "units.csv": "679580c94ea2083023e6b60968f2faf964534979a53396fed028431ff74aba9a"
+    },
+    "role_request_counts": {
+      "search": 9789,
+      "rec": 157192
+    },
+    "covered_requests": {
+      "search": 287,
+      "rec": 4996
+    }
+  },
+  "numerical_scope": "Bitwise score replay tested on a fresh pinned macOS CPU environment at batch64. Other platforms must report numerical differences; no universal cross-device bitwise guarantee."
+}

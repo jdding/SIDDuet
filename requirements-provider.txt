@@ -1,0 +1,4 @@
+# Optional provider readers; reference CPython 3.12.14
+pyarrow==21.0.0
+pandas==2.2.3
+numpy==2.3.5

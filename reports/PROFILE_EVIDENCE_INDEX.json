@@ -1,0 +1,117 @@
+{
+  "schema": "sr_sid_rolemap.public_evidence_index.v1",
+  "current_profile_root": "reports/v2/",
+  "shared_items": 118269,
+  "entries": [
+    {
+      "path": "reports/v2/RECONSTRUCTION_VERIFICATION.json",
+      "sha256": "38201c90e875ad7ea59f07f5bb54b59b448911d675f7a1e82c01ce0fec51fb92",
+      "bytes": 1884,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/SID_INPUT_BINDING.json",
+      "sha256": "ce39a9733b1badbe282566b26c30603fc919aa471321b2bfc89863fa715384a3",
+      "bytes": 1358,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/fixed_275_case.json",
+      "sha256": "72a5c2ae9bec23bc743dab5b1095538857273fa67876807f83306828def494b6",
+      "bytes": 1695,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/fixed_275_case_hashed.csv",
+      "sha256": "d5247b6012f4b9410b8a2201fff2eaa4256c5be22960bae3a478490e9f915d31",
+      "bytes": 2230,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_grid.csv",
+      "sha256": "be8e57da5d7a64d408625a3a55099d01c34a1a4e199d8fbed10f5d72e519ee20",
+      "bytes": 285,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_grid.json",
+      "sha256": "febef9f551cf8b1635581e67b2d89d3ff23160be835e24cbfb1e9ed7d2977ce2",
+      "bytes": 921,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_resid-gaoq.csv",
+      "sha256": "bd7a4ab8aaa0d01c329897b474fc980978cd99910f89f79e09512f35d1c4549d",
+      "bytes": 292,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_resid-gaoq.json",
+      "sha256": "79690b74c0024fa850a4eedc020151dd2e21523e922647dd81aa27f9a54031c5",
+      "bytes": 934,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_rq-vae.csv",
+      "sha256": "97132423b2e02d8593eeb868988c5360af286526e0c0ed4f1d7f8735cba81a25",
+      "bytes": 288,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_rq-vae.json",
+      "sha256": "dcb68157fe2e49456efc30256af963f1f5da884dcb8fbb3411574d3a06bb2cb6",
+      "bytes": 926,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/kuaisar_topology_reference.json",
+      "sha256": "a5fed2055c2d4cdee25a55b619f4ffc120c048bc67468360e528906cd5fbbab8",
+      "bytes": 4970,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_grid.csv",
+      "sha256": "24b3f88330f7419a65aa984757118c58206773b5634758a50faaaed4c3ed47f8",
+      "bytes": 445,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_grid.json",
+      "sha256": "0d4af4d5869a1eb562929d5f298ecd08e5828d108e3e32cfb4f670bab669b513",
+      "bytes": 927,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_resid-gaoq.csv",
+      "sha256": "130cc141554bcc5201f36f8b16491237e3c69252d963e5722d9daa8f44e6fce9",
+      "bytes": 457,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_resid-gaoq.json",
+      "sha256": "f6fbf7a2368255f7d2d0bd43bbd9685c1e5c3ac48185792d7dbb63836cbe4d00",
+      "bytes": 936,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_rq-vae.csv",
+      "sha256": "dadc441e714dd0cec35bed821b8dcb559f6162e752471a3dd062550087acdd49",
+      "bytes": 449,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_rq-vae.json",
+      "sha256": "7d4841a52a9dc3a6d91764edae3f7fb5bc2568b538865f995169ccdee7c111fa",
+      "bytes": 931,
+      "role": "current_v2_reference"
+    },
+    {
+      "path": "reports/v2/qilin_topology_reference.json",
+      "sha256": "1dc388a7400aaf76857d609b7ffa3c05afbd12b39a4022f59a4d09c56bc5cef0",
+      "bytes": 4946,
+      "role": "current_v2_reference"
+    }
+  ],
+  "result_guide": "reports/README.md",
+  "historical_protocol_archives_included": false
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "sr_sid_rolemap.checkpoint_parts.v1",
+  "artifact_id": "rolemap_unisar_kuaisar_seed20230601",
+  "filename": "unisar_kuaisar_seed20230601.pt",
+  "bytes": 142470582,
+  "sha256": "67d335cdbc08a652f4eebd0e4f0493c01fa50ff388743a28cf34505ce0443de1",
+  "parts": [
+    {
+      "path": "checkpoint.part-00",
+      "bytes": 50331648,
+      "sha256": "58526b9f4857d700a64e223d278c7db5808accf6885625dcacab592659c49d21",
+      "download_url": "https://github.com/jdding/rolemap/releases/download/v0.2.4/checkpoint.part-00"
+    },
+    {
+      "path": "checkpoint.part-01",
+      "bytes": 50331648,
+      "sha256": "11fd39c614f4be360b78484c84e38e543ca022315213a0377706a78413f69acb",
+      "download_url": "https://github.com/jdding/rolemap/releases/download/v0.2.4/checkpoint.part-01"
+    },
+    {
+      "path": "checkpoint.part-02",
+      "bytes": 41807286,
+      "sha256": "c7aeed67ea538a5b8c38054aab4899f9cadd600edb55628087a3b8c8c4bc7ae6",
+      "download_url": "https://github.com/jdding/rolemap/releases/download/v0.2.4/checkpoint.part-02"
+    }
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_text": "CC_BY_NC_SA_4.0.txt",
+  "origin": "Trained within this research workflow; not an original-author released checkpoint.",
+  "format": "PyTorch tensor state_dict; load with weights_only=True",
+  "contents": "212 float32 tensor entries, including learned item/user/token embeddings and six contrastive training-only entries. No raw request histories, query strings, vocabulary tables, optimizer state or executable upstream source.",
+  "upstream_source": {
+    "repository": "https://github.com/TengShi-RUC/UniSAR",
+    "commit": "1a14a246066cd1aa6ee789c57ff2c7499f3d7379",
+    "source_included": false,
+    "license_in_upstream_repository": null
+  },
+  "training": {
+    "random_seed": 20230601,
+    "time": "20260620-212734",
+    "training_from": "random_initialization; train=1,test_path empty",
+    "num_layers": 1,
+    "num_heads": 2,
+    "dropout": 0.1,
+    "learning_rate": 0.001,
+    "l2": 3e-05,
+    "batch_size": 1024,
+    "eval_batch_size": 512,
+    "infoNCE_neg_sample": 1024,
+    "q_i_cl_temp": 0.5,
+    "q_i_cl_weight": 0.001,
+    "his_cl_temp": 0.1,
+    "his_cl_weight": 0.1,
+    "src_loss_weight": 0.1,
+    "pred_hid_units": [
+      200,
+      80,
+      1
+    ],
+    "maximum_epochs": 100,
+    "early_stop_patience": 5,
+    "best_zero_based_epoch": 19,
+    "stopped_after_epochs": 25,
+    "training_compatibility_note": "Compact processed item vocabulary used for training InfoNCE sampling. This is an in-house fit, not original-author weights or an exact original-paper training reproduction."
+  },
+  "training_provenance": [
+    {
+      "sha256": "460eb3cd45641d397b7d5485e64a4c29fd15cf4c411fcd700c575c73c941476c",
+      "record_type": "original_training_log"
+    },
+    {
+      "sha256": "6aaa5338f62b5aa1ee2a80d312c7f4dd2f31a9c08aa4076a7390fce01edae04d",
+      "record_type": "original_training_stdout"
+    },
+    {
+      "sha256": "14869da9be34f57887c6cd0ea9398359b2fdd84d17d83b8e47a9f3ad9dee2133",
+      "record_type": "prior_checkpoint_readout"
+    }
+  ],
+  "data": {
+    "name": "UniSAR provider-processed KuaiSAR",
+    "source": "https://github.com/TengShi-RUC/UniSAR#1-download-data",
+    "underlying_dataset": "https://kuaisar.github.io/",
+    "underlying_dataset_license": "CC-BY-NC-SA-4.0",
+    "redistributed": false
+  },
+  "distribution": {
+    "kind": "github_release_assets",
+    "tag": "v0.2.4",
+    "url": "https://github.com/jdding/rolemap/releases/tag/v0.2.4"
+  }
+}

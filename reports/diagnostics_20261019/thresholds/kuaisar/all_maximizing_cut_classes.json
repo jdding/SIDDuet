@@ -1,0 +1,236 @@
+[
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4411,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 88768326769870,
+        "numerator": 6183287669
+      },
+      "upper_exclusive": {
+        "denominator": 22191742483295,
+        "numerator": 1545803474
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4412,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 22191742483295,
+        "numerator": 1545803474
+      },
+      "upper_exclusive": {
+        "denominator": 88765613096490,
+        "numerator": 6183140123
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4413,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 88765613096490,
+        "numerator": 6183140123
+      },
+      "upper_exclusive": {
+        "denominator": 1775285125196,
+        "numerator": 123661327
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4414,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 1775285125196,
+        "numerator": 123661327
+      },
+      "upper_exclusive": {
+        "denominator": 88762899423110,
+        "numerator": 6182992577
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4415,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 88762899423110,
+        "numerator": 6182992577
+      },
+      "upper_exclusive": {
+        "denominator": 22190385646605,
+        "numerator": 1545729701
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4416,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 22190385646605,
+        "numerator": 1545729701
+      },
+      "upper_exclusive": {
+        "denominator": 8069107795430,
+        "numerator": 562076821
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4417,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 8069107795430,
+        "numerator": 562076821
+      },
+      "upper_exclusive": {
+        "denominator": 44379414456520,
+        "numerator": 3091385629
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4418,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 44379414456520,
+        "numerator": 3091385629
+      },
+      "upper_exclusive": {
+        "denominator": 17751494415270,
+        "numerator": 1236539497
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  },
+  {
+    "boundary_pairs_in_run": 1,
+    "rsd_boundary_index": 4419,
+    "rsd_cut_interval": {
+      "lower_inclusive": {
+        "denominator": 17751494415270,
+        "numerator": 1236539497
+      },
+      "upper_exclusive": {
+        "denominator": 17767776455550,
+        "numerator": 1508792111
+      }
+    },
+    "rsi_boundary_end": 3262,
+    "rsi_boundary_start": 3262,
+    "rsi_cut_union_interval": {
+      "lower_inclusive": {
+        "denominator": 1,
+        "numerator": 988378867643
+      },
+      "upper_exclusive": {
+        "denominator": 1,
+        "numerator": 1000000000000
+      }
+    }
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "aggregates": [
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.583667,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.338365,
+      "role": "rec",
+      "slice_type": "all",
+      "slice_value": "all",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 4996
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.735192,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.53003,
+      "role": "search",
+      "slice_type": "all",
+      "slice_value": "all",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 287
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.539134,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.297628,
+      "role": "rec",
+      "slice_type": "topology_cell",
+      "slice_value": "high_rsd|low_rsi",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 2517
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.628883,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.379727,
+      "role": "rec",
+      "slice_type": "topology_cell",
+      "slice_value": "low_rsd|low_rsi",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 2479
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.740741,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.523194,
+      "role": "search",
+      "slice_type": "topology_cell",
+      "slice_value": "high_rsd|low_rsi",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 135
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.730263,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.536102,
+      "role": "search",
+      "slice_type": "topology_cell",
+      "slice_value": "low_rsd|low_rsi",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 152
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.539134,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.297628,
+      "role": "rec",
+      "slice_type": "rsd_bucket",
+      "slice_value": "high_rsd",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 2517
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.628883,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.379727,
+      "role": "rec",
+      "slice_type": "rsd_bucket",
+      "slice_value": "low_rsd",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 2479
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.740741,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.523194,
+      "role": "search",
+      "slice_type": "rsd_bucket",
+      "slice_value": "high_rsd",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 135
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.730263,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.536102,
+      "role": "search",
+      "slice_type": "rsd_bucket",
+      "slice_value": "low_rsd",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 152
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.583667,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.338365,
+      "role": "rec",
+      "slice_type": "rsi_mag_bucket",
+      "slice_value": "low_rsi",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 4996
+    },
+    {
+      "dataset": "kuaisar_unisar_processed",
+      "hit10": 0.735192,
+      "method_id": "unisar_processed_kuaisar",
+      "method_paradigm": "discriminative",
+      "ndcg10": 0.53003,
+      "role": "search",
+      "slice_type": "rsi_mag_bucket",
+      "slice_value": "low_rsi",
+      "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+      "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0",
+      "units": 287
+    }
+  ],
+  "boundary": "the script evaluates supplied scores; it does not train or reproduce a serving model",
+  "evaluation_units": 5283,
+  "methods": [
+    "unisar_processed_kuaisar"
+  ],
+  "paradigms": [
+    "discriminative"
+  ],
+  "schema": "sr_sid_rolemap.fixed_candidate_evaluation.v3",
+  "status": "pass",
+  "tie_policy": "uniform_within_exact_score_ties",
+  "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
+  "topology_sha256": "c4fa2fd5db0da45c02371329195d15eeff67d9323f55aefb8cbc9537528221e0"
+}

@@ -1,0 +1,13 @@
+# Actual model and input-conversion results
+
+`INFERENCE.json` records actual UniSAR predictions from the pinned source and earlier-trained checkpoint, including all original test denominators and score ties. `public_evaluator.json` matches the direct covered metrics (`metric_parity.json`). `RESULTS.json` and `coverage.csv` describe applicability and the prespecified support-stratified label comparison; the census followed a low-coverage sample and is descriptive.
+
+The core paired population does not represent every model request. In this processed input view, search coverage is 287/9,789 (2.93%) and recommendation coverage is 4,996/157,192 (3.18%). Covered NDCG@10 is 0.5300 versus 0.6253 on all search requests, and 0.3384 versus 0.4078 on recommendation. This is a population-selection association, not a gain or harm caused by RoleMap.
+
+After matching total-count and task-count-ratio strata, maximal versus nonmaximal label divergence has a recommendation difference of -0.0339 [-0.0579,-0.0085]. The search interval includes zero. These separate intervals do not establish a between-task interaction. The analysis does not validate an incremental benefit of the combined RSD/RSI scores or a causal semantic-conflict claim.
+
+The small, field-mapped portability example reproduces a 320-item topology exactly and joins all catalog-category map entries. It is the same provider dataset in another schema and is not external adoption. Raw users, requests, item-level counts, scores, maps from this case remain local. The exact self-trained numerical checkpoint is available as release attachments under CC BY-NC-SA4.0. The scripts accept compatible inputs held by the receiver; [Exact study replay](../../analysis/model_reuse/REPLAY.md) uses the separately downloadable checkpoint. See the optional workflow under `analysis/model_reuse/README.md`.
+
+The prior candidate-ID tie sensitivity gives search NDCG0.6245 overall and0.5264 covered, versus0.6253/0.5300 under the v3 exact-tie mean. Recommendation means are unchanged. Both policies retain the lower covered-cohort mean. `tie_policy_sensitivity.json` records the unrounded values and tie counts.
+
+`full_checkpoint_replay.json` supersedes the earlier sampled receiver check for execution coverage: a fresh virtualenv, fresh public source/provider downloads and only packaged weight parts reproduce all166,981 requests and16,698,100 score values. All three prediction CSVs are byte-identical; both topology CSVs match; metric objects and bootstrap/tie diagnostics have zero difference. The prior missing-tqdm attempt was retained in the author audit and the corrected dependency list is included. The checkpoint download is linked in the replay instructions.

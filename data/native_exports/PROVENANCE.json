@@ -1,0 +1,60 @@
+{
+  "catalog_ids": 20540,
+  "cohort_csv_sha256": "a6f3202fd6b6ac09e1a154e8c6d42511bd663e2f381206739c0243113aeb33e9",
+  "dataset_card": "https://huggingface.co/datasets/THUIR/Qilin",
+  "dataset_card_license_metadata": "apache-2.0",
+  "derived_input_terms": "Apache-2.0; see LICENSE-QILIN.txt and NOTICE.md",
+  "exact_raw_exposure_replay": {
+    "inclusion_authorized": true,
+    "local_qa_json": "qa/OPTIONAL_NATIVE_INPUT_REPRODUCTION.json",
+    "local_qa_report": "qa/OPTIONAL_NATIVE_INPUT_REPRODUCTION.md",
+    "qa_json_sha256": "6fda80362fa7386a700416acebcda651b0f74173baa9dc0910afe736d6a0c66a",
+    "qa_report_sha256": "4ad16fc30e359aa29b11323a2659792706b3775547ca82d7dbe306e453a819d9",
+    "request_row_sha256_matches_historical_r3": {
+      "audit": "d17775c9a7c4fa9b82273b9d3c23d52f11c732abbc9117a02f64065fa9efbf75",
+      "train": "ec2c812850fb4c75da6451daa79e5d46d3d9e04edf84fb1485d65957046321d7",
+      "validation": "bf82a16dba7f01a6c52d4e59bddc84df8741970195781afec4d6506ac7ab7dd5"
+    },
+    "six_fitted_views_and_all_audit_points_intervals_exact_equal": true,
+    "status": "PASS_EXACT_INPUT_SUBSTITUTION_REPRODUCTION"
+  },
+  "extractor_difference": "Only accepted cohort CSV byte hash differs from packaged extractor; item set and all split/weight logic unchanged",
+  "maps": [
+    {
+      "columns": [
+        "item_id",
+        "sid"
+      ],
+      "file": "native_maps/gensar_semantic.csv",
+      "rows": 20540,
+      "sha256": "da6bdd9ab65c983f028ce8137add898464bda91a348e963cc8dd08ac53c38740",
+      "source_sha256": "da6bdd9ab65c983f028ce8137add898464bda91a348e963cc8dd08ac53c38740"
+    },
+    {
+      "columns": [
+        "item_id",
+        "sid"
+      ],
+      "file": "native_maps/gensar_collaborative.csv",
+      "rows": 20540,
+      "sha256": "5b166b5a200457230129e05712585eafa95114679654bee71675413319cd5c64",
+      "source_sha256": "5b166b5a200457230129e05712585eafa95114679654bee71675413319cd5c64"
+    },
+    {
+      "columns": [
+        "item_id",
+        "sid"
+      ],
+      "file": "native_maps/gaoq_complete.csv",
+      "rows": 20540,
+      "sha256": "1a5a175b13196a7d837f3732d3cb5e3ee40f5798404cb94891b9a7f095cd69cf",
+      "source_sha256": "1a5a175b13196a7d837f3732d3cb5e3ee40f5798404cb94891b9a7f095cd69cf"
+    }
+  ],
+  "native_source_code_licenses_asserted": false,
+  "policy_change": "Permit only the three named derived catalog-ID/code maps and minimal cohort under provider Apache-2.0 terms and attribution; no requests, user/session identifiers, query/history, role-count/label joins, trajectories, or other complete maps",
+  "publication_status": "local_candidate_not_published",
+  "release_inclusion_authorized": true,
+  "status": "APPROVED_DERIVED_INPUTS_IN_UNPUBLISHED_LOCAL_CANDIDATE",
+  "upstream_native_source_code_included": false
+}
