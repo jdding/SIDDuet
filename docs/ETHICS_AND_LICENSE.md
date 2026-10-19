@@ -35,3 +35,8 @@ Apache-2.0 terms and attribution. They contain catalog identifiers and derived
 codes, not request/user/session/query/history data or a full role-label join.
 Other complete maps and all raw/user-level or role-label joins remain excluded.
 No upstream native implementation source code is bundled or relicensed.
+
+
+## Research assistance
+
+OpenAI Codex assisted protocol design, implementation, analysis scripts and documentation. The author is responsible for the resource and its claims. Labels are derived by the documented provider-field rules. Numerical checks use fixed source/input hashes, synthetic controls and full fixed-checkpoint prediction replay; no LLM-generated label judgments are treated as observed data.

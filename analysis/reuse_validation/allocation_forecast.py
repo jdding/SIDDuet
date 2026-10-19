@@ -431,7 +431,9 @@ def default_specs():
 
 
 def load_specs(args):
-    data = json.load(open(args.maps_manifest)) if args.maps_manifest else default_specs()
+    data = (
+        json.loads(Path(args.maps_manifest).read_text()) if args.maps_manifest else default_specs()
+    )
     paths = set(x["path"] for x in data["maps"])
     for pair in data.get("paired_shared_prefix", []):
         paths.update((pair["left"], pair["right"]))
@@ -565,10 +567,10 @@ def evaluate(args):
         raise ValueError("--fitted and its sibling FIT_RECEIPT.json are required")
     model_path = Path(args.fitted).resolve()
     receipt_path = model_path.parent.parent / "FIT_RECEIPT.json"
-    receipt = json.load(open(receipt_path))
+    receipt = json.loads(Path(receipt_path).read_text())
     if receipt["fitted_sha256"] != digest(model_path) or receipt.get("test_accessed") is not False:
         raise ValueError("Frozen model receipt mismatch")
-    frozen = json.load(open(model_path))
+    frozen = json.loads(Path(model_path).read_text())
     if frozen["schema"] != SCHEMA or frozen["phase"] != "FROZEN_WITHOUT_TEST_ACCESS":
         raise ValueError("Not an admissible frozen fit")
     # Check every binding, including code/protocol/map/source manifest, before test.

@@ -44,6 +44,7 @@ not be downloaded for the synthetic workflow. Their license is separate from MIT
 From the resource root:
 
 ```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 "$WORK/venv/bin/python" analysis/model_reuse/replay_unisar.py \
   --official-root "$WORK/source/UniSAR-1a14a246066cd1aa6ee789c57ff2c7499f3d7379" \
   --processed-root "$WORK/provider" \

@@ -1,7 +1,7 @@
 const runButton = document.getElementById("run");
 const status = document.getElementById("status");
 const results = document.getElementById("results");
-const worker = new Worker("demo/python-worker.js");
+const worker = new Worker("demo/python-worker.js", {type: "module"});
 const fixed = value => Number(value).toFixed(4);
 const percent = value => (100 * Number(value)).toFixed(2) + "%";
 

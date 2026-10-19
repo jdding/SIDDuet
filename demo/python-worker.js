@@ -17,7 +17,7 @@ let runtime;
 
 async function initialize(base) {
   postMessage({type: "progress", message: "Loading Python in your browser…"});
-  importScripts(PYODIDE_BASE + "pyodide.js");
+  const {loadPyodide} = await import(PYODIDE_BASE + "pyodide.mjs");
   const python = await loadPyodide({indexURL: PYODIDE_BASE});
   const response = await fetch(new URL("PACKAGE_MANIFEST.json", base));
   if (!response.ok) throw new Error("The resource manifest is unavailable.");
@@ -39,7 +39,7 @@ async function initialize(base) {
   return python;
 }
 
-onmessage = async event => {
+self.onmessage = async event => {
   try {
     const base = new URL("../", self.location.href);
     runtime ??= initialize(base);
