@@ -1,0 +1,12 @@
+{
+  "schema": "rolemap.shared_calendar_window.v1",
+  "start": 1732707000,
+  "end": 1732721400,
+  "utc_start": "2024-11-27T11:30:00+00:00",
+  "utc_end": "2024-11-27T15:30:00+00:00",
+  "duration_seconds": 14400,
+  "selection": "Earliest maximal contiguous run of complete half-hour bins after the original audit with real complete-interval requests in both tasks",
+  "bins": 8,
+  "selected_from_coverage_only": true,
+  "prediction_losses_examined": false
+}

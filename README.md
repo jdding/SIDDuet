@@ -11,6 +11,8 @@ support to each task, and attaches model predictions with explicit coverage and 
 | Should task counts be pooled for later exposure-allocation forecasts? | [Temporal reuse example](analysis/reuse_validation/README.md) |
 | Which requests does the diagnostic cover for a real joint model? | [UniSAR predictions and complete replay](analysis/model_reuse/REPLAY.md) |
 
+The [additional shared-calendar example](analysis/reuse_validation/SHARED_WINDOW_README.md) selects a later period using actual task coverage, then repeats the pooling comparison with fixed methods.
+
 See [what the release supports](docs/RESOURCE_CAPABILITIES.md) for package-only, provider-input and own-data workflows, and [the relationship to SIDInspector](docs/RELATION_TO_SIDINSPECTOR.md).
 
 ## Try it online

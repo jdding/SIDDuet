@@ -26,8 +26,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1171,
-      "sha256": "e67c56126ac1b316622d972b98b034ff069d1824fb94588214504e019ae9fb59"
+      "bytes": 1396,
+      "sha256": "c48b5eaec03af315da19e487957ef98c720105a7d8ca15db307b93d4a4c441ae"
     },
     {
       "path": "CITATION.cff",
@@ -56,13 +56,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4851,
-      "sha256": "94f3a3e861c9388888e4d5f69a0413ef37897d5188b7d161bc89019a048adb48"
+      "bytes": 5051,
+      "sha256": "a5baeda83ee5c46b4ebd4a2bb380f63bfde79d6d7487ac4442c35fedc0e12f12"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 1540,
-      "sha256": "35c803ff1c742559142d007184cf26535ac59a60d781802effdc31d81934e31f"
+      "bytes": 1775,
+      "sha256": "53adc4cb1b84c6c3fe9a7110ad81bff23cab5e084f468b5b89bd48c32266c809"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/README.md",
@@ -176,8 +176,8 @@
     },
     {
       "path": "analysis/reuse_validation/MULTIPLICITY_README.md",
-      "bytes": 2959,
-      "sha256": "2b1cc7c676fb8c3f5391dad9cdf4513c96f71a477595fdd2568be40afff4838b"
+      "bytes": 3500,
+      "sha256": "6ffe96838d6296b0f63fef14f3d585fb0b70c939eb6bd8792fb5d5b45d7bb8d0"
     },
     {
       "path": "analysis/reuse_validation/PROTOCOL.md",
@@ -186,13 +186,28 @@
     },
     {
       "path": "analysis/reuse_validation/README.md",
-      "bytes": 9447,
-      "sha256": "67563a59cdbb9424b50030b55464dbc5ccb44559bb953bd6608627afc0c5d02a"
+      "bytes": 8879,
+      "sha256": "951960ec046acec4f253cdd5b9895e39ec9879dd8abf5fbfd4540e4e903719a6"
     },
     {
       "path": "analysis/reuse_validation/RESULT_REVIEW_SUMMARY.md",
-      "bytes": 3434,
-      "sha256": "e546028f3ae87a904afe3f32fef69a7275e106fb4b1d8a2fcea8256c394ee83e"
+      "bytes": 2227,
+      "sha256": "09c69afe2d53a49151e3685a47433fca213abc5679539e8ee8a3b850ea40acd4"
+    },
+    {
+      "path": "analysis/reuse_validation/SHARED_WINDOW.json",
+      "bytes": 455,
+      "sha256": "4a467c7238aebf92219dc7f4915bc3207c51a0244277423cafc3885be2701ccb"
+    },
+    {
+      "path": "analysis/reuse_validation/SHARED_WINDOW_PROTOCOL.md",
+      "bytes": 3927,
+      "sha256": "6a5d985521c15e3721f2ff468f0f41df35c05ee45c510c167cccf20d1c0bfc5b"
+    },
+    {
+      "path": "analysis/reuse_validation/SHARED_WINDOW_README.md",
+      "bytes": 6106,
+      "sha256": "96b6eb6dcafd2cee2afabc76a49986ab90db226b21376e3869b82d780afae258"
     },
     {
       "path": "analysis/reuse_validation/SOURCE_PROVENANCE.json",
@@ -213,6 +228,16 @@
       "path": "analysis/reuse_validation/allocation_forecast.py",
       "bytes": 30623,
       "sha256": "14a46ed8774130003bddad97eb37caac7e9c484236952e4f7f5c95ca057a9d5a"
+    },
+    {
+      "path": "analysis/reuse_validation/compare_time_windows.py",
+      "bytes": 7170,
+      "sha256": "a8fb7566fe27a44506fee68bc001e86a95f6d67004feade370b09837c1236c77"
+    },
+    {
+      "path": "analysis/reuse_validation/export_shared_window.py",
+      "bytes": 5842,
+      "sha256": "2d6e05c7a075785c3376ec564b7fda326dfc7049596cda0bab026e43df55b654"
     },
     {
       "path": "analysis/reuse_validation/extract_exposures.py",
@@ -265,6 +290,31 @@
       "sha256": "03094027bd18f22dcfe858a8bb70cae991aa8fa38d89ee6e415c4404eeafe6ed"
     },
     {
+      "path": "analysis/reuse_validation/results/shared_window_coverage/CALENDAR_BINS.csv",
+      "bytes": 9480,
+      "sha256": "4538bc68f2f3a193d54d69da9dc1d311e1268ddb674efafc19f118c2fb736bb1"
+    },
+    {
+      "path": "analysis/reuse_validation/results/shared_window_coverage/COVERAGE.json",
+      "bytes": 2428,
+      "sha256": "f2a46d3d4f4fcb6733e0f9bbfdf2da3b9cdb44e7f9b92b1d7ba0475163ab0e55"
+    },
+    {
+      "path": "analysis/reuse_validation/results/shared_window_r1/RESULTS.csv",
+      "bytes": 1987,
+      "sha256": "a5c76a4be568961a918459aebc7d2a881a1d2b4ed539a395accd9d581b15ba40"
+    },
+    {
+      "path": "analysis/reuse_validation/results/shared_window_r1/RESULTS.json",
+      "bytes": 14104,
+      "sha256": "6bce32f07049d399cfcdd77c396df813fcc92f660a11418b233c96e5e800ff19"
+    },
+    {
+      "path": "analysis/reuse_validation/results/shared_window_r1/SUMMARY.json",
+      "bytes": 3297,
+      "sha256": "959811514568806caf989f651de3d99065d0e5dfc564c5bdf0c40fda67d924eb"
+    },
+    {
       "path": "analysis/reuse_validation/results/test_common_r1/RESULTS.csv",
       "bytes": 1988,
       "sha256": "56c60e6db80c9bde5e82f9d51bf79d67519c8f91c2ab982508f5d2f5fde309de"
@@ -283,6 +333,21 @@
       "path": "analysis/reuse_validation/results/test_main_r1/RESULTS.json",
       "bytes": 15397,
       "sha256": "1d36af64be086589bb74292aa2c5e2464ab6339975e80186b3a344f124fddddd"
+    },
+    {
+      "path": "analysis/reuse_validation/results/two_window_sensitivity/TWO_WINDOW_SENSITIVITY.csv",
+      "bytes": 1945,
+      "sha256": "e1e4123d6625e7546850a0d1ffc502c16c40795e4584d7c982f4b3474f9dc897"
+    },
+    {
+      "path": "analysis/reuse_validation/results/two_window_sensitivity/TWO_WINDOW_SENSITIVITY.json",
+      "bytes": 12954,
+      "sha256": "a27486f30c60d1ab835771112262666cb7e546153dcaac28e3b2ee9e60da9f80"
+    },
+    {
+      "path": "analysis/reuse_validation/shared_window.py",
+      "bytes": 9976,
+      "sha256": "67dfbd54159c2d75e0ce26a24690c6be9e879498301720d035cc5074af5cb0f3"
     },
     {
       "path": "analysis/reuse_validation/test_allocation_forecast.py",
@@ -446,8 +511,8 @@
     },
     {
       "path": "docs/RESOURCE_CAPABILITIES.md",
-      "bytes": 3999,
-      "sha256": "9515d06d970ebd750dfb2d4e9bde92dc75c3361882b5c21403d1388fe086528f"
+      "bytes": 4095,
+      "sha256": "157a61e38ab06147d4965671c88710c5ec1278cb44e99a2b738145895a4b872e"
     },
     {
       "path": "docs/ROLEMAP_RECORD_PROTOCOL.md",
@@ -961,8 +1026,8 @@
     }
   ],
   "counts": {
-    "files": 191,
-    "bytes": 8556725
+    "files": 204,
+    "bytes": 8635918
   },
-  "working_copy_status": "unreleased_review_revision"
+  "working_copy_status": "unreleased_shared_window_revision"
 }

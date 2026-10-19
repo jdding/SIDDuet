@@ -1,0 +1,85 @@
+{
+  "schema": "rolemap.calendar_coverage.v1",
+  "phase": "COVERAGE_ONLY_NO_FIT_OR_LOSS",
+  "sources": [
+    {
+      "role": "search",
+      "provider": "train",
+      "sha256": "dbe68affa5ea64aad0744fa9c08ac9d8d58180564ab28c0625684eaa09534bdd",
+      "rows": 44024
+    },
+    {
+      "role": "search",
+      "provider": "test",
+      "sha256": "89dd99821e365341860d69f77bab36eeb8d8b692194e082e40a9ea6ea39ff243",
+      "rows": 6192
+    },
+    {
+      "role": "recommendation",
+      "provider": "train",
+      "sha256": "42b3679342c369c5df3802355a5fd0029dcedc5709a2248497ae1ac6fe56533d",
+      "rows": 83437
+    },
+    {
+      "role": "recommendation",
+      "provider": "test",
+      "sha256": "849d5cce5b2244a535568f72230cc98e4fabb23634b30c98365d8a64cdf0c5f0",
+      "rows": 11115
+    }
+  ],
+  "code_sha256": "67dfbd54159c2d75e0ce26a24690c6be9e879498301720d035cc5074af5cb0f3",
+  "cohort_sha256": "a6f3202fd6b6ac09e1a154e8c6d42511bd663e2f381206739c0243113aeb33e9",
+  "primary_map_sha256": "da6bdd9ab65c983f028ce8137add898464bda91a348e963cc8dd08ac53c38740",
+  "cache_sha256": "e8f54085df20f18bd4f3ea2e72032a9e3c93fac74e641a97763974e554c527a0",
+  "source_audits": {
+    "search|train": {
+      "source_rows": 44024,
+      "valid_requests": 44024,
+      "crosses_half_hour_bin": 3814
+    },
+    "search|test": {
+      "source_rows": 6192,
+      "valid_requests": 6192,
+      "crosses_half_hour_bin": 584
+    },
+    "recommendation|train": {
+      "source_rows": 83437,
+      "valid_requests": 83437,
+      "crosses_half_hour_bin": 24461
+    },
+    "recommendation|test": {
+      "source_rows": 11115,
+      "valid_requests": 11115,
+      "crosses_half_hour_bin": 2830
+    }
+  },
+  "source_ranges": {
+    "search|train": {
+      "min_start": 1732138228.0,
+      "max_end": 1732751787.0
+    },
+    "search|test": {
+      "min_start": 1732735658.0,
+      "max_end": 1732752025.0
+    },
+    "recommendation|train": {
+      "min_start": 1732110732.0,
+      "max_end": 1735374870.0
+    },
+    "recommendation|test": {
+      "min_start": 1732706088.0,
+      "max_end": 1732723187.0
+    }
+  },
+  "duplicate_native_ids_across_sources": 0,
+  "valid_requests": 144768,
+  "bin_seconds": 1800,
+  "bins_total": 72,
+  "jointly_covered_bins": 32,
+  "new_joint_bins": 8,
+  "wall_seconds": 11.627733958,
+  "cpu_seconds": 11.338465000000001,
+  "max_rss_bytes": 232767488,
+  "pyarrow": "21.0.0",
+  "no_clicks_queries_histories_or_losses_used": true
+}

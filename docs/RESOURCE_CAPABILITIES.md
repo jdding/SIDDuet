@@ -7,7 +7,7 @@ RoleMap is software for joining task observations to supplied code maps. The rel
 | Release alone | Eight-item end-to-end example; verify current aggregate references | Python standard library, or the online example |
 | Shipped Qilin catalog exports | Inspect three 20,540-row maps as six complete/prefix views | Standard-library CSV/JSON reading; example below |
 | Licensed KuaiSAR/Qilin provider files | Reconstruct paired observations and contextual labels | Provider files and the relevant reader dependencies |
-| Historical Qilin request files plus shipped maps/cohort | Reproduce the pooling comparison and multiplicity sensitivity | NumPy; local train/tuning/audit request exports |
+| Historical Qilin request files plus shipped maps/cohort | Reproduce both temporal windows and multiplicity sensitivity | NumPy; local train/tuning/audit request exports |
 | Fixed checkpoint plus pinned UniSAR source and processed data | Replay the full 166,981-request prediction case | Separate v0.2.4 checkpoint assets and the declared CPU environment |
 | Own counts/labels and item-to-code map | Inspect task support and code-group allocation | Local schema conversion; actual common item keys |
 | Own request exposures or candidate scores | Compare pooling choices or evaluate supplied predictions | Declared temporal splits/user clusters, or actual scored candidates |
@@ -42,7 +42,7 @@ PYCODE
 
 The original pairing and population analyses require provider observations. Follow [preprocessing](PREPROCESSING_PROTOCOL.md), then [rebuilding](REBUILD_PROTOCOL.md). Published collision references alone cannot recover per-item task allocations or substitute a different labeling rule.
 
-[Temporal reuse](../analysis/reuse_validation/README.md) uses actual request exposures, not only item counts. The shipped maps remove the need to retrain quantizers; the provider Parquet requests are still required. The new [multiplicity instructions](../analysis/reuse_validation/MULTIPLICITY_README.md) use the resulting local score rows and emit aggregates only.
+[Temporal reuse](../analysis/reuse_validation/README.md), including the [additional shared window](../analysis/reuse_validation/SHARED_WINDOW_README.md), uses actual request exposures, not only item counts. The shipped maps remove the need to retrain quantizers; the provider Parquet requests are still required. The new [multiplicity instructions](../analysis/reuse_validation/MULTIPLICITY_README.md) use the resulting local score rows and emit aggregates only.
 
 [Complete checkpoint replay](../analysis/model_reuse/REPLAY.md) additionally needs the separately licensed weights, upstream source and processed data. Source cloning never downloads those weights.
 

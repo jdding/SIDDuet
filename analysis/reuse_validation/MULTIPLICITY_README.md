@@ -28,3 +28,7 @@ The GenSAR primary estimate stays 0.012686 nats. Its original pointwise 95% inte
 ## Comparison families
 
 This sensitivity covers the five macro-role temporal loss endpoints, not every exploratory statistic in the resource. The population analysis separately defines six primary band-matched comparisons and six supplementary exact-total comparisons, with BH and BY summaries within each six-comparison family. Checkpoint coverage and label-stratified NDCG intervals are descriptive analyses; no familywise confirmatory claim is made for them.
+
+## Additional shared-calendar window
+
+The original 20,000-draw five-view analysis above remains frozen. The [two-window analysis](SHARED_WINDOW_README.md) extends the streams to 40,000 draws and adds a ten-endpoint sensitivity. The original point estimates are unchanged; extended marginal interval endpoints vary slightly with the longer Monte Carlo stream. The GenSAR primary interval still includes zero for the original window, while its additional-window interval is positive. This does not promote the secondary GAOQ view to primary.

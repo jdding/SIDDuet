@@ -1,0 +1,483 @@
+{
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261019,
+  "common_window": null,
+  "elapsed_seconds": 0.6417758464813232,
+  "evaluation_manifest_sha256": "6a1397a55619a54e56cca499cd73173edaf5ee51eac15cf62c9ef25753cfa635",
+  "evaluation_sha256": "7b5f078af074bc5a005823c5e63f57ba09d050e0218540082b42de3e794e460c",
+  "evaluation_split": "audit",
+  "fitted_sha256": "27ea0f369bcc7ff700c565b7fc30f3cdd247e2cf8f6ab7728f6c9595e3498344",
+  "note": "Raw losses across granularities are not a method quality ranking.",
+  "results": [
+    {
+      "aware_loss": {
+        "macro": 1.7528077770125596,
+        "rec": 1.7528944107832196,
+        "search": 1.7527211432418996
+      },
+      "blind_loss": {
+        "macro": 1.7613113437812178,
+        "rec": 1.7682665514648617,
+        "search": 1.754356136097574
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            0.006502997432593402,
+            0.010595485292721184
+          ],
+          "rec": [
+            0.01201481997133903,
+            0.01871242551890822
+          ],
+          "search": [
+            -0.0006240613211065005,
+            0.004008506413568674
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 2373,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 96,
+        "member_appearances": 1701,
+        "rec_role_unseen_group_member_appearances": 113,
+        "rec_role_unseen_member_appearances": 1717,
+        "search_role_unseen_group_member_appearances": 643,
+        "search_role_unseen_member_appearances": 2434
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 5144,
+          "mapped_member_appearances": 5905,
+          "mapped_requests": 3508,
+          "no_mapped_requests": 7114,
+          "scored_requests": 3195,
+          "singleton_only_requests": 313,
+          "source_requests": 10622
+        },
+        "search": {
+          "collision_member_appearances": 3336,
+          "mapped_member_appearances": 3737,
+          "mapped_requests": 1637,
+          "no_mapped_requests": 3660,
+          "scored_requests": 1524,
+          "singleton_only_requests": 113,
+          "source_requests": 5297
+        }
+      },
+      "delta_nats": {
+        "macro": 0.008503566768658155,
+        "rec": 0.015372140681642055,
+        "search": 0.0016349928556742555
+      },
+      "name": "gensar_shared2",
+      "primary": true,
+      "selected_aware": {
+        "beta": 100.0,
+        "kind": "shrinkage",
+        "validation": {
+          "macro": 1.7485873152477809,
+          "rec": 1.7434027774343155,
+          "search": 1.753771853061246
+        }
+      },
+      "selected_blind": {
+        "alpha": 100.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 1.7587178493963092,
+          "rec": 1.7617024874215679,
+          "search": 1.7557332113710507
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 1.3269919959629541,
+        "rec": 1.340099545640414,
+        "search": 1.3138844462854944
+      },
+      "blind_loss": {
+        "macro": 1.3299771760112713,
+        "rec": 1.3448741862030584,
+        "search": 1.3150801658194842
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            0.0011660746836431174,
+            0.004821770846462422
+          ],
+          "rec": [
+            0.001785372990661005,
+            0.007780266949476532
+          ],
+          "search": [
+            -0.0007715162922285912,
+            0.0031971398534729177
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 1559,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 214,
+        "member_appearances": 1382,
+        "rec_role_unseen_group_member_appearances": 243,
+        "rec_role_unseen_member_appearances": 1220,
+        "search_role_unseen_group_member_appearances": 446,
+        "search_role_unseen_member_appearances": 904
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 2227,
+          "mapped_member_appearances": 5905,
+          "mapped_requests": 3508,
+          "no_mapped_requests": 7114,
+          "scored_requests": 1768,
+          "singleton_only_requests": 1740,
+          "source_requests": 10622
+        },
+        "search": {
+          "collision_member_appearances": 1202,
+          "mapped_member_appearances": 3737,
+          "mapped_requests": 1637,
+          "no_mapped_requests": 3660,
+          "scored_requests": 727,
+          "singleton_only_requests": 910,
+          "source_requests": 5297
+        }
+      },
+      "delta_nats": {
+        "macro": 0.0029851800483171598,
+        "rec": 0.004774640562644539,
+        "search": 0.0011957195339897808
+      },
+      "name": "gensar_semantic_complete",
+      "primary": false,
+      "selected_aware": {
+        "beta": 100.0,
+        "kind": "shrinkage",
+        "validation": {
+          "macro": 1.2949478506290328,
+          "rec": 1.3284919251847964,
+          "search": 1.2614037760732693
+        }
+      },
+      "selected_blind": {
+        "alpha": 100.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 1.2975474804528695,
+          "rec": 1.3320177931384682,
+          "search": 1.2630771677672707
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 1.7504963158615383,
+        "rec": 1.939618958591539,
+        "search": 1.5613736731315377
+      },
+      "blind_loss": {
+        "macro": 1.7504949919324677,
+        "rec": 1.9396025803368955,
+        "search": 1.56138740352804
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            -0.00022071123057018082,
+            0.00020445289451904153
+          ],
+          "rec": [
+            -0.00021289072056699944,
+            0.00016307647339062193
+          ],
+          "search": [
+            -0.00038978706693668097,
+            0.0003654266384984949
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 1559,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 197,
+        "member_appearances": 1589,
+        "rec_role_unseen_group_member_appearances": 266,
+        "rec_role_unseen_member_appearances": 1418,
+        "search_role_unseen_group_member_appearances": 723,
+        "search_role_unseen_member_appearances": 1275
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 1986,
+          "mapped_member_appearances": 5905,
+          "mapped_requests": 3508,
+          "no_mapped_requests": 7114,
+          "scored_requests": 1595,
+          "singleton_only_requests": 1913,
+          "source_requests": 10622
+        },
+        "search": {
+          "collision_member_appearances": 1425,
+          "mapped_member_appearances": 3737,
+          "mapped_requests": 1637,
+          "no_mapped_requests": 3660,
+          "scored_requests": 905,
+          "singleton_only_requests": 732,
+          "source_requests": 5297
+        }
+      },
+      "delta_nats": {
+        "macro": -1.323929070595753e-06,
+        "rec": -1.637825464362308e-05,
+        "search": 1.373039650220953e-05
+      },
+      "name": "gensar_collaborative_complete",
+      "primary": false,
+      "selected_aware": {
+        "alpha": 1000.0,
+        "kind": "separate",
+        "validation": {
+          "macro": 1.7597853506808945,
+          "rec": 1.9526064914833192,
+          "search": 1.5669642098784697
+        }
+      },
+      "selected_blind": {
+        "alpha": 1000.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 1.7600641716872882,
+          "rec": 1.9528774232671902,
+          "search": 1.5672509201073863
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 6.3907943830555585,
+        "rec": 6.322437920400979,
+        "search": 6.459150845710138
+      },
+      "blind_loss": {
+        "macro": 6.419085530768463,
+        "rec": 6.34202661120398,
+        "search": 6.496144450332947
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            0.020026130282546507,
+            0.03601548358723726
+          ],
+          "rec": [
+            0.015778004303800164,
+            0.02331350854252043
+          ],
+          "search": [
+            0.02144425068681839,
+            0.052315582939218536
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 2495,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 0,
+        "member_appearances": 1791,
+        "rec_role_unseen_group_member_appearances": 0,
+        "rec_role_unseen_member_appearances": 1832,
+        "search_role_unseen_group_member_appearances": 0,
+        "search_role_unseen_member_appearances": 2689
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 5905,
+          "mapped_member_appearances": 5905,
+          "mapped_requests": 3508,
+          "no_mapped_requests": 7114,
+          "scored_requests": 3508,
+          "singleton_only_requests": 0,
+          "source_requests": 10622
+        },
+        "search": {
+          "collision_member_appearances": 3737,
+          "mapped_member_appearances": 3737,
+          "mapped_requests": 1637,
+          "no_mapped_requests": 3660,
+          "scored_requests": 1637,
+          "singleton_only_requests": 0,
+          "source_requests": 5297
+        }
+      },
+      "delta_nats": {
+        "macro": 0.02829114771290442,
+        "rec": 0.019588690803000297,
+        "search": 0.03699360462280943
+      },
+      "name": "gaoq_depth1",
+      "primary": false,
+      "selected_aware": {
+        "alpha": 1000.0,
+        "kind": "separate",
+        "validation": {
+          "macro": 6.377197323769584,
+          "rec": 6.297894372846521,
+          "search": 6.456500274692648
+        }
+      },
+      "selected_blind": {
+        "alpha": 1000.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 6.400470067886812,
+          "rec": 6.314569608436498,
+          "search": 6.486370527337126
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aware_loss": {
+        "macro": 2.257813269678879,
+        "rec": 2.2191985675255377,
+        "search": 2.2964279718322205
+      },
+      "blind_loss": {
+        "macro": 2.269625286898661,
+        "rec": 2.2403577635962844,
+        "search": 2.2988928102010373
+      },
+      "bootstrap": {
+        "draws": 2000,
+        "intervals": {
+          "macro": [
+            0.00978764807585376,
+            0.013849203259976909
+          ],
+          "rec": [
+            0.018095268524728248,
+            0.0242008934271529
+          ],
+          "search": [
+            -0.00011804543985619586,
+            0.005085510732801721
+          ]
+        },
+        "seed": 20261019,
+        "status": "OK",
+        "undefined_role_draws": 0,
+        "users": 2495,
+        "valid_draws": 2000
+      },
+      "cold_support": {
+        "group_member_appearances": 11,
+        "member_appearances": 1791,
+        "rec_role_unseen_group_member_appearances": 28,
+        "rec_role_unseen_member_appearances": 1832,
+        "search_role_unseen_group_member_appearances": 297,
+        "search_role_unseen_member_appearances": 2689
+      },
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 5905,
+          "mapped_member_appearances": 5905,
+          "mapped_requests": 3508,
+          "no_mapped_requests": 7114,
+          "scored_requests": 3508,
+          "singleton_only_requests": 0,
+          "source_requests": 10622
+        },
+        "search": {
+          "collision_member_appearances": 3737,
+          "mapped_member_appearances": 3737,
+          "mapped_requests": 1637,
+          "no_mapped_requests": 3660,
+          "scored_requests": 1637,
+          "singleton_only_requests": 0,
+          "source_requests": 5297
+        }
+      },
+      "delta_nats": {
+        "macro": 0.011812017219781978,
+        "rec": 0.021159196070746678,
+        "search": 0.002464838368816835
+      },
+      "name": "gaoq_depth2",
+      "primary": false,
+      "selected_aware": {
+        "beta": 100.0,
+        "kind": "shrinkage",
+        "validation": {
+          "macro": 2.2513535655158505,
+          "rec": 2.2146487848805547,
+          "search": 2.2880583461511463
+        }
+      },
+      "selected_blind": {
+        "alpha": 100.0,
+        "kind": "pooled",
+        "validation": {
+          "macro": 2.2635681360560733,
+          "rec": 2.236477819720578,
+          "search": 2.290658452391569
+        }
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "coverage": {
+        "rec": {
+          "collision_member_appearances": 0,
+          "mapped_member_appearances": 5905,
+          "mapped_requests": 3508,
+          "no_mapped_requests": 7114,
+          "scored_requests": 0,
+          "singleton_only_requests": 3508,
+          "source_requests": 10622
+        },
+        "search": {
+          "collision_member_appearances": 0,
+          "mapped_member_appearances": 3737,
+          "mapped_requests": 1637,
+          "no_mapped_requests": 3660,
+          "scored_requests": 0,
+          "singleton_only_requests": 1637,
+          "source_requests": 5297
+        }
+      },
+      "interval": null,
+      "loss": null,
+      "name": "gaoq_depth3",
+      "primary": false,
+      "status": "NO_COLLISION_CONTROL"
+    }
+  ],
+  "schema": "rolemap.allocation_forecast.v1",
+  "canonical_results_sha256": "affa8c1a5e10c777af891dedb8069cae69f41d1d1630c4b6380904adc328bb02",
+  "provenance_note": "Canonical local result includes runtime/path bindings; this aggregate omits local absolute paths. Request losses and fitted member probabilities are excluded."
+}

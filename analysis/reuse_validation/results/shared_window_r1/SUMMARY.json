@@ -1,0 +1,102 @@
+{
+  "schema": "rolemap.shared_window_summary.v1",
+  "window": {
+    "schema": "rolemap.shared_calendar_window.v1",
+    "start": 1732707000,
+    "end": 1732721400,
+    "utc_start": "2024-11-27T11:30:00+00:00",
+    "utc_end": "2024-11-27T15:30:00+00:00",
+    "duration_seconds": 14400,
+    "selection": "Earliest maximal contiguous run of complete half-hour bins after the original audit with real complete-interval requests in both tasks",
+    "bins": 8,
+    "selected_from_coverage_only": true,
+    "prediction_losses_examined": false
+  },
+  "counts": {
+    "train|search": {
+      "requests": 13611,
+      "cohort_exposed_requests": 4372,
+      "primary_collision_requests": 3963,
+      "provider_train": 13611
+    },
+    "audit|search": {
+      "requests": 5297,
+      "cohort_exposed_requests": 1637,
+      "primary_collision_requests": 1524,
+      "provider_train": 5297
+    },
+    "validation|search": {
+      "requests": 5311,
+      "cohort_exposed_requests": 1584,
+      "primary_collision_requests": 1471,
+      "provider_train": 5311
+    },
+    "train|recommendation": {
+      "requests": 71016,
+      "cohort_exposed_requests": 27456,
+      "primary_collision_requests": 24720,
+      "provider_train": 71016
+    },
+    "audit|recommendation": {
+      "requests": 10622,
+      "cohort_exposed_requests": 3508,
+      "primary_collision_requests": 3195,
+      "provider_train": 4916,
+      "provider_test": 5706
+    },
+    "validation|recommendation": {
+      "requests": 9648,
+      "cohort_exposed_requests": 3465,
+      "primary_collision_requests": 3187,
+      "provider_train": 4479,
+      "provider_test": 5169
+    }
+  },
+  "unique_users": {
+    "train|search": 4318,
+    "audit|search": 1918,
+    "validation|search": 1867,
+    "train|recommendation": 9383,
+    "audit|recommendation": 3158,
+    "validation|recommendation": 3049
+  },
+  "output_timestamp_ranges": {
+    "train|search": {
+      "min_start": 1732138228.0,
+      "max_end": 1732706997.0
+    },
+    "audit|search": {
+      "min_start": 1732707002.0,
+      "max_end": 1732721397.0
+    },
+    "validation|search": {
+      "min_start": 1732707008.0,
+      "max_end": 1732721398.0
+    },
+    "train|recommendation": {
+      "min_start": 1732530507.0,
+      "max_end": 1732706999.0
+    },
+    "audit|recommendation": {
+      "min_start": 1732707000.0,
+      "max_end": 1732721387.0
+    },
+    "validation|recommendation": {
+      "min_start": 1732707000.0,
+      "max_end": 1732721398.0
+    }
+  },
+  "primary_users_repeated_across_windows": 563,
+  "protocol_sha256": "6a5d985521c15e3721f2ff468f0f41df35c05ee45c510c167cccf20d1c0bfc5b",
+  "estimator_code_sha256": "14a46ed8774130003bddad97eb37caac7e9c484236952e4f7f5c95ca057a9d5a",
+  "draws": 40000,
+  "max_original_reconstruction_error": 1.4210854715202004e-14,
+  "source_cohort": "Fixed historical 20,540-item Qilin cohort; original maps and estimator-selection rule retained",
+  "source_script_sha256": {
+    "shared_window.py": "67dfbd54159c2d75e0ce26a24690c6be9e879498301720d035cc5074af5cb0f3",
+    "export_shared_window.py": "2d6e05c7a075785c3376ec564b7fda326dfc7049596cda0bab026e43df55b654",
+    "compare_time_windows.py": "a8fb7566fe27a44506fee68bc001e86a95f6d67004feade370b09837c1236c77"
+  },
+  "replayed_from_provider_inputs": true,
+  "replayed_numeric_error": 0.0
+}

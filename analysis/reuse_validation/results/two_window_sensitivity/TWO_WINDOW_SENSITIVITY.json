@@ -1,0 +1,428 @@
+{
+  "schema": "rolemap.two_window_sensitivity.v1",
+  "status": "COMPLETE",
+  "draws": 40000,
+  "within_window_family_size": 5,
+  "combined_family_size": 10,
+  "nominal_family_coverage": 0.95,
+  "within_window_marginal_coverage": 0.99,
+  "combined_marginal_coverage": 0.995,
+  "primary": "gensar_shared2",
+  "primary_users_in_both_windows": 563,
+  "max_original_reconstruction_error": 1.4210854715202004e-14,
+  "source_sha256": {
+    "original_reference_results": "3f0b8fae9db938f0d0c7304962b8acbf92e0721de261c72f47f32b535439def7",
+    "original/gensar_shared2_scores.jsonl": "66c558422ed64a8668fa52001af426dcbde67f6e61c10fc9b609994cf8108269",
+    "original/gensar_semantic_complete_scores.jsonl": "6cc0f5c3f701c56644eee795c922593fbc04e6fe51240e0cd170cfa81b250c21",
+    "original/gensar_collaborative_complete_scores.jsonl": "a55df905fc7ec58ffeea253b32fc815aadd7e3438bdbb3ca26f92e28cc1df454",
+    "original/gaoq_depth1_scores.jsonl": "1d0aaec541530dc68a2e226852fc5dbce576c6f1b23cfea691ad42ec5365af31",
+    "original/gaoq_depth2_scores.jsonl": "fe1860e9eb9248149c653b132955e92944e366b57684fc4b3de3f7376005c35e",
+    "shared_reference_results": "affa8c1a5e10c777af891dedb8069cae69f41d1d1630c4b6380904adc328bb02",
+    "shared/gensar_shared2_scores.jsonl": "180f7dd0c2ed856a5b023f9d3ef775ea8e991af07ec0b1dc5c5a479e5b37b543",
+    "shared/gensar_semantic_complete_scores.jsonl": "aff02c856ad54b23355f036a5f14d64aa48725196a3e10381069147c2691cc63",
+    "shared/gensar_collaborative_complete_scores.jsonl": "e0c0f82bc72e214a9c2392c5af1621fdd9735a829645b9fd9fcd3f3125bba119",
+    "shared/gaoq_depth1_scores.jsonl": "d8cca70299dc46073e857fcf69fad3a14bdc35d6d85a620974dd078466f7c104",
+    "shared/gaoq_depth2_scores.jsonl": "31660840918935b28d16e2d17e1a6329440e7e3a52a4eab02ae46285678b8d9b"
+  },
+  "code_sha256": "a8fb7566fe27a44506fee68bc001e86a95f6d67004feade370b09837c1236c77",
+  "paired_bootstrap_code_sha256": "8e5772637072a0313cbf119afc9ae80ac7379e59efbe3fcc719179eb47193a8f",
+  "numpy": "1.26.4",
+  "synthetic_checks": {
+    "paired_user_cancellation": true,
+    "wider_interval_contains_narrower": true
+  },
+  "results": [
+    {
+      "window": "original",
+      "name": "gensar_shared2",
+      "primary": true,
+      "users": 1019,
+      "scored_requests": 1595,
+      "blind_loss_nats": {
+        "macro": 1.7056143396960919,
+        "rec": 1.7062442320203348,
+        "search": 1.7049844473718492
+      },
+      "aware_loss_nats": {
+        "macro": 1.6929281581329374,
+        "rec": 1.702655263880605,
+        "search": 1.6832010523852698
+      },
+      "delta_nats": {
+        "macro": 0.012686181563154486,
+        "rec": 0.0035889681397298645,
+        "search": 0.02178339498657933
+      },
+      "original_ci95_nats": [
+        0.0015837410923108782,
+        0.02418105885415158
+      ],
+      "extended_ci95_nats": [
+        0.0013611677772956245,
+        0.023839370035208026
+      ],
+      "within_window_family95_nats": [
+        -0.0020908030323462763,
+        0.02716921522929041
+      ],
+      "two_window_family95_nats": [
+        -0.0033242919420296514,
+        0.028212390385139466
+      ],
+      "reconstruction_max_abs_error": 2.220446049250313e-15
+    },
+    {
+      "window": "original",
+      "name": "gensar_semantic_complete",
+      "primary": false,
+      "users": 609,
+      "scored_requests": 792,
+      "blind_loss_nats": {
+        "macro": 1.2540576815764428,
+        "rec": 1.2628980753252494,
+        "search": 1.2452172878276362
+      },
+      "aware_loss_nats": {
+        "macro": 1.2504879631823502,
+        "rec": 1.2560101530351213,
+        "search": 1.2449657733295791
+      },
+      "delta_nats": {
+        "macro": 0.0035697183940925914,
+        "rec": 0.0068879222901281345,
+        "search": 0.0002515144980570483
+      },
+      "original_ci95_nats": [
+        -0.007134195045325528,
+        0.01428582446298477
+      ],
+      "extended_ci95_nats": [
+        -0.00719048353242318,
+        0.014198186548816279
+      ],
+      "within_window_family95_nats": [
+        -0.010557101005867963,
+        0.017560182242332883
+      ],
+      "two_window_family95_nats": [
+        -0.011823477917742693,
+        0.01884249667490954
+      ],
+      "reconstruction_max_abs_error": 1.3322676295501878e-15
+    },
+    {
+      "window": "original",
+      "name": "gensar_collaborative_complete",
+      "primary": false,
+      "users": 576,
+      "scored_requests": 764,
+      "blind_loss_nats": {
+        "macro": 1.7237269706886713,
+        "rec": 1.9781306658144069,
+        "search": 1.4693232755629357
+      },
+      "aware_loss_nats": {
+        "macro": 1.7237480638192715,
+        "rec": 1.9781462319021907,
+        "search": 1.4693498957363522
+      },
+      "delta_nats": {
+        "macro": -2.1093130600169374e-05,
+        "rec": -1.556608778385815e-05,
+        "search": -2.6620173416480597e-05
+      },
+      "original_ci95_nats": [
+        -0.00013502873484844968,
+        7.694026545639873e-05
+      ],
+      "extended_ci95_nats": [
+        -0.00013236422319355123,
+        7.886383767288788e-05
+      ],
+      "within_window_family95_nats": [
+        -0.00017111176699398766,
+        0.00010738769039972335
+      ],
+      "two_window_family95_nats": [
+        -0.00018415586785654442,
+        0.00011826371665158125
+      ],
+      "reconstruction_max_abs_error": 2.220446049250313e-16
+    },
+    {
+      "window": "original",
+      "name": "gaoq_depth1",
+      "primary": false,
+      "users": 1096,
+      "scored_requests": 1745,
+      "blind_loss_nats": {
+        "macro": 6.3835154624444606,
+        "rec": 6.320578306607306,
+        "search": 6.446452618281616
+      },
+      "aware_loss_nats": {
+        "macro": 6.377235578420308,
+        "rec": 6.310190848445748,
+        "search": 6.444280308394868
+      },
+      "delta_nats": {
+        "macro": 0.006279884024152693,
+        "rec": 0.010387458161558172,
+        "search": 0.0021723098867481028
+      },
+      "original_ci95_nats": [
+        -0.006923598222859362,
+        0.019281683324159745
+      ],
+      "extended_ci95_nats": [
+        -0.007158598170001818,
+        0.01924353031869106
+      ],
+      "within_window_family95_nats": [
+        -0.01159907773787633,
+        0.023378736479658435
+      ],
+      "two_window_family95_nats": [
+        -0.01330714543184175,
+        0.024736418824434555
+      ],
+      "reconstruction_max_abs_error": 1.7763568394002505e-15
+    },
+    {
+      "window": "original",
+      "name": "gaoq_depth2",
+      "primary": false,
+      "users": 1096,
+      "scored_requests": 1745,
+      "blind_loss_nats": {
+        "macro": 2.2709615796752054,
+        "rec": 2.2554267997119917,
+        "search": 2.2864963596384187
+      },
+      "aware_loss_nats": {
+        "macro": 2.2625193990039794,
+        "rec": 2.2425208854811873,
+        "search": 2.282517912526771
+      },
+      "delta_nats": {
+        "macro": 0.00844218067122604,
+        "rec": 0.012905914230804338,
+        "search": 0.003978447111647743
+      },
+      "original_ci95_nats": [
+        0.005673338488459956,
+        0.010982565262823086
+      ],
+      "extended_ci95_nats": [
+        0.005738225097217148,
+        0.011172540053655694
+      ],
+      "within_window_family95_nats": [
+        0.004906822310258656,
+        0.01201200829578162
+      ],
+      "two_window_family95_nats": [
+        0.004598307906748129,
+        0.012337010776617809
+      ],
+      "reconstruction_max_abs_error": 1.7763568394002505e-15
+    },
+    {
+      "window": "shared",
+      "name": "gensar_shared2",
+      "primary": true,
+      "users": 2373,
+      "scored_requests": 4719,
+      "blind_loss_nats": {
+        "macro": 1.7613113437812178,
+        "rec": 1.7682665514648617,
+        "search": 1.754356136097574
+      },
+      "aware_loss_nats": {
+        "macro": 1.7528077770125596,
+        "rec": 1.7528944107832196,
+        "search": 1.7527211432418996
+      },
+      "delta_nats": {
+        "macro": 0.008503566768658155,
+        "rec": 0.015372140681642055,
+        "search": 0.0016349928556742555
+      },
+      "original_ci95_nats": [
+        0.006502997432593402,
+        0.010595485292721184
+      ],
+      "extended_ci95_nats": [
+        0.00648643272643154,
+        0.010571801437924425
+      ],
+      "within_window_family95_nats": [
+        0.0058664179048413725,
+        0.01119986298436763
+      ],
+      "two_window_family95_nats": [
+        0.005618122424082495,
+        0.011448381171856285
+      ],
+      "reconstruction_max_abs_error": 3.774758283725532e-15
+    },
+    {
+      "window": "shared",
+      "name": "gensar_semantic_complete",
+      "primary": false,
+      "users": 1559,
+      "scored_requests": 2495,
+      "blind_loss_nats": {
+        "macro": 1.3299771760112713,
+        "rec": 1.3448741862030584,
+        "search": 1.3150801658194842
+      },
+      "aware_loss_nats": {
+        "macro": 1.3269919959629541,
+        "rec": 1.340099545640414,
+        "search": 1.3138844462854944
+      },
+      "delta_nats": {
+        "macro": 0.0029851800483171598,
+        "rec": 0.004774640562644539,
+        "search": 0.0011957195339897808
+      },
+      "original_ci95_nats": [
+        0.0011660746836431174,
+        0.004821770846462422
+      ],
+      "extended_ci95_nats": [
+        0.0011757306295605452,
+        0.0048175762110994474
+      ],
+      "within_window_family95_nats": [
+        0.0006046121287905481,
+        0.0053905314276109974
+      ],
+      "two_window_family95_nats": [
+        0.00039733631271873516,
+        0.005627302889121802
+      ],
+      "reconstruction_max_abs_error": 1.1102230246251565e-15
+    },
+    {
+      "window": "shared",
+      "name": "gensar_collaborative_complete",
+      "primary": false,
+      "users": 1559,
+      "scored_requests": 2500,
+      "blind_loss_nats": {
+        "macro": 1.7504949919324677,
+        "rec": 1.9396025803368955,
+        "search": 1.56138740352804
+      },
+      "aware_loss_nats": {
+        "macro": 1.7504963158615383,
+        "rec": 1.939618958591539,
+        "search": 1.5613736731315377
+      },
+      "delta_nats": {
+        "macro": -1.323929070595753e-06,
+        "rec": -1.637825464362308e-05,
+        "search": 1.373039650220953e-05
+      },
+      "original_ci95_nats": [
+        -0.00022071123057018082,
+        0.00020445289451904153
+      ],
+      "extended_ci95_nats": [
+        -0.0002213712676527868,
+        0.00020445684939339467
+      ],
+      "within_window_family95_nats": [
+        -0.0002967623494833044,
+        0.0002665304090037151
+      ],
+      "two_window_family95_nats": [
+        -0.00032108934912484317,
+        0.00029201734897031916
+      ],
+      "reconstruction_max_abs_error": 4.440892098500626e-15
+    },
+    {
+      "window": "shared",
+      "name": "gaoq_depth1",
+      "primary": false,
+      "users": 2495,
+      "scored_requests": 5145,
+      "blind_loss_nats": {
+        "macro": 6.419085530768463,
+        "rec": 6.34202661120398,
+        "search": 6.496144450332947
+      },
+      "aware_loss_nats": {
+        "macro": 6.3907943830555585,
+        "rec": 6.322437920400979,
+        "search": 6.459150845710138
+      },
+      "delta_nats": {
+        "macro": 0.02829114771290442,
+        "rec": 0.019588690803000297,
+        "search": 0.03699360462280943
+      },
+      "original_ci95_nats": [
+        0.020026130282546507,
+        0.03601548358723726
+      ],
+      "extended_ci95_nats": [
+        0.020183185398839853,
+        0.0364441683558089
+      ],
+      "within_window_family95_nats": [
+        0.01765254392110474,
+        0.03900791115861235
+      ],
+      "two_window_family95_nats": [
+        0.016626338570603947,
+        0.03991701008670559
+      ],
+      "reconstruction_max_abs_error": 1.4210854715202004e-14
+    },
+    {
+      "window": "shared",
+      "name": "gaoq_depth2",
+      "primary": false,
+      "users": 2495,
+      "scored_requests": 5145,
+      "blind_loss_nats": {
+        "macro": 2.269625286898661,
+        "rec": 2.2403577635962844,
+        "search": 2.2988928102010373
+      },
+      "aware_loss_nats": {
+        "macro": 2.257813269678879,
+        "rec": 2.2191985675255377,
+        "search": 2.2964279718322205
+      },
+      "delta_nats": {
+        "macro": 0.011812017219781978,
+        "rec": 0.021159196070746678,
+        "search": 0.002464838368816835
+      },
+      "original_ci95_nats": [
+        0.00978764807585376,
+        0.013849203259976909
+      ],
+      "extended_ci95_nats": [
+        0.009810587901048856,
+        0.013849439783661491
+      ],
+      "within_window_family95_nats": [
+        0.009214129861574225,
+        0.014491120485614696
+      ],
+      "two_window_family95_nats": [
+        0.008981387029420602,
+        0.014727680739624702
+      ],
+      "reconstruction_max_abs_error": 4.884981308350689e-15
+    }
+  ],
+  "seconds": 6.871538833,
+  "scope": "Retrospective fixed-cohort, fixed-map and fixed-fit conditional bootstrap; approximate coverage. Shared users and source reuse do not imply independent replications. No new neural training or primary switch."
+}
