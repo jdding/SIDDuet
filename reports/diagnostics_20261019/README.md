@@ -1,5 +1,7 @@
 # Population checks, score ties, and numerical cuts
 
+These are the original 199-draw records. The [1999-draw extension](../diagnostics_mc1999_20261020/README.md) provides the current higher-precision comparison; original files remain unchanged for reconstruction.
+
 These aggregates address two questions about the fixed RoleMap resource: whether the selected collision example represents the supplied mappings, and why the label-based scores form large ties. A supplementary exact-total reference and a cut sensitivity study follow the primary analysis. The existing `sr_sid_rolemap.topology.value_median.v2` reference is unchanged.
 
 The scope is 97,729 KuaiSAR and 20,540 Qilin common items, joined to three existing supplied mappings: GRID, RQ-VAE and ReSID-GAOQ. No mapping was fitted and no model was trained for these checks. The outputs do not establish independent external adoption or predictive benefit.

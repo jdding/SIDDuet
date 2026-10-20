@@ -1,5 +1,7 @@
 # Optional fixed-resource diagnostics
 
+The [1999-draw precision extension](protocols/MC1999_PRECISION.md) retains the original 199-draw baselines and reports a higher-budget check with unchanged references. See the [aggregate comparison](../../reports/diagnostics_mc1999_20261020/README.md).
+
 The four Python sources in `code/` implement the declared primary and supplementary comparisons. The public CLI removes the original author-workflow approval requirement while retaining input hashes, fixed seeds, draw counts, marginals and result checks. The study definitions are in `protocols/`. The aggregate findings and export identities are in [reports/diagnostics_20261019](../../reports/diagnostics_20261019/README.md). These analyses leave the v2 topology, its reference hashes and the release's synthetic quickstart unchanged.
 
 The scripts use an optional installed NumPy runtime. The recorded reference was CPython 3.12.14 + NumPy 2.3.5 on macOS; the standard-library-only core quickstart does not need NumPy. No installation, API, model or GPU is invoked by the commands below.
@@ -36,4 +38,4 @@ For the exact-total supplement, use the shipped `reports/diagnostics_20261019/po
 
 The aggregate reports retain original execution/source hashes, so their provenance refers to the study implementation. Public packaging changes only CLI/provenance handling and the helper/reference hash constants. Complete simulation draws and machine-specific execution manifests are not shipped. Synthetic checks verify the calculations; real-map replay additionally requires the lawful corresponding inputs.
 
-The main [rebuild protocol](../../docs/REBUILD_PROTOCOL.md) describes provider adapters and topology/mapping interfaces. It does not grant upstream access rights or distribute complete item-to-SID mappings, role-count tables, full provider data or restricted joins. Acquire any required upstream inputs under their own terms. No model training or new mapping fit is part of these optional diagnostics.
+The main [rebuild protocol](../../docs/REBUILD_PROTOCOL.md) describes provider adapters and topology/mapping interfaces. It does not grant upstream access rights or distribute role-count tables, full provider data or restricted joins. The three approved Qilin catalog maps and cohort are the separately documented exception; other complete mappings are not included. Acquire any required upstream inputs under their own terms. No model training or new mapping fit is part of these optional diagnostics.

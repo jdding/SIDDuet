@@ -53,8 +53,10 @@
   ],
   "native_source_code_licenses_asserted": false,
   "policy_change": "Permit only the three named derived catalog-ID/code maps and minimal cohort under provider Apache-2.0 terms and attribution; no requests, user/session identifiers, query/history, role-count/label joins, trajectories, or other complete maps",
-  "publication_status": "local_candidate_not_published",
   "release_inclusion_authorized": true,
-  "status": "APPROVED_DERIVED_INPUTS_IN_UNPUBLISHED_LOCAL_CANDIDATE",
-  "upstream_native_source_code_included": false
+  "upstream_native_source_code_included": false,
+  "publication_status_at_export": "local_candidate_not_published",
+  "status_at_export": "APPROVED_DERIVED_INPUTS_IN_UNPUBLISHED_LOCAL_CANDIDATE",
+  "distribution_status": "included_in_public_v0.2.6",
+  "distribution_note": "The export-time local-candidate status above is historical; these unchanged approved maps and cohort were included in the public v0.2.6 release."
 }

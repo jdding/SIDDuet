@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Clarify the decisions supported by paired coverage, count references and temporal pooling comparisons.
+- Extend both paired-count reference simulations to 1999 draws, preserving the original 199-draw streams and all observed statistics.
+- Report the larger Monte Carlo mean change in the sparse Qilin/ReSID-GAOQ stratum.
+- Clarify that native-map export-time publication flags describe the historical export state.
+
 ## 0.2.6 — 2026-10-19
 
 - Add a four-hour Qilin window selected from both tasks' actual calendar coverage before loss evaluation.

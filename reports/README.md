@@ -1,5 +1,7 @@
 # Result guide
 
+The [1999-draw precision comparison](diagnostics_mc1999_20261020/README.md) updates the reference estimates while preserving the original 199-draw records.
+
 | Evidence | Location | Interpretation |
 | --- | --- | --- |
 | Current paired-observation references | [`v2/`](v2/) | KuaiSAR and Qilin under the value-median v2 protocol |

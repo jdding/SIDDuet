@@ -26,8 +26,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1406,
-      "sha256": "895aa278c66ab7d943a0c674c63d984b6d62f1df34303fe0e1d02106a75e1676"
+      "bytes": 1839,
+      "sha256": "abd97ec746626f225c532a5c0b6929265d6e8e755e6aa9a7f6f930501083a8bd"
     },
     {
       "path": "CITATION.cff",
@@ -56,8 +56,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5051,
-      "sha256": "9756a9965c2a20e084ebbc6a766d6003d6398a2c49c5fd4fd88ab22afaf7b5f6"
+      "bytes": 5345,
+      "sha256": "2dc980bfb0e89f3a2ab306f098d7c940ada776572fdc8cf81924651c514b360f"
     },
     {
       "path": "RELEASE_STATUS.json",
@@ -66,8 +66,8 @@
     },
     {
       "path": "analysis/diagnostic_extension_20261019/README.md",
-      "bytes": 3893,
-      "sha256": "44836486f4f637e5d85b38f99913cc34907f11fbf9ec66cd0534bb9ef7f51ea1"
+      "bytes": 4248,
+      "sha256": "6d62321c7c99b09bf57d638364b9997bd2c2f9416d9053f1e96e864ade988b56"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/code/exact_total_analysis.py",
@@ -78,6 +78,11 @@
       "path": "analysis/diagnostic_extension_20261019/code/population_analysis.py",
       "bytes": 38150,
       "sha256": "cd2652bdade9a2258941e026bbe03dd19dd9bbba9f32dec8a168238fd0c1ef08"
+    },
+    {
+      "path": "analysis/diagnostic_extension_20261019/code/precision_extension.py",
+      "bytes": 18598,
+      "sha256": "060ff182d8a05fe7e79a49bcaf652df727950de8c8c01931fad7b8f958d042b9"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/code/threshold_sensitivity.py",
@@ -93,6 +98,11 @@
       "path": "analysis/diagnostic_extension_20261019/protocols/EXACT_TOTAL_PLAN.md",
       "bytes": 6396,
       "sha256": "7082ec0751717b90a3433a5e54362eae765a0d1207c1f52d8454fad09e46e401"
+    },
+    {
+      "path": "analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md",
+      "bytes": 3069,
+      "sha256": "2837daeb6046fb57e4999e67ab7a73656dbd795c96bfd551f0110fce40f309b6"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/protocols/PRIMARY_ANALYSIS_CONTRACT.md",
@@ -371,8 +381,8 @@
     },
     {
       "path": "data/native_exports/PROVENANCE.json",
-      "bytes": 2781,
-      "sha256": "1634645f739d226f43951f9fa37be85bcb785d364c6da361b566a10e2a882ace"
+      "bytes": 3026,
+      "sha256": "ad18356ca8e73a8795edaec51bc324db7dac736e0d49ce77d821b396c1550488"
     },
     {
       "path": "data/native_exports/README.md",
@@ -511,8 +521,8 @@
     },
     {
       "path": "docs/RESOURCE_CAPABILITIES.md",
-      "bytes": 4095,
-      "sha256": "157a61e38ab06147d4965671c88710c5ec1278cb44e99a2b738145895a4b872e"
+      "bytes": 5292,
+      "sha256": "67d3411492d8aba36b09f0891ae666dee54a5712a87c0db95ff23814834196cb"
     },
     {
       "path": "docs/ROLEMAP_RECORD_PROTOCOL.md",
@@ -561,8 +571,8 @@
     },
     {
       "path": "reports/README.md",
-      "bytes": 1196,
-      "sha256": "5fd68e7dc5e7c4ce9578e1c54f4277a660a8d817b2d66fe527724485ec8da62e"
+      "bytes": 1353,
+      "sha256": "4b7174fccf761c0cdedb63b7a77d34f97a7a21fade795ba018fae190a252d4c1"
     },
     {
       "path": "reports/diagnostics_20261019/EXPORT_PROVENANCE.json",
@@ -571,8 +581,8 @@
     },
     {
       "path": "reports/diagnostics_20261019/README.md",
-      "bytes": 8335,
-      "sha256": "bb4bd075e1eb107c201536649120af41f55de684ec8701a331426fc5a31a18e4"
+      "bytes": 8547,
+      "sha256": "3117604279092bacb1e61700020b63976b70fe4c9954f2c6aac3fb42483226ed"
     },
     {
       "path": "reports/diagnostics_20261019/exact_total/EXACT_TOTAL_RESULTS.json",
@@ -688,6 +698,21 @@
       "path": "reports/diagnostics_20261019/ties/qilin/summary.json",
       "bytes": 676995,
       "sha256": "33458449517e70ee2b2ec63eb0fc52ba56170cae9f70b584fee775dc216e6e1b"
+    },
+    {
+      "path": "reports/diagnostics_mc1999_20261020/COMPARISON.csv",
+      "bytes": 3581,
+      "sha256": "a1f5273d46133449a45face76084a47ba1851d90376b2147c5651b63dd1815fe"
+    },
+    {
+      "path": "reports/diagnostics_mc1999_20261020/MC1999_RESULTS.json",
+      "bytes": 346633,
+      "sha256": "1c2a38288fd99b005d7a6a557b5cdb6ac384c771f092fff3ae08fe94aaac5f9a"
+    },
+    {
+      "path": "reports/diagnostics_mc1999_20261020/README.md",
+      "bytes": 2754,
+      "sha256": "6ddcfff853eeb48b9c9f4ebf7ca5af7c10ccbffbaf6485c33ad1684c002aba09"
     },
     {
       "path": "reports/model_reuse/INFERENCE.json",
@@ -1026,8 +1051,8 @@
     }
   ],
   "counts": {
-    "files": 204,
-    "bytes": 8635923
+    "files": 209,
+    "bytes": 9013451
   },
-  "working_copy_status": "release"
+  "working_copy_status": "unreleased_mc1999_candidate_based_on_v0.2.6"
 }

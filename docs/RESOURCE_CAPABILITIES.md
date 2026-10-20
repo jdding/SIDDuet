@@ -12,6 +12,14 @@ RoleMap is software for joining task observations to supplied code maps. The rel
 | Own counts/labels and item-to-code map | Inspect task support and code-group allocation | Local schema conversion; actual common item keys |
 | Own request exposures or candidate scores | Compare pooling choices or evaluate supplied predictions | Declared temporal splits/user clusters, or actual scored candidates |
 
+## Use the outputs to choose an analysis
+
+1. Check which items and prediction targets have observations in both tasks. Keep the full candidate-domain evaluation as the reference, and report covered and uncovered requests separately. A missing task observation means the paired diagnostic is unavailable for that item.
+2. Inspect the two tasks' member counts within each shared code. Compare allocation divergence with the count-matched references before interpreting different leaders as unusual task separation.
+3. To decide whether to pool observations for exposure forecasting, declare a cohort, mapping and time window, fit the supplied candidate estimators on earlier requests, select on tuning users, and compare their later losses and uncertainty. Keep all declared code views and report their coverage.
+
+The forecast comparison chooses between the tested estimation procedures on the declared data. It does not provide a universal pooling rule or an RSD/RSI threshold for model selection. Role conditioning changes both the member frequencies and effective smoothing; the existing [baseline diagnostic](../analysis/reuse_validation/UNIFORM_BASELINE_DIAGNOSTIC.md) explains that boundary.
+
 ## Run without provider inputs
 
 `python3 -I scripts/validate_release.py` runs the synthetic interfaces and checks the shipped references. The reference checks verify the released reports; they do not reconstruct real observations from aggregates.
