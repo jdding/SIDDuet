@@ -1,6 +1,6 @@
 # Method Admission Protocol
 
-SearchRec RoleMap first separates systems that actually expose a shared SID
+SIDDuet first separates systems that actually expose a shared SID
 from adjacent joint S&R methods, then records literature coverage, interface
 specification, adapter verification, and executed evidence. A paper citation,
 joint objective, generative label, or model-agnostic score column is not by
@@ -23,8 +23,8 @@ materialized and passes the same QA as the registered datasets.
 ## Levels
 
 - `literature_only`: the method is relevant, but its public artifacts do not support
-  a reproducible RoleMap path.
-- `interface_specified`: a concrete mapping to one or more registered RoleMap
+  a reproducible SIDDuet path.
+- `interface_specified`: a concrete mapping to one or more registered SIDDuet
   surfaces is documented, but the named implementation has not run on that declared surface.
 - `adapter_verified`: pinned implementation and real data complete an
   end-to-end canary, including an exact topology join and aggregate QA.
@@ -44,7 +44,7 @@ field assigns every method to exactly one resource scope.
 
 Methods export only
 `dataset,unit_id,role,candidate_id,is_target,score`. The deterministic score
-adapter joins each unit's single target item to the registered RoleMap topology
+adapter joins each unit's single target item to the registered SIDDuet topology
 and adds `method_id`, `method_paradigm`, `score_direction`, and topology slices.
 The evaluator then groups by method before computing metrics, so scores from
 different models cannot be pooled accidentally. This interface evaluates supplied

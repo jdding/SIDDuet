@@ -1,6 +1,6 @@
 # Result scope
 
-RoleMap compares selected task-blind and task-conditioned member distributions using future exposure requests. The fixed maps, grid and tuning rule are identical across the two shared-calendar windows; the counts are refitted using each window's earlier data.
+SIDDuet compares selected task-blind and task-conditioned member distributions using future exposure requests. The fixed maps, grid and tuning rule are identical across the two shared-calendar windows; the counts are refitted using each window's earlier data.
 
 | GenSAR shared-prefix primary | First window | Additional window |
 | --- | ---: | ---: |

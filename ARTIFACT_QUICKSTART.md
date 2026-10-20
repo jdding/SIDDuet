@@ -3,7 +3,7 @@
 Use Python 3.10+ for the standard-library workflow. Run commands from the repository root.
 Keep generated provider data and real model outputs in a separate local directory.
 
-The [online example](https://jdding.github.io/rolemap/) runs the same core scripts
+The [online example](https://jdding.github.io/SIDDuet/) runs the same core scripts
 in your browser with fabricated inputs. It needs no account or local installation.
 For the full source-integrity and interface checks, use the command below.
 

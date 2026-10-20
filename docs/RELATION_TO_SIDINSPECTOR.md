@@ -2,7 +2,7 @@
 
 SIDInspector v2 (https://arxiv.org/html/2606.10375v2) already accepts metadata and interactions. Its D3 probe measures co-occurrence neighborhood alignment, D4 examines popularity allocation, and optional probes cover refresh pairs and generator traces. Calling it a toolkit that reads only isolated mappings would be inaccurate.
 
-| Research question | SIDInspector v2 | RoleMap contribution |
+| Research question | SIDInspector v2 | SIDDuet contribution |
 | --- | --- | --- |
 | Are codes well formed; how many items share codes? | Mapping contract, utilization and aliasing probes | Shared prerequisite; not claimed as new |
 | Do prefixes recover interaction neighborhoods? | D3 train-co-occurrence probe and bounded candidate-exposure checks | Not the new question tested here |
@@ -13,6 +13,6 @@ SIDInspector v2 (https://arxiv.org/html/2606.10375v2) already accepts metadata a
 
 The difference is in the represented observations and completed analyses. A user could extend another toolkit to implement these analyses; no claim of software impossibility is made.
 
-For example, the same code can contain one item supplying most search observations and another supplying most recommendation observations. Mapping utilization and alias size alone do not identify this task allocation. RoleMap keeps the two task observations separate and tests whether collapsing them loses information for a later exposure forecast. The 275-item example is located within the full population rather than treated as representative.
+For example, the same code can contain one item supplying most search observations and another supplying most recommendation observations. Mapping utilization and alias size alone do not identify this task allocation. SIDDuet keeps the two task observations separate and tests whether collapsing them loses information for a later exposure forecast. The 275-item example is located within the full population rather than treated as representative.
 
 The forecast experiment uses counts and code groups. It does not validate RSD/RSI as predictors, semantic ground truth, causal interference or ranking improvement.

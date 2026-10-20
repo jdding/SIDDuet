@@ -2,7 +2,7 @@
 
 The [1999-draw precision extension](protocols/MC1999_PRECISION.md) retains the original 199-draw baselines and reports a higher-budget check with unchanged references. See the [aggregate comparison](../../reports/diagnostics_mc1999_20261020/README.md).
 
-The four Python sources in `code/` implement the declared primary and supplementary comparisons. The public CLI removes the original author-workflow approval requirement while retaining input hashes, fixed seeds, draw counts, marginals and result checks. The study definitions are in `protocols/`. The aggregate findings and export identities are in [reports/diagnostics_20261019](../../reports/diagnostics_20261019/README.md). These analyses leave the v2 topology, its reference hashes and the release's synthetic quickstart unchanged.
+The Python sources in `code/` implement the declared primary and supplementary comparisons. The public CLI removes the original author-workflow approval requirement while retaining input hashes, fixed seeds, draw counts, marginals and result checks. The study definitions are in `protocols/`. The aggregate findings and export identities are in [reports/diagnostics_20261019](../../reports/diagnostics_20261019/README.md). These analyses leave the v2 topology, its reference hashes and the release's synthetic quickstart unchanged.
 
 The scripts use an optional installed NumPy runtime. The recorded reference was CPython 3.12.14 + NumPy 2.3.5 on macOS; the standard-library-only core quickstart does not need NumPy. No installation, API, model or GPU is invoked by the commands below.
 

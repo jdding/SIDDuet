@@ -9,19 +9,19 @@
       "path": "checkpoint.part-00",
       "bytes": 50331648,
       "sha256": "58526b9f4857d700a64e223d278c7db5808accf6885625dcacab592659c49d21",
-      "download_url": "https://github.com/jdding/rolemap/releases/download/v0.2.4/checkpoint.part-00"
+      "download_url": "https://github.com/jdding/SIDDuet/releases/download/v0.2.4/checkpoint.part-00"
     },
     {
       "path": "checkpoint.part-01",
       "bytes": 50331648,
       "sha256": "11fd39c614f4be360b78484c84e38e543ca022315213a0377706a78413f69acb",
-      "download_url": "https://github.com/jdding/rolemap/releases/download/v0.2.4/checkpoint.part-01"
+      "download_url": "https://github.com/jdding/SIDDuet/releases/download/v0.2.4/checkpoint.part-01"
     },
     {
       "path": "checkpoint.part-02",
       "bytes": 41807286,
       "sha256": "c7aeed67ea538a5b8c38054aab4899f9cadd600edb55628087a3b8c8c4bc7ae6",
-      "download_url": "https://github.com/jdding/rolemap/releases/download/v0.2.4/checkpoint.part-02"
+      "download_url": "https://github.com/jdding/SIDDuet/releases/download/v0.2.4/checkpoint.part-02"
     }
   ],
   "license": "CC-BY-NC-SA-4.0",
@@ -87,6 +87,6 @@
   "distribution": {
     "kind": "github_release_assets",
     "tag": "v0.2.4",
-    "url": "https://github.com/jdding/rolemap/releases/tag/v0.2.4"
+    "url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.4"
   }
 }

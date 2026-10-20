@@ -2,7 +2,7 @@
 
 ## Online example
 
-Open <https://jdding.github.io/rolemap/> and select **Run example**. The browser loads
+Open <https://jdding.github.io/SIDDuet/> and select **Run example**. The browser loads
 a pinned Pyodide Python runtime and verifies the source/fixture hashes against the
 package manifest. Six actual scripts rebuild counts and topology, join the map,
 inspect within-code support and evaluate supplied candidate scores. Each execution

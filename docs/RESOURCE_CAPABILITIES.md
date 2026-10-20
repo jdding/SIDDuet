@@ -1,6 +1,6 @@
 # What the release supports
 
-RoleMap is software for joining task observations to supplied code maps. The release includes runnable synthetic inputs, aggregate references and the approved Qilin catalog exports. Real observation rows and request losses must be reconstructed locally or supplied by the user.
+SIDDuet is software for joining task observations to supplied code maps. The release includes runnable synthetic inputs, aggregate references and the approved Qilin catalog exports. Real observation rows and request losses must be reconstructed locally or supplied by the user.
 
 | Inputs available | Executable use | Additional requirements |
 | --- | --- | --- |

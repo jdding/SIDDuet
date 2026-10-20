@@ -1,11 +1,11 @@
 {
   "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.2.6",
-  "release_tag": "v0.2.6",
-  "repository_url": "https://github.com/jdding/rolemap",
-  "release_url": "https://github.com/jdding/rolemap/releases/tag/v0.2.6",
+  "version": "0.2.7",
+  "release_tag": "v0.2.7",
+  "repository_url": "https://github.com/jdding/SIDDuet",
+  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.7",
   "publication_status": "public_release",
-  "release_date": "2026-10-19",
+  "release_date": "2026-10-20",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
   "reconstructed_datasets": [
@@ -33,13 +33,24 @@
     "paper drafts",
     "internal review records"
   ],
-  "hosted_live_demo": "https://jdding.github.io/rolemap/",
+  "hosted_live_demo": "https://jdding.github.io/SIDDuet/",
   "demo_execution": "pinned Pyodide, actual Python source, synthetic input, no upload",
-  "baseline_release_commit": "56884062717bdd2c2555b9644957574e111a9992",
+  "baseline_release_commit": "4d3502a1d4124fcc930a75eedafb0f91aebc78e1",
   "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication",
   "changes": [
-    "Clarified capabilities and relationship to SIDInspector",
-    "Added reproducible five-view multiplicity sensitivity",
-    "Coverage-selected four-hour Qilin check and two-window multiplicity sensitivity"
-  ]
+    "Display name SIDDuet; existing URLs and protocol identifiers remain compatible",
+    "Clarified contribution and input-dependent research decisions",
+    "Extended both fixed paired-count references to 1999 draws; retained original 199-draw records",
+    "Added reader replay instructions and aggregate precision/stability summaries"
+  ],
+  "count_reference_precision": {
+    "draws_per_reference": 1999,
+    "comparisons": 12,
+    "reference_families": "two separate families of six",
+    "observed_statistics_unchanged": true,
+    "report": "reports/diagnostics_mc1999_20261020/README.md",
+    "replay": "analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md"
+  },
+  "name": "SIDDuet",
+  "previous_display_name": "RoleMap"
 }

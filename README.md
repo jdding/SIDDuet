@@ -1,6 +1,10 @@
-# RoleMap
+# SIDDuet
 
-RoleMap helps researchers inspect shared semantic IDs across search and recommendation.
+A toolkit for comparing semantic IDs across search and recommendation.
+
+SIDDuet was previously named RoleMap. The repository is now jdding/SIDDuet; command names, record schemas and protocol identifiers retain their existing names for compatibility.
+
+SIDDuet helps researchers inspect shared semantic IDs across search and recommendation.
 It joins item-to-code mappings to task-specific observations, reports which items contribute
 support to each task, and attaches model predictions with explicit coverage and candidate sets.
 
@@ -19,7 +23,7 @@ See [what the release supports](docs/RESOURCE_CAPABILITIES.md) for package-only,
 
 ## Try it online
 
-[Run the browser example](https://jdding.github.io/rolemap/) without installing Python.
+[Run the browser example](https://jdding.github.io/SIDDuet/) without installing Python.
 It executes six shipped Python scripts on the eight-item synthetic fixture, checks
 source hashes and shows the computed topology, map coverage and candidate metrics.
 The first run loads a pinned Pyodide runtime; data stay in your browser.
@@ -29,8 +33,8 @@ The first run loads a pinned Pyodide runtime; data stay in your browser.
 Python 3.10+ and the standard library are enough for the synthetic example:
 
 ```sh
-git clone --branch v0.2.6 https://github.com/jdding/rolemap.git
-cd rolemap
+git clone --branch v0.2.7 https://github.com/jdding/SIDDuet.git
+cd SIDDuet
 python3 -I scripts/validate_release.py
 ```
 
@@ -73,7 +77,7 @@ conflict, or ranking improvements.
   the three approved fixed maps and minimal cohort, representing six views. Obtain
   request files from the provider; no quantizer retraining is needed.
 - [Complete UniSAR replay](analysis/model_reuse/REPLAY.md): download the separately
-  licensed checkpoint from the [fixed checkpoint assets](https://github.com/jdding/rolemap/releases/tag/v0.2.4)
+  licensed checkpoint from the [fixed checkpoint assets](https://github.com/jdding/SIDDuet/releases/tag/v0.2.4)
   and obtain the pinned upstream source and processed data. The recorded CPU environment
   reproduced 16,698,100 score values byte for byte.
 - [Provider reconstruction](docs/PREPROCESSING_PROTOCOL.md): build paired observations
@@ -93,4 +97,4 @@ noncommercial and ShareAlike terms. See [LICENSE](LICENSE) and the
 [model card](weights/unisar_kuaisar_v1/MODEL_CARD.md).
 
 Use [CITATION.cff](CITATION.cff) to cite the software version. Report reproducibility
-issues through [GitHub Issues](https://github.com/jdding/rolemap/issues).
+issues through [GitHub Issues](https://github.com/jdding/SIDDuet/issues).

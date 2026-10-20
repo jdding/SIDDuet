@@ -1,6 +1,6 @@
 # Replay the complete fixed-checkpoint case
 
-The exact numerical checkpoint is available as three [v0.2.4 release attachments](https://github.com/jdding/rolemap/releases/tag/v0.2.4) under CC BY-NC-SA 4.0. The code checkout contains the manifest, model card and license; model binaries are downloaded only for this optional replay. The weights have their own attribution and noncommercial terms; the scripts retain MIT. The provider-processed data and author's source are acquired directly upstream. This workflow does not need an author-private checkpoint path or retraining.
+The exact numerical checkpoint is available as three [v0.2.4 release attachments](https://github.com/jdding/SIDDuet/releases/tag/v0.2.4) under CC BY-NC-SA 4.0. The code checkout contains the manifest, model card and license; model binaries are downloaded only for this optional replay. The weights have their own attribution and noncommercial terms; the scripts retain MIT. The provider-processed data and author's source are acquired directly upstream. This workflow does not need an author-private checkpoint path or retraining.
 
 ## Prepare an isolated runtime and inputs
 
@@ -22,7 +22,7 @@ curl -fL 'https://drive.usercontent.google.com/download?id=1AgCl3Jd7UxJjGCOvUfx1
 unzip -q "$WORK/KuaiSAR.zip" -d "$WORK/provider"
 ```
 
-The processed ZIP is 558,437,486 bytes, SHA256 `db75d7458f6ec5f942a4f63f03b4bb381c33af3950b7f660a145b4a97d7ab8d2`. Its `dataset/` and `vocab/` directories are at the ZIP root. The official repository supplies this download link. Keep the ZIP and extracted data local; they are not redistributed by RoleMap. The processed files are trusted provider pickle inputs; the replay checks their expected hashes before loading them. A changed upstream file fails the identity check.
+The processed ZIP is 558,437,486 bytes, SHA256 `db75d7458f6ec5f942a4f63f03b4bb381c33af3950b7f660a145b4a97d7ab8d2`. Its `dataset/` and `vocab/` directories are at the ZIP root. The official repository supplies this download link. Keep the ZIP and extracted data local; they are not redistributed by SIDDuet. The processed files are trusted provider pickle inputs; the replay checks their expected hashes before loading them. A changed upstream file fails the identity check.
 
 ## Download the checkpoint
 
@@ -30,7 +30,7 @@ From the resource root, download the three fixed parts. No authentication is nee
 
 ```sh
 for part in checkpoint.part-00 checkpoint.part-01 checkpoint.part-02; do
-  curl -fL "https://github.com/jdding/rolemap/releases/download/v0.2.4/$part" \
+  curl -fL "https://github.com/jdding/SIDDuet/releases/download/v0.2.4/$part" \
     -o "weights/unisar_kuaisar_v1/$part"
 done
 ```

@@ -1,6 +1,6 @@
 # Ethics and License
 
-SearchRec RoleMap collected no new user data, recruited no participants, and ran
+SIDDuet collected no new user data, recruited no participants, and ran
 no intervention. The 100-row manual audit evaluates derived taxonomy labels,
 not people. We make no new claim about upstream consent or institutional-review
 status; those remain with the providers and each user's institution.

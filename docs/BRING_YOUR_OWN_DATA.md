@@ -1,10 +1,10 @@
 # Analyze your own catalog
 
-Run RoleMap inside the environment that holds your data. The basic workflow needs a task-specific count table and, for code-group analysis, a mapping over the same item keys. It does not require uploading logs or retraining a recommender.
+Run SIDDuet inside the environment that holds your data. The basic workflow needs a task-specific count table and, for code-group analysis, a mapping over the same item keys. It does not require uploading logs or retraining a recommender.
 
 ## 1. Define the observation
 
-Export four columns from your existing processing: item key, task, contextual label and positive integer count. Use the same label vocabulary across search and recommendation. State what a count means (for example, one exposure, one positive interaction or one retained transition), how labels were assigned and which time interval was included. RoleMap does not infer these meanings or make differently constructed observations equivalent.
+Export four columns from your existing processing: item key, task, contextual label and positive integer count. Use the same label vocabulary across search and recommendation. State what a count means (for example, one exposure, one positive interaction or one retained transition), how labels were assigned and which time interval was included. SIDDuet does not infer these meanings or make differently constructed observations equivalent.
 
 For a source CSV with `catalog_item,service,context_category,observations`, create a local JSON configuration:
 

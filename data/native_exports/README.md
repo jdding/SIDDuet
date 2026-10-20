@@ -84,5 +84,5 @@ notice. No upstream native implementation source code is bundled or relicensed.
 The exception is limited to these three maps and the minimal cohort; it does
 not authorize redistribution of raw request/user/query data, role-label joins,
 other complete maps or fitted models. These fixed exports are included in
-versioned RoleMap releases; real-observation replay still requires the provider
+versioned SIDDuet releases; real-observation replay still requires the provider
 request files described above.

@@ -29,4 +29,4 @@ The [full replay](../../analysis/model_reuse/REPLAY.md) reconstructs observation
 
 ## Download
 
-Exact weight parts are [v0.2.4 release attachments](https://github.com/jdding/rolemap/releases/tag/v0.2.4), not Git source blobs. [Replay instructions](../../analysis/model_reuse/REPLAY.md) download and verify them.
+Exact weight parts are [v0.2.4 release attachments](https://github.com/jdding/SIDDuet/releases/tag/v0.2.4), not Git source blobs. [Replay instructions](../../analysis/model_reuse/REPLAY.md) download and verify them.

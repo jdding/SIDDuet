@@ -4,6 +4,8 @@ This extends the band-matched and exact-total paired-count references from 199 t
 
 One PCG64 permutation stream is shared across the three mapping families within each dataset. KuaiSAR/Qilin seeds are 20262018/20262019 for band matching and 20263018/20263019 for exact totals. The first 199 aggregate draws reconstruct the old summaries; the local study also checked every retained aggregate value and all available exact-total permutation hashes.
 
+The historical band run did not save permutation hashes. In MC1999_RESULTS.json, permutation_sha256_equal is false for those band rows because that hash comparison was unavailable, not because a mismatch was found; their first 199 aggregate values match exactly. Exact-total rows also match the saved permutation hashes.
+
 Each of the two six-comparison families retains its own plus-one two-sided p calculation, BH adjustment and BY sensitivity. At 1999 draws, the two-sided resolution floor is 0.001. Reference ranges are central 95% simulation ranges, not confidence intervals for an observed effect.
 
 The precision replay uses CPython 3.12.14 and NumPy 2.3.5, one CPU process with BLAS threads limited to one. The recorded local run took 114.35 seconds and 155.4 MiB peak RSS. The driver preserves a 600-second/1 GiB limit and refuses to overwrite output directories. Full streams, private manifests and execution paths are excluded from the reader package; reviewed aggregate comparisons are in reports/diagnostics_mc1999_20261020.
@@ -11,6 +13,8 @@ The precision replay uses CPython 3.12.14 and NumPy 2.3.5, one CPU process with 
 ## Replay with lawful local inputs
 
 Use the same five scientific inputs as the original analysis: two v2 topology CSVs and three normalized mapping CSVs. The manifest format is read by population_analysis.py. Files must match their declared SHA256 and byte lengths; real observations are not included here.
+
+The manifest has top-level profile_id set to sr_sid_rolemap.topology.value_median.v2 and an assets array. Each asset supplies path, bytes and sha256 for the actual local file. Required basenames are kuaisar_topology_v2.csv, qilin_topology_v2.csv, grid_normalized_sid.csv, rq-vae_normalized_sid.csv and resid-gaoq_normalized_sid.csv. Topology CSVs provide dataset, profile_id, item_id, search_support and rec_support; mapping CSVs provide dataset, item_id and sid, with complete coverage of both common-item populations. Generate byte lengths and SHA256 values from the reconstructed local files; the replay rejects mismatches.
 
 Set an installed matching Python and fresh paths outside the checkout:
 

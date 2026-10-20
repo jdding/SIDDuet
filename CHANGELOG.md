@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.2.7 — 2026-10-20
+
+- Rename the toolbox display name to SIDDuet; retain the repository URL, commands and protocol identifiers.
 
 - Clarify the decisions supported by paired coverage, count references and temporal pooling comparisons.
 - Extend both paired-count reference simulations to 1999 draws, preserving the original 199-draw streams and all observed statistics.

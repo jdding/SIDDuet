@@ -1,7 +1,7 @@
 # Maintenance
 
 Report builder errors, metric discrepancies, input compatibility problems and documentation
-issues at <https://github.com/jdding/rolemap/issues>. Include the release version, command,
+issues at <https://github.com/jdding/SIDDuet/issues>. Include the release version, command,
 runtime and a synthetic reproducer where possible; do not upload private inputs.
 
 Published tags identify fixed versions. Corrections to code, protocols or aggregate results
