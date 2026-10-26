@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.8 — 2026-10-26
+
+- Add a standalone replay of training-only item eligibility, preserving both window outcomes, fixed input hashes and the original uncertainty correction.
+- Document the exact UTC windows, request-loss calculation and distinction between raw and processed KuaiSAR views.
+- Keep the main comparisons, mappings, checkpoint and measurement protocols unchanged.
+
 ## 0.2.7 — 2026-10-20
 
 - Rename the toolbox display name to SIDDuet; retain the repository URL, commands and protocol identifiers.

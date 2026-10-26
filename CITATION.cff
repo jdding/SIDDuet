@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Ding"
     given-names: "Jiandong"
-version: "0.2.7"
-date-released: "2026-10-20"
+version: "0.2.8"
+date-released: "2026-10-26"
 repository-code: "https://github.com/jdding/SIDDuet"
-url: "https://github.com/jdding/SIDDuet/releases/tag/v0.2.7"
+url: "https://github.com/jdding/SIDDuet/releases/tag/v0.2.8"

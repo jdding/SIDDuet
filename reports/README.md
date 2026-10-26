@@ -15,3 +15,5 @@ Older protocol reports, draft tables and internal audits are kept outside this p
 Aggregate results retain their scientific values. Local source-path metadata in four temporal
 result JSONs has been normalized; the provider identities and source hashes remain available.
 Complete simulation draws are reproducible research outputs and are not included in the code checkout.
+
+The [result interpretation guide](../docs/READING_THE_RESULTS.md) explains the metric units, exact windows and processed-data coverage. [Training-only cohort results](cohort_sensitivity/README.md) retain both fixed-window outcomes and link to their standalone replay.

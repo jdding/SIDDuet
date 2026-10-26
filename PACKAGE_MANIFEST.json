@@ -1,7 +1,7 @@
 {
   "schema": "sr_sid_rolemap.package_manifest.v1",
-  "release_version": "0.2.7",
-  "release_tag": "v0.2.7",
+  "release_version": "0.2.8",
+  "release_tag": "v0.2.8",
   "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
   "files": [
     {
@@ -26,13 +26,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1958,
-      "sha256": "c68570af1db27fc333bcb23e96e7a6343c65ae2e36ae9ef51b948fcdbe48df19"
+      "bytes": 2341,
+      "sha256": "02b39a650f84232a23d6af2d726aeb01f16b448a38a599b2de6930273d4e2b51"
     },
     {
       "path": "CITATION.cff",
       "bytes": 377,
-      "sha256": "c4925da5a550e36bc9e686e5bb1d988058635af11435e91130b2756f616b3f37"
+      "sha256": "4ea16d2a2c05e64e0ee3f5ea0af70b46fb549de931a83013f1c15f69a0994cce"
     },
     {
       "path": "DEVELOPMENT.md",
@@ -56,13 +56,33 @@
     },
     {
       "path": "README.md",
-      "bytes": 5596,
-      "sha256": "30e348b7fb91f4d861c69c702ad3205c638ade03a350e28774b40671f8bd0f4f"
+      "bytes": 5888,
+      "sha256": "603c78e6b76413f3a4ba5bb015217c071b43f42c28018644bc707d26624a3ec1"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 2266,
-      "sha256": "becee7a74b059cf39fb497e667d3ed1ecc7153ed7ef77eb9812863b4a1665617"
+      "bytes": 2377,
+      "sha256": "4f74bdbe06c8a1de57af53f75ca8a277c4551ec06d2394a8c7c18dfe96d7c188"
+    },
+    {
+      "path": "analysis/cohort_sensitivity/INPUTS.json",
+      "bytes": 1159,
+      "sha256": "db790c1d1becd4a54e3b4bb98cd32b8c433cc8f924c340a3c17983a101d1392c"
+    },
+    {
+      "path": "analysis/cohort_sensitivity/README.md",
+      "bytes": 2938,
+      "sha256": "94043a757bcf5a0c17500890684ce2bba8b9518cd9c2dc2d088f8bef1380207c"
+    },
+    {
+      "path": "analysis/cohort_sensitivity/replay.py",
+      "bytes": 12146,
+      "sha256": "ec420374df87593a6aa0e3461a836cd742667da33498c6774ec5ebd148d4ad24"
+    },
+    {
+      "path": "analysis/cohort_sensitivity/requirements-replay.txt",
+      "bytes": 13,
+      "sha256": "7bd6b8946940b79948c548c8048e545684b91c8edc9444d8dfc0c8f76a97c0a7"
     },
     {
       "path": "analysis/diagnostic_extension_20261019/README.md",
@@ -432,7 +452,7 @@
     {
       "path": "demo/index.html",
       "bytes": 7815,
-      "sha256": "96876f195d27aafa77b7cf15bac44b7d816138edb5c6b0807b8b843f6316d4f4"
+      "sha256": "163fd7c2046f657313db1849fe705e27b13d545add3038892e035346b8370ba6"
     },
     {
       "path": "demo/python-worker.js",
@@ -500,6 +520,11 @@
       "sha256": "3e65358bdbd120d5bc1fd2e6cbfd354a114a9ebac2290487cf6927fa98b913d6"
     },
     {
+      "path": "docs/READING_THE_RESULTS.md",
+      "bytes": 3078,
+      "sha256": "05e0169ea1a24a82e66ac04afa3a7c83fc07fb8507656aafae2a780660b02b13"
+    },
+    {
       "path": "docs/REAL_REUSE_CASE.md",
       "bytes": 5424,
       "sha256": "3a95f953495f3b27e69142b2fe3d88c4553d90c1d9bea5c05e44d49f2102db5b"
@@ -562,7 +587,7 @@
     {
       "path": "index.html",
       "bytes": 3341,
-      "sha256": "88e18f9be31eb4dff1324e2176add6e7d96b964b29cee4c4ebe335db96120ab7"
+      "sha256": "08ae7049b882ac4b41492c510eaa93ac344007509fbabf5e834b47e57e00811a"
     },
     {
       "path": "reports/PROFILE_EVIDENCE_INDEX.json",
@@ -571,8 +596,18 @@
     },
     {
       "path": "reports/README.md",
-      "bytes": 1353,
-      "sha256": "4b7174fccf761c0cdedb63b7a77d34f97a7a21fade795ba018fae190a252d4c1"
+      "bytes": 1622,
+      "sha256": "ab28bdd471e5a8f315403ad70ef0cd92bcc7d0eaacb0c4da7f81a3ac42497382"
+    },
+    {
+      "path": "reports/cohort_sensitivity/README.md",
+      "bytes": 668,
+      "sha256": "8a0f20bb1331bde4223a6b3bdfdb64ef0fab828f074ec3bbc4cf44bb3de8e3fd"
+    },
+    {
+      "path": "reports/cohort_sensitivity/RESULTS.json",
+      "bytes": 9455,
+      "sha256": "3f26007457ae217447051fd338ef2b6ed25d6ecc54892882fe40f2fb09364892"
     },
     {
       "path": "reports/diagnostics_20261019/EXPORT_PROVENANCE.json",
@@ -1051,7 +1086,7 @@
     }
   ],
   "counts": {
-    "files": 209,
-    "bytes": 9015566
+    "files": 216,
+    "bytes": 9046078
   }
 }

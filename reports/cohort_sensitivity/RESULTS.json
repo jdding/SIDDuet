@@ -1,0 +1,324 @@
+{
+  "schema": "sidduet.training_cohort_sensitivity.v1",
+  "posthoc": true,
+  "windows": [
+    {
+      "window": "first",
+      "training_only": {
+        "bootstrap": {
+          "draws": 10000,
+          "fixed_fits_and_groups": true,
+          "intervals": [
+            {
+              "family95": [
+                -0.06483032597639202,
+                0.027984160445566533
+              ],
+              "pointwise95": [
+                -0.052890056163794295,
+                0.018618825251477053
+              ]
+            }
+          ],
+          "invalid_draws": 0,
+          "seed": 20261020,
+          "users": 1019,
+          "valid_draws": 10000
+        },
+        "collision_groups": 878,
+        "coverage": {
+          "audit": {
+            "rec": {
+              "collision_member_appearances": 173,
+              "mapped_member_appearances": 332,
+              "mapped_requests": 288,
+              "no_mapped_requests": 3311,
+              "scored_requests": 156,
+              "singleton_only_requests": 132,
+              "source_requests": 3599
+            },
+            "search": {
+              "collision_member_appearances": 154,
+              "mapped_member_appearances": 283,
+              "mapped_requests": 158,
+              "no_mapped_requests": 1765,
+              "scored_requests": 110,
+              "singleton_only_requests": 48,
+              "source_requests": 1923
+            }
+          },
+          "train": {
+            "rec": {
+              "collision_member_appearances": 6170,
+              "mapped_member_appearances": 11945,
+              "mapped_requests": 9650,
+              "no_mapped_requests": 51410,
+              "scored_requests": 5377,
+              "singleton_only_requests": 4273,
+              "source_requests": 61060
+            },
+            "search": {
+              "collision_member_appearances": 3369,
+              "mapped_member_appearances": 5574,
+              "mapped_requests": 2651,
+              "no_mapped_requests": 6414,
+              "scored_requests": 1779,
+              "singleton_only_requests": 872,
+              "source_requests": 9065
+            }
+          },
+          "validation": {
+            "rec": {
+              "collision_member_appearances": 138,
+              "mapped_member_appearances": 307,
+              "mapped_requests": 265,
+              "no_mapped_requests": 2930,
+              "scored_requests": 131,
+              "singleton_only_requests": 134,
+              "source_requests": 3195
+            },
+            "search": {
+              "collision_member_appearances": 114,
+              "mapped_member_appearances": 217,
+              "mapped_requests": 138,
+              "no_mapped_requests": 1740,
+              "scored_requests": 81,
+              "singleton_only_requests": 57,
+              "source_requests": 1878
+            }
+          }
+        },
+        "fit": {
+          "aware": {
+            "alpha": 1.0,
+            "kind": "separate",
+            "validation": {
+              "macro": 0.8627491938545531,
+              "rec": 0.8197312635830731,
+              "search": 0.9057671241260331
+            }
+          },
+          "blind": {
+            "alpha": 1.0,
+            "kind": "pooled",
+            "validation": {
+              "macro": 0.894735806113562,
+              "rec": 0.8364157265068762,
+              "search": 0.9530558857202477
+            }
+          }
+        },
+        "gain": {
+          "macro": -0.01619707034191306,
+          "rec": -0.0027694941381048513,
+          "search": -0.029624646545721275
+        },
+        "groups": 2578,
+        "items": 4088,
+        "loss": {
+          "aware": {
+            "macro": 0.9120100968030908,
+            "rec": 0.8336679293388776,
+            "search": 0.9903522642673039
+          },
+          "blind": {
+            "macro": 0.8958130264611777,
+            "rec": 0.8308984352007729,
+            "search": 0.9607276177215825
+          }
+        },
+        "user_coverage": {
+          "audit": {
+            "rec": {
+              "scored_users": 146,
+              "source_users": 1499
+            },
+            "search": {
+              "scored_users": 89,
+              "source_users": 940
+            }
+          },
+          "train": {
+            "rec": {
+              "scored_users": 3197,
+              "source_users": 8675
+            },
+            "search": {
+              "scored_users": 1053,
+              "source_users": 3146
+            }
+          },
+          "validation": {
+            "rec": {
+              "scored_users": 121,
+              "source_users": 1367
+            },
+            "search": {
+              "scored_users": 71,
+              "source_users": 872
+            }
+          }
+        }
+      }
+    },
+    {
+      "window": "additional",
+      "training_only": {
+        "bootstrap": {
+          "draws": 10000,
+          "fixed_fits_and_groups": true,
+          "intervals": [
+            {
+              "family95": [
+                0.006526913844780606,
+                0.021634518924566033
+              ],
+              "pointwise95": [
+                0.008063720573732207,
+                0.019914220514729856
+              ]
+            }
+          ],
+          "invalid_draws": 0,
+          "seed": 20261021,
+          "users": 2373,
+          "valid_draws": 10000
+        },
+        "collision_groups": 1431,
+        "coverage": {
+          "audit": {
+            "rec": {
+              "collision_member_appearances": 747,
+              "mapped_member_appearances": 1275,
+              "mapped_requests": 1067,
+              "no_mapped_requests": 9555,
+              "scored_requests": 657,
+              "singleton_only_requests": 410,
+              "source_requests": 10622
+            },
+            "search": {
+              "collision_member_appearances": 646,
+              "mapped_member_appearances": 943,
+              "mapped_requests": 535,
+              "no_mapped_requests": 4762,
+              "scored_requests": 401,
+              "singleton_only_requests": 134,
+              "source_requests": 5297
+            }
+          },
+          "train": {
+            "rec": {
+              "collision_member_appearances": 11049,
+              "mapped_member_appearances": 17826,
+              "mapped_requests": 13739,
+              "no_mapped_requests": 57277,
+              "scored_requests": 9192,
+              "singleton_only_requests": 4547,
+              "source_requests": 71016
+            },
+            "search": {
+              "collision_member_appearances": 5826,
+              "mapped_member_appearances": 8677,
+              "mapped_requests": 4021,
+              "no_mapped_requests": 9590,
+              "scored_requests": 2994,
+              "singleton_only_requests": 1027,
+              "source_requests": 13611
+            }
+          },
+          "validation": {
+            "rec": {
+              "collision_member_appearances": 803,
+              "mapped_member_appearances": 1301,
+              "mapped_requests": 1113,
+              "no_mapped_requests": 8535,
+              "scored_requests": 714,
+              "singleton_only_requests": 399,
+              "source_requests": 9648
+            },
+            "search": {
+              "collision_member_appearances": 650,
+              "mapped_member_appearances": 968,
+              "mapped_requests": 528,
+              "no_mapped_requests": 4783,
+              "scored_requests": 392,
+              "singleton_only_requests": 136,
+              "source_requests": 5311
+            }
+          }
+        },
+        "fit": {
+          "aware": {
+            "beta": 10.0,
+            "kind": "shrinkage",
+            "validation": {
+              "macro": 0.9986519927078397,
+              "rec": 0.952803159543416,
+              "search": 1.0445008258722634
+            }
+          },
+          "blind": {
+            "alpha": 1.0,
+            "kind": "pooled",
+            "validation": {
+              "macro": 1.0046217935472366,
+              "rec": 0.9558668411838998,
+              "search": 1.0533767459105734
+            }
+          }
+        },
+        "gain": {
+          "macro": 0.014113193319734017,
+          "rec": 0.007331410457957794,
+          "search": 0.02089497618151024
+        },
+        "groups": 3521,
+        "items": 6217,
+        "loss": {
+          "aware": {
+            "macro": 0.9398176746662104,
+            "rec": 0.8950936631619155,
+            "search": 0.9845416861705052
+          },
+          "blind": {
+            "macro": 0.9539308679859444,
+            "rec": 0.9024250736198733,
+            "search": 1.0054366623520155
+          }
+        },
+        "user_coverage": {
+          "audit": {
+            "rec": {
+              "scored_users": 563,
+              "source_users": 3158
+            },
+            "search": {
+              "scored_users": 292,
+              "source_users": 1918
+            }
+          },
+          "train": {
+            "rec": {
+              "scored_users": 4482,
+              "source_users": 9383
+            },
+            "search": {
+              "scored_users": 1684,
+              "source_users": 4318
+            }
+          },
+          "validation": {
+            "rec": {
+              "scored_users": 592,
+              "source_users": 3049
+            },
+            "search": {
+              "scored_users": 274,
+              "source_users": 1867
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -13,9 +13,12 @@ support to each task, and attaches model predictions with explicit coverage and 
 | Do shared codes contain different task contributors? | [Topology and code-group analysis](docs/REBUILD_PROTOCOL.md) |
 | Can I use my own catalog and field names? | [Bring your own data](docs/BRING_YOUR_OWN_DATA.md) |
 | Should task counts be pooled for later exposure-allocation forecasts? | [Temporal reuse example](analysis/reuse_validation/README.md) |
+| Does the pooling result change with training-only item eligibility? | [Cohort sensitivity replay](analysis/cohort_sensitivity/README.md) |
 | Which requests does the diagnostic cover for a real joint model? | [UniSAR predictions and complete replay](analysis/model_reuse/REPLAY.md) |
 
 For a new dataset, first check paired-observation coverage, then compare within-code task allocations against the count references. Use later requests to compare pooling choices within a declared cohort and window; keep the full-request prediction evaluation alongside the covered diagnostic.
+
+The [training-only cohort sensitivity](analysis/cohort_sensitivity/README.md) reproduces both fixed-window outcomes without rebuilding the quantizer.
 
 The [additional shared-calendar example](analysis/reuse_validation/SHARED_WINDOW_README.md) selects a later period using actual task coverage, then repeats the pooling comparison with fixed methods.
 
@@ -33,7 +36,7 @@ The first run loads a pinned Pyodide runtime; data stay in your browser.
 Python 3.10+ and the standard library are enough for the synthetic example:
 
 ```sh
-git clone --branch v0.2.7 https://github.com/jdding/SIDDuet.git
+git clone --branch v0.2.8 https://github.com/jdding/SIDDuet.git
 cd SIDDuet
 python3 -I scripts/validate_release.py
 ```

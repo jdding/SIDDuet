@@ -1,0 +1,27 @@
+{
+  "schema": "sidduet.training_cohort_inputs.v1",
+  "seed": 20261020,
+  "bootstrap_draws": 10000,
+  "interval_family_endpoints": 4,
+  "windows": {
+    "first": {
+      "sha256": {
+        "train": "ec2c812850fb4c75da6451daa79e5d46d3d9e04edf84fb1485d65957046321d7",
+        "validation": "bf82a16dba7f01a6c52d4e59bddc84df8741970195781afec4d6506ac7ab7dd5",
+        "audit": "d17775c9a7c4fa9b82273b9d3c23d52f11c732abbc9117a02f64065fa9efbf75"
+      }
+    },
+    "additional": {
+      "sha256": {
+        "train": "6880b775a9d9ed3747c2a25eeff70a49614c662fc50364070a67b95aaf093972",
+        "validation": "4277d86f8bdf71057a57b1bb240c284fd085504885d87d0cc06b58959a363c60",
+        "audit": "7b5f078af074bc5a005823c5e63f57ba09d050e0218540082b42de3e794e460c"
+      }
+    }
+  },
+  "repository_sha256": {
+    "data/native_exports/native_maps/gensar_semantic.csv": "da6bdd9ab65c983f028ce8137add898464bda91a348e963cc8dd08ac53c38740",
+    "data/native_exports/cohort.json": "2ed36214d925945e1fd886940363245ed159c8819ff4f6ed116c72206b91c6db",
+    "analysis/reuse_validation/allocation_forecast.py": "14a46ed8774130003bddad97eb37caac7e9c484236952e4f7f5c95ca057a9d5a"
+  }
+}
