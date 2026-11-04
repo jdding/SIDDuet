@@ -32,7 +32,7 @@ Keep real counts and item rows local. Only items with positive observations in b
 
 ## 2. Supply a mapping
 
-Export `dataset,item_id,sid` in CSV; `sid` is a JSON token list quoted as one CSV field. The dataset and item keys must match the count table. A privately remapped catalog needs its actual bridge; equal-looking integers are not a bridge. The Qilin-specific native converter is not needed for this generic path.
+Export `dataset,item_id,sid` in CSV; `sid` is a nonempty JSON token list quoted as one CSV field. Tokens must be nonblank strings or integers; strings and integers remain distinct. JSON whitespace and Unicode escaping do not change code identity. Legacy nonblank opaque SIDs (as in the synthetic fixtures) remain supported and are preserved exactly. Empty/missing SIDs, invalid list tokens, incorrect CSV row widths, duplicate headers and duplicate dataset/item keys (even identical rows) are rejected before outputs are written. Dataset and item keys are exact identities and must match the count table. A privately remapped catalog needs its actual bridge; equal-looking integers are not a bridge. The Qilin-specific native converter is not needed for this generic path.
 
 ```sh
 python3 -I scripts/admit_sid_family.py \
@@ -42,6 +42,20 @@ python3 -I scripts/admit_sid_family.py \
 ```
 
 The report gives map coverage, collisions and group composition. A category-path map can exercise the interface; label it as a catalog grouping rather than a learned tokenizer.
+
+To calibrate task allocation, run the [general count-reference command](COUNT_REFERENCE_CALIBRATION.md)
+on the same count table and one or more named maps:
+
+```sh
+python3 -I scripts/calibrate_task_allocation.py \
+  --role-counts /local/new/counts.csv --sid-map my_map=/local/map.csv \
+  --draws 1999 --seed 20261104 \
+  --out-json /local/new/calibration.json --out-csv /local/new/calibration.csv
+```
+
+This compares within-code allocation JSD with paired band-matched and exact-total
+regroupings. Dataset names and common-item counts come from your inputs. NumPy is
+required for this analysis; no provider file, quantizer fitting or model is needed.
 
 ## 3. Attach predictions or test pooling
 

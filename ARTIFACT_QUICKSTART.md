@@ -39,6 +39,9 @@ Follow [Bring your own data](docs/BRING_YOUR_OWN_DATA.md). Configure your field 
 task values, import counts, then build a topology. Add a map over the same real item keys
 for code-group analysis; add actual candidate scores for model inspection.
 [The reconstruction protocol](docs/REBUILD_PROTOCOL.md) lists each command and schema.
+Use [count-reference calibration](docs/COUNT_REFERENCE_CALIBRATION.md) to
+compare your own member allocations with band-matched and exact-total
+regroupings, with no fixed dataset names or catalog sizes.
 
 ## 3. Choose a real-data replay
 

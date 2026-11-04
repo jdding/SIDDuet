@@ -8,8 +8,13 @@ import csv
 import hashlib
 import json
 import math
+import runpy
 from collections import defaultdict
+from decimal import Decimal
 from pathlib import Path
+
+
+load_sid_map = runpy.run_path(str(Path(__file__).resolve().with_name("sid_map_io.py")))["load_sid_map"]
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -53,7 +58,7 @@ def aggregate(units: list[dict[str, object]], field: str | None) -> list[dict[st
                 "slice_type": "all" if field is None else field,
                 "slice_value": value,
                 "units": len(rows),
-                "ndcg10": round(sum(float(row["ndcg10"]) for row in rows) / len(rows), 6),
+                "ndcg10": round(math.fsum(float(row["ndcg10"]) for row in rows) / len(rows), 6),
                 "mean_group_size": round(
                     sum(int(row["group_size"]) for row in rows) / len(rows), 6
                 ),
@@ -71,7 +76,7 @@ def main() -> None:
     args = parser.parse_args()
 
     topology, topology_sha256 = read_topology(args.topology)
-    sid_lookup = {(row["dataset"], row["item_id"]): row["sid"] for row in read_csv(args.sid_map)}
+    sid_lookup = load_sid_map(args.sid_map)
     joined = [
         dict(row, sid=sid_lookup[(row["dataset"], row["item_id"])])
         for row in topology
@@ -87,10 +92,20 @@ def main() -> None:
             continue
         for role in ["search", "rec"]:
             support = f"{role}_support"
-            ranked = sorted(group, key=lambda row: (-float(row[support]), row["item_id"]))
-            positions = {row["item_id"]: position for position, row in enumerate(ranked, start=1)}
+            support_counts: dict[Decimal, int] = defaultdict(int)
             for row in group:
-                position = positions[row["item_id"]]
+                support_counts[Decimal(row[support])] += 1
+            discounts: dict[Decimal, float] = {}
+            start = 1
+            for value, count in sorted(support_counts.items(), reverse=True):
+                # A uniform ordering of a tie assigns each target every rank
+                # with equal probability, including zero discounts past rank 10.
+                discounts[value] = sum(
+                    1.0 / math.log2(position + 1)
+                    for position in range(start, min(start + count, 11))
+                ) / count
+                start += count
+            for row in group:
                 units.append(
                     {
                         "dataset": dataset,
@@ -99,7 +114,7 @@ def main() -> None:
                         "rsd_bucket": row["rsd_bucket"],
                         "rsi_mag_bucket": row["rsi_mag_bucket"],
                         "group_size": len(group),
-                        "ndcg10": 1.0 / math.log2(position + 1) if position <= 10 else 0.0,
+                        "ndcg10": discounts[Decimal(row[support])],
                     }
                 )
     if not units:
@@ -116,7 +131,8 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(rows)
     payload = {
-        "schema": "sr_sid_rolemap.collision_diagnostic.v1",
+        "schema": "sr_sid_rolemap.collision_diagnostic.v2",
+        "support_tie_policy": "expected_discount_over_exact_support_ties",
         "status": "pass",
         "topology_profile_id": TOPOLOGY_PROFILE_ID,
         "topology_sha256": topology_sha256,

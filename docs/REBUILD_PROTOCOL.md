@@ -55,6 +55,22 @@ A SID map uses `dataset,item_id,sid`. Admission reports coverage and collision
 structure. Outputs retain `topology_profile_id` and the exact topology-file
 `topology_sha256`; item-level joins are not emitted.
 
+For count-reference calibration on your own dataset, use the separate
+[general calibration command](COUNT_REFERENCE_CALIBRATION.md):
+
+```sh
+python3 -I scripts/calibrate_task_allocation.py \
+  --role-counts /local/new/counts.csv --sid-map supplied=/local/map.csv \
+  --draws 1999 --seed 20261104 \
+  --out-json /local/new/calibration.json --out-csv /local/new/calibration.csv
+```
+
+It accepts arbitrary dataset and map names, aggregates labels to item/task
+counts and constructs both paired-count references. Install NumPy in your own
+environment for this command. The study-specific scripts under
+`analysis/diagnostic_extension_20261019` retain their fixed input contracts and
+historical results.
+
 ## 4. Inspect within-code support
 
 ```bash
@@ -68,6 +84,9 @@ python3 -I scripts/evaluate_collision_diagnostic.py \
 The command ranks items by each role's support within an exact SID group and
 emits aggregate NDCG@10. This is a support diagnostic, not model ranking or an
 independent semantic-harm test. Its outputs carry the same topology identity.
+Collision diagnostic v2 averages rank discounts within exact-support ties;
+renaming item keys cannot change a slice. Archived v1 diagnostics keep their
+original identity and values.
 
 ## 5. Attach existing scores
 

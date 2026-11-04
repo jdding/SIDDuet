@@ -7,8 +7,12 @@ import argparse
 import csv
 import hashlib
 import json
+import runpy
 from collections import defaultdict
 from pathlib import Path
+
+
+load_sid_map = runpy.run_path(str(Path(__file__).resolve().with_name("sid_map_io.py")))["load_sid_map"]
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -38,16 +42,6 @@ def read_topology(path: Path) -> tuple[list[dict[str, str]], str]:
     return rows, digest.hexdigest()
 
 
-def unique_map(rows: list[dict[str, str]], value: str) -> dict[tuple[str, str], str]:
-    result: dict[tuple[str, str], str] = {}
-    for row in rows:
-        key = (row["dataset"], row["item_id"])
-        if key in result:
-            raise ValueError(f"duplicate item row: {key}")
-        result[key] = row[value]
-    return result
-
-
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -66,7 +60,7 @@ def main() -> None:
     args = parser.parse_args()
 
     topology_rows, topology_sha256 = read_topology(args.topology)
-    sid_lookup = unique_map(read_csv(args.sid_map), "sid")
+    sid_lookup = load_sid_map(args.sid_map)
     joined = [
         dict(row, sid=sid_lookup[(row["dataset"], row["item_id"])])
         for row in topology_rows
