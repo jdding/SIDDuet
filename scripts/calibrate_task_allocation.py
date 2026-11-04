@@ -20,6 +20,9 @@ POP_PATH = ROOT / "analysis/diagnostic_extension_20261019/code/population_analys
 MAP_PATH = ROOT / "scripts/sid_map_io.py"
 MAX_EXACT = 2**53
 REFERENCES = ("band", "exact_total")
+# All six summary metrics are in [0, 1]. Only tail comparisons use this
+# absolute tolerance; reported statistics/ranges retain their original precision.
+TAIL_TIE_ABSOLUTE_TOLERANCE = 1e-12
 
 
 def load_path(name, path):
@@ -138,6 +141,13 @@ def summary(stats, sizes):
     return POP.means(stats["jsd"], stats["disjoint"], sizes, stats["events"], sizes >= 2)
 
 
+def empirical_p_with_ties(observed, values):
+    """Treat summation-roundoff ties inclusively in the unchanged p kernel."""
+    values = np.asarray(values, dtype=float)
+    tied = np.abs(values - observed) <= TAIL_TIE_ABSOLUTE_TOLERANCE
+    return POP.empirical_p(observed, np.where(tied, observed, values))
+
+
 def reference_summary(observed, values, draws):
     result = {}
     for metric in POP.METRICS:
@@ -150,7 +160,7 @@ def reference_summary(observed, values, draws):
             result[metric] = {"draws": draws, "mean": float(arr.mean()),
                               "central_95pct": [float(v) for v in np.percentile(arr, [2.5, 97.5])],
                               "observed_minus_reference_mean": float(observed[metric] - arr.mean()),
-                              "two_sided_p": POP.empirical_p(observed[metric], arr)}
+                              "two_sided_p": empirical_p_with_ties(observed[metric], arr)}
     return result
 
 
@@ -248,7 +258,10 @@ def calculate(args):
                          "groups": "fixed SID groups; summary metrics exclude singleton groups",
                          "weights": "equal-group, item-count, or each state's actual group S+R volume",
                          "primary_metric": "equal_group_jsd",
-                         "p": "min(1,2*min((1+#reference>=observed)/(B+1),(1+#reference<=observed)/(B+1))); inclusive ties",
+                         "p": "min(1,2*min((1+#reference>=observed)/(B+1),(1+#reference<=observed)/(B+1))); reference values within the declared absolute tolerance of observed are treated as observed in both tails",
+                         "tail_tie_absolute_tolerance": TAIL_TIE_ABSOLUTE_TOLERANCE,
+                         "tail_tie_relative_tolerance": 0,
+                         "tail_tie_scope": "all six bounded [0,1] summary metrics; comparison only, reported statistics and reference ranges remain unrounded",
                          "multiplicity": "BH and BY across all estimable dataset-by-map primary endpoints, separately for each reference; structural noncollision controls excluded",
                          "secondary_metrics": "descriptive summaries and unadjusted p values; no secondary FDR claim",
                          "range": "central 95 percent regrouping reference range, not an effect confidence interval",

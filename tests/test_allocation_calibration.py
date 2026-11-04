@@ -113,6 +113,44 @@ class AllocationCalibration(unittest.TestCase):
         result, _ = self.success()
         self.assertEqual(result["results"][0]["observed"]["equal_group_disjoint"], 0)
 
+    def test_one_group_permutations_are_numerical_ties_with_p_and_q_one(self):
+        pairs = [(95, 5), (60, 40), (40, 60), (1, 99), (30, 70), (10, 90)]
+        self.write(self.counts, ["dataset", "item_id", "role", "label", "count"],
+                   [["probe", str(i), role, "x", count] for i, pair in enumerate(pairs)
+                    for role, count in zip(("search", "rec"), pair)])
+        self.write(self.mapping, ["dataset", "item_id", "sid"],
+                   [["probe", str(i), "one-group"] for i in range(len(pairs))])
+        result, _ = self.success(draws=31, maps=[("v", self.mapping)])
+        record = result["results"][0]
+        for reference in ("band", "exact_total"):
+            with self.subTest(reference=reference):
+                ref = record["references"][reference]
+                self.assertEqual(ref["primary_p"], 1)
+                self.assertEqual(ref["primary_bh_q"], 1)
+                self.assertEqual(ref["primary_by_q"], 1)
+        self.assertEqual(result["protocol"]["tail_tie_absolute_tolerance"], 1e-12)
+        self.assertEqual(result["protocol"]["tail_tie_relative_tolerance"], 0)
+
+    def test_numerical_tail_ties_preserve_clearly_separated_contrast(self):
+        # Every observed pair has opposing leaders; all totals are ten.
+        # Shared regroupings usually put some same-direction pairs together.
+        pairs = [(9, 1), (1, 9)] * 12
+        self.write(self.counts, ["dataset", "item_id", "role", "label", "count"],
+                   [["contrast", str(i), role, "x", count] for i, pair in enumerate(pairs)
+                    for role, count in zip(("search", "rec"), pair)])
+        self.write(self.mapping, ["dataset", "item_id", "sid"],
+                   [["contrast", str(i), str(i // 2)] for i in range(len(pairs))])
+        result, _ = self.success(draws=199, maps=[("v", self.mapping)])
+        record = result["results"][0]
+        for reference in ("band", "exact_total"):
+            with self.subTest(reference=reference):
+                ref = record["references"][reference]
+                self.assertGreater(record["observed"]["equal_group_jsd"] -
+                                   ref["metrics"]["equal_group_jsd"]["mean"], 0.1)
+                self.assertLess(ref["primary_p"], 0.05)
+                self.assertLess(ref["primary_bh_q"], 0.05)
+                self.assertLess(ref["primary_by_q"], 0.05)
+
     def test_aggregation_exclusion_unused_and_exact_dataset_keys(self):
         rows = self.count_rows + [[self.dataset, "only-search", "search", "a", 4],
                                  [self.dataset, "zero", "search", "a", 0],
@@ -211,9 +249,9 @@ class AllocationCalibration(unittest.TestCase):
             # Independent arithmetic, inclusive ties; duplicate views give equal BH q=p, BY=min(1,1.5p).
             primary_values = [sample["equal_group_jsd"] for sample in simulations]
             obs = observed["equal_group_jsd"]
-            # Avoid asserting a tail boundary when Python/NumPy differ by a final bit.
-            greater = sum(value > obs or math.isclose(value, obs, abs_tol=1e-14) for value in primary_values)
-            less = sum(value < obs or math.isclose(value, obs, abs_tol=1e-14) for value in primary_values)
+            # Adapter-local absolute ties absorb only numerical summation differences.
+            greater = sum(value > obs or abs(value - obs) <= 1e-12 for value in primary_values)
+            less = sum(value < obs or abs(value - obs) <= 1e-12 for value in primary_values)
             p = min(1, 2 * min((1 + greater) / 32, (1 + less) / 32))
             self.assertAlmostEqual(actual["primary_p"], p, places=14)
             self.assertAlmostEqual(actual["primary_bh_q"], p, places=14)

@@ -118,9 +118,17 @@ Input hashes still change when input bytes are reordered.
 `equal_group_jsd` is primary. With observed statistic `t`, `B` draws and
 reference statistics `T_b`, the two-sided Monte Carlo p is
 `min(1, 2 * min((1 + #{T_b >= t})/(B+1), (1 + #{T_b <= t})/(B+1)))`.
-Tails include ties and use the generated binary64 statistics. The lower bound
-is `min(1, 2/(B+1))`; defaults give 0.001 at 1999 draws. This is conditional
-reference calibration, not an iid event or causal model.
+Tails include numerical ties: a reference value with absolute difference from
+`t` at most **`1e-12`** is counted in both tails. Relative tolerance is zero.
+All six metrics are bounded in `[0,1]` (JSD in bits). This fixed absolute
+comparison tolerance prevents harmless summation-order roundoff from turning
+permutations of an unchanged group multiset into apparent tail differences.
+The generic adapter treats those values as `t` only when calling the unchanged
+population helper's p kernel. Reported observed values, reference means/ranges
+and differences retain their original full precision. The JSON protocol records
+both tolerances and this scope. Historical helper code and results are unchanged.
+The lower bound is `min(1, 2/(B+1))`; defaults give 0.001 at 1999 draws. This
+is conditional reference calibration, not an iid event or causal model.
 
 For each reference separately, the primary multiplicity family contains all
 estimable dataset-by-map endpoints from this invocation. JSON lists its exact
@@ -161,3 +169,6 @@ CLI under isolated Python, independent analytic six-metric expectations,
 independent reference calculations, paired-stratum preservation, shared draws,
 ties, singleton/exclusion handling, arbitrary dataset/view names, coverage and
 malformed-input rejection, reproducibility, multiplicity and output guards.
+Numerical regressions also require p/BH/BY equal to one for the mathematically
+invariant one-group reference, while retaining sensitivity to a clearly
+separated constructed contrast.
