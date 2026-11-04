@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased local core-fix candidate — 2026-11-04
+## Unreleased core-fix candidate — 2026-11-04
 
 
 - Add a general paired-count calibration CLI for user-supplied datasets and maps.

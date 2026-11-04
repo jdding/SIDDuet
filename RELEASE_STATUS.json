@@ -1,10 +1,10 @@
 {
-  "schema": "sr_sid_rolemap.local_candidate.v1",
-  "version": "0.2.8+local.core-fixes.20261104",
+  "schema": "sr_sid_rolemap.patch_candidate.v1",
+  "version": "0.2.8+core-fixes.20261104",
   "release_tag": null,
   "repository_url": "https://github.com/jdding/SIDDuet",
   "release_url": null,
-  "publication_status": "unreleased_local_candidate",
+  "publication_status": "unreleased_branch_candidate",
   "release_date": null,
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
@@ -67,5 +67,5 @@
     "commit": "d1d76dd0874a9498511f151c8b5eb264b734d6de"
   },
   "scientific_results_recomputed": false,
-  "local_branch": "codex/core-fixes-20261104"
+  "candidate_branch": "codex/core-fixes-20261104"
 }

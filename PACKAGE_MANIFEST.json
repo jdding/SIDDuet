@@ -1,6 +1,6 @@
 {
   "schema": "sr_sid_rolemap.package_manifest.v1",
-  "release_version": "0.2.8+local.core-fixes.20261104",
+  "release_version": "0.2.8+core-fixes.20261104",
   "release_tag": null,
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "files": [
@@ -26,8 +26,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2860,
-      "sha256": "69568385344965ffb5136f7e0ce7a361dd282d404c76acdabb7792617581c29b"
+      "bytes": 2854,
+      "sha256": "d83920d2c2ab998c8364b71a2e52e50da11b5f05767945bc91498de25dbfbf7b"
     },
     {
       "path": "CITATION.cff",
@@ -56,13 +56,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6697,
-      "sha256": "0ec4458d5974f7f9ea53663efa76c7b3c6722f6d73c825c24104e2eb3d9dd46b"
+      "bytes": 6687,
+      "sha256": "5ad95e328e5999286a79a3e1e71659104d5f210684873214ce7c0af0c0672d3c"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 2696,
-      "sha256": "9bbcb4b007b9d5c549a8e47b12d5870aa35d51c1421813c049283dde1e203ade"
+      "bytes": 2695,
+      "sha256": "c2f089de1374168868b9cf0141f1f497f4936d88e0bc0c232e0a10c7f9a5ea9b"
     },
     {
       "path": "analysis/cohort_sensitivity/INPUTS.json",
@@ -1112,9 +1112,9 @@
   ],
   "counts": {
     "files": 221,
-    "bytes": 9111725
+    "bytes": 9111708
   },
-  "publication_status": "unreleased_local_candidate",
+  "publication_status": "unreleased_branch_candidate",
   "base_release": {
     "version": "0.2.8",
     "release_tag": "v0.2.8",

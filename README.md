@@ -1,7 +1,7 @@
 # SIDDuet
 
-Local, unpublished core-fix candidate based on v0.2.8. See `RELEASE_STATUS.json`
-for this checkout's identity. Published v0.2.8 and its scientific reports remain
+Unreleased core-fix candidate based on v0.2.8. See `RELEASE_STATUS.json`
+for this branch's identity. Published v0.2.8 and its scientific reports remain
 the historical baseline; this candidate adds generic count calibration and fixes
 map validation and support-tie handling.
 
