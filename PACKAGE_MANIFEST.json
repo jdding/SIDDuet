@@ -466,8 +466,8 @@
     },
     {
       "path": "docs/COUNT_REFERENCE_CALIBRATION.md",
-      "bytes": 8883,
-      "sha256": "873f272b375f352bcfa6ee3d308ca0ec70d44ec7dc9791797ae3065ca366dd44"
+      "bytes": 9707,
+      "sha256": "bd5afd79a8f563ecc04cc57ff74c55821be43792d3bd034424ba6e19a2827b89"
     },
     {
       "path": "docs/DATASET_ADMISSION_REGISTRY.json",
@@ -1001,8 +1001,8 @@
     },
     {
       "path": "scripts/calibrate_task_allocation.py",
-      "bytes": 18038,
-      "sha256": "0001bc03551dda40993e02f1d63ef0b12c8d455cd94f084f764d9a11318dd978"
+      "bytes": 18939,
+      "sha256": "a7497831a15b72815cf7c6084894d124915fff624f6198ded45126e97f03d77b"
     },
     {
       "path": "scripts/evaluate_collision_diagnostic.py",
@@ -1086,8 +1086,8 @@
     },
     {
       "path": "tests/test_allocation_calibration.py",
-      "bytes": 17551,
-      "sha256": "5dd7362da3f83a1d120afbc17eb95f0f3edd2f7cd496d99607aa5813220e92e4"
+      "bytes": 19909,
+      "sha256": "cd6b0da16148afdf514f48dab308ecf700b6b2a081f08b9ce6680d790f5caff4"
     },
     {
       "path": "tests/test_sid_map_interfaces.py",
@@ -1112,7 +1112,7 @@
   ],
   "counts": {
     "files": 221,
-    "bytes": 9107642
+    "bytes": 9111725
   },
   "publication_status": "unreleased_local_candidate",
   "base_release": {
