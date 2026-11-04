@@ -32,7 +32,7 @@ Keep real counts and item rows local. Only items with positive observations in b
 
 ## 2. Supply a mapping
 
-Export `dataset,item_id,sid` in CSV; `sid` is a JSON token list quoted as one CSV field. The dataset and item keys must match the count table. A privately remapped catalog needs its actual bridge; equal-looking integers are not a bridge. The Qilin-specific native converter is not needed for this generic path.
+Export `dataset,item_id,sid` in CSV; `sid` is a nonempty JSON token list quoted as one CSV field. Tokens must be nonblank strings or integers; strings and integers remain distinct. JSON whitespace and Unicode escaping do not change code identity. Legacy nonblank opaque SIDs (as in the synthetic fixtures) remain supported and are preserved exactly. Empty/missing SIDs, invalid list tokens, incorrect CSV row widths, duplicate headers and duplicate dataset/item keys (even identical rows) are rejected before outputs are written. Dataset and item keys are exact identities and must match the count table. A privately remapped catalog needs its actual bridge; equal-looking integers are not a bridge. The Qilin-specific native converter is not needed for this generic path.
 
 ```sh
 python3 -I scripts/admit_sid_family.py \

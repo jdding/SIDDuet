@@ -3,6 +3,7 @@ const FILES = [
   "demo/browser_example.py",
   "scripts/materialize_role_label_counts.py",
   "scripts/build_role_topology.py",
+  "scripts/sid_map_io.py",
   "scripts/admit_sid_family.py",
   "scripts/evaluate_collision_diagnostic.py",
   "scripts/adapt_method_scores.py",

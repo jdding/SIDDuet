@@ -45,6 +45,22 @@ evaluation ranks supplied scores in their declared candidate domain. SID
 admission reports mapping coverage and collision structure. These observations
 answer different questions and are not combined into a leaderboard score.
 
+Admission and collision diagnostics share the strict SID-map reader: exact
+dataset/item keys, unique headers and item keys, correct CSV widths and nonblank
+codes. JSON token lists are parsed and canonically serialized; whitespace and
+Unicode escaping do not distinguish codes. Lists contain nonblank strings or
+integers, with string and integer tokens distinct. Legacy nonblank opaque codes
+remain exact strings. Invalid maps fail before either output is written.
+
+Collision diagnostic v2 reports `support_tie_policy` as
+`expected_discount_over_exact_support_ties`. Each member of an exact numeric
+support tie receives the average discount over every occupied rank, counting
+zero beyond rank 10. A tie crossing rank 10 therefore includes those zero
+discounts in its denominator. Item IDs and row order do not break support ties.
+Historical v1 reports retain their original ID-based tie ordering; no archived
+scientific or synthetic output is rewritten. Topology v2 and fixed-candidate v3
+are unchanged.
+
 Neither role-label disagreement nor a collision alone establishes semantic
 error, model harm or heldout utility. Legacy high-minus-low ranking, stability
 and alternative-cut sensitivity reports retain their original profile; they
