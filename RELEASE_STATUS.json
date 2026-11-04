@@ -1,13 +1,13 @@
 {
-  "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.2.8",
-  "release_tag": "v0.2.8",
+  "schema": "sr_sid_rolemap.local_candidate.v1",
+  "version": "0.2.8+local.core-fixes.20261104",
+  "release_tag": null,
   "repository_url": "https://github.com/jdding/SIDDuet",
-  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.8",
-  "publication_status": "public_release",
-  "release_date": "2026-10-26",
+  "release_url": null,
+  "publication_status": "unreleased_local_candidate",
+  "release_date": null,
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
-  "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
+  "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "reconstructed_datasets": [
     "kuaisar",
     "qilin"
@@ -38,9 +38,9 @@
   "baseline_release_commit": "4d3502a1d4124fcc930a75eedafb0f91aebc78e1",
   "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication",
   "changes": [
-    "Standalone training-only item eligibility replay with both frozen outcomes and unchanged confidence intervals",
-    "Exact UTC windows and metric/loss explanations",
-    "Explicit raw-versus-processed KuaiSAR view interpretation"
+    "General user-data paired-count calibration entry point",
+    "Exact-support tie averaging for collision diagnostic v2",
+    "Strict SID-map validation and JSON token-list canonicalization"
   ],
   "count_reference_precision": {
     "draws_per_reference": 1999,
@@ -57,5 +57,15 @@
     "results": "reports/cohort_sensitivity/RESULTS.json",
     "posthoc": true,
     "original_four_endpoint_family_retained": true
-  }
+  },
+  "base_release": {
+    "version": "0.2.8",
+    "release_tag": "v0.2.8",
+    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.8",
+    "release_date": "2026-10-26",
+    "publication_status": "public_release",
+    "commit": "d1d76dd0874a9498511f151c8b5eb264b734d6de"
+  },
+  "scientific_results_recomputed": false,
+  "local_branch": "codex/core-fixes-20261104"
 }

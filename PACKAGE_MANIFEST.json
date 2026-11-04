@@ -1,8 +1,8 @@
 {
   "schema": "sr_sid_rolemap.package_manifest.v1",
-  "release_version": "0.2.8",
-  "release_tag": "v0.2.8",
-  "scientific_reproduction_status": "v2_reference_reproduced_kuaisar_qilin",
+  "release_version": "0.2.8+local.core-fixes.20261104",
+  "release_tag": null,
+  "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -21,13 +21,13 @@
     },
     {
       "path": "ARTIFACT_QUICKSTART.md",
-      "bytes": 2893,
-      "sha256": "5b825a0d0c8ff03c34d743b7f503cdaed35aadfed4b9a70340ec7b94d4e28937"
+      "bytes": 3096,
+      "sha256": "926823af19c1384fca48c41d3cc7d7ac5c3237011b87546468705e2139f91777"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2341,
-      "sha256": "02b39a650f84232a23d6af2d726aeb01f16b448a38a599b2de6930273d4e2b51"
+      "bytes": 2860,
+      "sha256": "69568385344965ffb5136f7e0ce7a361dd282d404c76acdabb7792617581c29b"
     },
     {
       "path": "CITATION.cff",
@@ -56,13 +56,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 5888,
-      "sha256": "603c78e6b76413f3a4ba5bb015217c071b43f42c28018644bc707d26624a3ec1"
+      "bytes": 6697,
+      "sha256": "0ec4458d5974f7f9ea53663efa76c7b3c6722f6d73c825c24104e2eb3d9dd46b"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 2377,
-      "sha256": "4f74bdbe06c8a1de57af53f75ca8a277c4551ec06d2394a8c7c18dfe96d7c188"
+      "bytes": 2696,
+      "sha256": "9bbcb4b007b9d5c549a8e47b12d5870aa35d51c1421813c049283dde1e203ade"
     },
     {
       "path": "analysis/cohort_sensitivity/INPUTS.json",
@@ -456,13 +456,18 @@
     },
     {
       "path": "demo/python-worker.js",
-      "bytes": 2414,
-      "sha256": "97ecaa2385d3dc2dba15d09032f63bb66bbed04fc6deec4a3a9527d8e38a0828"
+      "bytes": 2441,
+      "sha256": "76d739a3190840b8664bc601a7f3b63a000ab3dd1e7e5d73d553a5f71a790aaa"
     },
     {
       "path": "docs/BRING_YOUR_OWN_DATA.md",
-      "bytes": 4278,
-      "sha256": "285df409008f782525e203f571859a9540b66dfa335551bf7c7b13dfb7843a5b"
+      "bytes": 5390,
+      "sha256": "341b1c8e029e49c81eacc563ab37c5a7476427c12b71ca0dc981660e94fdb753"
+    },
+    {
+      "path": "docs/COUNT_REFERENCE_CALIBRATION.md",
+      "bytes": 8883,
+      "sha256": "873f272b375f352bcfa6ee3d308ca0ec70d44ec7dc9791797ae3065ca366dd44"
     },
     {
       "path": "docs/DATASET_ADMISSION_REGISTRY.json",
@@ -511,8 +516,8 @@
     },
     {
       "path": "docs/METRIC_PROTOCOL.md",
-      "bytes": 4554,
-      "sha256": "318bffbea87dd958080064337d288848dcf22bdc2d18b62614ba338a422298a2"
+      "bytes": 5558,
+      "sha256": "9eefcfa72b3f1b73173aa78bdc3826599e2bcd5645a417236e3939b0a884a0ef"
     },
     {
       "path": "docs/PREPROCESSING_PROTOCOL.md",
@@ -531,8 +536,8 @@
     },
     {
       "path": "docs/REBUILD_PROTOCOL.md",
-      "bytes": 4682,
-      "sha256": "2da2026035e8cb2092bf8a148e245f46921b6443d30b36b261a2f8d957ad6a1d"
+      "bytes": 5561,
+      "sha256": "254d70737f665f37f44fde9bcc9b20f804c59a6148d9136942f30355fac314e1"
     },
     {
       "path": "docs/RELATION_TO_SIDINSPECTOR.md",
@@ -546,8 +551,8 @@
     },
     {
       "path": "docs/RESOURCE_CAPABILITIES.md",
-      "bytes": 5292,
-      "sha256": "721ba95c0e8fb585b277d0120a9e9b5998846e441f946a262fbd788d89db4cb2"
+      "bytes": 5359,
+      "sha256": "d52ead063ed3dbe1650d04bb53076789268c0dd9de68fd069257727b3920c575"
     },
     {
       "path": "docs/ROLEMAP_RECORD_PROTOCOL.md",
@@ -971,8 +976,8 @@
     },
     {
       "path": "scripts/admit_sid_family.py",
-      "bytes": 5724,
-      "sha256": "443374039129c1ba8579e88783d1837be00eee1da026a43f72416704c406c5de"
+      "bytes": 5492,
+      "sha256": "e6a627c445fc1d7aef321cf11d0a05245f4ad8c8b0c25d71c63113a43dd2ed6f"
     },
     {
       "path": "scripts/assemble_checkpoint.py",
@@ -995,9 +1000,14 @@
       "sha256": "755bc709fc100b723ac8309691b0d896fcd86160507168a4f23e16ac4e8e8d6c"
     },
     {
+      "path": "scripts/calibrate_task_allocation.py",
+      "bytes": 18038,
+      "sha256": "0001bc03551dda40993e02f1d63ef0b12c8d455cd94f084f764d9a11318dd978"
+    },
+    {
       "path": "scripts/evaluate_collision_diagnostic.py",
-      "bytes": 5395,
-      "sha256": "462b44100899c5a358fbbf06450264861b6cda671de5eaba9a83b3d6eb9847ba"
+      "bytes": 5984,
+      "sha256": "aa6b46729e03517f387196168f303101f0503d452acff0cffc25576649674a25"
     },
     {
       "path": "scripts/evaluate_fixed_candidates.py",
@@ -1045,6 +1055,11 @@
       "sha256": "2c56ada82b55faee85a6e553f1a668a801a8739f0c250af6692b005f26859cf5"
     },
     {
+      "path": "scripts/sid_map_io.py",
+      "bytes": 2440,
+      "sha256": "9237ebc4659b5df5921adeaf01b7680307876d678be280e2a25bcd7456f15755"
+    },
+    {
       "path": "scripts/validate_dataset_registry.py",
       "bytes": 2573,
       "sha256": "227db156a8d438886cdd67122b0f5fcaa7d7770b7e3946c38966a0c31b1de37c"
@@ -1070,6 +1085,16 @@
       "sha256": "29668071e2c0386c1062a715bc6fa0b435efbde36e1f0681e2fb03d78730a226"
     },
     {
+      "path": "tests/test_allocation_calibration.py",
+      "bytes": 17551,
+      "sha256": "5dd7362da3f83a1d120afbc17eb95f0f3edd2f7cd496d99607aa5813220e92e4"
+    },
+    {
+      "path": "tests/test_sid_map_interfaces.py",
+      "bytes": 9356,
+      "sha256": "79052afb02ff170964bee09400b7942a30a6dd2b61208ae1e590f386b4f7446a"
+    },
+    {
       "path": "weights/unisar_kuaisar_v1/CC_BY_NC_SA_4.0.txt",
       "bytes": 20850,
       "sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd"
@@ -1086,7 +1111,16 @@
     }
   ],
   "counts": {
-    "files": 216,
-    "bytes": 9046078
+    "files": 221,
+    "bytes": 9107642
+  },
+  "publication_status": "unreleased_local_candidate",
+  "base_release": {
+    "version": "0.2.8",
+    "release_tag": "v0.2.8",
+    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.8",
+    "release_date": "2026-10-26",
+    "publication_status": "public_release",
+    "commit": "d1d76dd0874a9498511f151c8b5eb264b734d6de"
   }
 }

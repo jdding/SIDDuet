@@ -9,7 +9,7 @@ SIDDuet is software for joining task observations to supplied code maps. The rel
 | Licensed KuaiSAR/Qilin provider files | Reconstruct paired observations and contextual labels | Provider files and the relevant reader dependencies |
 | Historical Qilin request files plus shipped maps/cohort | Reproduce both temporal windows and multiplicity sensitivity | NumPy; local train/tuning/audit request exports |
 | Fixed checkpoint plus pinned UniSAR source and processed data | Replay the full 166,981-request prediction case | Separate v0.2.4 checkpoint assets and the declared CPU environment |
-| Own counts/labels and item-to-code map | Inspect task support and code-group allocation | Local schema conversion; actual common item keys |
+| Own counts/labels and item-to-code map | Inspect task support and [calibrate code-group allocation](COUNT_REFERENCE_CALIBRATION.md) | Local schema conversion; actual common item keys; NumPy for calibration |
 | Own request exposures or candidate scores | Compare pooling choices or evaluate supplied predictions | Declared temporal splits/user clusters, or actual scored candidates |
 
 ## Use the outputs to choose an analysis

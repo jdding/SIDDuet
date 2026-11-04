@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased local core-fix candidate — 2026-11-04
+
+
+- Add a general paired-count calibration CLI for user-supplied datasets and maps.
+- Average collision-support rank discounts over exact-support ties (diagnostic
+  schema v2); topology v2 and fixed-candidate evaluation v3 stay unchanged.
+- Reject missing SID values, malformed map rows and duplicate item keys.
+- Normalize JSON token-list spelling consistently across map consumers.
+- Preserve the published v0.2.8 checkout and all historical scientific results.
+
 ## 0.2.8 — 2026-10-26
 
 - Add a standalone replay of training-only item eligibility, preserving both window outcomes, fixed input hashes and the original uncertainty correction.

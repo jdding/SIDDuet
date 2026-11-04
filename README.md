@@ -1,5 +1,10 @@
 # SIDDuet
 
+Local, unpublished core-fix candidate based on v0.2.8. See `RELEASE_STATUS.json`
+for this checkout's identity. Published v0.2.8 and its scientific reports remain
+the historical baseline; this candidate adds generic count calibration and fixes
+map validation and support-tie handling.
+
 A toolkit for comparing semantic IDs across search and recommendation.
 
 SIDDuet was previously named RoleMap. The repository is now jdding/SIDDuet; command names, record schemas and protocol identifiers retain their existing names for compatibility.
@@ -12,6 +17,7 @@ support to each task, and attaches model predictions with explicit coverage and 
 | --- | --- |
 | Do shared codes contain different task contributors? | [Topology and code-group analysis](docs/REBUILD_PROTOCOL.md) |
 | Can I use my own catalog and field names? | [Bring your own data](docs/BRING_YOUR_OWN_DATA.md) |
+| Is my code group's task allocation unusual at its count volume? | [General count-reference calibration](docs/COUNT_REFERENCE_CALIBRATION.md) |
 | Should task counts be pooled for later exposure-allocation forecasts? | [Temporal reuse example](analysis/reuse_validation/README.md) |
 | Does the pooling result change with training-only item eligibility? | [Cohort sensitivity replay](analysis/cohort_sensitivity/README.md) |
 | Which requests does the diagnostic cover for a real joint model? | [UniSAR predictions and complete replay](analysis/model_reuse/REPLAY.md) |
@@ -45,6 +51,12 @@ Expected: `PASS_PUBLIC_RESOURCE_SMOKE`. Results appear under `outputs/`.
 This checks input contracts and the shipped reference files; it does not download data,
 run a neural model, or establish real-data findings. See the [quickstart](ARTIFACT_QUICKSTART.md)
 for the output tables and commands for your own inputs.
+
+For your own counts and maps, use `scripts/calibrate_task_allocation.py` to
+compare allocation JSD with paired band-matched and exact-total references.
+The [calibration guide](docs/COUNT_REFERENCE_CALIBRATION.md) defines inputs,
+coverage, shared permutations and multiplicity families. This optional analysis
+uses NumPy; the eight-item quickstart remains standard-library only.
 
 For the local browser interface:
 

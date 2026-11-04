@@ -43,6 +43,20 @@ python3 -I scripts/admit_sid_family.py \
 
 The report gives map coverage, collisions and group composition. A category-path map can exercise the interface; label it as a catalog grouping rather than a learned tokenizer.
 
+To calibrate task allocation, run the [general count-reference command](COUNT_REFERENCE_CALIBRATION.md)
+on the same count table and one or more named maps:
+
+```sh
+python3 -I scripts/calibrate_task_allocation.py \
+  --role-counts /local/new/counts.csv --sid-map my_map=/local/map.csv \
+  --draws 1999 --seed 20261104 \
+  --out-json /local/new/calibration.json --out-csv /local/new/calibration.csv
+```
+
+This compares within-code allocation JSD with paired band-matched and exact-total
+regroupings. Dataset names and common-item counts come from your inputs. NumPy is
+required for this analysis; no provider file, quantizer fitting or model is needed.
+
 ## 3. Attach predictions or test pooling
 
 For model inspection, export the actual finite scores with
