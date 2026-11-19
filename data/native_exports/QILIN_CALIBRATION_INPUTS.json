@@ -1,0 +1,15 @@
+{
+  "files": {
+    "notes/train-00000-of-00005.parquet": "e8b7454bf71fadc17242c97bf57f2d06e38825344e530f93113942ac3a145efd",
+    "notes/train-00001-of-00005.parquet": "b8a673d9968d58028b6c24d39c9e47d00d3a9741daf82557b2314eb1e3149845",
+    "notes/train-00002-of-00005.parquet": "2dc71a2b88beb115cf9e55a6f792f0b0d7a54367bd6083c0f41a08087f7bb1dd",
+    "notes/train-00003-of-00005.parquet": "6a1a888431f0f749ad29800bdd65c8270f1f14e972589909462e8bd948c1f980",
+    "notes/train-00004-of-00005.parquet": "b63ed072194c231005fa6ffcf4e237eb8d127fab71095c735a4cf69849a426b6",
+    "recommendation_test/train-00000-of-00001.parquet": "849d5cce5b2244a535568f72230cc98e4fabb23634b30c98365d8a64cdf0c5f0",
+    "recommendation_train/train-00000-of-00001.parquet": "42b3679342c369c5df3802355a5fd0029dcedc5709a2248497ae1ac6fe56533d",
+    "search_test/train-00000-of-00001.parquet": "89dd99821e365341860d69f77bab36eeb8d8b692194e082e40a9ea6ea39ff243",
+    "search_train/train-00000-of-00001.parquet": "dbe68affa5ea64aad0744fa9c08ac9d8d58180564ab28c0625684eaa09534bdd"
+  },
+  "repository": "THUIR/Qilin",
+  "revision": "2d79000cef450b99f6423357ce86e5c132d32dd5"
+}

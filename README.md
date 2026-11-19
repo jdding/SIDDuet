@@ -1,9 +1,9 @@
 # SIDDuet
 
-Unreleased core-fix candidate based on v0.2.8. See `RELEASE_STATUS.json`
-for this branch's identity. Published v0.2.8 and its scientific reports remain
-the historical baseline; this candidate adds generic count calibration and fixes
-map validation and support-tie handling.
+[SIDDuet v0.3.0](https://github.com/jdding/SIDDuet/releases/tag/v0.3.0) includes
+general count calibration, a Table 2 check from saved aggregates, and a
+Qilin replay from public inputs. The original study reports are carried
+forward from [v0.2.8](https://github.com/jdding/SIDDuet/releases/tag/v0.2.8).
 
 A toolkit for comparing semantic IDs across search and recommendation.
 
@@ -17,7 +17,7 @@ support to each task, and attaches model predictions with explicit coverage and 
 | --- | --- |
 | Do shared codes contain different task contributors? | [Topology and code-group analysis](docs/REBUILD_PROTOCOL.md) |
 | Can I use my own catalog and field names? | [Bring your own data](docs/BRING_YOUR_OWN_DATA.md) |
-| Is my code group's task allocation unusual at its count volume? | [General count-reference calibration](docs/COUNT_REFERENCE_CALIBRATION.md) |
+| Is allocation divergence across my code groups unusual at their count volumes? | [General count-reference calibration](docs/COUNT_REFERENCE_CALIBRATION.md) |
 | Should task counts be pooled for later exposure-allocation forecasts? | [Temporal reuse example](analysis/reuse_validation/README.md) |
 | Does the pooling result change with training-only item eligibility? | [Cohort sensitivity replay](analysis/cohort_sensitivity/README.md) |
 | Which requests does the diagnostic cover for a real joint model? | [UniSAR predictions and complete replay](analysis/model_reuse/REPLAY.md) |
@@ -39,10 +39,14 @@ The first run loads a pinned Pyodide runtime; data stay in your browser.
 
 ## Quickstart
 
+[Verify Table 2 or run the Qilin calibration](ARTIFACT_QUICKSTART.md). The
+table check uses the release files alone. The Qilin example starts from the
+provider snapshot and the released GenSAR shared prefix.
+
 Python 3.10+ and the standard library are enough for the synthetic example:
 
 ```sh
-git clone --branch v0.2.8 https://github.com/jdding/SIDDuet.git
+git clone --branch v0.3.0 https://github.com/jdding/SIDDuet.git
 cd SIDDuet
 python3 -I scripts/validate_release.py
 ```

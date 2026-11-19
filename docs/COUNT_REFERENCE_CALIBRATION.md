@@ -1,6 +1,6 @@
 # Calibrate paired counts for your own SID maps
 
-This entry point is an unreleased local draft based on v0.2.8. It accepts your
+This entry point is available in SIDDuet v0.3.0. It accepts your
 own dataset names, role counts and named SID maps. It reports aggregate
 allocation differences relative to two conditional count-regrouping references.
 It does not rerun or replace the frozen population study, assess semantic
@@ -12,7 +12,7 @@ From the resource repository root, with Python and NumPy available:
 
 ```sh
 mkdir -p /tmp/sidduet-calibration-example
-/opt/homebrew/bin/python3 -I -B scripts/calibrate_task_allocation.py \
+python3 -I -B scripts/calibrate_task_allocation.py \
   --role-counts samples/synthetic_role_label_counts.csv \
   --sid-map demo-view=samples/synthetic_sid_map.csv \
   --draws 19 --seed 20261104 \
@@ -160,7 +160,7 @@ named files and leaves existing study reports untouched.
 ## Local verification
 
 ```sh
-/opt/homebrew/bin/python3 -B -m unittest discover \
+python3 -B -m unittest discover \
   -s tests -p test_allocation_calibration.py -v
 ```
 

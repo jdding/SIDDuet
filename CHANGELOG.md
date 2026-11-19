@@ -1,7 +1,9 @@
 # Changelog
 
-## Unreleased core-fix candidate — 2026-11-04
+## 0.3.0 — 2026-11-19
 
+- Verify all six Table 2 rows from saved aggregate reference draws.
+- Add a public-input Qilin replay of the GenSAR two-token prefix.
 
 - Add a general paired-count calibration CLI for user-supplied datasets and maps.
 - Average collision-support rank discounts over exact-support ties (diagnostic

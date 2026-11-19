@@ -25,4 +25,8 @@ Observed JSD is 16.80–54.89% below the band reference means and 14.40–53.18%
 
 The historical band run did not save permutation hashes. In MC1999_RESULTS.json, permutation_sha256_equal is false for those band rows because that hash comparison was unavailable, not because a mismatch was found; their first 199 aggregate values match exactly. Exact-total rows also match the saved permutation hashes.
 
-See [COMPARISON.csv](COMPARISON.csv) for unrounded 199/1999 means, reference-range endpoints, effects, p values and changes; [MC1999_RESULTS.json](MC1999_RESULTS.json) retains the full aggregate summaries. [Replay instructions](../../analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md) require lawful corresponding inputs; no raw observations, item/group rows, private manifest or complete draw stream is distributed here.
+See [COMPARISON.csv](COMPARISON.csv) for unrounded 199/1999 means, reference-range endpoints, effects, p values and changes; [MC1999_RESULTS.json](MC1999_RESULTS.json) retains the full aggregate summaries. The [Table 2 verifier](../../ARTIFACT_QUICKSTART.md#1-verify-table-2-from-the-release)
+uses `TABLE2_NULL_MEANS.json`, which contains just the equal-group JSD mean for
+each draw. It does not include individual groups, item observations, or sampled
+assignments. The [original replay](../../analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md)
+requires the corresponding observations and maps.

@@ -1,7 +1,7 @@
 {
   "schema": "sr_sid_rolemap.package_manifest.v1",
-  "release_version": "0.2.8+core-fixes.20261104",
-  "release_tag": null,
+  "release_version": "0.3.0",
+  "release_tag": "v0.3.0",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "files": [
     {
@@ -21,18 +21,18 @@
     },
     {
       "path": "ARTIFACT_QUICKSTART.md",
-      "bytes": 3096,
-      "sha256": "926823af19c1384fca48c41d3cc7d7ac5c3237011b87546468705e2139f91777"
+      "bytes": 5421,
+      "sha256": "94027ab48975ef162ffbc990871f58d7704d9f8f03d9baf5cd5a48666a3d00f1"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2854,
-      "sha256": "d83920d2c2ab998c8364b71a2e52e50da11b5f05767945bc91498de25dbfbf7b"
+      "bytes": 2964,
+      "sha256": "6ce515d5da3c97ff74bfa784ae82faabfa41c4720c9a13915bfc8d739ea87a68"
     },
     {
       "path": "CITATION.cff",
       "bytes": 377,
-      "sha256": "4ea16d2a2c05e64e0ee3f5ea0af70b46fb549de931a83013f1c15f69a0994cce"
+      "sha256": "e755c97053312af6959049b596bb5ac662b2cd934241e4ca123b7fa779d2ff03"
     },
     {
       "path": "DEVELOPMENT.md",
@@ -56,13 +56,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6687,
-      "sha256": "5ad95e328e5999286a79a3e1e71659104d5f210684873214ce7c0af0c0672d3c"
+      "bytes": 6940,
+      "sha256": "76d5f703f6d3cccf6e2616bed522da7168c23fe42122955f5b59148c771c7929"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 2695,
-      "sha256": "c2f089de1374168868b9cf0141f1f497f4936d88e0bc0c232e0a10c7f9a5ea9b"
+      "bytes": 2889,
+      "sha256": "1a5e1800fecef9adfdbd3e1b1dca2160d4cb4d844aa8974d34234f7887105af2"
     },
     {
       "path": "analysis/cohort_sensitivity/INPUTS.json",
@@ -405,6 +405,11 @@
       "sha256": "ad18356ca8e73a8795edaec51bc324db7dac736e0d49ce77d821b396c1550488"
     },
     {
+      "path": "data/native_exports/QILIN_CALIBRATION_INPUTS.json",
+      "bytes": 1141,
+      "sha256": "b86687a69c8f163dd27489ff3c5fd0fb96681ae53248a5870d69d573a1ffa2e4"
+    },
+    {
       "path": "data/native_exports/README.md",
       "bytes": 4740,
       "sha256": "661d09ea2947ece21d7932806c84bcd86bfaafce5a5e426b2febdaeb10137073"
@@ -466,8 +471,8 @@
     },
     {
       "path": "docs/COUNT_REFERENCE_CALIBRATION.md",
-      "bytes": 9707,
-      "sha256": "bd5afd79a8f563ecc04cc57ff74c55821be43792d3bd034424ba6e19a2827b89"
+      "bytes": 9657,
+      "sha256": "66de7710ba23d5253730fd609c3ed1b8bab2b2d327f63c0dee4f77bfb5581cb7"
     },
     {
       "path": "docs/DATASET_ADMISSION_REGISTRY.json",
@@ -551,8 +556,8 @@
     },
     {
       "path": "docs/RESOURCE_CAPABILITIES.md",
-      "bytes": 5359,
-      "sha256": "d52ead063ed3dbe1650d04bb53076789268c0dd9de68fd069257727b3920c575"
+      "bytes": 5602,
+      "sha256": "d963e12d8ce9a390c46211d73fff117e68c757df17aae3023b30ec547ff11632"
     },
     {
       "path": "docs/ROLEMAP_RECORD_PROTOCOL.md",
@@ -592,7 +597,7 @@
     {
       "path": "index.html",
       "bytes": 3341,
-      "sha256": "08ae7049b882ac4b41492c510eaa93ac344007509fbabf5e834b47e57e00811a"
+      "sha256": "974c8b7653e83def49965b34a1dd95acf1925233e7eec23f123b99e1f099f323"
     },
     {
       "path": "reports/PROFILE_EVIDENCE_INDEX.json",
@@ -751,8 +756,13 @@
     },
     {
       "path": "reports/diagnostics_mc1999_20261020/README.md",
-      "bytes": 3076,
-      "sha256": "da730598a4e38838a79d8572c311d51fe6e191b9d444e1027e8dfb6303aa52ce"
+      "bytes": 3249,
+      "sha256": "07e3154e0756ade81fa192bf70a1de5ec71ad05ca5abcdc1f627e83ea05d0a15"
+    },
+    {
+      "path": "reports/diagnostics_mc1999_20261020/TABLE2_NULL_MEANS.json",
+      "bytes": 476165,
+      "sha256": "9c027219f20caea5acfb77986c8f89465b02c258b0ec5fba07b138ff43cdc705"
     },
     {
       "path": "reports/model_reuse/INFERENCE.json",
@@ -1050,6 +1060,11 @@
       "sha256": "02794df5dc73e399345ca5050066edfa53de59b28083931bdcd035bc3abb992c"
     },
     {
+      "path": "scripts/replay_qilin_calibration.py",
+      "bytes": 5567,
+      "sha256": "60991dddf742a4e0522fd0c6c2710428ed9cea65bf90f3bc9477411b72489d67"
+    },
+    {
       "path": "scripts/serve_demo.py",
       "bytes": 8436,
       "sha256": "2c56ada82b55faee85a6e553f1a668a801a8739f0c250af6692b005f26859cf5"
@@ -1085,6 +1100,11 @@
       "sha256": "29668071e2c0386c1062a715bc6fa0b435efbde36e1f0681e2fb03d78730a226"
     },
     {
+      "path": "scripts/verify_table2.py",
+      "bytes": 4007,
+      "sha256": "fe3ff4f6a2e9c30b11c8232f882bf04148302d2e0040a79bed925f724cfadf7e"
+    },
+    {
       "path": "tests/test_allocation_calibration.py",
       "bytes": 19909,
       "sha256": "cd6b0da16148afdf514f48dab308ecf700b6b2a081f08b9ce6680d790f5caff4"
@@ -1111,10 +1131,10 @@
     }
   ],
   "counts": {
-    "files": 221,
-    "bytes": 9111708
+    "files": 225,
+    "bytes": 9601836
   },
-  "publication_status": "unreleased_branch_candidate",
+  "publication_status": "public_release",
   "base_release": {
     "version": "0.2.8",
     "release_tag": "v0.2.8",

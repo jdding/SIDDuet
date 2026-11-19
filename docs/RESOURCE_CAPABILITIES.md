@@ -4,7 +4,7 @@ SIDDuet is software for joining task observations to supplied code maps. The rel
 
 | Inputs available | Executable use | Additional requirements |
 | --- | --- | --- |
-| Release alone | Eight-item end-to-end example; verify current aggregate references | Python standard library, or the online example |
+| Release alone | Eight-item end-to-end example; recompute Table 2 summaries from saved draws | Python standard library, or the online example |
 | Shipped Qilin catalog exports | Inspect three 20,540-row maps as six complete/prefix views | Standard-library CSV/JSON reading; example below |
 | Licensed KuaiSAR/Qilin provider files | Reconstruct paired observations and contextual labels | Provider files and the relevant reader dependencies |
 | Historical Qilin request files plus shipped maps/cohort | Reproduce both temporal windows and multiplicity sensitivity | NumPy; local train/tuning/audit request exports |
@@ -47,6 +47,10 @@ PYCODE
 ```
 
 ## Rebuild observations and new analyses
+
+The [Qilin calibration example](../ARTIFACT_QUICKSTART.md#2-run-a-calibration-from-public-qilin-inputs)
+uses the public inputs and the released GenSAR shared prefix to exercise the
+same calibration command available for user inputs.
 
 The original pairing and population analyses require provider observations. Follow [preprocessing](PREPROCESSING_PROTOCOL.md), then [rebuilding](REBUILD_PROTOCOL.md). Published collision references alone cannot recover per-item task allocations or substitute a different labeling rule.
 

@@ -1,11 +1,11 @@
 {
-  "schema": "sr_sid_rolemap.patch_candidate.v1",
-  "version": "0.2.8+core-fixes.20261104",
-  "release_tag": null,
+  "schema": "sr_sid_rolemap.public_release.v1",
+  "version": "0.3.0",
+  "release_tag": "v0.3.0",
   "repository_url": "https://github.com/jdding/SIDDuet",
-  "release_url": null,
-  "publication_status": "unreleased_branch_candidate",
-  "release_date": null,
+  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.3.0",
+  "publication_status": "public_release",
+  "release_date": "2026-11-19",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "reconstructed_datasets": [
@@ -40,7 +40,9 @@
   "changes": [
     "General user-data paired-count calibration entry point",
     "Exact-support tie averaging for collision diagnostic v2",
-    "Strict SID-map validation and JSON token-list canonicalization"
+    "Strict SID-map validation and JSON token-list canonicalization",
+    "Table 2 verification from aggregate draws",
+    "Public-input Qilin shared-prefix replay"
   ],
   "count_reference_precision": {
     "draws_per_reference": 1999,
@@ -48,7 +50,8 @@
     "reference_families": "two separate families of six",
     "observed_statistics_unchanged": true,
     "report": "reports/diagnostics_mc1999_20261020/README.md",
-    "replay": "analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md"
+    "replay": "analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md",
+    "table_verifier": "scripts/verify_table2.py"
   },
   "name": "SIDDuet",
   "previous_display_name": "RoleMap",
@@ -67,5 +70,5 @@
     "commit": "d1d76dd0874a9498511f151c8b5eb264b734d6de"
   },
   "scientific_results_recomputed": false,
-  "candidate_branch": "codex/core-fixes-20261104"
+  "qilin_calibration_example": "scripts/replay_qilin_calibration.py"
 }
