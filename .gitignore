@@ -4,5 +4,8 @@ __pycache__/
 .DS_Store
 .venv/
 weights/unisar_kuaisar_v1/checkpoint.part-*
-
 .ruff_cache/
+.pytest_cache/
+*.egg-info/
+build/
+dist/

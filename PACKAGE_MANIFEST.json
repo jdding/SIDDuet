@@ -1,7 +1,7 @@
 {
   "schema": "sr_sid_rolemap.package_manifest.v1",
-  "release_version": "0.3.0",
-  "release_tag": "v0.3.0",
+  "release_version": "0.4.0",
+  "release_tag": "v0.4.0",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "files": [
     {
@@ -11,8 +11,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 103,
-      "sha256": "6e65eeb8998f9e8082fff90a92d74c18811870a0e498864a472244bacaed21c2"
+      "bytes": 142,
+      "sha256": "0efe8f7c737661257c1a0fc92e9a1a0ba2315b18e0ef909b0650e8a240cbddb1"
     },
     {
       "path": ".nojekyll",
@@ -21,18 +21,18 @@
     },
     {
       "path": "ARTIFACT_QUICKSTART.md",
-      "bytes": 5421,
-      "sha256": "94027ab48975ef162ffbc990871f58d7704d9f8f03d9baf5cd5a48666a3d00f1"
+      "bytes": 3835,
+      "sha256": "93e43cb81cb1f04e37a72f5044f006c3a372cd2972fb091a090f2e522e3a1eed"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2964,
-      "sha256": "6ce515d5da3c97ff74bfa784ae82faabfa41c4720c9a13915bfc8d739ea87a68"
+      "bytes": 3997,
+      "sha256": "25f00092be6c7adb95ed3105b94628a6e1ef14d23d018d87ea1dbc50fb959c2b"
     },
     {
       "path": "CITATION.cff",
       "bytes": 377,
-      "sha256": "e755c97053312af6959049b596bb5ac662b2cd934241e4ca123b7fa779d2ff03"
+      "sha256": "15c1507b0af963d52915a4f637a9a7fdcb0511036ba50140366996d5d355b049"
     },
     {
       "path": "DEVELOPMENT.md",
@@ -46,23 +46,23 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 2648,
-      "sha256": "153072e1624bb71a1684ef4d9a4075eeb4f4bf4edcfbe344c0d1abe3d1566d09"
+      "bytes": 2661,
+      "sha256": "af73cb8afd77d4dfc5777a4c3949a5736b041d92884105df3e8aca41d6e254af"
     },
     {
       "path": "MAINTENANCE.md",
-      "bytes": 682,
-      "sha256": "f4524af0425f86a03919b33658532f32ed837884f56979ea9a18c35dd3efc25c"
+      "bytes": 1731,
+      "sha256": "9a4b3c28ec6f4a65457a09f15e4360e860383da3056228dfc8c1bc1bf523b50f"
     },
     {
       "path": "README.md",
-      "bytes": 6940,
-      "sha256": "76d5f703f6d3cccf6e2616bed522da7168c23fe42122955f5b59148c771c7929"
+      "bytes": 7260,
+      "sha256": "f318f42daac1909cc311ef53d0d636d83adf9a1d4e338475fe0f23eac65ae3c9"
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 2889,
-      "sha256": "1a5e1800fecef9adfdbd3e1b1dca2160d4cb4d844aa8974d34234f7887105af2"
+      "bytes": 2996,
+      "sha256": "14db1e53bc3343634117a4a4c569520b3121658c05031bacb45de9d9bce8248d"
     },
     {
       "path": "analysis/cohort_sensitivity/INPUTS.json",
@@ -441,28 +441,28 @@
     },
     {
       "path": "demo/browser-example.js",
-      "bytes": 2742,
-      "sha256": "5af1748051fbcda50c40db73379008649d8ec702888547784ba85ff96a4c9d9d"
+      "bytes": 9036,
+      "sha256": "093af7f66786632e558fdcf2c4d629eb91adea204824b05d326a06aed9da9b8e"
     },
     {
       "path": "demo/browser.css",
-      "bytes": 2884,
-      "sha256": "badd899262bfcf52e696be1a6287eeb4deee09874889fcbedaecabcdec1c1914"
+      "bytes": 4934,
+      "sha256": "7264994dc2ff75b9fb4639410b7473b4f261ee441e7249539caf8fcd4a1fbf14"
     },
     {
       "path": "demo/browser_example.py",
-      "bytes": 5004,
-      "sha256": "da20b890dfdea4ed02a8ab0233a6fd8749a08b49f8822e1e3f1de44c83b35522"
+      "bytes": 18272,
+      "sha256": "74b2373dee90b9595a9db21b833175acb7f8670e32688289f7e76d4f925cc4b1"
     },
     {
       "path": "demo/index.html",
-      "bytes": 7815,
-      "sha256": "163fd7c2046f657313db1849fe705e27b13d545add3038892e035346b8370ba6"
+      "bytes": 8845,
+      "sha256": "d912a11f16eb14c3c5cb95422fcace4455e93a62724e21c8331c4adab252e325"
     },
     {
       "path": "demo/python-worker.js",
-      "bytes": 2441,
-      "sha256": "76d739a3190840b8664bc601a7f3b63a000ab3dd1e7e5d73d553a5f71a790aaa"
+      "bytes": 2814,
+      "sha256": "95f8625bba812a957a191bcc3c47f4cdff85a67923ea58625254a87ee025eea9"
     },
     {
       "path": "docs/BRING_YOUR_OWN_DATA.md",
@@ -596,8 +596,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 3341,
-      "sha256": "974c8b7653e83def49965b34a1dd95acf1925233e7eec23f123b99e1f099f323"
+      "bytes": 10046,
+      "sha256": "dffbb1fa460bfbdd4d889844f0984a4b71926c66aa1184817d0409e4871df413"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1480,
+      "sha256": "cf04ba1f7330ef24790b0e150ce4a44d113809e599ba9e17f06fd25e8cacdeba"
     },
     {
       "path": "reports/PROFILE_EVIDENCE_INDEX.json",
@@ -1066,8 +1071,8 @@
     },
     {
       "path": "scripts/serve_demo.py",
-      "bytes": 8436,
-      "sha256": "2c56ada82b55faee85a6e553f1a668a801a8739f0c250af6692b005f26859cf5"
+      "bytes": 7525,
+      "sha256": "8a60404a789949b39463ef300021c742c5792c12deabd2e959e7a7e02dda0c02"
     },
     {
       "path": "scripts/sid_map_io.py",
@@ -1091,8 +1096,8 @@
     },
     {
       "path": "scripts/validate_release.py",
-      "bytes": 17017,
-      "sha256": "0f50c2bcdeeaf0ee8b42e8a938cf873aee120b2a7b83f9446f49af75df5e1225"
+      "bytes": 17145,
+      "sha256": "abc735471bafe7be4e2b650a992036df7ee64d0631deb62551b64831cbcd8c11"
     },
     {
       "path": "scripts/validate_rolemap_record.py",
@@ -1105,9 +1110,24 @@
       "sha256": "fe3ff4f6a2e9c30b11c8232f882bf04148302d2e0040a79bed925f724cfadf7e"
     },
     {
+      "path": "sidduet/__init__.py",
+      "bytes": 262,
+      "sha256": "9fa2b9214872ea3d1771ac18fc89a3f45ab476d1f1f0ca0feffdd6adfa01c5c4"
+    },
+    {
+      "path": "sidduet/cli.py",
+      "bytes": 2919,
+      "sha256": "6bef28b7c7d69ee67d8550774ecd452254bb3adac06fff8ed45545a504e2b5ae"
+    },
+    {
       "path": "tests/test_allocation_calibration.py",
       "bytes": 19909,
       "sha256": "cd6b0da16148afdf514f48dab308ecf700b6b2a081f08b9ce6680d790f5caff4"
+    },
+    {
+      "path": "tests/test_cli_and_demo.py",
+      "bytes": 3107,
+      "sha256": "75eb17ba1c5bda9e85509567923590e42844c639b5149f2043a92ceb383886d2"
     },
     {
       "path": "tests/test_sid_map_interfaces.py",
@@ -1131,16 +1151,7 @@
     }
   ],
   "counts": {
-    "files": 225,
-    "bytes": 9601836
-  },
-  "publication_status": "public_release",
-  "base_release": {
-    "version": "0.2.8",
-    "release_tag": "v0.2.8",
-    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.8",
-    "release_date": "2026-10-26",
-    "publication_status": "public_release",
-    "commit": "d1d76dd0874a9498511f151c8b5eb264b734d6de"
+    "files": 229,
+    "bytes": 9639516
   }
 }

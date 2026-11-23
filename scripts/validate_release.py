@@ -350,7 +350,9 @@ def inventory_issues() -> list[str]:
         p.relative_to(ROOT).as_posix()
         for p in ROOT.rglob("*")
         if p.is_file()
-        and not set(p.relative_to(ROOT).parts) & {".git", "outputs", "__pycache__", ".ruff_cache"}
+        and not set(p.relative_to(ROOT).parts)
+        & {".git", "outputs", "__pycache__", ".ruff_cache", ".pytest_cache", "build", "dist"}
+        and not any(part.endswith(".egg-info") for part in p.relative_to(ROOT).parts)
     }
     files -= {"CHECKSUMS.sha256", "PACKAGE_MANIFEST.json"} | optional
     checksums = checksum_rows()

@@ -3,8 +3,11 @@
   --ink: #18313a;
   --muted: #56676b;
   --accent: #18594e;
+  --search: #1b6f78;
+  --rec: #c76b2c;
   --line: #cbd4cf;
   --paper: #faf9f4;
+  --card: #f2f5f0;
 }
 * { box-sizing: border-box; }
 body {
@@ -13,42 +16,63 @@ body {
   color: var(--ink);
   font: 16px/1.55 "Avenir Next", "Trebuchet MS", sans-serif;
 }
-main { max-width: 1080px; margin: 34px auto; padding: 0 28px 50px; }
+main { max-width: 1100px; margin: 34px auto; padding: 0 28px 50px; }
 header { border-top: 5px solid var(--accent); padding-top: 17px; }
 .eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
-h1 { font: normal clamp(27px, 4vw, 39px)/1.15 Georgia, serif; margin: 12px 0; }
-h2 { font: normal 23px/1.25 Georgia, serif; margin: 0 0 13px; }
+h1 { font: normal clamp(26px, 4vw, 38px)/1.15 Georgia, serif; margin: 12px 0; }
+h2 { font: normal 22px/1.25 Georgia, serif; margin: 26px 0 12px; }
+h2:first-child { margin-top: 0; }
+h3 { font: 700 15px/1.3 "Avenir Next", "Trebuchet MS", sans-serif; margin: 20px 0 10px; color: var(--ink); }
 p { margin: 8px 0; }
 a { color: var(--accent); text-underline-offset: 3px; }
-nav { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; margin-top: 20px; }
-.lede { max-width: 78ch; color: var(--muted); }
+nav { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; margin-top: 18px; }
+.lede { max-width: 82ch; color: var(--muted); }
 .notice { padding: 13px 16px; background: #edf2e9; border-left: 3px solid var(--accent); margin: 22px 0 17px; font-size: 14px; }
 .notice strong { display: block; }
-.action { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin: 19px 0 27px; }
-button { border: 0; border-radius: 3px; background: var(--accent); color: white; padding: 12px 18px; font: 700 15px "Avenir Next", "Trebuchet MS", sans-serif; cursor: pointer; }
+.action { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin: 19px 0 24px; }
+button { border: 0; border-radius: 3px; background: var(--accent); color: white; padding: 11px 18px; font: 700 15px "Avenir Next", "Trebuchet MS", sans-serif; cursor: pointer; }
 button:hover { background: #103f37; }
-button:focus-visible, a:focus-visible { outline: 3px solid #bb8a2a; outline-offset: 3px; }
+button:focus-visible, a:focus-visible, select:focus-visible { outline: 3px solid #bb8a2a; outline-offset: 3px; }
 button:disabled { opacity: .65; cursor: wait; }
 #status { font-size: 14px; color: var(--muted); }
 #status.error { color: #9a3d29; }
-.results { border-top: 1px solid var(--line); padding-top: 24px; }
-.pair { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; margin-top: 30px; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--line); margin-bottom: 22px; padding-bottom: 10px; }
+.tab-btn { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 8px 14px; font-size: 14px; font-weight: 600; }
+.tab-btn:hover { background: var(--card); }
+.tab-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 3px; background: #e1ebe4; color: var(--accent); margin-left: 8px; vertical-align: middle; }
+.badge.published { background: #f3e8dd; color: #8c4819; }
+.results { border-top: 1px solid var(--line); padding-top: 22px; }
+.pair { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px; margin-top: 18px; }
 .scroll { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; white-space: nowrap; }
-caption { text-align: left; color: var(--muted); font-size: 13px; margin-bottom: 10px; }
-th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; }
+caption { text-align: left; color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; }
 th { font-size: 12px; font-weight: 700; color: var(--muted); border-top: 1px solid var(--ink); }
 th:first-child, td:first-child { text-align: left; }
 tbody tr:nth-child(even) { background: #f0f2ed; }
-.note { font-size: 12px; color: var(--muted); margin-top: 9px; }
-details { border-top: 1px solid var(--line); margin-top: 29px; padding-top: 14px; font-size: 13px; }
+.note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.inspector { margin-top: 18px; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+.inspector-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+select { font: 14px "Avenir Next", "Trebuchet MS", sans-serif; padding: 5px 10px; border: 1px solid var(--line); border-radius: 3px; background: white; color: var(--ink); }
+.bar-row { display: grid; grid-template-columns: 190px 1fr; gap: 12px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); }
+.bar-row:first-child { border-top: 0; }
+.bar-label { font-size: 13px; font-weight: 600; }
+.bar-tracks { display: flex; flex-direction: column; gap: 4px; }
+.bar-line { display: flex; align-items: center; gap: 8px; }
+.bar-fill { display: inline-block; height: 11px; border-radius: 2px; min-width: 3px; }
+.bar-fill.search { background: var(--search); }
+.bar-fill.rec { background: var(--rec); }
+.bar-val { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+details { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 14px; font-size: 13px; }
 summary { cursor: pointer; font-weight: 700; }
 #steps { overflow-wrap: anywhere; padding-left: 20px; }
-#steps li { padding: 4px 0; }
-footer { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 14px; color: var(--muted); font-size: 12px; }
+#steps li { padding: 3px 0; }
+footer { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 14px; color: var(--muted); font-size: 12px; }
 [hidden] { display: none !important; }
-@media (max-width: 700px) {
-  main { padding: 0 18px; }
-  .pair { grid-template-columns: 1fr; gap: 25px; }
-  th, td { padding: 8px; }
+@media (max-width: 740px) {
+  main { padding: 0 16px; }
+  .pair { grid-template-columns: 1fr; gap: 20px; }
+  .bar-row { grid-template-columns: 1fr; gap: 6px; }
+  th, td { padding: 7px; }
 }

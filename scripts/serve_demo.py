@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Run the fixed synthetic workflow through a small local HTTP interface."""
+"""Run SIDDuet's three diagnostic workflows through a small local HTTP interface."""
 
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import os
 from pathlib import Path
@@ -37,7 +36,7 @@ def run_workflow():
         "PACKAGE_MANIFEST.json",
         "CHECKSUMS.sha256",
     ]
-    with tempfile.TemporaryDirectory(prefix="rolemap-synthetic-demo-") as folder:
+    with tempfile.TemporaryDirectory(prefix="sidduet-local-demo-") as folder:
         work = Path(folder)
         for name in names:
             relative = Path(name)
@@ -47,63 +46,42 @@ def run_workflow():
             target = work / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, target)
-        proc = subprocess.Popen(
-            [sys.executable, "-I", str(work / "scripts" / "validate_release.py")],
-            cwd=work,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            start_new_session=True,
-        )
-        try:
-            proc.communicate(timeout=30)
-        except subprocess.TimeoutExpired:
-            os.killpg(proc.pid, signal.SIGKILL)
-            proc.communicate()
-            raise RuntimeError("workflow timed out") from None
-        if proc.returncode:
-            raise RuntimeError("workflow failed")
+
+        def run_isolated(script: Path) -> subprocess.CompletedProcess[str]:
+            proc = subprocess.Popen(
+                [sys.executable, "-I", "-B", str(script)],
+                cwd=work,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                start_new_session=True,
+            )
+            try:
+                stdout, stderr = proc.communicate(timeout=30)
+            except subprocess.TimeoutExpired:
+                os.killpg(proc.pid, signal.SIGKILL)
+                proc.communicate()
+                raise RuntimeError("workflow timed out") from None
+            if proc.returncode:
+                raise RuntimeError(f"workflow failed: {stderr.strip()}")
+            return subprocess.CompletedProcess(proc.args, proc.returncode, stdout, stderr)
+
+        run_isolated(work / "scripts" / "validate_release.py")
+        demo_proc = run_isolated(work / "demo" / "browser_example.py")
+        demo_payload = json.loads(demo_proc.stdout)
+
         outputs = work / "outputs"
         load = lambda name: json.loads((outputs / name).read_text(encoding="utf-8"))
         summary = load("public_resource_smoke_result.json")
         checks = load("interface_contract_checks.json")["checks"]
-        with (outputs / "synthetic_role_topology.csv").open(newline="", encoding="utf-8") as handle:
-            topology = list(csv.DictReader(handle))
         if summary["status"] != "pass" or not all(row["passed"] for row in checks):
             raise RuntimeError("synthetic checks failed")
-        if len(topology) != 8 or any(row["dataset"] != "demo" for row in topology):
-            raise RuntimeError("unexpected synthetic topology")
-        topology = [
-            {
-                "item": row["item_id"],
-                "search_support": float(row["search_support"]),
-                "rec_support": float(row["rec_support"]),
-                "rsd": float(row["rsd_score"]),
-                "rsi": float(row["rsi_signed"]),
-                "cell": row["topology_cell"],
-            }
-            for row in topology
-        ]
-        admission = load("synthetic_admission.json")["dataset_summaries"][0]
-        metrics = [
-            row
-            for row in load("synthetic_fixed_candidate_metrics.json")["aggregates"]
-            if row["slice_type"] == "all"
-        ]
+
         result = {
-            "status": "pass",
-            "synthetic": True,
+            **demo_payload,
             "isolated_run": True,
             "run_id": secrets.token_hex(6),
             "metadata": metadata(),
-            "topology": topology,
-            "coverage": {
-                key: admission[key]
-                for key in ("topology_items", "joined_items", "join_coverage", "unique_sid_count")
-            },
-            "metrics": [
-                {key: row[key] for key in ("role", "units", "ndcg10", "hit10")} for row in metrics
-            ],
             "checks": [{"name": row["check"], "passed": bool(row["passed"])} for row in checks],
             "elapsed_seconds": round(time.monotonic() - started, 3),
         }
@@ -179,11 +157,11 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError, json.JSONDecodeError):
             return self.reply(400, {"error": "Invalid JSON request"})
         if not self.server.workflow_lock.acquire(blocking=False):
-            return self.reply(429, {"error": "A synthetic run is already active"})
+            return self.reply(429, {"error": "A workflow run is already active"})
         try:
             result = run_workflow()
         except Exception:
-            self.reply(500, {"error": "Synthetic workflow did not complete"})
+            self.reply(500, {"error": "Local workflow did not complete"})
         else:
             self.reply(200, result)
         finally:

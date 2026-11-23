@@ -1,11 +1,11 @@
 {
   "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.3.0",
-  "release_tag": "v0.3.0",
+  "version": "0.4.0",
+  "release_tag": "v0.4.0",
   "repository_url": "https://github.com/jdding/SIDDuet",
-  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.3.0",
+  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.0",
   "publication_status": "public_release",
-  "release_date": "2026-11-19",
+  "release_date": "2026-11-23",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "reconstructed_datasets": [
@@ -13,7 +13,7 @@
     "qilin"
   ],
   "reconstructed_common_items": 118269,
-  "local_demo_command": "python3 -I scripts/serve_demo.py --port 8765",
+  "local_demo_command": "sidduet demo --port 8765",
   "checkpoint": {
     "distribution": "optional_github_release_assets",
     "manifest": "weights/unisar_kuaisar_v1/CHECKPOINT.json",
@@ -34,15 +34,14 @@
     "internal review records"
   ],
   "hosted_live_demo": "https://jdding.github.io/SIDDuet/",
-  "demo_execution": "pinned Pyodide, actual Python source, synthetic input, no upload",
-  "baseline_release_commit": "4d3502a1d4124fcc930a75eedafb0f91aebc78e1",
+  "demo_execution": "pinned Pyodide, actual Python source, all three workflows + live verify_table2.py, no upload",
+  "baseline_release_commit": "0106a33406fda7198c815af293e4a0f6981dc57f",
   "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication",
   "changes": [
-    "General user-data paired-count calibration entry point",
-    "Exact-support tie averaging for collision diagnostic v2",
-    "Strict SID-map validation and JSON token-list canonicalization",
-    "Table 2 verification from aggregate draws",
-    "Public-input Qilin shared-prefix replay"
+    "Three-workflow browser demo and local HTTP demo aligned directly with the paper (shared-code calibration, live Table 2 verification, prediction coverage, temporal pooling)",
+    "Standard Python packaging (pyproject.toml) and unified sidduet CLI",
+    "Measured single-CPU runtime and peak RSS benchmarks",
+    "Clarified maintenance plan and SIDInspector boundary in top-level docs"
   ],
   "count_reference_precision": {
     "draws_per_reference": 1999,
@@ -62,12 +61,12 @@
     "original_four_endpoint_family_retained": true
   },
   "base_release": {
-    "version": "0.2.8",
-    "release_tag": "v0.2.8",
-    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.2.8",
-    "release_date": "2026-10-26",
+    "version": "0.3.0",
+    "release_tag": "v0.3.0",
+    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.3.0",
+    "release_date": "2026-11-19",
     "publication_status": "public_release",
-    "commit": "d1d76dd0874a9498511f151c8b5eb264b734d6de"
+    "commit": "0106a33406fda7198c815af293e4a0f6981dc57f"
   },
   "scientific_results_recomputed": false,
   "qilin_calibration_example": "scripts/replay_qilin_calibration.py"

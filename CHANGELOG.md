@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 — 2026-11-23
+
+- Upgrade the zero-install browser demo (`https://jdding.github.io/SIDDuet/`) and local HTTP demo to execute and display all three paper workflows directly: shared-code allocation JSD with interactive member share bars, pure-Python count-matched calibration, live `verify_table2.py` execution, paired-target prediction coverage (Table 3), and pooled vs. task-conditioned forecasting (Table 4 and training-only cohort sensitivity).
+- Add standard Python packaging (`pyproject.toml`) and a unified `sidduet` CLI (`verify-table2`, `validate`, `calibrate`, `import-counts`, `replay-qilin`, `demo`) with zero core dependencies.
+- Document measured single-CPU runtime and peak RSS benchmarks across Qilin (20,540 items) and KuaiSAR (97,729 items) scales.
+- Clarify maintenance governance, sustainability practices, and the boundary relative to `SIDInspector` in top-level documentation.
+- Preserve all historical `v0.2.8` study reports, `v0.2.4` checkpoint assets, and backward-compatible script paths unchanged.
+
 ## 0.3.0 — 2026-11-19
 
 - Verify all six Table 2 rows from saved aggregate reference draws.
