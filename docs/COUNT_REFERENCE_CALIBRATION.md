@@ -8,11 +8,12 @@ quality, predict heldout utility, or identify a causal effect.
 
 ## Run the shipped tiny example
 
-From the resource repository root, with Python and NumPy available:
+From the checkout, install the CLI with NumPy and run the sample:
 
 ```sh
+python3 -m pip install -e ".[calibration]"
 mkdir -p /tmp/sidduet-calibration-example
-python3 -I -B scripts/calibrate_task_allocation.py \
+sidduet calibrate \
   --role-counts samples/synthetic_role_label_counts.csv \
   --sid-map demo-view=samples/synthetic_sid_map.csv \
   --draws 19 --seed 20261104 \
@@ -22,8 +23,7 @@ python3 -I -B scripts/calibrate_task_allocation.py \
 
 This is a fabricated eight-item, two-collision-group example, not a scientific
 result. The output directory must exist and both output files must be fresh;
-choose new filenames to repeat it. Python is loaded in isolated mode (`-I`),
-and the CLI resolves its helpers by their explicit repository paths.
+choose new filenames to repeat it. With NumPy already installed, you can also run `python3 -I -B scripts/calibrate_task_allocation.py` with these flags.
 
 ## Use your own data
 

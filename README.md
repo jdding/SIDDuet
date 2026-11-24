@@ -1,6 +1,6 @@
 # SIDDuet
 
-[SIDDuet v0.4.0](https://github.com/jdding/SIDDuet/releases/tag/v0.4.0) is an open-source diagnostic toolkit, paired-observation protocol, and benchmark reproduction package for inspecting shared Semantic IDs (SIDs) across search and recommendation.
+[SIDDuet v0.4.1](https://github.com/jdding/SIDDuet/releases/tag/v0.4.1) is an open-source diagnostic toolkit, paired-observation protocol, and benchmark reproduction package for inspecting shared Semantic IDs (SIDs) across search and recommendation.
 
 Without retraining tokenizers, SIDDuet joins existing item-to-code maps to paired search and recommendation observations across **three diagnostic workflows**:
 
@@ -17,23 +17,22 @@ See [what the release supports](docs/RESOURCE_CAPABILITIES.md) for package-only,
 Open the [live browser demo](https://jdding.github.io/SIDDuet/) to run all three workflows directly in your browser using a pinned standard-library Pyodide runtime:
 
 - **Workflow 1:** Computes per-group allocation JSD, interactive member share bars, band-matched and exact-total count-matched permutation references on the synthetic fixture, and runs `scripts/verify_table2.py` live on the 1,999 saved Monte Carlo draw means.
-- **Workflow 2:** Evaluates synthetic candidate scores and displays the published UniSAR/KuaiSAR paired-target coverage and NDCG@10 comparison (Table 3).
-- **Workflow 3:** Runs closed-form pooled vs. task-conditioned smoothing on the synthetic split and displays the Qilin two-window pooling and training-only cohort sensitivity summaries (Table 4).
+- **Workflow 2:** Computes paired-target coverage and both NDCG@10 scores on the same synthetic candidate sets, alongside the archived UniSAR/KuaiSAR Table 3 summary.
+- **Workflow 3:** Scores pooled, separate, and shrinkage rules on held-out synthetic counts with fixed smoothing strengths. The Qilin summaries show pooled loss minus the loss of the task-conditioned rule selected on tuning users.
 
 All executed scripts and summary files are SHA-256 verified against `PACKAGE_MANIFEST.json` before execution; nothing leaves your browser.
 
 ## Install and Quickstart
 
-Python 3.10+ and the standard library suffice for core verification, the synthetic workflows, and the local demo. Optional extras install NumPy (for custom calibration) and PyArrow (for Qilin Parquet replay).
+Use Python 3.10+ from a SIDDuet checkout. The standard library covers verification and the synthetic workflows. The CLI uses an editable install so it can find scripts and artifacts in the checkout. Add NumPy with `.[calibration]` or NumPy and PyArrow with `.[provider]` for Qilin Parquet replay.
+
+From the root of your SIDDuet checkout or unpacked source archive:
 
 ```sh
-git clone --branch v0.4.0 https://github.com/jdding/SIDDuet.git
-cd SIDDuet
-
-# Optional editable install exposing the unified `sidduet` CLI
+# Install the sidduet CLI from this checkout
 python3 -m pip install -e .
 
-# 1. Verify all six Table 2 rows from saved Monte Carlo draws
+# 1. Verify the six main Table 2 rows from saved draws
 sidduet verify-table2          # or: python3 -I -B scripts/verify_table2.py
 
 # 2. Check SHA-256 manifest integrity and run the standard-library smoke suite
@@ -46,6 +45,7 @@ sidduet demo --port 8765       # or: python3 -I scripts/serve_demo.py --port 876
 For your own counts and item-to-code maps, map local CSV columns with `sidduet import-counts` ([Bring your own data](docs/BRING_YOUR_OWN_DATA.md)) and run `sidduet calibrate` ([Count-reference calibration](docs/COUNT_REFERENCE_CALIBRATION.md)):
 
 ```sh
+python3 -m pip install -e ".[calibration]"
 sidduet calibrate \
   --role-counts /path/to/counts.csv \
   --sid-map baseline=/path/to/baseline.csv \
@@ -62,7 +62,7 @@ Single-machine CPU benchmarks (Python 3 + NumPy, no GPU required):
 
 | Workload | Scale | Wall time | Peak RSS |
 | --- | --- | ---: | ---: |
-| `sidduet verify-table2` | 6 study rows × 1,999 saved draws | 0.04 s | 19 MiB |
+| `sidduet verify-table2` | 6 rows × 2 references × 1,999 saved draws | 0.04 s | 19 MiB |
 | `sidduet validate` | Full SHA-256 manifest + smoke suite | 2.8 s | 26 MiB |
 | `sidduet calibrate` (Qilin scale) | 20,540 items, 4,021 groups, 1,999 draws × 2 refs | 9.1 s | 58 MiB |
 | `sidduet calibrate` (KuaiSAR scale) | 97,729 items, 3,462 groups, 1,999 draws × 2 refs | 61.2 s | 113 MiB |

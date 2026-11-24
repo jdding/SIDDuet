@@ -48,7 +48,7 @@ PYCODE
 
 ## Rebuild observations and new analyses
 
-The [Qilin calibration example](../ARTIFACT_QUICKSTART.md#2-run-a-calibration-from-public-qilin-inputs)
+The [Qilin calibration example](../ARTIFACT_QUICKSTART.md#2-replay-qilin-gensar-shared-prefix-calibration-from-public-inputs)
 uses the public inputs and the released GenSAR shared prefix to exercise the
 same calibration command available for user inputs.
 

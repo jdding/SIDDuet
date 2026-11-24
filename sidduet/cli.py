@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from importlib.util import find_spec
 from pathlib import Path
 import subprocess
 import sys
@@ -12,7 +13,7 @@ from sidduet import REPO_ROOT, __version__
 COMMANDS: dict[str, tuple[str, str]] = {
     "verify-table2": (
         "scripts/verify_table2.py",
-        "Verify all six Table 2 population rows from saved Monte Carlo draw means.",
+        "Verify the six main Table 2 rows from saved Monte Carlo draw means.",
     ),
     "validate": (
         "scripts/validate_release.py",
@@ -37,12 +38,18 @@ COMMANDS: dict[str, tuple[str, str]] = {
 }
 
 
+COMMAND_EXTRAS = {
+    "calibrate": ("calibration", ("numpy",)),
+    "replay-qilin": ("provider", ("numpy", "pyarrow")),
+}
+
+
 def resolve_script(rel_path: str) -> Path:
     script = (REPO_ROOT / rel_path).resolve()
     if not script.is_file():
         raise FileNotFoundError(
-            f"SIDDuet script not found at {script}. Install editable from a tagged checkout "
-            "(`pip install -e .`) or run from the repository root."
+            f"Cannot find {rel_path}. From a tagged SIDDuet checkout, "
+            "use an editable install: python -m pip install -e ."
         )
     return script
 
@@ -73,7 +80,17 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     parsed = parser.parse_args(argv)
     rel_path, _ = COMMANDS[parsed.command]
-    script = resolve_script(rel_path)
+    try:
+        script = resolve_script(rel_path)
+    except FileNotFoundError as error:
+        parser.error(str(error))
+    extra, modules = COMMAND_EXTRAS.get(parsed.command, ("", ()))
+    missing = [module for module in modules if find_spec(module) is None]
+    if missing:
+        parser.error(
+            f"{parsed.command} needs {', '.join(missing)}. From the SIDDuet checkout, "
+            f"run: python -m pip install -e '.[{extra}]'"
+        )
     forwarded = list(parsed.args)
     if forwarded and forwarded[0] == "--":
         forwarded = forwarded[1:]

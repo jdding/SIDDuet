@@ -12,7 +12,7 @@ const FILES = [
   "docs/TOPOLOGY_PROFILE_V2_CONTRACT.md",
   "samples/synthetic_role_events.csv",
   "samples/synthetic_sid_map.csv",
-  "samples/synthetic_method_scores.csv",
+  "samples/synthetic_prediction_coverage_scores.csv",
   "reports/diagnostics_mc1999_20261020/TABLE2_NULL_MEANS.json",
   "reports/diagnostics_mc1999_20261020/MC1999_RESULTS.json",
   "reports/model_reuse/RESULTS.json",

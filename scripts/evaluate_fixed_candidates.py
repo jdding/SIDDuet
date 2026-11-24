@@ -59,6 +59,11 @@ def main() -> None:
     parser.add_argument("--candidates", type=Path, required=True)
     parser.add_argument("--out-csv", type=Path, required=True)
     parser.add_argument("--out-json", type=Path, required=True)
+    parser.add_argument(
+        "--paired-target-slices",
+        action="store_true",
+        help="Report matched and unmatched target slices beside the full test.",
+    )
     args = parser.parse_args()
     required = {
         "method_id",
@@ -141,8 +146,13 @@ def main() -> None:
                 "hit10": hit10,
             }
         )
+    slice_fields = [None, "topology_cell", "rsd_bucket", "rsi_mag_bucket"]
+    if args.paired_target_slices:
+        for unit in units:
+            unit["paired_target"] = "unmatched" if unit["topology_cell"] == "unmatched" else "covered"
+        slice_fields.append("paired_target")
     rows = []
-    for field in [None, "topology_cell", "rsd_bucket", "rsi_mag_bucket"]:
+    for field in slice_fields:
         rows.extend(aggregate(units, field))
     for row in rows:
         row["topology_profile_id"] = TOPOLOGY_PROFILE_ID

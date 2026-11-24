@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.1 — 2026-11-24
+
+- Add `--allow-unpaired-targets` (`adapt_method_scores.py`) and `--paired-target-slices` (`evaluate_fixed_candidates.py`) so the live browser and local demos compute paired-target coverage alongside full-test and covered NDCG@10 on the same candidate sets.
+- Compare pooled, separate, and shrinkage rules with fixed smoothing strengths (`alpha = beta = 10`) on held-out synthetic counts, and align Table 4 captions with task-conditioned shrinkage selection.
+- Report actionable `pip install -e '.[calibration]'` / `'.[provider]'` guidance when running optional CLI subcommands without NumPy or PyArrow.
+- Clarify the six saved-draw Table 2 comparisons versus the separate Qilin GenSAR shared-prefix replay across quickstart and demos.
+- Preserve all historical study summaries (`v0.2.8`), checkpoint assets (`v0.2.4`), and prior immutable tags (`v0.4.0` and earlier).
+
 ## 0.4.0 — 2026-11-23
 
 - Upgrade the zero-install browser demo (`https://jdding.github.io/SIDDuet/`) and local HTTP demo to execute and display all three paper workflows directly: shared-code allocation JSD with interactive member share bars, pure-Python count-matched calibration, live `verify_table2.py` execution, paired-target prediction coverage (Table 3), and pooled vs. task-conditioned forecasting (Table 4 and training-only cohort sensitivity).

@@ -8,7 +8,6 @@ const panels = Array.from(document.querySelectorAll("[data-panel]"));
 const worker = new Worker("demo/python-worker.js", {type: "module"});
 const fixed = (value, digits = 3) => Number(value).toFixed(digits);
 const percent = value => (100 * Number(value)).toFixed(2) + "%";
-const signed = (value, digits = 3) => (Number(value) >= 0 ? "+" : "−") + Math.abs(Number(value)).toFixed(digits);
 
 let lastResult = null;
 
@@ -93,7 +92,7 @@ function render(result) {
   lastResult = result;
   for (const id of [
     "wf1-groups", "wf1-cal", "wf1-table2",
-    "wf2-synth-cov", "wf2-synth-metrics", "wf2-table3",
+    "wf2-synth-metrics", "wf2-table3",
     "wf3-synth", "wf3-table4", "wf3-cohort", "steps",
   ]) {
     document.getElementById(id).replaceChildren();
@@ -154,18 +153,12 @@ function render(result) {
   }
 
   // Workflow 2: Prediction coverage & ranking
-  const cov = result.coverage;
-  addRow("wf2-synth-cov", [
-    `${cov.joined_items} / ${cov.topology_items}`,
-    percent(cov.join_coverage),
-    cov.unique_sid_count,
-  ]);
   for (const m of result.metrics) {
     addRow("wf2-synth-metrics", [
       m.role === "rec" ? "Recommendation" : "Search",
-      m.units,
-      fixed(m.ndcg10, 3),
-      percent(m.hit10),
+      `${m.covered_units} / ${m.units} (${percent(m.covered_units / m.units)})`,
+      fixed(m.ndcg10),
+      m.covered_ndcg10 === null ? "—" : fixed(m.covered_ndcg10),
     ]);
   }
   for (const row of result.table3) {
@@ -180,24 +173,18 @@ function render(result) {
 
   // Workflow 3: Temporal pooling comparison
   const ps = result.pooling_synthetic;
-  addRow("wf3-synth", [
-    `Task-blind (${ps.pooled.rule}, α=${ps.pooled.alpha})`,
-    fixed(ps.pooled.macro_loss, 4),
-    fixed(ps.pooled.search_loss, 4),
-    fixed(ps.pooled.rec_loss, 4),
-  ]);
-  addRow("wf3-synth", [
-    `Task-conditioned (${ps.task_conditioned.rule}, α=${ps.task_conditioned.alpha})`,
-    fixed(ps.task_conditioned.macro_loss, 4),
-    fixed(ps.task_conditioned.search_loss, 4),
-    fixed(ps.task_conditioned.rec_loss, 4),
-  ]);
-  addRow("wf3-synth", [
-    "Pooled minus task-conditioned (Δ > 0 favors separate)",
-    signed(ps.delta_nats, 4),
-    signed(ps.pooled.search_loss - ps.task_conditioned.search_loss, 4),
-    signed(ps.pooled.rec_loss - ps.task_conditioned.rec_loss, 4),
-  ]);
+  for (const [label, row] of [
+    [`Pooled (α=${ps.pooled.alpha})`, ps.pooled],
+    [`Separate (α=${ps.task_conditioned.alpha})`, ps.task_conditioned],
+    [`Shrinkage (β=${ps.shrinkage.beta})`, ps.shrinkage],
+  ]) {
+    addRow("wf3-synth", [
+      label,
+      fixed(row.macro_loss),
+      fixed(row.search_loss),
+      fixed(row.rec_loss),
+    ]);
+  }
 
   const fmtCell = (delta, ci) => `${fixed(delta, 3)} [${fixed(ci[0], 3)}, ${fixed(ci[1], 3)}]`;
   for (const row of result.table4) {
@@ -243,7 +230,7 @@ worker.onmessage = event => {
   if (response.type === "progress") status.textContent = response.message;
   if (response.type === "result") {
     render(response.result);
-    finish("Complete. All three SIDDuet workflows executed and verified in your browser.");
+    finish("Complete. Synthetic examples ran for all three workflows.");
   }
   if (response.type === "error") finish(response.message, true);
 };

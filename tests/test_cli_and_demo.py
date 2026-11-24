@@ -21,7 +21,7 @@ class CLIAndDemoTests(unittest.TestCase):
             capture_output=True,
             check=True,
         )
-        self.assertIn("0.4.0", ver.stdout)
+        self.assertIn("0.4.1", ver.stdout)
 
         t2 = subprocess.run(
             [sys.executable, "-m", "sidduet.cli", "verify-table2"],
@@ -47,7 +47,7 @@ class CLIAndDemoTests(unittest.TestCase):
         )
         payload = json.loads(proc.stdout)
         self.assertEqual(payload["status"], "pass")
-        self.assertEqual(payload["version"], "0.4.0")
+        self.assertEqual(payload["version"], "0.4.1")
 
         wf1 = payload["workflow1"]
         self.assertEqual(wf1["common_items"], 8)
@@ -60,11 +60,26 @@ class CLIAndDemoTests(unittest.TestCase):
         self.assertEqual(len(payload["table2"]), 6)
 
         self.assertEqual(payload["coverage"]["join_coverage"], 1.0)
-        self.assertEqual(len(payload["metrics"]), 2)
+        metrics = {row["role"]: row for row in payload["metrics"]}
+        self.assertEqual(set(metrics), {"search", "rec"})
+        for row in metrics.values():
+            self.assertEqual((row["covered_units"], row["units"]), (1, 2))
+        self.assertEqual(metrics["search"]["ndcg10"], 0.815465)
+        self.assertEqual(metrics["search"]["covered_ndcg10"], 0.630930)
+        self.assertEqual(metrics["rec"]["ndcg10"], 0.750000)
+        self.assertEqual(metrics["rec"]["covered_ndcg10"], 1.000000)
         self.assertEqual(len(payload["table3"]), 2)
 
-        self.assertGreater(payload["pooling_synthetic"]["pooled"]["macro_loss"], 0.0)
-        self.assertGreater(payload["pooling_synthetic"]["task_conditioned"]["macro_loss"], 0.0)
+        pooling = payload["pooling_synthetic"]
+        self.assertEqual(pooling["pooled"]["alpha"], 10.0)
+        self.assertEqual(pooling["task_conditioned"]["alpha"], 10.0)
+        self.assertEqual(pooling["shrinkage"]["beta"], 10.0)
+        for rule in ("pooled", "task_conditioned", "shrinkage"):
+            self.assertGreater(pooling[rule]["macro_loss"], 0.0)
+        self.assertAlmostEqual(
+            pooling["delta_nats"],
+            pooling["pooled"]["macro_loss"] - pooling["task_conditioned"]["macro_loss"],
+        )
         self.assertEqual(len(payload["table4"]), 6)
         self.assertEqual(len(payload["cohort_sensitivity"]), 2)
 

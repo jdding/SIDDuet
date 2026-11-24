@@ -1,0 +1,13 @@
+dataset,unit_id,role,candidate_id,is_target,score
+demo,p01,search,item_01,1,0.65
+demo,p01,search,unpaired_search,0,0.90
+demo,p01,search,d01,0,0.20
+demo,p02,search,unpaired_search,1,0.95
+demo,p02,search,item_02,0,0.60
+demo,p02,search,d02,0,0.30
+demo,p03,rec,item_04,1,0.90
+demo,p03,rec,unpaired_rec,0,0.65
+demo,p03,rec,d03,0,0.25
+demo,p04,rec,unpaired_rec,1,0.25
+demo,p04,rec,item_06,0,0.85
+demo,p04,rec,d04,0,0.55

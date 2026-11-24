@@ -11,14 +11,14 @@
 <body>
 <main>
   <header>
-    <div class="eyebrow">SIDDuet / v0.4.0</div>
+    <div class="eyebrow">SIDDuet / v0.4.1</div>
     <h1>Semantic IDs across Search and Recommendation</h1>
     <p class="lede">Run all three SIDDuet diagnostic workflows directly in your browser: inspect shared-code allocation divergence with count-matched references, audit paired-target prediction coverage, and compare pooled versus task-conditioned exposure forecasts.</p>
     <nav aria-label="Resource links">
-      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.0/ARTIFACT_QUICKSTART.md">Quickstart</a>
-      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.0/docs/BRING_YOUR_OWN_DATA.md">Use your own data</a>
-      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.0/docs/COUNT_REFERENCE_CALIBRATION.md">Count-reference calibration</a>
-      <a href="https://github.com/jdding/SIDDuet/tree/v0.4.0">Source and replay</a>
+      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md">Quickstart</a>
+      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/docs/BRING_YOUR_OWN_DATA.md">Use your own data</a>
+      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/docs/COUNT_REFERENCE_CALIBRATION.md">Count-reference calibration</a>
+      <a href="https://github.com/jdding/SIDDuet/tree/v0.4.1">Source and replay</a>
     </nav>
   </header>
 
@@ -88,10 +88,10 @@
         </table>
       </div>
 
-      <h3>1C. Live Table 2 verification via <code>scripts/verify_table2.py</code> <span class="badge published">Published study · live verify</span></h3>
+      <h3>1C. Verify the six main Table 2 rows with <code>scripts/verify_table2.py</code> <span class="badge published">Published study · live verify</span></h3>
       <div class="scroll">
         <table>
-          <caption>Recomputed in-browser from 1,999 saved Monte Carlo draw means (all 12 comparisons reach p = 0.001; BH = 0.001, BY = 0.002).</caption>
+          <caption>The six main rows have 1,999 saved draw means per reference. Their means, p-values and adjustments are recomputed here. The GenSAR prefix row uses the <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md#2-replay-qilin-gensar-shared-prefix-calibration-from-public-inputs">Qilin provider-input replay</a>.</caption>
           <thead>
             <tr>
               <th scope="col">Dataset</th>
@@ -111,30 +111,23 @@
     <!-- WORKFLOW 2 -->
     <div data-panel="wf2" hidden>
       <h2>Workflow 2 · Paired-target prediction coverage vs. full-test ranking</h2>
-      <div class="pair">
-        <section>
-          <h3>2A. Synthetic map join coverage <span class="badge">Live Python</span></h3>
-          <div class="scroll">
-            <table>
-              <caption>Exact item join from <code>admit_sid_family.py</code>.</caption>
-              <thead><tr><th scope="col">Joined / items</th><th scope="col">Coverage</th><th scope="col">Unique codes</th></tr></thead>
-              <tbody id="wf2-synth-cov"></tbody>
-            </table>
-          </div>
-        </section>
-        <section>
-          <h3>2B. Synthetic candidate-score evaluation <span class="badge">Live Python</span></h3>
-          <div class="scroll">
-            <table>
-              <caption>Output of <code>adapt_method_scores.py</code> and <code>evaluate_fixed_candidates.py</code>.</caption>
-              <thead><tr><th scope="col">Task</th><th scope="col">Requests</th><th scope="col">NDCG@10</th><th scope="col">Hit@10</th></tr></thead>
-              <tbody id="wf2-synth-metrics"></tbody>
-            </table>
-          </div>
-        </section>
+      <h3>2A. Synthetic paired-target audit <span class="badge">Live Python</span></h3>
+      <div class="scroll">
+        <table>
+          <caption>One target per task has paired observations. Every request and candidate stays in the full-test score. The covered score uses requests whose targets have paired observations.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Task</th>
+              <th scope="col">Paired targets / all requests</th>
+              <th scope="col">Full-test NDCG@10</th>
+              <th scope="col">Covered NDCG@10</th>
+            </tr>
+          </thead>
+          <tbody id="wf2-synth-metrics"></tbody>
+        </table>
       </div>
 
-      <h3>2C. Published UniSAR / KuaiSAR audit summary (Table 3) <span class="badge published">Published study summary</span></h3>
+      <h3>2B. Published UniSAR / KuaiSAR audit summary (Table 3) <span class="badge published">Published study summary</span></h3>
       <div class="scroll">
         <table>
           <caption>Loaded from shipped <code>reports/model_reuse/RESULTS.json</code> (100 original candidates; exact-score tie averaging; 2,000-draw user-cluster 95% CI for Covered minus Full).</caption>
@@ -156,10 +149,10 @@
     <div data-panel="wf3" hidden>
       <h2>Workflow 3 · Pooled vs. task-conditioned exposure forecasting</h2>
 
-      <h3>3A. Closed-form smoothing comparison (synthetic split) <span class="badge">Live Python</span></h3>
+      <h3>3A. Smoothing rules on synthetic counts <span class="badge">Live Python</span></h3>
       <div class="scroll">
         <table>
-          <caption>Task-blind pooled smoothing vs. task-conditioned separate/shrinkage smoothing on the synthetic shared codes (nats; lower loss is better).</caption>
+          <caption>Each rule uses the same held-out share of synthetic counts. Smoothing strengths are fixed. This example illustrates the estimators and uses log loss in nats.</caption>
           <thead>
             <tr>
               <th scope="col">Estimator</th>
@@ -175,7 +168,7 @@
       <h3>3B. Published Qilin two-window pooling summary (Table 4) <span class="badge published">Published study summary</span></h3>
       <div class="scroll">
         <table>
-          <caption>Pooled minus separate macro forecast loss (10<sup>−3</sup> nats; positive favors separate counts). Brackets give 99.50% Bonferroni-adjusted user-cluster intervals (40,000 draws).</caption>
+          <caption>Pooled minus selected task-conditioned macro loss (10<sup>−3</sup> nats). GAOQ Prefix (2) selects shrinkage in both windows. Brackets show 99.50% marginal user-cluster intervals (40,000 draws), targeting 95.00% family coverage.</caption>
           <thead>
             <tr>
               <th scope="col">Code view</th>
@@ -196,7 +189,7 @@
               <th scope="col">Window</th>
               <th scope="col">Collision groups</th>
               <th scope="col">Scored requests</th>
-              <th scope="col">Pooled − Separate [95% family CI]</th>
+              <th scope="col">Pooled − task-conditioned [95% family CI]</th>
             </tr>
           </thead>
           <tbody id="wf3-cohort"></tbody>
@@ -213,7 +206,7 @@
 
   <footer>
     Python runs locally in your browser via a pinned Pyodide runtime; source and report hashes are checked against <code>PACKAGE_MANIFEST.json</code> before execution.
-    Full provider-file reconstruction and UniSAR replay instructions are in <a href="https://github.com/jdding/SIDDuet/blob/v0.4.0/ARTIFACT_QUICKSTART.md">ARTIFACT_QUICKSTART.md</a>.
+    Full provider-file reconstruction and UniSAR replay instructions are in <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md">ARTIFACT_QUICKSTART.md</a>.
   </footer>
 </main>
 </body>

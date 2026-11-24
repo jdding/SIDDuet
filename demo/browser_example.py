@@ -154,9 +154,9 @@ def _compute_workflow1(counts_path: Path, sid_map_path: Path, draws: int = 199, 
 
 
 def _compute_synthetic_pooling(groups: list[dict]) -> dict:
-    """Closed-form pooled vs. task-conditioned smoothing on the synthetic groups."""
-    # Hold out 20% of each item's synthetic counts as a later exposure window (min 1)
-    alphas = (0.1, 1.0, 10.0, 100.0)
+    """Compare fixed smoothing rules on a held-out share of synthetic counts."""
+    # Keep smoothing fixed so the held-out counts only score the rules.
+    alpha = beta = 10.0
     train_s: dict[str, dict[str, float]] = {}
     train_r: dict[str, dict[str, float]] = {}
     eval_s: dict[str, dict[str, float]] = {}
@@ -189,80 +189,49 @@ def _compute_synthetic_pooling(groups: list[dict]) -> dict:
         macro = 0.5 * (role_losses["search"] + role_losses["rec"])
         return macro, role_losses["search"], role_losses["rec"]
 
-    best_pooled = None
-    best_pooled_probs = None
-    for alpha in alphas:
-        probs = {"search": {}, "rec": {}}
-        for g in groups:
-            sid = g["sid"]
-            members = [m["item"] for m in g["members"]]
-            u = 1.0 / len(members)
-            tot = sum(train_s[sid][i] + train_r[sid][i] for i in members)
-            dist = {
-                i: (train_s[sid][i] + train_r[sid][i] + alpha * u) / (tot + alpha)
-                for i in members
+    pooled_probs = {"search": {}, "rec": {}}
+    separate_probs = {"search": {}, "rec": {}}
+    shrinkage_probs = {"search": {}, "rec": {}}
+    for group in groups:
+        sid = group["sid"]
+        members = [member["item"] for member in group["members"]]
+        prior = 1.0 / len(members)
+        pooled_counts = {item: train_s[sid][item] + train_r[sid][item] for item in members}
+        pooled_total = sum(pooled_counts.values())
+        pooled = {
+            item: (count + alpha * prior) / (pooled_total + alpha)
+            for item, count in pooled_counts.items()
+        }
+        for task, train in (("search", train_s), ("rec", train_r)):
+            counts = train[sid]
+            total = sum(counts.values())
+            pooled_probs[task][sid] = pooled
+            separate_probs[task][sid] = {
+                item: (count + alpha * prior) / (total + alpha)
+                for item, count in counts.items()
             }
-            probs["search"][sid] = dist
-            probs["rec"][sid] = dist
-        loss, s_loss, r_loss = macro_loss(probs)
-        if best_pooled is None or loss < best_pooled["macro_loss"]:
-            best_pooled = {
-                "rule": "pooled",
-                "alpha": alpha,
-                "macro_loss": loss,
-                "search_loss": s_loss,
-                "rec_loss": r_loss,
-            }
-            best_pooled_probs = probs
-
-    best_separate = None
-    for alpha in alphas:
-        probs = {"search": {}, "rec": {}}
-        for g in groups:
-            sid = g["sid"]
-            members = [m["item"] for m in g["members"]]
-            u = 1.0 / len(members)
-            for role, tr_map in (("search", train_s), ("rec", train_r)):
-                tot = sum(tr_map[sid][i] for i in members)
-                probs[role][sid] = {
-                    i: (tr_map[sid][i] + alpha * u) / (tot + alpha)
-                    for i in members
-                }
-        loss, s_loss, r_loss = macro_loss(probs)
-        if best_separate is None or loss < best_separate["macro_loss"]:
-            best_separate = {
-                "rule": "separate",
-                "alpha": alpha,
-                "macro_loss": loss,
-                "search_loss": s_loss,
-                "rec_loss": r_loss,
+            shrinkage_probs[task][sid] = {
+                item: (count + beta * pooled[item]) / (total + beta)
+                for item, count in counts.items()
             }
 
-    for beta in alphas:
-        probs = {"search": {}, "rec": {}}
-        for g in groups:
-            sid = g["sid"]
-            members = [m["item"] for m in g["members"]]
-            for role, tr_map in (("search", train_s), ("rec", train_r)):
-                tot = sum(tr_map[sid][i] for i in members)
-                probs[role][sid] = {
-                    i: (tr_map[sid][i] + beta * best_pooled_probs[role][sid][i]) / (tot + beta)
-                    for i in members
-                }
-        loss, s_loss, r_loss = macro_loss(probs)
-        if loss < best_separate["macro_loss"]:
-            best_separate = {
-                "rule": "shrinkage",
-                "alpha": beta,
-                "macro_loss": loss,
-                "search_loss": s_loss,
-                "rec_loss": r_loss,
-            }
+    def scored(rule, probabilities, **smoothing):
+        macro, search, rec = macro_loss(probabilities)
+        return {
+            "rule": rule,
+            **smoothing,
+            "macro_loss": macro,
+            "search_loss": search,
+            "rec_loss": rec,
+        }
 
+    pooled = scored("pooled", pooled_probs, alpha=alpha)
+    separate = scored("separate", separate_probs, alpha=alpha)
     return {
-        "pooled": best_pooled,
-        "task_conditioned": best_separate,
-        "delta_nats": best_pooled["macro_loss"] - best_separate["macro_loss"],
+        "pooled": pooled,
+        "task_conditioned": separate,
+        "shrinkage": scored("shrinkage", shrinkage_probs, beta=beta),
+        "delta_nats": pooled["macro_loss"] - separate["macro_loss"],
     }
 
 
@@ -419,7 +388,8 @@ def run_example() -> dict:
             "adapt_method_scores.py",
             [
                 "--scores",
-                ROOT / "samples/synthetic_method_scores.csv",
+                ROOT / "samples/synthetic_prediction_coverage_scores.csv",
+                "--allow-unpaired-targets",
                 "--topology",
                 output / "topology.csv",
                 "--method-id",
@@ -437,6 +407,7 @@ def run_example() -> dict:
             [
                 "--candidates",
                 output / "adapted.csv",
+                "--paired-target-slices",
                 "--out-csv",
                 output / "metrics.csv",
                 "--out-json",
@@ -450,9 +421,24 @@ def run_example() -> dict:
             return json.loads((output / name).read_text(encoding="utf-8"))
 
         coverage = load("admission.json")["dataset_summaries"][0]
-        metrics = [
-            row for row in load("metrics.json")["aggregates"] if row["slice_type"] == "all"
-        ]
+        score_rows = load("metrics.json")["aggregates"]
+        covered_by_role = {
+            row["role"]: row for row in score_rows
+            if row["slice_type"] == "paired_target" and row["slice_value"] == "covered"
+        }
+        metrics = []
+        for row in score_rows:
+            if row["slice_type"] != "all":
+                continue
+            covered = covered_by_role.get(row["role"], {})
+            metrics.append({
+                "role": row["role"],
+                "units": row["units"],
+                "ndcg10": row["ndcg10"],
+                "hit10": row["hit10"],
+                "covered_units": covered.get("units", 0),
+                "covered_ndcg10": covered.get("ndcg10"),
+            })
         workflow1 = _compute_workflow1(output / "counts.csv", ROOT / "samples/synthetic_sid_map.csv")
         pooling_synth = _compute_synthetic_pooling(workflow1["groups"])
         published = _load_published_summaries()
@@ -464,7 +450,7 @@ def run_example() -> dict:
 
         return {
             "status": "pass",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "synthetic": True,
             "workflow1": workflow1,
             "table2": table2_rows,
@@ -472,9 +458,7 @@ def run_example() -> dict:
                 key: coverage[key]
                 for key in ("topology_items", "joined_items", "join_coverage", "unique_sid_count")
             },
-            "metrics": [
-                {key: row[key] for key in ("role", "units", "ndcg10", "hit10")} for row in metrics
-            ],
+            "metrics": metrics,
             "table3": published["table3"],
             "pooling_synthetic": pooling_synth,
             "table4": published["table4"],

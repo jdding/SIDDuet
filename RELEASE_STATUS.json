@@ -1,11 +1,11 @@
 {
   "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.4.0",
-  "release_tag": "v0.4.0",
+  "version": "0.4.1",
+  "release_tag": "v0.4.1",
   "repository_url": "https://github.com/jdding/SIDDuet",
-  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.0",
+  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.1",
   "publication_status": "public_release",
-  "release_date": "2026-11-23",
+  "release_date": "2026-11-24",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "reconstructed_datasets": [
@@ -34,14 +34,14 @@
     "internal review records"
   ],
   "hosted_live_demo": "https://jdding.github.io/SIDDuet/",
-  "demo_execution": "pinned Pyodide, actual Python source, all three workflows + live verify_table2.py, no upload",
-  "baseline_release_commit": "0106a33406fda7198c815af293e4a0f6981dc57f",
+  "demo_execution": "pinned Pyodide, actual Python source, live paired-target coverage slices, fixed-strength smoothing rules, and live verify_table2.py, no upload",
+  "baseline_release_commit": "43036301123ada30627cca50904851760bafd105",
   "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication",
   "changes": [
-    "Three-workflow browser demo and local HTTP demo aligned directly with the paper (shared-code calibration, live Table 2 verification, prediction coverage, temporal pooling)",
-    "Standard Python packaging (pyproject.toml) and unified sidduet CLI",
-    "Measured single-CPU runtime and peak RSS benchmarks",
-    "Clarified maintenance plan and SIDInspector boundary in top-level docs"
+    "Add --allow-unpaired-targets and --paired-target-slices for live paired-target coverage auditing",
+    "Compare pooled, separate, and shrinkage rules with fixed smoothing strengths on held-out synthetic counts",
+    "Add clear missing-dependency guidance in sidduet CLI for optional calibration/provider extras",
+    "Clarify six primary Table 2 rows versus the separate Qilin GenSAR prefix replay across docs and demos"
   ],
   "count_reference_precision": {
     "draws_per_reference": 1999,
@@ -61,12 +61,12 @@
     "original_four_endpoint_family_retained": true
   },
   "base_release": {
-    "version": "0.3.0",
-    "release_tag": "v0.3.0",
-    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.3.0",
-    "release_date": "2026-11-19",
+    "version": "0.4.0",
+    "release_tag": "v0.4.0",
+    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.0",
+    "release_date": "2026-11-23",
     "publication_status": "public_release",
-    "commit": "0106a33406fda7198c815af293e4a0f6981dc57f"
+    "commit": "43036301123ada30627cca50904851760bafd105"
   },
   "scientific_results_recomputed": false,
   "qilin_calibration_example": "scripts/replay_qilin_calibration.py"

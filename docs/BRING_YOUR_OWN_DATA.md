@@ -59,8 +59,24 @@ required for this analysis; no provider file, quantizer fitting or model is need
 
 ## 3. Attach predictions or test pooling
 
-For model inspection, export the actual finite scores with
-`dataset,unit_id,role,candidate_id,is_target,score`. Each request needs one target and distinct candidates. Report targets outside the paired-observation topology before selecting covered requests; the strict adapter rejects a missing target. Use `scripts/adapt_method_scores.py` and `scripts/evaluate_fixed_candidates.py` as shown in `REBUILD_PROTOCOL.md`. Evaluation v3 averages gain within exact score ties, so candidate renaming cannot change a result. It evaluates the supplied candidate set, not full-catalog retrieval.
+For model inspection, export finite scores with
+`dataset,unit_id,role,candidate_id,is_target,score`. Each request needs one target and distinct candidates. Use the paired topology built from the count table. Check that it uses the same dataset and item keys as the scores.
+
+```sh
+python3 -I -B scripts/adapt_method_scores.py \
+  --scores /local/scores.csv --topology /local/new/topology.csv \
+  --method-id my_model --method-paradigm discriminative --score-direction higher_is_better \
+  --allow-unpaired-targets --out-csv /local/new/adapted.csv
+python3 -I -B scripts/evaluate_fixed_candidates.py \
+  --candidates /local/new/adapted.csv --paired-target-slices \
+  --out-csv /local/new/metrics.csv --out-json /local/new/metrics.json
+```
+
+For each dataset and task, divide the `paired_target=covered` request count by
+the `all` count. Read NDCG@10 from the same rows. An absent covered row means
+zero paired requests and no covered score. The adapter keeps every candidate
+in the audit. It still requires all targets to match when the flag is omitted.
+The evaluator averages gain over exact-score ties.
 
 For a later exposure-allocation comparison, use the separate request and map interfaces in `analysis/reuse_validation/README.md`. That workflow needs declared temporal splits and stable local user identifiers for clustered intervals. It has additional input requirements beyond the count table.
 

@@ -1,6 +1,6 @@
 # Quickstart
 
-Use Python 3.10+ for the standard-library workflows. Run commands from the repository root, or install the lightweight `sidduet` CLI with `python3 -m pip install -e .`. Keep generated provider data and real model outputs in a separate local directory.
+Use Python 3.10+ from a SIDDuet checkout. Run the scripts from the repository root, or install the CLI there with `python3 -m pip install -e .`. The editable install lets the CLI find scripts and artifacts in the checkout. Keep generated provider data and real model outputs in a separate local directory.
 
 The [online browser demo](https://jdding.github.io/SIDDuet/) executes the released Python scripts in your browser (pinned Pyodide, SHA-256 verified against `PACKAGE_MANIFEST.json`) across all three workflows with no account or local installation.
 
@@ -8,7 +8,7 @@ See [docs/RESOURCE_CAPABILITIES.md](docs/RESOURCE_CAPABILITIES.md) for what runs
 
 ## 1. Verify Table 2 from the release
 
-From a checkout of `v0.4.0`, run:
+From a checkout of `v0.4.1`, run:
 
 ```sh
 python3 -I -B scripts/verify_table2.py
@@ -16,7 +16,7 @@ python3 -I -B scripts/verify_table2.py
 sidduet verify-table2
 ```
 
-The command prints all six primary Table 2 rows as CSV in ~0.04 s (<20 MiB RAM). It recomputes each reference mean and two-sided Monte Carlo p-value from the 1,999 saved draw means, then reapplies BH and BY across both six-comparison families. For KuaiSAR/GRID the printed row is `kuaisar,grid,3462,0.132,0.158,0.154,60.60%`. To rerun permutations from raw observations and normalized maps, follow the [study replay protocol](analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md).
+The command prints the six main Table 2 rows as CSV in ~0.04 s (<20 MiB RAM). The GenSAR prefix row uses the separate Qilin replay below. It recomputes each reference mean and two-sided Monte Carlo p-value from the 1,999 saved draw means, then reapplies BH and BY across both six-comparison families. For KuaiSAR/GRID the printed row is `kuaisar,grid,3462,0.132,0.158,0.154,60.60%`. To rerun permutations from raw observations and normalized maps, follow the [study replay protocol](analysis/diagnostic_extension_20261019/protocols/MC1999_PRECISION.md).
 
 ## 2. Replay Qilin GenSAR shared-prefix calibration from public inputs
 
@@ -45,14 +45,16 @@ Expected: `PASS_PUBLIC_RESOURCE_SMOKE` (~2.8 s, ~26 MiB RAM). This checks comple
 
 ## 4. Calibrate your own counts and SID maps
 
-With NumPy installed (`pip install -e ".[calibration]"`):
+Install the calibration extra and run the shipped example. The output directory is fresh on each run.
 
 ```sh
+python3 -m pip install -e ".[calibration]"
+SIDDUET_OUT=$(mktemp -d)
 sidduet calibrate \
   --role-counts samples/synthetic_role_label_counts.csv \
   --sid-map demo-view=samples/synthetic_sid_map.csv \
   --draws 199 --seed 20261104 \
-  --out-json /tmp/demo-cal.json --out-csv /tmp/demo-cal.csv
+  --out-json "$SIDDUET_OUT/result.json" --out-csv "$SIDDUET_OUT/result.csv"
 ```
 
 On a single CPU, 1,999 draws across both count-matched references take ~9.1 s (58 MiB peak RSS) at Qilin scale (20,540 items, 4,021 collision groups) and ~61.2 s (113 MiB peak RSS) at KuaiSAR scale (97,729 items, 3,462 groups). See [docs/COUNT_REFERENCE_CALIBRATION.md](docs/COUNT_REFERENCE_CALIBRATION.md) and [docs/BRING_YOUR_OWN_DATA.md](docs/BRING_YOUR_OWN_DATA.md) for custom schemas.
@@ -65,4 +67,4 @@ sidduet demo --port 8765
 python3 -I scripts/serve_demo.py --port 8765
 ```
 
-Open <http://127.0.0.1:8765> and click **Run all three workflows**.
+Open <http://127.0.0.1:8765> and click **Run all three workflows**. In the live prediction audit, one of two requests per task has paired target observations. Both ranking summaries come from the same scores and candidates. The three smoothing rules use fixed strengths and share the same held-out counts.

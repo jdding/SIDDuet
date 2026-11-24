@@ -57,6 +57,11 @@ def main() -> None:
         choices=("higher_is_better", "lower_is_better"),
         required=True,
     )
+    parser.add_argument(
+        "--allow-unpaired-targets",
+        action="store_true",
+        help="Keep requests with targets absent from the supplied paired topology.",
+    )
     parser.add_argument("--out-csv", type=Path, required=True)
     args = parser.parse_args()
 
@@ -92,9 +97,13 @@ def main() -> None:
         target = targets[0]
         target_topology = topology_by_item.get((target["dataset"], target["candidate_id"]))
         if target_topology is None:
-            raise ValueError(
-                "target item is absent from topology: "
-                f"dataset={target['dataset']} item_id={target['candidate_id']}"
+            if not args.allow_unpaired_targets:
+                raise ValueError(
+                    "target item is absent from topology: "
+                    f"dataset={target['dataset']} item_id={target['candidate_id']}"
+                )
+            target_topology = dict.fromkeys(
+                ("topology_cell", "rsd_bucket", "rsi_mag_bucket"), "unmatched"
             )
         for row in rows:
             if not math.isfinite(float(row["score"])):
