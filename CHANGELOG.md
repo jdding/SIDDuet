@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2 — 2026-11-28
+
+- Add `sidduet inspect-groups` for local upper-tail human inspection using the same counts and maps as `calibrate`. Rows report population rank and percentile, group totals, and each task leader’s counts and shares in both tasks.
+- Report exact common-item coverage on incomplete maps and require complete coverage before writing results. Both demos show the eight-item group inspection.
+- Update the package and citation contact for Jiandong Ding. The scientific results and checkpoint retain their original versions.
+
 ## 0.4.1 — 2026-11-24
 
 - Add `--allow-unpaired-targets` (`adapt_method_scores.py`) and `--paired-target-slices` (`evaluate_fixed_candidates.py`) so the live browser and local demos compute paired-target coverage alongside full-test and covered NDCG@10 on the same candidate sets.

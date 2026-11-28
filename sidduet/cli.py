@@ -23,6 +23,10 @@ COMMANDS: dict[str, tuple[str, str]] = {
         "scripts/calibrate_task_allocation.py",
         "Calibrate paired task counts against band-matched and exact-total references.",
     ),
+    "inspect-groups": (
+        "scripts/inspect_groups.py",
+        "Rank collision groups by allocation JSD for upper-tail human inspection.",
+    ),
     "import-counts": (
         "scripts/import_role_counts.py",
         "Map local CSV columns into the canonical paired-count schema.",
@@ -40,6 +44,7 @@ COMMANDS: dict[str, tuple[str, str]] = {
 
 COMMAND_EXTRAS = {
     "calibrate": ("calibration", ("numpy",)),
+    "inspect-groups": ("calibration", ("numpy",)),
     "replay-qilin": ("provider", ("numpy", "pyarrow")),
 }
 

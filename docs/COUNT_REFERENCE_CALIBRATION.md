@@ -25,6 +25,23 @@ This is a fabricated eight-item, two-collision-group example, not a scientific
 result. The output directory must exist and both output files must be fresh;
 choose new filenames to repeat it. With NumPy already installed, you can also run `python3 -I -B scripts/calibrate_task_allocation.py` with these flags.
 
+## Inspect individual groups
+
+Using the same two input tables, export the upper tail for human inspection. Choose a fresh local output path. Replace the sample paths with your count table and map, or repeat `--sid-map` for additional maps.
+
+```sh
+sidduet inspect-groups \
+  --role-counts samples/synthetic_role_label_counts.csv \
+  --sid-map demo=samples/synthetic_sid_map.csv \
+  --top-groups 2 --out-csv /tmp/sidduet-groups.csv
+```
+
+The sample reports `8/8` common items covered and exports both collision groups. With one common item missing, the command reports `7/8 covered, 1 missing` and stops. Each dataset and map has its own ranking. Singletons contribute to coverage. Only groups with at least two common items enter the JSD distribution. A map of singletons produces a header-only CSV.
+
+Rows give the SID, group size, base-2 JSD, rank, percentile, collision-group denominator and total observations for each task. For each task leader, the CSV gives the item ID, number of tied leaders, counts in **both** tasks and each count divided by its task total in that group. The first item in lexical order represents a tie. A rank of 1 means no group has a larger JSD. The percentile is the percentage of all collision groups with JSD at or below that row’s value, before truncation to K. Exact ties share a rank and percentile and are ordered by canonical SID. The CSV contains local item and group IDs.
+
+In the published KuaiSAR/ReSID-GAOQ case, the 275-item group ranks 31st among 9,204 groups (99.67th percentile, JSD 0.516). Its search leader has 46/514 search observations and 1/1,413 recommendation observations. Its recommendation leader has 1/514 and 478/1,413, respectively. The [released case](../reports/v2/fixed_275_case.json) uses hashed identifiers. Reconstructing the full ranking requires the local paired counts and complete map. High JSD points to groups worth inspecting. A same-budget comparison found no consistent advantage for selecting groups by training-period JSD, so this ranking does not establish which codes to split.
+
 ## Use your own data
 
 ```sh
@@ -152,7 +169,7 @@ directly; its study-specific input reader and runner are never invoked.
 
 CSV contains one row per dataset/map/reference with the full-precision primary
 observed value, reference mean/range/difference, p, BH/BY q and grouping counts.
-No output contains raw item IDs, paired vectors, SID codes, membership tables,
+The two calibration outputs contain no raw item IDs, paired vectors, SID codes, membership tables,
 or per-draw arrays. Dataset/map names and input paths remain in provenance;
 review those names before sharing outputs. This command writes only the two
 named files and leaves existing study reports untouched.

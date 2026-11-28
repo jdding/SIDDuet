@@ -11,14 +11,14 @@
 <body>
 <main>
   <header>
-    <div class="eyebrow">SIDDuet / v0.4.1</div>
+    <div class="eyebrow">SIDDuet / v0.4.2</div>
     <h1>Semantic IDs across Search and Recommendation</h1>
     <p class="lede">Run all three SIDDuet diagnostic workflows directly in your browser: inspect shared-code allocation divergence with count-matched references, audit paired-target prediction coverage, and compare pooled versus task-conditioned exposure forecasts.</p>
     <nav aria-label="Resource links">
-      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md">Quickstart</a>
-      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/docs/BRING_YOUR_OWN_DATA.md">Use your own data</a>
-      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/docs/COUNT_REFERENCE_CALIBRATION.md">Count-reference calibration</a>
-      <a href="https://github.com/jdding/SIDDuet/tree/v0.4.1">Source and replay</a>
+      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.2/ARTIFACT_QUICKSTART.md">Quickstart</a>
+      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.2/docs/BRING_YOUR_OWN_DATA.md">Use your own data</a>
+      <a href="https://github.com/jdding/SIDDuet/blob/v0.4.2/docs/COUNT_REFERENCE_CALIBRATION.md">Count-reference calibration</a>
+      <a href="https://github.com/jdding/SIDDuet/tree/v0.4.2">Source and replay</a>
     </nav>
   </header>
 
@@ -43,12 +43,13 @@
     <div data-panel="wf1">
       <h2>Workflow 1 · Shared-code allocation &amp; count-matched calibration</h2>
 
-      <h3>1A. Shared-code groups on the synthetic fixture <span class="badge">Live Python</span></h3>
+      <h3>1A. Inspect collision groups by allocation JSD <span class="badge">Live Python</span></h3>
       <div class="scroll">
         <table>
-          <caption>Member counts joined to <code>samples/synthetic_sid_map.csv</code>; base-2 allocation JSD compares search vs. recommendation shares.</caption>
+          <caption><span id="wf1-map-coverage"></span> Percentiles use all collision groups. Each leader has a count and within-group share for search (S) and recommendation (R).</caption>
           <thead>
             <tr>
+              <th scope="col">Rank (percentile)</th>
               <th scope="col">Code</th>
               <th scope="col">Items</th>
               <th scope="col">Search obs</th>
@@ -62,6 +63,8 @@
           <tbody id="wf1-groups"></tbody>
         </table>
       </div>
+
+      <p>For upper-tail human inspection on your own counts and map, use <a href="https://github.com/jdding/SIDDuet/blob/v0.4.2/docs/COUNT_REFERENCE_CALIBRATION.md#inspect-individual-groups"><code>sidduet inspect-groups</code></a>. A high JSD alone does not justify a code split.</p>
 
       <div class="inspector">
         <div class="inspector-head">
@@ -91,7 +94,7 @@
       <h3>1C. Verify the six main Table 2 rows with <code>scripts/verify_table2.py</code> <span class="badge published">Published study · live verify</span></h3>
       <div class="scroll">
         <table>
-          <caption>The six main rows have 1,999 saved draw means per reference. Their means, p-values and adjustments are recomputed here. The GenSAR prefix row uses the <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md#2-replay-qilin-gensar-shared-prefix-calibration-from-public-inputs">Qilin provider-input replay</a>.</caption>
+          <caption>The six main rows have 1,999 saved draw means per reference. Their means, p-values and adjustments are recomputed here. The GenSAR prefix row uses the <a href="https://github.com/jdding/SIDDuet/blob/v0.4.2/ARTIFACT_QUICKSTART.md#2-replay-qilin-gensar-shared-prefix-calibration-from-public-inputs">Qilin provider-input replay</a>.</caption>
           <thead>
             <tr>
               <th scope="col">Dataset</th>
@@ -206,7 +209,7 @@
 
   <footer>
     Python runs locally in your browser via a pinned Pyodide runtime; source and report hashes are checked against <code>PACKAGE_MANIFEST.json</code> before execution.
-    Full provider-file reconstruction and UniSAR replay instructions are in <a href="https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md">ARTIFACT_QUICKSTART.md</a>.
+    Full provider-file reconstruction and UniSAR replay instructions are in <a href="https://github.com/jdding/SIDDuet/blob/v0.4.2/ARTIFACT_QUICKSTART.md">ARTIFACT_QUICKSTART.md</a>.
   </footer>
 </main>
 </body>

@@ -5,7 +5,9 @@ type: software
 authors:
   - family-names: "Ding"
     given-names: "Jiandong"
-version: "0.4.1"
-date-released: "2026-11-24"
+    affiliation: "Huawei Technologies Co., Ltd."
+    email: "dingjiandong2@huawei.com"
+version: "0.4.2"
+date-released: "2026-11-28"
 repository-code: "https://github.com/jdding/SIDDuet"
-url: "https://github.com/jdding/SIDDuet/releases/tag/v0.4.1"
+url: "https://github.com/jdding/SIDDuet/releases/tag/v0.4.2"

@@ -1,6 +1,7 @@
 const PYODIDE_BASE = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/";
 const FILES = [
   "demo/browser_example.py",
+  "scripts/inspect_groups.py",
   "scripts/materialize_role_label_counts.py",
   "scripts/build_role_topology.py",
   "scripts/sid_map_io.py",

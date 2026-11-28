@@ -87,6 +87,65 @@ class AllocationCalibration(unittest.TestCase):
         self.assertFalse(flat.exists())
         return process
 
+    def test_ranked_group_inspection_uses_full_population_and_both_tasks(self):
+        out = self.base / "inspect.csv"
+        command = [sys.executable, "-m", "sidduet.cli", "inspect-groups", "--role-counts",
+                   str(self.counts), "--sid-map", f"test={self.mapping}", "--out-csv", str(out)]
+        proc = subprocess.run(command + ["--top-groups", "2"], cwd=ROOT, capture_output=True,
+                              text=True, check=True)
+        self.assertIn("6/6 common items covered, 2/3 collision groups exported", proc.stdout)
+        with out.open(newline="") as stream:
+            first, second = csv.DictReader(stream)
+        self.assertEqual((first["rank"], first["sid"], second["rank"]), ("1", "group0", "2"))
+        self.assertAlmostEqual(float(second["percentile"]), 200 / 3)
+        self.assertAlmostEqual(float(first["jsd"]), independent_metrics(self.pairs, [[0, 1]])[METRICS[0]])
+        self.assertEqual((first["search_total"], first["rec_total"]), ("10", "10"))
+        for role, expected in (("search", (self.ids[0], 9, 1)), ("rec", (self.ids[1], 1, 9))):
+            item, sc, rc = expected
+            self.assertEqual(first[role + "_leader_item"], item)
+            for task, count in (("search", sc), ("rec", rc)):
+                self.assertEqual(int(first[f"{role}_leader_{task}_count"]), count)
+                self.assertEqual(float(first[f"{role}_leader_{task}_share"]), count / 10)
+        keep = out.read_bytes()
+        self.assertNotEqual(subprocess.run(command, cwd=ROOT, capture_output=True).returncode, 0)
+        self.assertEqual(out.read_bytes(), keep)
+
+    def test_inspection_ties_singletons_and_multiple_maps(self):
+        singleton = self.base / "single.csv"
+        self.write(singleton, ["dataset", "item_id", "sid"],
+                   [[self.dataset, item, item] for item in self.ids])
+        self.write(self.counts, ["dataset", "item_id", "role", "label", "count"],
+                   [row[:-1] + [1] for row in self.count_rows])
+        out = self.base / "groups.csv"
+        proc = subprocess.run([sys.executable, "-I", "-B", str(ROOT / "scripts/inspect_groups.py"),
+                               "--role-counts", str(self.counts), "--sid-map", f"ties={self.mapping}",
+                               "--sid-map", f"single={singleton}", "--top-groups", "2",
+                               "--out-csv", str(out)], text=True, capture_output=True, check=True)
+        self.assertIn("single: 6/6 common items covered, 0/0 collision groups exported", proc.stdout)
+        with out.open(newline="") as stream:
+            rows = list(csv.DictReader(stream))
+        self.assertEqual([r["sid"] for r in rows], ["group0", "group1"])
+        for r, item in zip(rows, self.ids[::2]):
+            self.assertEqual((r["rank"], r["percentile"], r["search_leader_item"],
+                              r["rec_leader_ties"]), ("1", "100.0", item, "2"))
+
+    def test_partial_map_reports_seven_of_eight_before_creating_output(self):
+        maps = ROOT / "samples/synthetic_sid_map.csv"
+        with maps.open(newline="") as stream:
+            rows = list(csv.reader(stream))
+        self.write(self.mapping, rows[0], rows[1:-1])
+        counts = ROOT / "samples/synthetic_role_label_counts.csv"
+        out = self.base / "groups.csv"
+        for name, extra in (("inspect-groups", []), ("calibrate", ["--out-json", str(self.base / "agg.json")])):
+            cmd = [sys.executable, "-m", "sidduet.cli", name, "--role-counts", str(counts),
+                   "--sid-map", f"complete={maps}", "--sid-map", f"partial={self.mapping}",
+                   "--out-csv", str(out), *extra]
+            proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True)
+            self.assertNotEqual(proc.returncode, 0)
+            self.assertIn("partial: 7/8 covered, 1 missing (demo: 7/8)", proc.stderr)
+            self.assertFalse(out.exists())
+            self.assertFalse((self.base / "agg.json").exists())
+
     def test_analytic_six_metrics_and_aggregate_only_provenance(self):
         result, rows = self.success()
         record = result["results"][0]

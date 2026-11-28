@@ -8,7 +8,7 @@ Report adapter errors, numerical reproducibility discrepancies, mapping compatib
 
 ## Versioning and Long-Term Availability
 
-- **Immutable release tags:** Every published release is identified by an annotated Git tag (e.g., `v0.4.1`) with a complete SHA-256 inventory (`PACKAGE_MANIFEST.json` and `CHECKSUMS.sha256`) verified by `sidduet validate`.
+- **Immutable release tags:** Every published release is identified by an annotated Git tag (e.g., `v0.4.2`) with a complete SHA-256 inventory (`PACKAGE_MANIFEST.json` and `CHECKSUMS.sha256`) verified by `sidduet validate`.
 - **Protocol stability:** Corrections to code, adapters, documentation, or packaging receive a new semantic version tag with updated checksums and a `CHANGELOG.md` entry. Changes to measurement definitions increment the protocol version identifier so historical comparisons remain unambiguous.
 - **Preservation of prior baselines:** Historical study reports and the separately licensed UniSAR checkpoint assets (`v0.2.4`) are preserved across releases without rewriting prior tags.
 

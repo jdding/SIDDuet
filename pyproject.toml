@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sidduet"
-version = "0.4.1"
+version = "0.4.2"
 description = "Cross-task diagnostic toolkit and benchmark workflows for Semantic IDs across search and recommendation."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-  { name = "Jiandong Ding", email = "jdding@fudan.edu.cn" },
+  { name = "Jiandong Ding", email = "dingjiandong2@huawei.com" },
 ]
 keywords = [
   "semantic-ids",
@@ -38,7 +38,7 @@ dev = ["pytest>=8.0", "ruff>=0.6"]
 
 [project.urls]
 Homepage = "https://github.com/jdding/SIDDuet"
-Documentation = "https://github.com/jdding/SIDDuet/blob/v0.4.1/ARTIFACT_QUICKSTART.md"
+Documentation = "https://github.com/jdding/SIDDuet/blob/v0.4.2/ARTIFACT_QUICKSTART.md"
 Repository = "https://github.com/jdding/SIDDuet"
 Issues = "https://github.com/jdding/SIDDuet/issues"
 Demo = "https://jdding.github.io/SIDDuet/"

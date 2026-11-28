@@ -8,7 +8,7 @@ See [docs/RESOURCE_CAPABILITIES.md](docs/RESOURCE_CAPABILITIES.md) for what runs
 
 ## 1. Verify Table 2 from the release
 
-From a checkout of `v0.4.1`, run:
+From a checkout of `v0.4.2`, run:
 
 ```sh
 python3 -I -B scripts/verify_table2.py
@@ -58,6 +58,15 @@ sidduet calibrate \
 ```
 
 On a single CPU, 1,999 draws across both count-matched references take ~9.1 s (58 MiB peak RSS) at Qilin scale (20,540 items, 4,021 collision groups) and ~61.2 s (113 MiB peak RSS) at KuaiSAR scale (97,729 items, 3,462 groups). See [docs/COUNT_REFERENCE_CALIBRATION.md](docs/COUNT_REFERENCE_CALIBRATION.md) and [docs/BRING_YOUR_OWN_DATA.md](docs/BRING_YOUR_OWN_DATA.md) for custom schemas.
+
+With the same two tables, export groups for [upper-tail human inspection](docs/COUNT_REFERENCE_CALIBRATION.md#inspect-individual-groups). This sample covers 8/8 common items. Both groups are ranked against the full collision-group distribution.
+
+```sh
+sidduet inspect-groups \
+  --role-counts samples/synthetic_role_label_counts.csv \
+  --sid-map demo=samples/synthetic_sid_map.csv \
+  --top-groups 2 --out-csv "$SIDDUET_OUT/groups.csv"
+```
 
 ## 5. Run the local three-workflow web demo
 

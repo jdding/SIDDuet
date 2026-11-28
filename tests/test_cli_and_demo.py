@@ -21,7 +21,7 @@ class CLIAndDemoTests(unittest.TestCase):
             capture_output=True,
             check=True,
         )
-        self.assertIn("0.4.1", ver.stdout)
+        self.assertIn("0.4.2", ver.stdout)
 
         t2 = subprocess.run(
             [sys.executable, "-m", "sidduet.cli", "verify-table2"],
@@ -47,10 +47,19 @@ class CLIAndDemoTests(unittest.TestCase):
         )
         payload = json.loads(proc.stdout)
         self.assertEqual(payload["status"], "pass")
-        self.assertEqual(payload["version"], "0.4.1")
+        self.assertEqual(payload["version"], "0.4.2")
 
         wf1 = payload["workflow1"]
         self.assertEqual(wf1["common_items"], 8)
+        self.assertEqual(wf1["covered_common_items"], 8)
+        self.assertEqual([g["rank"] for g in wf1["groups"]], [1, 2])
+        self.assertEqual([g["percentile"] for g in wf1["groups"]], [100.0, 50.0])
+        for g in wf1["groups"]:
+            for role in ("search", "rec"):
+                m = next(m for m in g["members"] if m[f"is_{role}_leader"])
+                for task in ("search", "rec"):
+                    self.assertIn(f"{m[task + '_count']} ({m[task + '_share']:.2%})",
+                                  g[role + "_leader_traffic"])
         self.assertEqual(wf1["collision_groups"], 2)
         self.assertEqual(len(wf1["groups"]), 2)
         self.assertGreaterEqual(wf1["observed_mean_jsd"], 0.0)

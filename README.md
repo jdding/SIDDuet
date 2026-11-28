@@ -1,12 +1,12 @@
 # SIDDuet
 
-[SIDDuet v0.4.1](https://github.com/jdding/SIDDuet/releases/tag/v0.4.1) is an open-source diagnostic toolkit, paired-observation protocol, and benchmark reproduction package for inspecting shared Semantic IDs (SIDs) across search and recommendation.
+[SIDDuet v0.4.2](https://github.com/jdding/SIDDuet/releases/tag/v0.4.2) is an open-source diagnostic toolkit, paired-observation protocol, and benchmark reproduction package for inspecting shared Semantic IDs (SIDs) across search and recommendation.
 
 Without retraining tokenizers, SIDDuet joins existing item-to-code maps to paired search and recommendation observations across **three diagnostic workflows**:
 
 | Workflow | Core question | Entry point |
 | --- | --- | --- |
-| **1. Shared-code calibration** | Which items drive search vs. recommendation traffic within shared codes, and is the divergence unusual for their count volumes? | `sidduet calibrate` · [Calibration guide](docs/COUNT_REFERENCE_CALIBRATION.md) |
+| **1. Shared-code calibration** | Which items drive search vs. recommendation traffic within shared codes, and is the divergence unusual for their count volumes? | `sidduet calibrate` · [`sidduet inspect-groups`](docs/COUNT_REFERENCE_CALIBRATION.md#inspect-individual-groups) · [Calibration guide](docs/COUNT_REFERENCE_CALIBRATION.md) |
 | **2. Prediction coverage** | Which test requests have paired observations for their targets, and how do covered ranking scores compare with the full test? | [UniSAR replay & coverage](analysis/model_reuse/REPLAY.md) |
 | **3. Temporal pooling** | Does keeping task counts separate reduce future within-code exposure-allocation forecast loss relative to pooled counts? | [Temporal reuse protocol](analysis/reuse_validation/README.md) · [Cohort sensitivity](analysis/cohort_sensitivity/README.md) |
 

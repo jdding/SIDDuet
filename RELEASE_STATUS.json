@@ -1,11 +1,11 @@
 {
   "schema": "sr_sid_rolemap.public_release.v1",
-  "version": "0.4.1",
-  "release_tag": "v0.4.1",
+  "version": "0.4.2",
+  "release_tag": "v0.4.2",
   "repository_url": "https://github.com/jdding/SIDDuet",
-  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.1",
+  "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.2",
   "publication_status": "public_release",
-  "release_date": "2026-11-24",
+  "release_date": "2026-11-28",
   "topology_profile_id": "sr_sid_rolemap.topology.value_median.v2",
   "scientific_reproduction_status": "historical_v028_results_preserved_not_rerun",
   "reconstructed_datasets": [
@@ -34,14 +34,13 @@
     "internal review records"
   ],
   "hosted_live_demo": "https://jdding.github.io/SIDDuet/",
-  "demo_execution": "pinned Pyodide, actual Python source, live paired-target coverage slices, fixed-strength smoothing rules, and live verify_table2.py, no upload",
-  "baseline_release_commit": "43036301123ada30627cca50904851760bafd105",
+  "demo_execution": "pinned Pyodide, actual Python source, ranked collision groups and leader shares, live paired-target coverage slices, fixed-strength smoothing rules, and live verify_table2.py, no upload",
+  "baseline_release_commit": "bc8c097b1032ff4e171866da93587e74589a21dc",
   "additional_temporal_validation": "Same-day shared-calendar period, fixed cohort/maps and estimator rule; not cross-dataset replication",
   "changes": [
-    "Add --allow-unpaired-targets and --paired-target-slices for live paired-target coverage auditing",
-    "Compare pooled, separate, and shrinkage rules with fixed smoothing strengths on held-out synthetic counts",
-    "Add clear missing-dependency guidance in sidduet CLI for optional calibration/provider extras",
-    "Clarify six primary Table 2 rows versus the separate Qilin GenSAR prefix replay across docs and demos"
+    "Add inspect-groups for human inspection of ranked collision groups, their population percentiles and both leaders across tasks.",
+    "Report covered and required common items when a map is incomplete. The command stops before creating output.",
+    "Display ranked group and leader traffic on the eight-item browser fixture and update author contact metadata."
   ],
   "count_reference_precision": {
     "draws_per_reference": 1999,
@@ -61,12 +60,12 @@
     "original_four_endpoint_family_retained": true
   },
   "base_release": {
-    "version": "0.4.0",
-    "release_tag": "v0.4.0",
-    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.0",
-    "release_date": "2026-11-23",
+    "version": "0.4.1",
+    "release_tag": "v0.4.1",
+    "release_url": "https://github.com/jdding/SIDDuet/releases/tag/v0.4.1",
+    "release_date": "2026-11-24",
     "publication_status": "public_release",
-    "commit": "43036301123ada30627cca50904851760bafd105"
+    "commit": "bc8c097b1032ff4e171866da93587e74589a21dc"
   },
   "scientific_results_recomputed": false,
   "qilin_calibration_example": "scripts/replay_qilin_calibration.py"

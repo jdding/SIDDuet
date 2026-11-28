@@ -51,7 +51,11 @@ def _compute_workflow1(counts_path: Path, sid_map_path: Path, draws: int = 199, 
         for row in csv.DictReader(handle):
             item_to_sid[row["item_id"]] = row["sid"]
 
-    common_items = sorted(i for i, (s, r) in paired.items() if s > 0 and r > 0 and i in item_to_sid)
+    common_items = sorted(i for i, (s, r) in paired.items() if s > 0 and r > 0)
+    covered = sum(i in item_to_sid for i in common_items)
+    if covered != len(common_items):
+        raise ValueError(f"synthetic map coverage: {covered}/{len(common_items)} covered, "
+                         f"{len(common_items) - covered} missing")
     by_sid: dict[str, list[str]] = {}
     for item in common_items:
         by_sid.setdefault(item_to_sid[item], []).append(item)
@@ -95,6 +99,21 @@ def _compute_workflow1(counts_path: Path, sid_map_path: Path, draws: int = 199, 
                 "members": member_rows,
             }
         )
+
+    rank_groups = runpy.run_path(str(ROOT / "scripts/inspect_groups.py"))["rank_groups"]
+    by_code = {g["sid"]: g for g in groups}
+    scores = {sid: g["allocation_jsd"] for sid, g in by_code.items()}
+    groups = []
+    for sid, rank, percentile in rank_groups(scores):
+        g = by_code[sid]
+        g.update(rank=rank, percentile=percentile)
+        for role in ("search", "rec"):
+            leaders = [m for m in g["members"] if m[f"is_{role}_leader"]]
+            g[f"{role}_leader_traffic"] = " / ".join(
+                f"{m['item']} · S {m['search_count']} ({m['search_share']:.2%}), "
+                f"R {m['rec_count']} ({m['rec_share']:.2%})" for m in leaders
+            )
+        groups.append(g)
 
     observed_mean_jsd = sum(g["allocation_jsd"] for g in groups) / len(groups)
     disjoint_rate = sum(1 for g in groups if g["disjoint_leaders"]) / len(groups)
@@ -144,6 +163,7 @@ def _compute_workflow1(counts_path: Path, sid_map_path: Path, draws: int = 199, 
 
     return {
         "common_items": len(common_items),
+        "covered_common_items": covered,
         "collision_groups": len(groups),
         "observed_mean_jsd": observed_mean_jsd,
         "observed_disjoint_rate": disjoint_rate,
@@ -450,7 +470,7 @@ def run_example() -> dict:
 
         return {
             "status": "pass",
-            "version": "0.4.1",
+            "version": "0.4.2",
             "synthetic": True,
             "workflow1": workflow1,
             "table2": table2_rows,

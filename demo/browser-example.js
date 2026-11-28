@@ -100,16 +100,19 @@ function render(result) {
 
   // Workflow 1: Shared-code groups & count-matched calibration
   const wf1 = result.workflow1;
+  document.getElementById("wf1-map-coverage").textContent =
+    `${wf1.covered_common_items}/${wf1.common_items} common synthetic items covered.`;
   groupSelect.replaceChildren();
   for (const g of wf1.groups) {
     addRow("wf1-groups", [
+      `${g.rank} (${fixed(g.percentile, 2)}%)`,
       g.sid,
       g.size,
       g.search_total,
       g.rec_total,
       fixed(g.allocation_jsd, 3),
-      `${g.search_leader} (${percent(g.search_leader_share)})`,
-      `${g.rec_leader} (${percent(g.rec_leader_share)})`,
+      g.search_leader_traffic,
+      g.rec_leader_traffic,
       g.disjoint_leaders ? "Yes" : "No",
     ]);
     const opt = document.createElement("option");

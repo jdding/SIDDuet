@@ -164,6 +164,37 @@ def reference_summary(observed, values, draws):
     return result
 
 
+def map_coverage(datasets, mappings):
+    all_common = {(dataset, item) for dataset, data in datasets.items() for item in data["ids"]}
+    coverage = []
+    for name, mapping in mappings.items():
+        missing = all_common - mapping.keys()
+        if missing:
+            gaps = defaultdict(int)
+            for dataset, _ in missing:
+                gaps[dataset] += 1
+            detail = ", ".join(f"{d}: {len(datasets[d]['ids']) - n}/{len(datasets[d]['ids'])}"
+                               for d, n in sorted(gaps.items()))
+            raise ValueError(f"map coverage incomplete for common cohort: {name}: "
+                             f"{len(all_common) - len(missing)}/{len(all_common)} covered, "
+                             f"{len(missing)} missing ({detail})")
+        coverage.append({"name": name, "input_rows": len(mapping), "covered_common_items": len(all_common),
+                         "unused_rows": len(mapping.keys() - all_common),
+                         "datasets": [{"dataset": dataset, "common_items": len(data["ids"]),
+                                       "unused_rows": sum(d == dataset and (d, i) not in all_common
+                                                          for d, i in mapping)}
+                                      for dataset, data in datasets.items()]})
+    return coverage
+
+
+def group_index(dataset, ids, mapping):
+    codes = [mapping[(dataset, item)] for item in ids]
+    labels = sorted(set(codes))
+    code_index = {code: i for i, code in enumerate(labels)}
+    group = np.array([code_index[code] for code in codes], dtype=np.int64)
+    return labels, group, np.bincount(group, minlength=len(labels)).astype(np.int64)
+
+
 def calculate(args):
     if args.draws < 1 or args.seed < 0:
         raise ValueError("draws must be positive and seed must be nonnegative")
@@ -175,26 +206,13 @@ def calculate(args):
     check_outputs((args.out_json, args.out_csv), protected)
     datasets, cohorts = read_counts(args.role_counts)
     mappings = {name: SID_IO.load_sid_map(path) for name, path in maps.items()}
-    all_common = {(dataset, item) for dataset, data in datasets.items() for item in data["ids"]}
-    coverage = []
-    for name, mapping in mappings.items():
-        if all_common - mapping.keys():
-            raise ValueError("map coverage incomplete for common cohort: " + name)
-        coverage.append({"name": name, "input_rows": len(mapping), "covered_common_items": len(all_common),
-                         "unused_rows": len(mapping.keys() - all_common),
-                         "datasets": [{"dataset": dataset, "common_items": len(data["ids"]),
-                                       "unused_rows": sum(d == dataset and (d, i) not in all_common
-                                                          for d, i in mapping)}
-                                      for dataset, data in datasets.items()]})
+    coverage = map_coverage(datasets, mappings)
     records = []
     for dataset, data in datasets.items():
         s, r = data["s"], data["r"]
         views = []
         for name, mapping in mappings.items():
-            codes = [mapping[(dataset, item)] for item in data["ids"]]
-            code_index = {code: i for i, code in enumerate(sorted(set(codes)))}
-            group = np.array([code_index[code] for code in codes], dtype=np.int64)
-            sizes = np.bincount(group, minlength=len(code_index)).astype(np.int64)
+            _, group, sizes = group_index(dataset, data["ids"], mapping)
             observed = summary(POP.group_stats(s, r, group, sizes), sizes)
             collision = sizes >= 2
             record = {"dataset": dataset, "mapping": name,
@@ -310,10 +328,14 @@ def write_outputs(args, result):
         raise
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def add_input_arguments(parser):
     parser.add_argument("--role-counts", type=Path, required=True)
     parser.add_argument("--sid-map", action="append", required=True, help="repeatable name=map.csv")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    add_input_arguments(parser)
     parser.add_argument("--draws", type=int, default=1999)
     parser.add_argument("--seed", type=int, default=20261104)
     parser.add_argument("--out-json", type=Path, required=True)
